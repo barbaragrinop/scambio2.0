@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                    <img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="100" height="30">
+                    <img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">

@@ -73,29 +73,69 @@
   transition: all 0.2s;
 }
 
+.button-cadastrar {
+  margin-left: 400px;
+  margin-top: 15px;
+}
+
+.navbar {
+  height: 15px;
+}
+
+.navbar-brand {
+  padding-top: 8px;
+}
+
+.formCadastro {
+  margin-right: 0;
+  margin-top: 90px;
+  margin-left: 63px;
+}
+
+.dt-nasc {
+  width: 178px;
+}
+
 div.box {
   width: 150px;
   display: inline-block;
 }
 
+.subtitle {
+  font-size: 17.8px;
+}
+
 .img-barbara {
-  width: 130px;
+  width: 120px;
 }
 
 .img-beatriz {
-  width: 130px;
+  width: 135px;
+  height: 150px;
 }
 
 .img-munir {
-  width: 130px;
+  width: 128px;
+  height: 150px;
 }
 
 .img-thamirys {
-  width: 130px;
+  width: 120px;
 }
 
 .img-yago {
   width: 130px;
+  height: 150px;
+}
+
+.int-generic {
+  border-radius: 5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.name-int {
+  font-size: 15.5px;
 }
 
 .btn-solid-reg:hover {
@@ -142,13 +182,6 @@ div.box {
   border: 1px solid #eb427e;
   background: transparent;
   color: #eb427e;
-}
-
-.form-cadastro {
-  height: 20%;
-  width: 65%;
-  padding-left: 29%;
-  padding-top: 5%;
 }
 
 .text-container {

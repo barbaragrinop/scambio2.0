@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
 </head>
 
@@ -21,10 +21,10 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                    <img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="100" height="30">
+                    <img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
                 </a>
             </div>
-            <div class="collapse navbar-collapse" style=" background-color: #F2EEE8;" id="myNavbar">
+            <div class="collapse navbar-collapse" style="background-color: #F2EEE8;" id="myNavbar">
                 <ul class="textCor nav navbar-nav">
                     <li><a href="#sobre">Quem Somos</a></li>
                     <li><a href="#comofunciona">Como Funciona?</a></li>
@@ -61,27 +61,27 @@
 
     <div id="sobre" class="container-fluid sobre">
         <h1>Sobre Nós e o Projeto</h1>
-        <h2 class="h4">Somos alunos do curso técnico em Desenvolvimento de Sistemas na ETEC Dra Ruth Cardoso em São Vicente. Atualmente no terceiro módulo e último. </h2>
-        <h2 class="h4">Estamos construindo o Scambio, um site pensado para realizar trocas de livros, onde você poderá publicar um livro e troca-lo por outro de seu interesse.</h2>
+        <h2 class="h4" style="line-height: 23px;">Somos alunos do curso técnico em Desenvolvimento de Sistemas na ETEC Dra Ruth Cardoso em São Vicente. Atualmente no terceiro módulo e último. </h2>
+        <h2 class="h4 subtitle">O Scambio, é uma plataforma para realizar trocas de livros, onde você poderá publicar um livro e troca-lo por outro de seu interesse.</h2>
         <div class="box">
-            <img class="img-barbara" src="assets/imgs/barbara.jpg" />
-            <span> Titulo da primeira imagem </span>
+            <img class="img-barbara int-generic" src="assets/imgs/barbara.jpg" />
+            <span class="name-int"> Barbara Hellen </span>
         </div>
         <div class="box">
-            <img class="img-beatriz" src="assets/imgs/beatriz.jpg" />
-            <span> Titulo da segunda imagem </span>
+            <img class="img-beatriz int-generic" src="assets/imgs/beatriz.jpg" />
+            <span class="name-int"> Beatriz Bombardelli </span>
         </div>
         <div class="box">
-            <img class="img-munir" src="" />
-            <span> Titulo da segunda imagem </span>
+            <img class="img-munir int-generic" src="assets/imgs/munir.jpeg" />
+            <span class="name-int"> Munir Arabi </span>
         </div>
         <div class="box">
-            <img class="img-thamirys" src="" />
-            <span> Titulo da segunda imagem </span>
+            <img class="img-thamirys int-generic" src="assets/imgs/thamirys.jpg" />
+            <span class="name-int"> Thamirys Abilio </span>
         </div>
         <div class="box">
-            <img class="img-yago" src="" />
-            <span> Titulo da segunda imagem </span>
+            <img class="img-yago int-generic" src="assets/imgs/yago.jpg" />
+            <span class="name-int"> Yago Felipe </span>
         </div>
     </div>
     <div id="comofunciona" class="container-fluid">
