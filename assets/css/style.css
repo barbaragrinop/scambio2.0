@@ -256,7 +256,16 @@ div.box {
 .div-ajuda {
     width: 600px;
     padding-top: 50px;
+    display: block;
     margin: auto;
+}
+
+.div-ajuda input {
+    font-size: 1.5rem;
+}
+
+#sobre .box {
+    margin-left: 13px;
 }
 
 input[type="text"],
