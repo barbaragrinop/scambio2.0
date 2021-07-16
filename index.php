@@ -65,13 +65,16 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h1 class="h1-large">Uma plataforma acolhedora para seus amados livros.</h1>
-                        <p class="p-large">Venha fazer parte de uma comunidade de troca de livros, tenha novas experiências e novos livros.</p>
+                        <p class="p-large">📚 Uma plataforma fácil de usar, basta apenas criar o seu cadastro e se aventurar na busca por novos livros e conhecer pessoas com os mesmos gostos.</p>
+                        <p class="p-large">📚 Após o cadastro é só buscar por novos livros e entrar em contato com anunciante.</p>
+                        <p class="p-large">📚 O envio do livro ou a troca é da sua escolha, você pode optr por trocar com pessoas perto de você ou longe.</p>
+                        <p class="p-large">📚 Não apenas troque, mas doe para quem precisa! O incentvo da leitura ajuda á todos.</p>
+
                     </div> 
                 </div> 
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" width="350px" src="assets/imgs/comofunciona.png" alt="alternative">
+                        <img class="img-fluid" width="400px" src="assets/imgs/comofunciona2.png" alt="alternative">
                     </div> 
                 </div> 
             </div> 
