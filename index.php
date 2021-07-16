@@ -91,10 +91,78 @@
     </div>
     <div id="ajuda" class="container-fluid">
         <h1>Precisa de Ajuda?</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <div class="row div-ajuda">
+            <form action="">
+                <div class="row">
+                <div class="col-25">
+                    <label for="nome">Nome</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome..">
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-25">
+                    <label for="email">E-mail</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="email" name="email" placeholder="Seu e-mail..">
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="estado">Estado</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="estado" name="estado">
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                            <option value="DF">DF</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="mensagem">Mensagem</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem.." style="height:200px"></textarea>
+                    </div>
+                </div>
+                <div class="row btn-submit">
+                    <input onclick="alertaBtnAjuda()" type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
     </div>
 
+    <script>
+        function alertaBtnAjuda() {
+            alert("Você recebera uma resposta em breve");
+        }
+    </script>
 </body>
 
 </html>

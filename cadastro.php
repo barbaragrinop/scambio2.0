@@ -29,7 +29,7 @@
                 <ul class="textCor nav navbar-nav">
                     <li><a href="#sobre">Quem Somos</a></li>
                     <li><a href="#comofunciona">Como Funciona?</a></li>
-                    <li><a href="#ajuda">Ajuda</a></li>
+                    <li><a href="index.php#ajuda">Ajuda</a></li>
                 </ul>
                 <ul class=" textCor nav navbar-nav navbar-right">
                     <li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
@@ -48,7 +48,7 @@
                 <div class="container">
                     <div class="col-md-4">
                         <h4>Nome:</h4>
-                        <input type="text" placeholder="Nome Completo">
+                        <input class="input" type="text" placeholder="Nome Completo">
                     </div>
                     <div class="col-md-4">
                         <h4>Data de nascimento:</h4>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-md-4">
                         <h4>CEP:</h4>
-                        <input type="text" placeholder="CEP">
+                        <input type="text" name="cep" id="cep" placeholder="CEP">
                     </div>
                     <div class="col-md-4">
                         <h4>Rua:</h4>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="col-md-4">
                         <h4>Cidade:</h4>
-                        <input type="text" placeholder="nome da Cidade">
+                        <input type="text" placeholder="Nome da Cidade">
                     </div>
                     <div class="col-md-4">
                         <h4>Estado:</h4>
@@ -105,6 +105,7 @@
 
     <script>
         $("#celular").mask("(99) 99999-9999");
+        $("#cep").mask("99999-999");
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
