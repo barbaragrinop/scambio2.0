@@ -25,7 +25,7 @@
                     <img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
                 </a>
             </div>
-            <div class="collapse navbar-collapse" style=" background-color: #F2EEE8;" id="myNavbar">
+            <div class="collapse navbar-collapse" style=" background-color: #000000;" id="myNavbar">
                 <ul class="textCor nav navbar-nav">
                     <li><a href="#sobre">Quem Somos</a></li>
                     <li><a href="#comofunciona">Como Funciona?</a></li>
