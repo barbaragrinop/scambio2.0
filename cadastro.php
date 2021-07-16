@@ -32,7 +32,6 @@
                     <li><a href="../scambio/index.php#ajuda">Ajuda</a></li>
                 </ul>
                 <ul class=" textCor nav navbar-nav navbar-right">
-                    <li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
                 </ul>
             </div>
