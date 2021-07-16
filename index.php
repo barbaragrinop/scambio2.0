@@ -60,37 +60,84 @@
     <!-- end of header -->
 
     <div id="sobre" class="container-fluid sobre">
-        <h1>Sobre Nós e o Projeto</h1>
+        <h2 class="h1-large">Sobre Nós e o Projeto</h2>
         <h2 class="h4" style="line-height: 23px;">Somos alunos do curso técnico em Desenvolvimento de Sistemas na ETEC Dra Ruth Cardoso em São Vicente. Atualmente no terceiro módulo e último. </h2>
         <h2 class="h4 subtitle">O Scambio, é uma plataforma para realizar trocas de livros, onde você poderá publicar um livro e troca-lo por outro de seu interesse.</h2>
         <div class="box">
             <img class="img-barbara int-generic" src="assets/imgs/barbara.jpg" />
             <span class="name-int"> Barbara Hellen </span>
+            <br>
+            <span class="name-int"> Back-end & Banco de Dados </span>
+            <br>
+            <span class="name-int"> São Vicente - SP </span>
+            <br>
+            <span class="name-int"> 20 anos </span>
+            
         </div>
         <div class="box">
             <img class="img-beatriz int-generic" src="assets/imgs/beatriz.jpg" />
             <span class="name-int"> Beatriz Bombardelli </span>
+            <br>
+            <span class="name-int"> Front-end & Design </span>
+            <br>
+            <span class="name-int"> São Vicente - SP </span>
+            <br>
+            <span class="name-int"> 18 anos </span>
         </div>
         <div class="box">
             <img class="img-munir int-generic" src="assets/imgs/munir.jpeg" />
             <span class="name-int"> Munir Arabi </span>
+            <br>
+            <span class="name-int"> Front-end & Design </span>
+            <br>
+            <span class="name-int">São Vicente - SP </span>
+            <br>
+            <span class="name-int"> 17 anos </span>
         </div>
         <div class="box">
             <img class="img-thamirys int-generic" src="assets/imgs/thamirys.jpg" />
             <span class="name-int"> Thamirys Abilio </span>
+            <br>
+            <span class="name-int"> Back-end & Banco de Dados</span>
+            <br>
+            <span class="name-int"> Cubatão - SP </span>
+            <br>
+            <span class="name-int"> 31 anos </span>
         </div>
         <div class="box">
             <img class="img-yago int-generic" src="assets/imgs/yago.jpg" />
             <span class="name-int"> Yago Felipe </span>
+            <br>
+            <span class="name-int"> Documentação e validação </span>
+            <br>
+            <span class="name-int"> São Vicente - SP </span>
+            <br>
+            <span class="name-int"> 19 anos </span>
         </div>
     </div>
     <div id="comofunciona" class="container-fluid">
-        <h1>Como Funciona?</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <h2 class="h1-large">Como Funciona?</h2>
+        <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h1 class="h1-large">Uma plataforma acolhedora para seus amados livros.</h1>
+                        <p class="p-large">Venha fazer parte de uma comunidade de troca de livros, tenha novas experiências e novos livros.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img class="img-fluid" width="350px" src="assets/imgs/comofunciona.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
     </div>
     <div id="ajuda" class="container-fluid">
-        <h1>Precisa de Ajuda?</h1>
+        <h2 class="h1-large" >Precisa de Ajuda?</h2>
         <div class="row div-ajuda">
             <form action="">
                 <div class="row">

@@ -45,7 +45,7 @@
             </div>
 
             <form class="row g-3 formCadastro">
-                <div class="container">
+                <div class="container div-cadastro">
                     <div class="col-md-4">
                         <h4>Nome:</h4>
                         <input class="input" type="text" placeholder="Nome Completo">
