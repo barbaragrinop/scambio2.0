@@ -256,7 +256,16 @@ div.box {
 .div-ajuda {
     width: 600px;
     padding-top: 50px;
+    display: block;
     margin: auto;
+}
+
+.div-ajuda input {
+    font-size: 1.5rem;
+}
+
+#sobre .box {
+    margin-left: 13px;
 }
 
 input[type="text"],
@@ -265,7 +274,7 @@ textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
     resize: vertical;
 }
 

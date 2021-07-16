@@ -27,9 +27,9 @@
             </div>
             <div class="collapse navbar-collapse" style=" background-color: #F2EEE8;" id="myNavbar">
                 <ul class="textCor nav navbar-nav">
-                    <li><a href="#sobre">Quem Somos</a></li>
-                    <li><a href="#comofunciona">Como Funciona?</a></li>
-                    <li><a href="#ajuda">Ajuda</a></li>
+                    <li><a href="../scambio/index.php#comofunciona">Como Funciona?</a></li>
+                    <li><a href="../scambio/index.php#quemsomos">Quem Somos</a></li>
+                    <li><a href="../scambio/index.php#ajuda">Ajuda</a></li>
                 </ul>
                 <ul class=" textCor nav navbar-nav navbar-right">
                     <li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>

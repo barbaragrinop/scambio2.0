@@ -13,7 +13,7 @@
 </head>
 
 <body class="body">
-    <nav class="secondaryColor navbar navbar-inverse navbar-fixed-top">
+<nav class="secondaryColor navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -25,11 +25,11 @@
                     <img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
                 </a>
             </div>
-            <div class="collapse navbar-collapse" style=" background-color: #F2EEE8;" id="myNavbar">
+            <div class="collapse navbar-collapse" style="background-color: #F2EEE8;" id="myNavbar">
                 <ul class="textCor nav navbar-nav">
-                    <li><a href="#sobre">Quem Somos</a></li>
-                    <li><a href="#comofunciona">Como Funciona?</a></li>
-                    <li><a href="index.php#ajuda">Ajuda</a></li>
+                    <li><a href="../scambio/index.php#comofunciona">Como Funciona?</a></li>
+                    <li><a href="../scambio/index.php#quemsomos">Quem Somos</a></li>
+                    <li><a href="../scambio/index.php#ajuda">Ajuda</a></li>
                 </ul>
                 <ul class=" textCor nav navbar-nav navbar-right">
                     <li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
