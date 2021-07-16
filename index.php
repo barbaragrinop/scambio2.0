@@ -60,7 +60,6 @@
     
     <div id="comofunciona" class="container-fluid">
         <h2 class="h1-large" style="font-family: Cutive;">Como Funciona?</h2>
-        <header id="header" class="header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -79,7 +78,6 @@
                 </div> 
             </div> 
         </div>  
-    </header> 
     </div>
 
     <div id="sobre" class="container-fluid sobre">
