@@ -166,6 +166,7 @@
                     </div>
                     <div class="col-75">
                         <select id="estado" name="estado">
+                            <option value="--">--</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
                             <option value="AP">AP</option>
