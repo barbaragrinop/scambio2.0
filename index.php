@@ -82,7 +82,7 @@
 
     <div id="sobre" class="container-fluid sobre">
         <h2 class="h1-large" style="font-family: Cutive;">Sobre Nós e o Projeto</h2>
-        <h2 class="h4" style="line-height: 30px;">Somos alunos do curso técnico em Desenvolvimento de Sistemas na ETEC Dra Ruth Cardoso em São Vicente. Atualmente no terceiro módulo e último. </h2>
+        <h2 class="h4 description-quemsomos" style="line-height: 30px;">Somos alunos do curso técnico em Desenvolvimento de Sistemas na ETEC Dra Ruth Cardoso em São Vicente. Atualmente no terceiro módulo e último. </h2>
         <h2 class="h4 subtitle">O Scambio, é uma plataforma para realizar trocas de livros, onde você poderá publicar um livro e troca-lo por outro de seu interesse.</h2>
         <div class="box">
             <img class="img-barbara int-generic" src="assets/imgs/barbara.jpg" />
@@ -143,6 +143,8 @@
  
     <div id="ajuda" class="container-fluid">
         <h2 class="h1-large" style="font-family: Cutive;" >Precisa de Ajuda?</h2>
+        <span class="span-ajuda">Deixe aqui sua dúvida, sugestão ou comentário sobre o projeto</span>
+
         <div class="row div-ajuda">
             <form action="">
                 <div class="row">
@@ -213,7 +215,9 @@
 
     <script>
         function alertaBtnAjuda() {
-            alert("Você recebera uma resposta em breve");
+            let input = document.querySelector('#nome');
+            let nome = input.value;
+            alert("Olá " + nome + ". Você receberá uma resposta em breve!");
         }
     </script>
 </body>

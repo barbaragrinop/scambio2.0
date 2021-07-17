@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+* {
+    font-family: sans-serif;
+}
+
 .secondaryColor {
     background-color: #f2eee8;
     border: #f2eee8;
@@ -10,6 +14,7 @@ html {
 .body {
     background: #f2eee8;
     position: relative;
+    font-family: sans-serif;
 }
 
 .container {
@@ -147,7 +152,7 @@ div.box {
 }
 
 .subtitle {
-    font-size: 17.8px;
+    font-size: 18.8px;
 }
 
 .img-barbara {
@@ -180,7 +185,8 @@ div.box {
 }
 
 .name-int {
-    font-size: 15.5px;
+    font-size: 16px;
+    font-family: sans-serif;
 }
 
 .btn-solid-reg:hover {
@@ -245,13 +251,22 @@ div.box {
 
 .h1-large {
     font-size: 60px;
+    padding-bottom: 8px;
+}
+
+.description-quemsomos {
+    font-size: 21px;
 }
 
 .div-ajuda {
     width: 600px;
-    padding-top: 50px;
+    padding-top: 20px;
     display: block;
     margin: auto;
+}
+
+#ajuda .span-ajuda {
+    font-size: 1.75rem;
 }
 
 .div-ajuda input {
