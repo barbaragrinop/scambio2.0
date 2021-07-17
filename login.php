@@ -53,7 +53,9 @@
                         <h4>Senha:</h4>
                         <input type="password" placeholder="********">
                     </div>
-                    <div class="recuperar-senha"><a href="recuperacaodesenha.php">Esqueceu sua senha?</a></div>
+                    <div class="recuperar-senha">
+                        <a href="recuperacaodesenha.php">Esqueceu sua senha?</a>
+                    </div>
                     <div class="col-md-4 button-login">
                         <button type="submit" class="btn btn-primary">Logar</button>
                     </div>

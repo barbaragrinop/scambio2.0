@@ -280,7 +280,7 @@ div.box {
 input[type="text"],
 select,
 textarea {
-    width: 100%;
+    width: 200px;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -307,18 +307,21 @@ input[type="submit"]:hover {
 }
 
 .div-login {
-    padding-top: 80px;
-    padding-left: 443px;
+    /* padding-top: 80px;
+    padding-left: 443px; */
     line-height: 30px;
     border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+    background-color: #F2EEE8;
+    display: block;
+    margin: auto;
+    padding: auto;
 }
 
 .div-cadastro {
     border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+    background-color: #F2EEE8;
+    display: block;
+    padding: auto;
 }
 
 .col-25 {
