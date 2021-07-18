@@ -277,10 +277,10 @@ div.box {
     margin-left: 13px;
 }
 
-input[type="text"],
+.div-ajuda form div input[type="text"],
 select,
 textarea {
-    width: 200px;
+    width: 400px;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
