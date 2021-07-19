@@ -39,58 +39,58 @@
     </nav>
     <div class="acess">
         <div class="acess-form acess-form-cadastro">
-            <div class="acess-header">
+            <div class="title-cadastro">
                 <h2>Junte-se a nossa comunidade</h2>
             </div>
 
             <form class="row g-3 formCadastro">
-                <div class="container div-cadastro">
-                    <div class="col-md-4">
-                        <h4>Nome:</h4>
+                <div class="container div-cadastro input-container">
+                    <div class="col-md-6 div-label-input">
+                        <label>Nome:</label>
                         <input class="input" type="text" placeholder="Nome Completo">
                     </div>
-                    <div class="col-md-4">
-                        <h4>Data de nascimento:</h4>
-                        <input class="dt-nasc" type="date" id="date">
+                    <div class="col-md-6 div-label-input">
+                        <label>Data de nascimento:</label>
+                        <input class="dt-nasc" type="date" id="date" placeholder="">
                     </div>
-                    <div class="col-md-4">
-                        <h4>Celular:</h4>
+                    <div class="col-md-6 div-label-input">
+                        <label>Celular:</label>
                         <input type="text" name="celular" id="celular" placeholder="( ) 00000-0000" maxlength="15" />
                     </div>
-                    <div class="col-md-4">
-                        <h4>E-mail:</h4>
+                    <div class="col-md-6 div-label-input">
+                        <label>E-mail:</label>
                         <input type="text" placeholder="Endereço de E-mail">
                     </div>
-                    <div class="col-md-4">
-                        <h4>Senha:</h4>
+                    <div class="col-md-6 div-label-input">
+                        <label>Senha:</label>
                         <input type="password" placeholder="********">
                     </div>
-                    <div class="col-md-4">
-                        <h4>Confirmar Senha:</h4>
+                    <div class="col-md-6 div-label-input">
+                        <label>Confirmar Senha:</label>
                         <input type="password" placeholder="********">
                     </div>
-                    <div class="col-md-4">
-                        <h4>CEP:</h4>
+                    <div class="col-md-6 div-label-input">
+                        <label>CEP:</label>
                         <input type="text" name="cep" id="cep" placeholder="CEP">
                     </div>
-                    <div class="col-md-4">
-                        <h4>Rua:</h4>
+                    <div class="col-md-6 div-label-input">
+                        <label>Rua:</label>
                         <input type="text" placeholder="Nome da Rua">
                     </div>
-                    <div class="col-md-4">
-                        <h4>Número:</h4>
+                    <div class="col-md-6 div-label-input">
+                        <label>Número:</label>
                         <input type="text" placeholder="Número da Residência">
                     </div>
-                    <div class="col-md-4">
-                        <h4>Bairro:</h4>
+                    <div class="col-md-6 div-label-input">
+                        <label>Bairro:</label>
                         <input type="text" placeholder="Nome do Bairro">
                     </div>
-                    <div class="col-md-4">
-                        <h4>Cidade:</h4>
+                    <div class="col-md-6 div-label-input">
+                        <label>Cidade:</label>
                         <input type="text" placeholder="Nome da Cidade">
                     </div>
-                    <div class="col-md-4">
-                        <h4>Estado:</h4>
+                    <div class="col-md-6 div-label-input">
+                        <label>Estado:</label>
                         <input type="text" placeholder="Nome do Estado">
                     </div>
 
