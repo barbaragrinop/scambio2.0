@@ -9,6 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
+    <title>Scambio</title>
 </head>
 
 <body class="body">
@@ -32,7 +33,7 @@
                 </ul>
                 <ul class=" textCor nav navbar-nav navbar-right">
                     <li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
-                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+                    <li><a href="loginTemplate/login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
                 </ul>
             </div>
         </div>
@@ -46,7 +47,7 @@
                         <h1 class="h1-large">Troca de livro? Dê um match no Scambio.</h1>
                         <p class="p-large">Venha fazer parte de uma comunidade de troca de livros, tenha novas experiências e novos livros.</p>
                         <a class="btn-solid-lg" href="cadastro.php"><i class="fab fa-apple"></i>Cadastre-se</a>
-                        <a class="btn-solid-lg secondary" href="login.php"><i class="fab fa-google-play"></i>Entrar</a>
+                        <a class="btn-solid-lg secondary" href="loginTemplate/login.php"><i class="fab fa-google-play"></i>Entrar</a>
                     </div> 
                 </div> 
                 <div class="col-lg-6">

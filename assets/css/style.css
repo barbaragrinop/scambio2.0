@@ -85,7 +85,7 @@ html {
 }
 
 .button-login {
-    margin: 20px 0 0 67px;
+    margin: 20px 0 0 40px;
 }
 
 .recuperar-senha {
@@ -121,6 +121,13 @@ html {
 
 .title-cadastro {
     height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.title-login {
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center
@@ -349,12 +356,11 @@ input[type="submit"]:hover {
 }
 
 .div-login {
-    line-height: 30px;
-    border-radius: 5px;
-    background-color: #F2EEE8;
-    display: block;
-    margin: auto;
-    padding: auto;
+    padding-top: 45px;
+}
+
+.img-page-login {
+    padding-left: 80px;
 }
 
 .col-25 {

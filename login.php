@@ -39,12 +39,15 @@
     </nav>
     <div class="acess">
         <div class="acess-form acess-form-cadastro">
-            <div class="acess-header">
-                <h2>Junte-se a nossa comunidade</h2>
+            <div class="title-login">
+                <h2>Login</h2>
             </div>
 
             <form class="row g-3 formCadastro">
-                <div class="container div-login">
+                <div class="col-md-6 img-page-login">
+                    <img class="img-page-login" src="assets/imgs/login.png" alt="">
+                </div>
+                <div class="container div-login col-md-6">
                     <div class="col-md-12 div-email-login">
                         <h4>E-mail:</h4>
                         <input type="text" placeholder="Endereço de E-mail">
