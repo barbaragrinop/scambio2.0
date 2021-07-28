@@ -27,7 +27,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt div-improv" data-tilt>
-					<img src="images/book.png" alt="IMG">
+					<img src="images/login" alt="IMG">
 				</div>
 
 				<form class="login100-form validate-form">
@@ -61,7 +61,7 @@
 						<span class="txt1">
 							<!-- Esqueceu sua -->
 						</span>
-						<a class="txt2" href="../recuperacaoSenha/senha.php">
+						<a class="txt2" href="../recuperacao/senha.php">
 							Esqueceu sua Senha?
 						</a>
 					</div>
