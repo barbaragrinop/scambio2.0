@@ -61,7 +61,7 @@
 						<span class="txt1">
 							<!-- Esqueceu sua -->
 						</span>
-						<a class="txt2" href="#">
+						<a class="txt2" href="../recuperacaoSenha/senha.php">
 							Esqueceu sua Senha?
 						</a>
 					</div>
