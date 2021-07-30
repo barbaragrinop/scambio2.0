@@ -24,11 +24,12 @@
 	.secondaryColor {
     background-color: #f2eee8;
     border: #f2eee8;
+	height: 60px;
 } 
 </style>
 </head>
 <body>
-<nav class="secondaryColor navbar navbar-inverse navbar-fixed-top">
+	<nav class="secondaryColor navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

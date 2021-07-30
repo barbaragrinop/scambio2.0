@@ -20,33 +20,14 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
-<style>
-	.secondaryColor {
-    background-color: #f2eee8;
-    border: #f2eee8;
-} 
-</style>
 </head>
 <body>
-<nav class="secondaryColor navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="../index.php">
-                    <img src="images/logo1.PNG" alt="logo Scambio" width="110" height="38">
-                </a>
-            </div>
-        </div>
-    </nav>
-	<div class="limiter">
+	
+		<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt div-improv" data-tilt>
-					<img src="images/login.png" alt="IMG">
+					<img src="images/login" alt="IMG">
 				</div>
 
 				<form class="login100-form validate-form">
@@ -74,15 +55,6 @@
 						<button class="login100-form-btn">
 							Entrar
 						</button>
-					</div>
-
-					<div class="text-center p-t-12">
-						<span class="txt1">
-						<!--- Não tem cadastro? Cadastre-se.--->
-						</span>
-						<a class="txt2" href="../cadastro.php">
-						Não tem cadastro? Cadastre-se.
-						</a>
 					</div>
 
 					<div class="text-center p-t-12">

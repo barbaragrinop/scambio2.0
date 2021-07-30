@@ -191,8 +191,8 @@ background: linear-gradient(90deg, rgba(242,238,232,1) 5%, rgba(186,146,112,1) 3
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 90px 130px 33px 95px;
-  padding-top: -200px !important;
+  padding: 80px 130px 0px 95px;
+  margin-top: -60px !important;
 }
 
 /*------------------------------------------------------------------
