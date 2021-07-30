@@ -61,6 +61,8 @@
     
     <div id="comofunciona" class="container-fluid">
         <h2 class="h1-large" style="font-family: Cutive;">Como Funciona?</h2>
+        <br>
+        <br>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -74,6 +76,8 @@
 
     <div id="sobre" class="container-fluid sobre">
         <h2 class="h1-large" style="font-family: Cutive;">Sobre Nós e o Projeto</h2>
+        <br>
+        <br>
         <h2 class="h4 description-quemsomos" style="line-height: 30px;">Somos alunos do curso técnico em Desenvolvimento de Sistemas na ETEC Dra Ruth Cardoso em São Vicente. Atualmente no terceiro módulo e último. </h2>
         <h2 class="h4 subtitle">O Scambio, é uma plataforma para realizar trocas de livros, onde você poderá publicar um livro e troca-lo por outro de seu interesse.</h2>
         <div class="box">
@@ -135,6 +139,8 @@
  
     <div id="ajuda" class="container-fluid">
         <h2 class="h1-large" style="font-family: Cutive;" >Precisa de Ajuda?</h2>
+        <br>
+        <br>
         <span class="span-ajuda">Deixe aqui sua dúvida, sugestão ou comentário sobre o projeto</span>
 
         <div class="row div-ajuda">
