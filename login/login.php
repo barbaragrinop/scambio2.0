@@ -22,6 +22,30 @@
 <!--===============================================================================================-->
 </head>
 <body>
+
+<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="../index.php">
+				<img src="images/logo1.png" alt="logo Scambio" width="110" height="38">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="../index.php#comofunciona">Como Funciona?</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../index.php#sobre">Quem Somos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../index.php#ajuda">Ajuda</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	
 		<div class="limiter">
 		<div class="container-login100">
@@ -35,7 +59,7 @@
 						Entre para continuar
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
 						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -43,7 +67,7 @@
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input" data-validate = "Digite sua senha!">
 						<input class="input100" type="password" name="pass" placeholder="Senha">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -52,9 +76,11 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Entrar
-						</button>
+						<a class="link-entrar" href="#">
+							<button class="login100-form-btn">
+								Entrar
+							</button>
+						</a>
 					</div>
 
 					<div class="text-center p-t-12">

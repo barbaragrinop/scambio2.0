@@ -20,29 +20,42 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
-<style>
-	.secondaryColor {
-    background-color: #f2eee8;
-    border: #f2eee8;
-	height: 60px;
-} 
-</style>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<style>
+		.secondaryColor {
+		background-color: #f2eee8;
+		border: #f2eee8;
+		height: 60px;
+	} 
+	</style>
 </head>
 <body>
-	<nav class="secondaryColor navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="../index.php">
-                    <img src="images/logo1.PNG" alt="logo Scambio" width="110" height="38">
-                </a>
-            </div>
-        </div>
-    </nav>
+	<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="../index.php">
+				<img src="images/logo1.png" alt="logo Scambio" width="110" height="38">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="../index.php#comofunciona">Como Funciona?</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../index.php#sobre">Quem Somos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../index.php#ajuda">Ajuda</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -55,7 +68,7 @@
 						Digite o Email cadastrado para receber o link de recuperação
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
 						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">

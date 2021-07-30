@@ -6,6 +6,10 @@ html {
   padding-bottom: 60px !important;
 }
 
+.img-nav {
+  padding-left: -10px !important;
+}
+
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
@@ -174,7 +178,7 @@ iframe {
   align-items: center;
   padding: 15px;
   background: rgb(242,238,232);
-background: linear-gradient(90deg, rgba(242,238,232,1) 5%, rgba(186,146,112,1) 39%, rgba(216,226,227,1) 93%);
+  background: linear-gradient(90deg, rgba(242,238,232,1) 5%, rgba(186,146,112,1) 39%, rgba(216,226,227,1) 93%);
 
 }
 

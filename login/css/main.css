@@ -6,6 +6,14 @@ html {
     padding-bottom: 60px !important;
 }
 
+.img-nav {
+    padding-left: -10px !important;
+}
+
+.link-entrar {
+    width: 400px;
+}
+
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
@@ -250,8 +258,8 @@ iframe {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 90px 130px 33px 95px;
-    padding-top: -200px !important;
+    padding: 80px 130px 0px 95px;
+    margin-top: -60px !important;
 }
 
 
