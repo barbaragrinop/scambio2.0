@@ -79,7 +79,9 @@
         <br>
         <br>
         <h2 class="h4 description-quemsomos" style="line-height: 30px;">Somos alunos do curso técnico em Desenvolvimento de Sistemas na ETEC Dra Ruth Cardoso em São Vicente. Atualmente no terceiro módulo e último. </h2>
-        <h2 class="h4 subtitle">O Scambio, é uma plataforma para realizar trocas de livros, onde você poderá publicar um livro e troca-lo por outro de seu interesse.</h2>
+        <h2 class="h4 subtitle">O Scambio, é uma plataforma de troca de livros idealizada por nós de fácil acesso e utilização. A ideia de criar uma plataforma voltada para troca e doações de livros veio para incentivar a leitura em nosso país e levar o acesso á livros para todos, basta se cadastrar na plataforma e se aventurar na busca de novos livros.</h2>
+        <br>
+        <br>
         <div class="box">
             <img class="img-barbara int-generic" src="assets/imgs/barbara.jpg" />
             <span class="name-int"> Barbara Hellen </span>
