@@ -13,6 +13,7 @@
     <script src="assets/js/validacao.js"></script>
     <script src="assets/js/cadastroUsuario.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/confirmacao-senha.js"></script>
 </head>
 
 <body class="body">
@@ -72,6 +73,7 @@
                         <label>Confirmar Senha:</label>
                         <input type="password" name="conf" id="conf" placeholder="********">
                     </div>
+                    <small id="result"></small>
                     <div class="col-md-6 div-label-input">
                         <label>CEP:</label>
                         <input type="text" name="cep" id="cep" placeholder="CEP">
