@@ -2,6 +2,7 @@
 include("./config/conexao.php");
 $uf = "SE";
 $email = 'barbara@barbara.com';
+echo $email;
 
 // -------------------------------TESTE RETORNO DE LINHAS------------------------------------------------------------------
 //     $insereUF = $pdo->query("SELECT cd_uf from db_scambio.tb_uf where sg_uf= '$uf'");

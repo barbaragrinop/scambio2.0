@@ -22,7 +22,6 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
 <nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="../index.php">
@@ -51,7 +50,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt div-improv" data-tilt>
-					<img src="images/login" alt="IMG">
+					<img src="images/login.png" alt="IMG">
 				</div>
 
 				<form class="login100-form validate-form">

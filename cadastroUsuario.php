@@ -14,33 +14,26 @@ $cidade = $_POST['cidade'];
 $uf = $_POST['estado']; 
 
 //Verificando cadastro do email
-
-$verificar = $pdo->query("SELECT * from db_scambio.tb_usuario where nm_email = '$email'");
-$res = $verificar->fetchAll(PDO::FETCH_ASSOC);
-$total_reg = @count($res);
-if($total_reg > 0){
-    echo 'E-mail já cadastrado. Por favor, escolha outro email.';
+try{
+    $insere = $pdo->prepare("call db_scambio.sp_cadastraUsuario(:nome, :senha, :celular, :datanasc, :email, :cep, :rua, :bairro, :cidade, :uf, :numerocasa)");
+    $insere->execute(array(
+        ':nome' => $nome, 
+        ':senha' => $senha,
+        ':celular' => $cel,
+        ':datanasc' => $dtnasc,
+        ':email' => $email, 
+        ':cep' => $cep,
+        ':rua' => $rua, 
+        ':bairro' => $bairro,
+        ':cidade' => $cidade,
+        ':uf' => $uf,
+        ':numerocasa' => $numero
+    ));
+    echo "Cadastro Realizado com Sucesso!";
+    // header('Location: login/login.php');
 } 
-else{ // se o email estiver disponível, cadastra.
-    try{
-        $insere = $pdo->prepare("call db_scambio.sp_cadastraUsuario(:nome, :senha, :celular, :datanasc, :email, :cep, :rua, :bairro, :cidade, :uf, :numerocasa)");
-        $insere->execute(array(
-            ':nome' => $nome, 
-            ':senha' => $senha,
-            ':celular' => $cel,
-            ':datanasc' => $dtnasc,
-            ':email' => $email, 
-            ':cep' => $cep,
-            ':rua' => $rua, 
-            ':bairro' => $bairro,
-            ':cidade' => $cidade,
-            ':uf' => $uf,
-            ':numerocasa' => $numero
-        ));
-        echo "Cadastro Realizado com Sucesso!";
-    } catch(Exception $ex){
-        echo "Erro na inserção: " . $ex->getMessage();
-    }
+catch(Exception $ex){
+    echo "Erro na inserção: " . $ex->getMessage();
 }
 
 

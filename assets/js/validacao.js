@@ -1,7 +1,8 @@
 //veficando se o email já existe 
 $(document).ready(function(){
-    $('.check_email').change(function(e){
-        var email = $('.check_email').val();
+    $('#email').change(function(e){
+        $('#myModal').modal('show');
+        var email = $('#email').val();
         $.ajax({
             type: "post",
             url: "./verificaEmail.php",
@@ -10,7 +11,7 @@ $(document).ready(function(){
                 "email_id": email,
             },
             success: function (response) {
-               alert(response);
+                $('#retornoEmail').html(response);
             }
         });
     });

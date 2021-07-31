@@ -42,7 +42,6 @@
             <div class="title-login">
                 <h2>Login</h2>
             </div>
-
             <form class="row g-3 formCadastro">
                 <div class="col-md-6 img-page-login">
                     <img class="img-page-login" src="assets/imgs/login.png" alt="">

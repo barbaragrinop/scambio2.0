@@ -10,6 +10,9 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="assets/js/validacao.js"></script>
+    <script src="assets/js/cadastroUsuario.js"></script>
+    <script src="assets/js/script.js"></script>
 </head>
 
 <body class="body">
@@ -43,15 +46,15 @@
                 <h2>Junte-se a nossa comunidade</h2>
             </div>
 
-            <form class="row g-3 formCadastro">
+            <form class="row g-3 formCadastro" id="frm" >
                 <div class="container div-cadastro input-container">
                     <div class="col-md-6 div-label-input">
                         <label>Nome:</label>
-                        <input class="input" type="text" placeholder="Nome Completo">
+                        <input class="input" name="nome" id="nome" type="text" placeholder="Nome Completo">
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>Data de nascimento:</label>
-                        <input class="dt-nasc" type="date" id="date" placeholder="">
+                        <input class="dt-nasc" name="dtnasc" id="dtnasc" type="date" id="date" placeholder="">
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>Celular:</label>
@@ -59,15 +62,15 @@
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>E-mail:</label>
-                        <input type="text" placeholder="Endereço de E-mail">
+                        <input type="text" name="email" id="email" placeholder="Endereço de E-mail">
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>Senha:</label>
-                        <input type="password" placeholder="********">
+                        <input type="password" name="senha" id="senha" placeholder="********">
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>Confirmar Senha:</label>
-                        <input type="password" placeholder="********">
+                        <input type="password" name="conf" id="conf" placeholder="********">
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>CEP:</label>
@@ -75,40 +78,84 @@
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>Rua:</label>
-                        <input type="text" placeholder="Nome da Rua">
+                        <input type="text" name="rua" id="rua" placeholder="Nome da Rua">
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>Número:</label>
-                        <input type="text" placeholder="Número da Residência">
+                        <input type="text" name="numero" id="numero" placeholder="Número da Residência">
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>Bairro:</label>
-                        <input type="text" placeholder="Nome do Bairro">
+                        <input type="text" name="bairro" id="bairro" placeholder="Nome do Bairro">
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>Cidade:</label>
-                        <input type="text" placeholder="Nome da Cidade">
+                        <input type="text" name="cidade" id="cidade" placeholder="Nome da Cidade">
                     </div>
                     <div class="col-md-6 div-label-input">
                         <label>Estado:</label>
-                        <input type="text" placeholder="Nome do Estado">
+                        <input type="text" name="estado" id="estado" placeholder="Nome do Estado">
                     </div>
 
                     <div class="col-md-4 button-cadastrar">
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" id="salvar" name="salvar" class="btn btn-primary">Cadastrar</button>
                     </div>
                 </div>
             </form>
         </div>
+        <a href="login/login.php">asdasd</a>
     </div>
 
     <script>
         $("#celular").mask("(99) 99999-9999");
-        $("#cep").mask("99999-999");
+        // $("#cep").mask("99999-999");
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2 id="retornoEmail"></h2>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2 id="retornoCadastro"></h2>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 
