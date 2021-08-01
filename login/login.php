@@ -1,3 +1,10 @@
+<?php
+	//Validadar se existe SESSION
+	session_start();
+	if(isset($_SESSION['id'])){
+		header('Location: ../home.php');
+	}else{
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +49,10 @@
 						<a class="nav-link" href="../index.php#ajuda">Ajuda</a>
 					</li>
 				</ul>
+				<!--   Adiconar Botão para redirecionar para a tela de login
+				<ul class=" textCor nav navbar-nav navbar-right">
+                    <li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
+				</ul> -->
 			</div>
 		</div>
 	</nav>
@@ -53,7 +64,7 @@
 					<img src="images/login.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post" action="../session_authguard.php">
 					<span class="login100-form-title">
 						Entre para continuar
 					</span>
@@ -117,3 +128,6 @@
 
 </body>
 </html>
+<?php	
+	}
+?>

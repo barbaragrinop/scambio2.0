@@ -1,3 +1,10 @@
+<?php
+	//Validadar se existe SESSION
+	session_start();
+	if(isset($_SESSION['id'])){
+		header('Location: ../home.php');
+	}else{
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,3 +119,6 @@
 
 </body>
 </html>
+<?php
+	}
+?>

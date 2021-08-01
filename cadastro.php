@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if(isset($_SESSION['id'])){
+        header('Location: home.php');
+    }
+    else{
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -105,12 +114,11 @@
                 </div>
             </form>
         </div>
-        <a href="login/login.php">asdasd</a>
     </div>
 
     <script>
         $("#celular").mask("(99) 99999-9999");
-        // $("#cep").mask("99999-999");
+        $("#cep").mask("99999-999");
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -162,3 +170,6 @@
 
 
 </html>
+<?php
+    }
+?>
