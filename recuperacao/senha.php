@@ -20,8 +20,12 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!--===============================================================================================-->
+	<script src="../assets/js/recuperaSenha.js"></script>
+<!--===============================================================================================-->
 
 	<style>
 		.secondaryColor {
@@ -63,13 +67,13 @@
 					<img src="images/book.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" id="frmRecupera">
 					<span class="login100-form-title">
 						Digite o Email cadastrado para receber o link de recuperação
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name="recemail" placeholder="Email" id="recemail">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -77,7 +81,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="submit" class="login100-form-btn">
 							Enviar
 						</button>
 					</div>
