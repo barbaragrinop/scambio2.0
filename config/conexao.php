@@ -1,6 +1,9 @@
 <?php
 
-$servidor = "localhost";
+session_start();
+
+//Alterar para Servidor = LocalHost
+$servidor = "127.0.0.1:3308";
 $usuario = "root";
 $senha = "";
 $banco = "db_scambio";

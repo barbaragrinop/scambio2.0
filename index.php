@@ -1,3 +1,7 @@
+<?php
+	//Validadar se existe SESSION
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,10 +35,23 @@
                     <li><a href="#sobre">Quem Somos</a></li>
                     <li><a href="#ajuda">Ajuda</a></li>
                 </ul>
+                <?php
+                    if(isset($_SESSION['id'])){
+                ?>
+                <!-- Modificar este Botão  ----  Botão Logout -->
+                    <form action="logout.php">
+                        <input id="inpkill"  class="inpkill glyphicon" name="DestroySession" type="submit" value="Logout">
+                    </form>
+                <?php
+                    }else{
+                ?>
                 <ul class=" textCor nav navbar-nav navbar-right">
                     <li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
                     <li><a href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
                 </ul>
+                <?php                   
+                    }
+                ?>
             </div>
         </div>
     </nav>
@@ -46,8 +63,18 @@
                     <div class="text-container">
                         <h1 class="h1-large">Troca de livro? Dê um match no Scambio.</h1>
                         <p class="p-large">Venha fazer parte de uma comunidade de troca de livros, tenha novas experiências e novos livros.</p>
-                        <a class="btn-solid-lg" href="cadastro.php"><i class="fab fa-apple"></i>Cadastre-se</a>
-                        <a class="btn-solid-lg secondary" href="login/login.php"><i class="fab fa-google-play"></i>Entrar</a>
+                        <?php
+                            if(isset($_SESSION['id'])){
+                        ?>
+                                <a class="btn-solid-lg" href="home.php"><i class="fab fa-apple"></i>Acessar Scambio</a>
+                        <?php
+                            }else{
+                        ?>
+                                <a class="btn-solid-lg" href="cadastro.php"><i class="fab fa-apple"></i>Cadastre-se</a>
+                                <a class="btn-solid-lg secondary" href="login/login.php"><i class="fab fa-google-play"></i>Entrar</a>
+                        <?php
+                            }
+                        ?>
                     </div> 
                 </div> 
                 <div class="col-lg-6">
