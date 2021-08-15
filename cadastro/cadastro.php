@@ -72,7 +72,7 @@
 								Cadastre-se na plataforma!
 							</span>
 
-							<div class="wrap-input100 validate-input col" data-validate = "Nome completo!">
+							<div class="wrap-input100 validate-input col" data-validate = "Digite seu nome completo!">
 								<small class="titleInputs">Nome</small>
 								<input class="input100" type="text" name="name" id="nome" placeholder="Nome Completo">
 							</div>
@@ -82,12 +82,12 @@
 								<input class="input100" type="text" name="celular" id="celular" placeholder="(99) 99999-9999">
 							</div>
 
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Senha inválida!">
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Digite uma senha válida!">
 								<small class="titleInputs">Senha</small>
 								<input class="input100" type="password" name="senha" id="senha" placeholder="********">
 							</div>
 
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Senha Inválida!">
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Digite uma senha válida!">
 								<small class="titleInputs">Confirmar senha</small>
 								<input class="input100" type="password" name="senhaConfirmacao" placeholder="********">
 							</div>
@@ -97,7 +97,7 @@
 								<input class="input100" type="date" name="dtnasc" placeholder="">
 							</div>
 
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Email Inválida!">
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Email Inválido!">
 								<small class="titleInputs">Email</small>
 								<input class="input100" type="text" name="email" id="email" placeholder="Email">
 							</div>
@@ -109,12 +109,12 @@
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Cidade Inválida!">
 								<small class="titleInputs">Cidade</small>
-								<input class="input100" type="text" name="cidade" id="cidade" placeholder="Cidade">
+								<input class="input100" type="text" name="cidade" id="cidade" placeholder="Cidade" readonly>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Rua Inválida!">
 								<small class="titleInputs">Rua</small>
-								<input class="input100" type="text" name="rua" id="rua" placeholder="Nome da Rua">
+								<input class="input100" type="text" name="rua" id="rua" placeholder="Nome da Rua" readonly>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Número Inválido!">
@@ -122,14 +122,14 @@
 								<input class="input100" type="number" name="numero" id="numero" placeholder="999">
 							</div>
 
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Bairro Inválida!">
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Bairro Inválido!">
 								<small class="titleInputs">Bairro</small>
-								<input class="input100" type="text" name="bairro" id="bairro" placeholder="Nome do Bairro">
+								<input class="input100" type="text" name="bairro" id="bairro" placeholder="Nome do Bairro" readonly>
 							</div>
 							
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Estado Inválida!">
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Estado Inválido!">
 								<small class="titleInputs">Estado</small>
-								<input class="input100" type="text" name="estado" id="estado" placeholder="Estado">
+								<input class="input100" type="text" name="estado" id="estado" placeholder="Estado" readonly>
 							</div>
 
 							
