@@ -8,8 +8,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Scambio</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Cadastro | Scambio</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+	rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -28,6 +29,15 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+    <script src="assets/js/validacao.js"></script>
+    <script src="assets/js/cadastroUsuario.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/confirmacao-senha.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 </head>
 	<body>
 		<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
@@ -50,10 +60,6 @@
 								<a class="nav-link" href="../index.php#ajuda">Ajuda</a>
 							</li>
 						</ul>
-						<!--   Adiconar Botão para redirecionar para a tela de login
-						<ul class=" textCor nav navbar-nav navbar-right">
-							<li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
-						</ul> -->
 					</div>
 				</div>
 			</nav>
@@ -63,115 +69,67 @@
 					<div class="wrap-login100 container">
 						<form class="login100-form validate-form row" method="post" action="../session_authguard.php">
 							<span class="login100-form-title">
-								Entre para continuar
+								Cadastre-se na plataforma!
 							</span>
 
-							<div class="wrap-input100 validate-input col" data-validate = "Nome completo!">
+							<div class="wrap-input100 validate-input col" data-validate = "Digite seu nome completo!">
 								<small class="titleInputs">Nome</small>
-								<input class="input100" type="text" name="name" placeholder="Nome Completo">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-user" aria-hidden="true"></i> -->
-								<!-- </span> -->
+								<input class="input100" type="text" name="name" id="nome" placeholder="Nome Completo">
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Celular Inválido!">
 								<small class="titleInputs">Celular</small>
-								<input class="input100" type="text" name="celular" placeholder="(99) 99999-9999">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-mobile" aria-hidden="true"></i>
-								</span> -->
+								<input class="input100" type="text" name="celular" id="celular" placeholder="(99) 99999-9999">
 							</div>
 
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Senha inválida!">
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Digite uma senha válida!">
 								<small class="titleInputs">Senha</small>
-								<input class="input100" type="password" name="senha" placeholder="********">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-lock" aria-hidden="true"></i>
-								</span> -->
+								<input class="input100" type="password" name="senha" id="senha" placeholder="********">
 							</div>
 
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Senha Inválida!">
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Digite uma senha válida!">
 								<small class="titleInputs">Confirmar senha</small>
 								<input class="input100" type="password" name="senhaConfirmacao" placeholder="********">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-envelope" aria-hidden="true"></i>
-								</span> -->
-							</div>
-
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "CEP Inválido!">
-								<small class="titleInputs">CEP</small>
-								<input class="input100" type="number" name="cep" placeholder="_____-___">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fas fa-map" aria-hidden="true"></i>
-								</span> -->
-							</div>
-
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Número Inválido!">
-								<small class="titleInputs">Número</small>
-								<input class="input100" type="text" name="numero" placeholder="999">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-envelope" aria-hidden="true"></i>
-								</span> -->
-							</div>
-
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Cidade Inválida!">
-								<small class="titleInputs">Cidade</small>
-								<input class="input100" type="text" name="cidade" placeholder="Cidade">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-envelope" aria-hidden="true"></i>
-								</span> -->
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Data Inválida!">
 								<small class="titleInputs">Data de nascimento</small>
-								<input class="input100" type="date" name="data" placeholder="">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-envelope" aria-hidden="true"></i>
-								</span> -->
+								<input class="input100" type="date" name="dtnasc" placeholder="">
 							</div>
 
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Email Inválida!">
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Email Inválido!">
 								<small class="titleInputs">Email</small>
-								<input class="input100" type="text" name="email" placeholder="Email">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-envelope" aria-hidden="true"></i>
-								</span> -->
+								<input class="input100" type="text" name="email" id="email" placeholder="Email">
+							</div>
+
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "CEP Inválido!">
+								<small class="titleInputs">CEP</small>
+								<input class="input100" name="cep" id="cep" placeholder="_____-___">
+							</div>
+
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Cidade Inválida!">
+								<small class="titleInputs">Cidade</small>
+								<input class="input100" type="text" name="cidade" id="cidade" placeholder="Cidade" readonly>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Rua Inválida!">
 								<small class="titleInputs">Rua</small>
-								<input class="input100" type="text" name="rua" placeholder="Nome da Rua">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-envelope" aria-hidden="true"></i>
-								</span> -->
+								<input class="input100" type="text" name="rua" id="rua" placeholder="Nome da Rua" readonly>
 							</div>
 
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Bairro Inválida!">
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Número Inválido!">
+								<small class="titleInputs">Número</small>
+								<input class="input100" type="number" name="numero" id="numero" placeholder="999">
+							</div>
+
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Bairro Inválido!">
 								<small class="titleInputs">Bairro</small>
-								<input class="input100" type="text" name="bairro" placeholder="Nome do Bairro">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-envelope" aria-hidden="true"></i>
-								</span> -->
+								<input class="input100" type="text" name="bairro" id="bairro" placeholder="Nome do Bairro" readonly>
 							</div>
 							
-							<div class="wrap-input100 validate-input col-md-6" data-validate = "Estado Inválida!">
+							<div class="wrap-input100 validate-input col-md-6" data-validate = "Estado Inválido!">
 								<small class="titleInputs">Estado</small>
-								<input class="input100" type="text" name="estado" placeholder="Estado">
-								<!-- <span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-envelope" aria-hidden="true"></i>
-								</span> -->
+								<input class="input100" type="text" name="estado" id="estado" placeholder="Estado" readonly>
 							</div>
 
 							
@@ -179,7 +137,7 @@
 							<div class="container-login100-form-btn">
 								<a class="link-entrar" href="#">
 									<button class="login100-form-btn">
-										Entrar
+										Cadastro
 									</button>
 								</a>
 							</div>
@@ -194,14 +152,14 @@
 
 		
 	<!--===============================================================================================-->	
-		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+		<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
 	<!--===============================================================================================-->
 		<script src="vendor/bootstrap/js/popper.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	<!--===============================================================================================-->
 		<script src="vendor/select2/select2.min.js"></script>
 	<!--===============================================================================================-->
-		<script src="vendor/tilt/tilt.jquery.min.js"></script>
+		<!-- <script src="vendor/tilt/tilt.jquery.min.js"></script> -->
 		<script >
 			$('.js-tilt').tilt({
 				scale: 1.1
@@ -209,6 +167,15 @@
 		</script>
 	<!--===============================================================================================-->
 		<script src="js/main.js"></script>
+
+		<!--  -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+		<script>
+			$("#celular").mask("(99) 99999-9999");
+			$("#cep").mask("99999-999");
+    	</script>
+		
 
 	</body>
 </html>

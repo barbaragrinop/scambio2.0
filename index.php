@@ -46,7 +46,7 @@
                     }else{
                 ?>
                 <ul class=" textCor nav navbar-nav navbar-right">
-                    <li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
+                    <li><a href="cadastro/cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
                     <li><a href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
                 </ul>
                 <?php                   
@@ -70,7 +70,7 @@
                         <?php
                             }else{
                         ?>
-                                <a class="btn-solid-lg" href="cadastro.php"><i class="fab fa-apple"></i>Cadastre-se</a>
+                                <a class="btn-solid-lg" href="cadastro/cadastro.php"><i class="fab fa-apple"></i>Cadastre-se</a>
                                 <a class="btn-solid-lg secondary" href="login/login.php"><i class="fab fa-google-play"></i>Entrar</a>
                         <?php
                             }
@@ -143,16 +143,6 @@
             <span class="name-int">São Vicente - SP </span>
             <br>
             <span class="name-int"> 17 anos </span>
-        </div>
-        <div class="box">
-            <img class="img-thamirys int-generic" src="assets/imgs/thamirys.jpg" />
-            <span class="name-int"> Thamirys Abilio </span>
-            <br>
-            <span class="name-int"> Back-end & Banco de Dados</span>
-            <br>
-            <span class="name-int"> Cubatão - SP </span>
-            <br>
-            <span class="name-int"> 31 anos </span>
         </div>
         <div class="box">
             <img class="img-yago int-generic" src="assets/imgs/yago.jpg" />
