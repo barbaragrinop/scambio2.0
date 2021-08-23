@@ -76,20 +76,20 @@
 
 				<form class="login100-form validate-form" id="frmRecupera">
 					<span id="titlePrincipal" class="login100-form-title">
-						Digite o email cadastrado para receber o código de verificação.
+						Verifique se você recebeu um email contendo seu código. Seu código tem 6 digitos.
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
-						<input class="input100" type="text" name="email" placeholder="Email" id="email">
+						<input class="input100" type="text" name="codigo" placeholder="Código de 6 digitos." id="codigo">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<i class="fa fa-code" aria-hidden="true"></i>
 						</span>
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button onclick="validarEmail()" id="btnEnviar" type="submit" class="login100-form-btn">
-							Enviar
+						<button onclick="validarCodigo()" id="btnValidarCodigo" type="submit" class="login100-form-btn">
+							Validar Código
 						</button>
 					</div>
 				</form>
