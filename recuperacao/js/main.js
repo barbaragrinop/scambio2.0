@@ -18,7 +18,6 @@ function validarEmail(){
 }
 
 
-
 (function ($) {
     "use strict";
 

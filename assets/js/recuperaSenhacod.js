@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#frmRecupera').submit(() => {
+    $('#frmRecuperaCodigo').submit(() => {
         var codigo = $('#codigo').val();
         $.ajax({
             type: "post",
@@ -8,7 +8,12 @@ $(document).ready(function(){
                 "codigo": codigo
             },
             success: function (response) {
-                // alert(response);
+                if(response == "Código válido!"){
+                    alert(response);
+                    window.location.href = "./novaSenha.php";
+                }else{
+                    alert(response);
+                }
             }
         });
     });

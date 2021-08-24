@@ -6,7 +6,7 @@
 	}if(isset($_SESSION['recuperacao'])){
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<title>Scambio</title>
 	<meta charset="UTF-8">
@@ -74,10 +74,11 @@
 					<img src="images/book.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" id="frmRecupera" method="post" action="../validarcodigo.php" >
+				<form class="login100-form validate-form" id="frmRecuperaCodigo" >
 					<span id="titlePrincipal" class="login100-form-title">
-						Verifique se você recebeu um email contendo seu código. Seu código tem 6 digitos.
+						Verifique se você recebeu um email com um código de 6 digitos.
 					</span>
+					
 
 					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
 						<input class="input100" type="text" name="codigo" placeholder="Código de 6 digitos." id="codigo">

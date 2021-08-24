@@ -1,6 +1,12 @@
+
 $(document).ready(function(){
     $('#frmRecupera').submit(() => {
         var emailManda = $('#recemail').val();
+        if(!emailManda)
+        {
+            alert("E-mail inválido");
+            return;
+        }
         $.ajax({
             type: "post",
             url: "../esqueciSenha.php",
@@ -9,6 +15,9 @@ $(document).ready(function(){
             },
             success: function (response) {
                 // alert(response);
+            }, 
+            error: function (response) { 
+                alert(response);
             }
         });
     });

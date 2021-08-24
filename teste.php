@@ -1,12 +1,12 @@
 <?php
-// include("./config/conexao.php");
+include("./config/conexao.php");
 
 // $uf = "SE";
 // $email = 'barbara@barbara.com';
 // echo $email;
 
 $uf = "SE";
-$email = 'barbara@barbara.com';
+$email = 'barbara.pereira65@etec.sp.gov.br';
 // echo $email;
 
 // echo "<script>alert('Cadastro Realizado com Sucesso')</script>";
@@ -16,8 +16,21 @@ $result = bin2hex($random); //transforma
 //conta = strlen($result); //conta quantos tem
 $SeisCaracteres = substr($result, 6);
 $SeisCaracteres = strtoupper($SeisCaracteres);
-echo $SeisCaracteres;
 
+
+$query = $pdo->prepare("UPDATE db_scambio.tb_usuario SET cd_recuperacao = :codigo where cd_usuario = (SELECT cd_usuario from db_scambio.tb_usuario where nm_email = :email)");
+        $query->bindValue(':email', $email);
+        echo $email;
+        echo $SeisCaracteres;
+        $query->bindValue(':codigo', $SeisCaracteres);
+        $query->execute();
+        if($query->rowCount() > 0)
+        {
+            echo "FOi";
+        }
+        else {
+            echo "n foi não";
+        }
 
 
 // -------------------------------TESTE RETORNO DE LINHAS------------------------------------------------------------------
