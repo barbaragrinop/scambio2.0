@@ -170,9 +170,9 @@ $(document).ready(function(){
         let rua = document.getElementById('rua').value.trim();
 
 
-        setTimeout(function(){ 
-            alert(rua)
-        }, 1000);
+        // setTimeout(function(){ 
+        //     alert(rua)
+        // }, 1000);
         
         
         
