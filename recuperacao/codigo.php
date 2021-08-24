@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Scambio | Login</title>
+	<title>Scambio</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -27,9 +27,23 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!--===============================================================================================-->
+	<script src="../assets/js/recuperaSenha.js"></script>
+<!--===============================================================================================-->
+
+	<style>
+		.secondaryColor {
+		background-color: #f2eee8;
+		border: #f2eee8;
+		height: 60px;
+	} 
+	</style>
 </head>
 <body>
-<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="../index.php">
 				<img src="images/logo1.png" alt="logo Scambio" width="110" height="38">
@@ -49,57 +63,34 @@
 						<a class="nav-link" href="../index.php#ajuda">Ajuda</a>
 					</li>
 				</ul>
-				<!--   Adiconar Botão para redirecionar para a tela de login
-				<ul class=" textCor nav navbar-nav navbar-right">
-                    <li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
-				</ul> -->
 			</div>
 		</div>
 	</nav>
-	
-		<div class="limiter">
+
+	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt div-improv" data-tilt>
-					<img src="images/login.png" alt="IMG">
+					<img src="images/book.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" method="post" action="../session_authguard.php">
-					<span class="login100-form-title">
-						Entre para continuar
+				<form class="login100-form validate-form" id="frmRecupera">
+					<span id="titlePrincipal" class="login100-form-title">
+						Verifique se você recebeu um email contendo seu código. Seu código tem 6 digitos.
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name="codigo" placeholder="Código de 6 digitos." id="codigo">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Digite sua senha!">
-						<input class="input100" type="password" name="pass" placeholder="Senha">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
+							<i class="fa fa-code" aria-hidden="true"></i>
 						</span>
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<a class="link-entrar" href="#">
-							<button class="login100-form-btn">
-								Entrar
-							</button>
-						</a>
-					</div>
-
-					<div class="text-center p-t-12">
-						<span class="txt1">
-							<!-- Esqueceu sua -->
-						</span>
-						<a class="txt2" href="../recuperacao/senha.php">
-							Esqueceu sua Senha?
-						</a>
+						<button onclick="validarCodigo()" id="btnValidarCodigo" type="submit" class="login100-form-btn">
+							Validar Código
+						</button>
 					</div>
 				</form>
 			</div>
@@ -128,6 +119,6 @@
 
 </body>
 </html>
-<?php	
+<?php
 	}
 ?>
