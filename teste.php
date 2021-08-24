@@ -1,5 +1,6 @@
 <?php
 // include("./config/conexao.php");
+
 // $uf = "SE";
 // $email = 'barbara@barbara.com';
 // echo $email;
@@ -11,6 +12,21 @@ if(isset($_SESSION['recuperacao'])){
 else{
     print_r($_SESSION['recuperacao'])
 }
+=======
+$uf = "SE";
+$email = 'barbara@barbara.com';
+// echo $email;
+
+// echo "<script>alert('Cadastro Realizado com Sucesso')</script>";
+
+$random = random_bytes(6);
+$result = bin2hex($random); //transforma
+//conta = strlen($result); //conta quantos tem
+$SeisCaracteres = substr($result, 6);
+$SeisCaracteres = strtoupper($SeisCaracteres);
+echo $SeisCaracteres;
+
+
 
 // -------------------------------TESTE RETORNO DE LINHAS------------------------------------------------------------------
 //     $insereUF = $pdo->query("SELECT cd_uf from db_scambio.tb_uf where sg_uf= '$uf'");
