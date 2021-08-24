@@ -82,7 +82,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
-						<input class="input100" type="text"  name="email" placeholder="Email" id="recemail">
+						<input class="input100" type="email" name="recemail" placeholder="Email" id="recemail">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -98,7 +98,6 @@
 			</div>
 		</div>
 	</div>
-	
 	
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

@@ -85,7 +85,7 @@
 						<input class="input100" type="password" name="novaSenha1" placeholder="Senha" id="novaSenha1">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-key" aria-hidden="true"></i>
+							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
 
@@ -93,7 +93,7 @@
 						<input class="input100" type="password" name="novaSenha2" placeholder="Confirme a senha" id="novaSenha2">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-key" aria-hidden="true"></i>
+							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
 					
