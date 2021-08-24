@@ -67,14 +67,14 @@
 			<div class="limiter">
 				<div class="container-login100">
 					<div class="wrap-login100 container">
-						<form class="login100-form validate-form row" id="frm" method="post" action="../cadastroUsuario.php">
+						<form class="login100-form validate-form row" id="frm" method="post" action="../cadastroUsuario.php" autocomplete="no">
 							<span class="login100-form-title">
 								Cadastre-se na plataforma!
 							</span>
 
 							<div class="wrap-input100 validate-input col" data-validate = "Digite seu nome completo!">
 								<small class="titleInputs">Nome</small>
-								<input class="input100" type="text" name="nome" id="nome" placeholder="Nome Completo">
+								<input autocomplete="no" class="input100" type="text" name="nome" id="nome" placeholder="Nome Completo">
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Celular Inválido!">
@@ -94,7 +94,7 @@
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Data Inválida!">
 								<small class="titleInputs">Data de nascimento</small>
-								<input class="input100" type="date" name="dtnasc" id="dtnasc" placeholder="">
+								<input class="input100" type="text" name="dtnasc" id="dtnasc" placeholder="17/01/2004">
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Email Inválido!">
@@ -131,9 +131,9 @@
 								<small class="titleInputs">Estado</small>
 								<input class="input100" type="text" name="estado" id="estado" placeholder="Estado" readonly>
 							</div>
-							<div class="container-login100-form-btn">
+							<div class="container-login100-form-btn pointer-none">
 								<a class="link-entrar" href="#">
-									<button class="login100-form-btn" id="salvar">
+									<button class="login100-form-btn classHover" id="salvar">
 										Cadastro
 									</button>
 								</a>
@@ -167,6 +167,7 @@
 		<script>
 			$("#celular").mask("(99) 99999-9999");
 			$("#cep").mask("99999-999");
+			$("#dtnasc").mask("99/99/9999");
     	</script>
 		
 
