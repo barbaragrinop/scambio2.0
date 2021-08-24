@@ -75,7 +75,8 @@
 					<img src="images/book.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" id="frmRecupera">
+				<form class="login100-form validate-form" method="post" action="../alteraSenha.php">
+				<!-- <form class="login100-form validate-form" id="frmRestauraSenha"> -->
 					<span id="titlePrincipal" class="login100-form-title">
 						Digite uma senha confiável.
 					</span>

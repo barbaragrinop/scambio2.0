@@ -75,13 +75,14 @@
 					<img src="images/book.png" alt="IMG">
 				</div>
 
+				<!-- <form class="login100-form validate-form" id="frmRecupera" method="post" action="../esqueciSenha.php"> -->
 				<form class="login100-form validate-form" id="frmRecupera" method="post" action="../esqueciSenha.php">
 					<span id="titlePrincipal" class="login100-form-title">
 						Digite o email cadastrado para receber o código de verificação.
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
-						<input class="input100" type="text" name="email" placeholder="Email" id="recemail">
+						<input class="input100" type="text"  name="email" placeholder="Email" id="recemail">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -89,7 +90,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button onclick="validarEmail()" id="btnEnviar" type="submit" class="login100-form-btn">
+						<button id="btnEnviar" type="submit" class="login100-form-btn">
 							Enviar
 						</button>
 					</div>
