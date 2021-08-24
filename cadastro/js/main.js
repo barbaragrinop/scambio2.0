@@ -21,7 +21,7 @@ $(document).ready(function(){
                 document.getElementById("estado").readOnly = true;
                 document.getElementById("bairro").readOnly = true;
                 document.getElementById("rua").readOnly = true;
-                document.getElementById("myBtn").disabled = true;
+                document.getElementById("salvar").disabled = true;
 
             },
             error : function(erro){
@@ -36,17 +36,16 @@ $(document).ready(function(){
         
         if(name == ""){
             alert('Digite seu nome.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
-            // document.getElementById("myBtn").style.visibility = "hidden";
+            $('button').removeClass('pointer-some');
 
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            // document.getElementById("myBtn").style.visibility = "initial";
         }
 
     });
@@ -57,16 +56,16 @@ $(document).ready(function(){
         
         if(celular == "(__) _____-____"){
             alert('Digite seu celular.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
     });
@@ -77,36 +76,41 @@ $(document).ready(function(){
         
         if(senha == ""){
             alert('Senha não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
     });
 
     $("#senhaConfirmacao").focusout(function(){
         let senhaConfirmacao = document.getElementById('senhaConfirmacao').value.trim();
+        let senha = document.getElementById('senha').value.trim();
         
         
         if(senhaConfirmacao == ""){
             alert('Confirmação de senha não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
-        }else {
-            document.getElementById("myBtn").disabled = false;
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
+        } else if(senha != senhaConfirmacao){
+            alert('Senhas não coincidem!')
+            document.getElementById('senhaConfirmacao').value = ""
+        }
+        else {
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
     });
@@ -117,36 +121,42 @@ $(document).ready(function(){
         
         if(dtnasc == ""){
             alert('Data de Nascimento não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
     });
 
     $("#email").focusout(function(){
         let email = document.getElementById('email').value.trim();
+
+        var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
         
         
         if(email == ""){
             alert('Email não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
-        }else {
-            document.getElementById("myBtn").disabled = false;
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
+        } else if(!email.match(pattern)) {
+            alert('Email inválido!')
+            document.getElementById('email').value = ""
+        }
+        else {
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
     });
@@ -157,16 +167,16 @@ $(document).ready(function(){
         
         if(cep == "_____-___"){
             alert('CEP não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
     });
@@ -177,16 +187,16 @@ $(document).ready(function(){
         
         if(cidade == ""){
             alert('Cidade não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
     });
@@ -197,16 +207,16 @@ $(document).ready(function(){
         
         if(rua == ""){
             alert('Rua não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
     });
@@ -217,16 +227,16 @@ $(document).ready(function(){
         
         if(numero == ""){
             alert('Numero não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
 
@@ -239,16 +249,16 @@ $(document).ready(function(){
         
         if(bairro == ""){
             alert('Bairro não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
     });
@@ -259,16 +269,16 @@ $(document).ready(function(){
         
         if(estado == ""){
             alert('Estado não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
         }
 
     }); 
