@@ -22,7 +22,7 @@ $(document).ready(function(){
                 document.getElementById("estado").readOnly = true;
                 document.getElementById("bairro").readOnly = true;
                 document.getElementById("rua").readOnly = true;
-                document.getElementById("myBtn").disabled = true;
+                document.getElementById("salvar").disabled = true;
 
             },
             error : function(erro){
@@ -37,17 +37,17 @@ $(document).ready(function(){
         
         if(name == ""){
             alert('Digite seu nome.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
-            // document.getElementById("myBtn").style.visibility = "hidden";
+            // document.getElementById("salvar").style.visibility = "hidden";
 
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            // document.getElementById("myBtn").style.visibility = "initial";
+            // document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -58,16 +58,16 @@ $(document).ready(function(){
         
         if(celular == "(__) _____-____"){
             alert('Digite seu celular.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            document.getElementById("salvar").style.visibility = "hidden";
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
+            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -78,16 +78,16 @@ $(document).ready(function(){
         
         if(senha == ""){
             alert('Senha não informado.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            document.getElementById("salvar").style.visibility = "hidden";
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
+            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -99,20 +99,20 @@ $(document).ready(function(){
         
         if(senhaConfirmacao == ""){
             alert('Confirmação de senha não informado.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            document.getElementById("salvar").style.visibility = "hidden";
         } else if (senha != senhaConfirmacao) {
             alert("As senhas não coincidem!!")
             document.getElementById("senhaConfirmacao").value = ""
         }
         else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
+            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -123,16 +123,16 @@ $(document).ready(function(){
         
         if(dtnasc == ""){
             alert('Data de Nascimento não informado.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            document.getElementById("salvar").style.visibility = "hidden";
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
+            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -145,44 +145,53 @@ $(document).ready(function(){
         
         if(email == ""){
             alert('Email não informado.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            document.getElementById("salvar").style.visibility = "hidden";
         } else if (!email.match(pattern)){
             alert("Digite um email valido!")
             document.getElementById("email").value = "";
         }
         else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
+            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
 
     $("#cep").focusout(function(){
-        let cep = document.getElementById('cep').value.trim();
-        var validacep = /^[0-9]{8}$/;
+        var cep = document.getElementById('cep').value.trim();
+        var cep = cep.replace("-", "").replace(".", "");
+
+        let rua = document.getElementById('rua').value.trim();
+
+
+        setTimeout(function(){ 
+            alert(rua)
+        }, 1000);
         
-        if(cep == "_____-___"){
-            alert('CEP não informado.');
-            document.getElementById("myBtn").disabled = true;
-            $('button').addClass('pointer-none');
-            $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
-        } if(!validacep.test(cep)) {
-            alert("Digite um CEP válido!")
-        }
-        else {
-            document.getElementById("myBtn").disabled = false;
-            $('button').removeClass('pointer-none');
-            $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
-        }
+        
+        
+        // if(cep == "_____-___"){
+        //     alert('CEP não informado.');
+        //     document.getElementById("salvar").disabled = true;
+        //     $('button').addClass('pointer-none');
+        //     $('button').removeClass('classHover');
+        //     document.getElementById("salvar").style.visibility = "hidden";
+        // } else if(validacep.test(cep)) {
+        //     alert("Digite um CEP válido!")
+        // }
+        // else {
+        //     document.getElementById("salvar").disabled = false;
+        //     $('button').removeClass('pointer-none');
+        //     $('button').addClass('pointer-some');
+        //     $('button').addClass('classHover');
+        //     document.getElementById("salvar").style.visibility = "initial";
+        // }
 
     });
 
@@ -192,16 +201,16 @@ $(document).ready(function(){
         
         if(cidade == ""){
             alert('Cidade não informado.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            document.getElementById("salvar").style.visibility = "hidden";
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
+            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -212,16 +221,16 @@ $(document).ready(function(){
         
         if(rua == ""){
             alert('Rua não informado.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            document.getElementById("salvar").style.visibility = "hidden";
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
+            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -232,16 +241,16 @@ $(document).ready(function(){
         
         if(numero == ""){
             alert('Numero não informado.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            document.getElementById("salvar").style.visibility = "hidden";
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
+            document.getElementById("salvar").style.visibility = "initial";
         }
 
 
@@ -254,16 +263,16 @@ $(document).ready(function(){
         
         if(bairro == ""){
             alert('Bairro não informado.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            document.getElementById("salvar").style.visibility = "hidden";
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
+            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -274,16 +283,16 @@ $(document).ready(function(){
         
         if(estado == ""){
             alert('Estado não informado.');
-            document.getElementById("myBtn").disabled = true;
+            document.getElementById("salvar").disabled = true;
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("myBtn").style.visibility = "hidden";
+            document.getElementById("salvar").style.visibility = "hidden";
         }else {
-            document.getElementById("myBtn").disabled = false;
+            document.getElementById("salvar").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
             $('button').addClass('classHover');
-            document.getElementById("myBtn").style.visibility = "initial";
+            document.getElementById("salvar").style.visibility = "initial";
         }
 
     }); 

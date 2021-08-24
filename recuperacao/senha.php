@@ -1,6 +1,7 @@
 <?php
 	//Validadar se existe SESSION
 	session_start();
+
 	if(isset($_SESSION['id'])){
 		header('Location: ../home.php');
 	}else{
@@ -75,12 +76,12 @@
 				</div>
 
 				<form class="login100-form validate-form" id="frmRecupera">
-					<span class="login100-form-title">
-						Digite o Email cadastrado para receber o link de recuperação
+					<span id="titlePrincipal" class="login100-form-title">
+						Digite o email cadastrado para receber o código de verificação.
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
-						<input class="input100" type="text" name="recemail" placeholder="Email" id="recemail">
+						<input class="input100" type="text" name="email" placeholder="Email" id="recemail">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -88,7 +89,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button type="submit" class="login100-form-btn">
+						<button onclick="validarEmail()" id="btnEnviar" type="submit" class="login100-form-btn">
 							Enviar
 						</button>
 					</div>
@@ -116,6 +117,7 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="../assets/js/recuperaSenha.js"></script>
 
 </body>
 </html>

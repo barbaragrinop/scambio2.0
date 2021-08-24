@@ -1,6 +1,5 @@
 $(document).ready(function(){
     $('#salvar').click(() => {
-        $('#modalCadastro').modal('show');
         $.ajax({
             url: 'cadastroUsuario.php',
             type: 'post',
