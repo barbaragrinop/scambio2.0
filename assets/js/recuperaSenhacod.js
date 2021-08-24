@@ -1,11 +1,11 @@
 $(document).ready(function(){
     $('#frmRecupera').submit(() => {
-        var emailManda = $('#recemail').val();
+        var codigo = $('#codigo').val();
         $.ajax({
             type: "post",
-            url: "../esqueciSenha.php",
+            url: "../validarcodigo.php",
             data: {
-                "email": emailManda
+                "codigo": codigo
             },
             success: function (response) {
                 // alert(response);

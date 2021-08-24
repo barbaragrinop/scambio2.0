@@ -5,13 +5,7 @@
 // $email = 'barbara@barbara.com';
 // echo $email;
 
-session_start();
-if(isset($_SESSION['recuperacao'])){
-    header('Location: ../home.php');
-}
-else{
-    print_r($_SESSION['recuperacao']);
-}
+
 $uf = "SE";
 $email = 'barbara@barbara.com';
 // echo $email;
