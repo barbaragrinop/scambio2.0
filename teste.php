@@ -3,6 +3,7 @@ include("./config/conexao.php");
 $uf = "SE";
 $email = 'barbara@barbara.com';
 echo $email;
+echo "<script>alert('Cadastro Realizado com Sucesso')</script>"
 
 // -------------------------------TESTE RETORNO DE LINHAS------------------------------------------------------------------
 //     $insereUF = $pdo->query("SELECT cd_uf from db_scambio.tb_uf where sg_uf= '$uf'");

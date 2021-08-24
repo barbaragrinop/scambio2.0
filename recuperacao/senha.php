@@ -1,6 +1,7 @@
 <?php
 	//Validadar se existe SESSION
 	session_start();
+
 	if(isset($_SESSION['id'])){
 		header('Location: ../home.php');
 	}else{
@@ -116,6 +117,7 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="../assets/js/recuperaSenha.js"></script>
 
 </body>
 </html>

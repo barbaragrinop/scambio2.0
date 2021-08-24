@@ -30,14 +30,14 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
-    <link href="assets/css/style.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
-    <script src="assets/js/validacao.js"></script>
-    <script src="assets/js/cadastroUsuario.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/confirmacao-senha.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="../assets/js/validacao.js"></script>
+    <script src="../assets/js/cadastroUsuario.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/confirmacao-senha.js"></script>
+    
 </head>
 	<body>
 		<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
@@ -67,14 +67,14 @@
 			<div class="limiter">
 				<div class="container-login100">
 					<div class="wrap-login100 container">
-						<form class="login100-form validate-form row" method="post" action="../session_authguard.php">
+						<form class="login100-form validate-form row" id="frm" method="post" action="../cadastroUsuario.php">
 							<span class="login100-form-title">
 								Cadastre-se na plataforma!
 							</span>
 
 							<div class="wrap-input100 validate-input col" data-validate = "Digite seu nome completo!">
 								<small class="titleInputs">Nome</small>
-								<input class="input100" type="text" name="name" id="nome" placeholder="Nome Completo">
+								<input class="input100" type="text" name="nome" id="nome" placeholder="Nome Completo">
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Celular Inválido!">
@@ -132,25 +132,19 @@
 								<input class="input100" type="text" name="estado" id="estado" placeholder="Estado" readonly>
 							</div>
 
-							
-							
 							<div class="container-login100-form-btn">
 								<a class="link-entrar" href="#">
-									<button class="login100-form-btn">
+									<button class="login100-form-btn" id="salvar">
 										Cadastro
 									</button>
 								</a>
 							</div>
-
-							
 						</form>
 					</div>
 				</div>
-			</div>
-		
+			</div>,
 		
 
-		
 	<!--===============================================================================================-->	
 		<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
 	<!--===============================================================================================-->
@@ -160,11 +154,11 @@
 		<script src="vendor/select2/select2.min.js"></script>
 	<!--===============================================================================================-->
 		<!-- <script src="vendor/tilt/tilt.jquery.min.js"></script> -->
-		<script >
+		<!-- <script >
 			$('.js-tilt').tilt({
 				scale: 1.1
 			})
-		</script>
+		</script> -->
 	<!--===============================================================================================-->
 		<script src="js/main.js"></script>
 
