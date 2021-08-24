@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $("#cep").focusout(function(){
         var cep = $("#cep").val();
         cep = cep.replace("-", "");
@@ -93,6 +94,7 @@ $(document).ready(function(){
 
     $("#senhaConfirmacao").focusout(function(){
         let senhaConfirmacao = document.getElementById('senhaConfirmacao').value.trim();
+        let senha = document.getElementById('senha').value.trim();
         
         
         if(senhaConfirmacao == ""){
@@ -101,7 +103,11 @@ $(document).ready(function(){
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
             document.getElementById("myBtn").style.visibility = "hidden";
-        }else {
+        } else if (senha != senhaConfirmacao) {
+            alert("As senhas não coincidem!!")
+            document.getElementById("senhaConfirmacao").value = ""
+        }
+        else {
             document.getElementById("myBtn").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
@@ -133,6 +139,8 @@ $(document).ready(function(){
 
     $("#email").focusout(function(){
         let email = document.getElementById('email').value.trim();
+
+        var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
         
         
         if(email == ""){
@@ -141,7 +149,11 @@ $(document).ready(function(){
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
             document.getElementById("myBtn").style.visibility = "hidden";
-        }else {
+        } else if (!email.match(pattern)){
+            alert("Digite um email valido!")
+            document.getElementById("email").value = "";
+        }
+        else {
             document.getElementById("myBtn").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
@@ -153,7 +165,7 @@ $(document).ready(function(){
 
     $("#cep").focusout(function(){
         let cep = document.getElementById('cep').value.trim();
-        
+        var validacep = /^[0-9]{8}$/;
         
         if(cep == "_____-___"){
             alert('CEP não informado.');
@@ -161,7 +173,10 @@ $(document).ready(function(){
             $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
             document.getElementById("myBtn").style.visibility = "hidden";
-        }else {
+        } if(!validacep.test(cep)) {
+            alert("Digite um CEP válido!")
+        }
+        else {
             document.getElementById("myBtn").disabled = false;
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
