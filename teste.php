@@ -1,5 +1,18 @@
 <?php
 // include("./config/conexao.php");
+
+// $uf = "SE";
+// $email = 'barbara@barbara.com';
+// echo $email;
+
+session_start()
+if(isset($_SESSION['recuperacao'])){
+    header('Location: ../home.php');
+}
+else{
+    print_r($_SESSION['recuperacao'])
+}
+=======
 $uf = "SE";
 $email = 'barbara@barbara.com';
 // echo $email;
@@ -12,6 +25,7 @@ $result = bin2hex($random); //transforma
 $SeisCaracteres = substr($result, 6);
 $SeisCaracteres = strtoupper($SeisCaracteres);
 echo $SeisCaracteres;
+
 
 
 // -------------------------------TESTE RETORNO DE LINHAS------------------------------------------------------------------
