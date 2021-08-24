@@ -74,7 +74,7 @@
 
 							<div class="wrap-input100 validate-input col" data-validate = "Digite seu nome completo!">
 								<small class="titleInputs">Nome</small>
-								<input class="input100" type="text" name="name" id="nome" placeholder="Nome Completo">
+								<input class="input100" type="text" name="nome" id="nome" placeholder="Nome Completo">
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Celular Inválido!">
@@ -89,12 +89,12 @@
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Digite uma senha válida!">
 								<small class="titleInputs">Confirmar senha</small>
-								<input class="input100" type="password" name="senhaConfirmacao" placeholder="********">
+								<input class="input100" type="password" name="senhaConfirmacao" id="senhaConfirmacao" placeholder="********">
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Data Inválida!">
 								<small class="titleInputs">Data de nascimento</small>
-								<input class="input100" type="date" name="dtnasc" placeholder="">
+								<input class="input100" type="date" name="dtnasc" id="dtnasc" placeholder="">
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Email Inválido!">
@@ -119,7 +119,7 @@
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Número Inválido!">
 								<small class="titleInputs">Número</small>
-								<input class="input100" type="number" name="numero" id="numero" placeholder="999">
+								<input class="input100" type="number" name="numero" id="numero" placeholder="000">
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Bairro Inválido!">
@@ -134,9 +134,9 @@
 
 							
 							
-							<div class="container-login100-form-btn">
+							<div class="container-login100-form-btn pointer-none">
 								<a class="link-entrar" href="#">
-									<button class="login100-form-btn">
+									<button id="myBtn" class="login100-form-btn classHover">
 										Cadastro
 									</button>
 								</a>
