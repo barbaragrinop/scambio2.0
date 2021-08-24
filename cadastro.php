@@ -19,7 +19,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-    <script src="assets/js/validacao.js"></script>
+    <script src="./assets/"></script>
     <script src="assets/js/cadastroUsuario.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/confirmacao-senha.js"></script>
@@ -165,10 +165,10 @@
             </div>
         </div>
     </div>
-    
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
 </body>
+
+
 </html>
 <?php
     }
