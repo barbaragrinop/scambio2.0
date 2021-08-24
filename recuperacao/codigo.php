@@ -3,7 +3,7 @@
 	session_start();
 	if(isset($_SESSION['id'])){
 		header('Location: ../home.php');
-	}else{
+	}if(isset($_SESSION['recuperacao'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <!--===============================================================================================-->
-	<script src="../assets/js/recuperaSenha.js"></script>
+	<script src="../assets/js/recuperaSenhacod.js"></script>
 <!--===============================================================================================-->
 
 	<style>
@@ -74,7 +74,7 @@
 					<img src="images/book.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" id="frmRecupera">
+				<form class="login100-form validate-form" id="frmRecupera" method="post" action="../validarcodigo.php" >
 					<span id="titlePrincipal" class="login100-form-title">
 						Verifique se você recebeu um email contendo seu código. Seu código tem 6 digitos.
 					</span>
@@ -95,6 +95,7 @@
 				</form>
 			</div>
 		</div>
+		
 	</div>
 	
 	
@@ -120,5 +121,8 @@
 </body>
 </html>
 <?php
+	}
+	else{
+		header('Location:../home.php');
 	}
 ?>

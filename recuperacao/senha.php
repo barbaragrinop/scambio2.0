@@ -75,7 +75,7 @@
 					<img src="images/book.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" id="frmRecupera">
+				<form class="login100-form validate-form" id="frmRecupera" method="post" action="../esqueciSenha.php">
 					<span id="titlePrincipal" class="login100-form-title">
 						Digite o email cadastrado para receber o código de verificação.
 					</span>
@@ -99,8 +99,6 @@
 	</div>
 	
 	
-
-	
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -116,8 +114,8 @@
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
-	<script src="../assets/js/recuperaSenha.js"></script>
+	<!-- <script src="js/main.js"></script> -->
+
 
 </body>
 </html>
