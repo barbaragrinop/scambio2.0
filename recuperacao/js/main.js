@@ -1,3 +1,23 @@
+$(document).ready(function() {
+    
+});
+
+
+function validarEmail(){
+    var email = document.getElementById("email").value;
+
+    var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (email.match(pattern)){
+        // location.href = "https://facebook.com"
+        document.getElementById('titlePrincipal').innerHTML = "Verifique se você recebeu um email contendo seu código. Seu código tem 6 digitos.";
+    } else{
+        alert('email invalido')
+    }
+
+}
+
+
 
 (function ($) {
     "use strict";
