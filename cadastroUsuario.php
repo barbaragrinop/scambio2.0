@@ -1,5 +1,5 @@
 <?php 
-include("./config/conexao.php");
+include("config/conexao.php");
 
 $nome = $_POST['nome'];
 $dtnasc = $_POST['dtnasc'];
@@ -29,8 +29,8 @@ try{
         ':uf' => $uf,
         ':numerocasa' => $numero
     ));
-    echo "Cadastro Realizado com Sucesso!";
-    // header('Location: login/login.php');
+    header('Location: login/login.php');
+    
 } 
 catch(Exception $ex){
     echo "Erro na inserção: " . $ex->getMessage();

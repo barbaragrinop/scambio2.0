@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    $('#recemail').change(() => {
+    $('#frmRecupera').submit(() => {
         var emailManda = $('#recemail').val();
         $.ajax({
             type: "post",
-            url: "../esqueciSenha.php",
+            url: "esqueciSenha.php",
             data: {
                 "email": emailManda
             },
