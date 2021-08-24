@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 
 //Alterar para Servidor = LocalHost
 $servidor = "127.0.0.1:3308";
