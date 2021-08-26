@@ -80,8 +80,8 @@
 					</span>
 					
 
-					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
-						<input class="input100" type="text" name="codigo" placeholder="Código de 6 digitos." id="codigo">
+					<div class="wrap-input100 validate-input" data-validate = "Código Inválido!">
+						<input class="input100" type="text" name="codigo" placeholder="Código de 6 digitos." id="codigo" maxlength="6">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-code" aria-hidden="true"></i>

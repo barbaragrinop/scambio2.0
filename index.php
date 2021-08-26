@@ -40,13 +40,13 @@
                 ?>
                 <!-- Modificar este Botão  ----  Botão Logout -->
                     <form action="logout.php">
-                        <input id="inpkill"  class="inpkill glyphicon" name="DestroySession" type="submit" value="Logout">
+                        <input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
                     </form>
                 <?php
                     }else{
                 ?>
-                <ul class=" textCor nav navbar-nav navbar-right">
-                    <li><a href="cadastro/cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
+                <ul class="textCor nav navbar-nav navbar-right">
+                    <li><a href="cadastro/cadastro.php"><span class="glyphicon glyphicon-user "></span> Cadastre-se</a></li>
                     <li><a href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
                 </ul>
                 <?php                   
