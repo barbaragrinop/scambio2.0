@@ -2,6 +2,35 @@ html {
     /* overflow-y: hidden; */
 }
 
+.links-cadastro {
+    margin-left: 0px;
+}
+
+.navbar-left li a {
+    color: #9D9D9D;
+    font: 14px sans-serif;
+    padding: 15px;
+}
+
+.navbar-left li a:hover {
+    color: #fff;
+}
+
+.navbar {
+    height: 52px !important;
+    color: #C5AF99 !important;
+}
+
+.textCor {
+    margin-top: -4px;
+    margin-left: -1px;
+}
+
+.container-fluid {
+    margin-top: 1px;
+    margin-left: -14.5px;
+}
+
 .div-improv {
     padding-bottom: 60px !important;
 }

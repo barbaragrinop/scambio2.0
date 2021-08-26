@@ -12,7 +12,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="shortcut icon" href="../assets/imgs/logoFundo.png" />
+
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -25,34 +26,42 @@
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
+    <link href="../assets/css/style.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
 <!--===============================================================================================-->
 </head>
 <body>
-<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="../index.php">
-				<img src="images/logo1.png" alt="logo Scambio" width="110" height="38">
+				<img class="img-login" src="../assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link" href="../index.php#comofunciona">Como Funciona?</a>
+				<ul class="textCor nav navbar-nav navbar-left">
+					<li>
+						<a href="../index.php#comofunciona"> Como Funciona?</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../index.php#sobre">Quem Somos</a>
+					<li>
+						<a href="../index.php#quemsomos">Quem Somos</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../index.php#ajuda">Ajuda</a>
+					<li>
+						<a href="../index.php#ajuda"> Ajuda</a>
+					</li>
+                   
+				</ul>
+				<ul class="textCor nav navbar-nav navbar-right">
+					<li>
+						<a href="../cadastro/cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a>
 					</li>
 				</ul>
-				<!--   Adiconar Botão para redirecionar para a tela de login
-				<ul class=" textCor nav navbar-nav navbar-right">
-                    <li><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
-				</ul> -->
 			</div>
 		</div>
 	</nav>
