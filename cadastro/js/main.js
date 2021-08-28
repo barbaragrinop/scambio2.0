@@ -36,7 +36,9 @@ $(document).ready(function(){
         
         
         if(name == ""){
-            alert('Digite seu nome.');
+            var x = document.getElementById("snackbarnome");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
@@ -56,7 +58,9 @@ $(document).ready(function(){
     $("#celular").focusout(function(){
         let celular = document.getElementById('celular').value.trim();
         if(celular == "(__) _____-____"){
-            alert('Digite seu celular.');
+            var x = document.getElementById("snackbarcelular");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
@@ -76,7 +80,9 @@ $(document).ready(function(){
         
         
         if(senha == ""){
-            alert('Senha não informado.');
+            var x = document.getElementById("snackbarsenha");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
 
             $('button').removeClass('classHover');
@@ -99,7 +105,9 @@ $(document).ready(function(){
         
         
         if(senhaConfirmacao == ""){
-            alert('Confirmação de senha não informado.');
+            var x = document.getElementById("snackbarSenhaConfirmacao");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
 
             $('button').removeClass('classHover');
@@ -125,7 +133,9 @@ $(document).ready(function(){
         
         
         if(dtnasc == ""){
-            alert('Data de Nascimento não informado.');
+            var x = document.getElementById("snackbardtnasc");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
@@ -147,7 +157,9 @@ $(document).ready(function(){
         
         
         if(email == ""){
-            alert('Email não informado.');
+            var x = document.getElementById("snackbaremail");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
@@ -178,8 +190,10 @@ $(document).ready(function(){
         // }, 1000);
         
  
-        if(cep == "_____-___"){
-            alert('CEP não informado.');
+        if(cep == "________"){
+            var x = document.getElementById("snackbarcep");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
@@ -199,7 +213,9 @@ $(document).ready(function(){
         
         
         if(cidade == ""){
-            alert('Cidade não informado.');
+            var x = document.getElementById("snackbarcidade");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
@@ -219,7 +235,9 @@ $(document).ready(function(){
         
         
         if(rua == ""){
-            alert('Rua não informado.');
+            var x = document.getElementById("snackbarrua");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
@@ -239,7 +257,9 @@ $(document).ready(function(){
         
         
         if(numero == ""){
-            alert('Numero não informado.');
+            var x = document.getElementById("snackbarnumero");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
@@ -261,7 +281,9 @@ $(document).ready(function(){
         
         
         if(bairro == ""){
-            alert('Bairro não informado.');
+            var x = document.getElementById("snackbarbairro");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
@@ -281,7 +303,9 @@ $(document).ready(function(){
         
         
         if(estado == ""){
-            alert('Estado não informado.');
+            var x = document.getElementById("snackbarestado");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');

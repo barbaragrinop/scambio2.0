@@ -13,7 +13,12 @@ html {
 }
 
 .navbar-left li a:hover {
-    color: #fff;
+    color: #ffff;
+    background-color: transparent;
+}
+
+.bg-light {
+    background-color: #F2EEE8 !important;
 }
 
 .navbar {
