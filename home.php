@@ -6,11 +6,11 @@
 <html lang="pt-br">
 <head>
 	<title>Scambio</title>
+    <link rel="shortcut icon" href="assets/imgs/logoFundo.png" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="login/images/icons/favicon.ico"/>
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="login/vendor/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->
@@ -40,20 +40,14 @@
 				<img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0 textCor nav navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="index.php#comofunciona">Como Funciona?</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="index.php#sobre">Quem Somos</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="index.php#ajuda">Ajuda</a>
-					</li>
-				</ul>
+			<div class="collapse navbar-collapse" style="background-color: #F2EEE8;" id="navbarSupportedContent">
+				<ul class="textCor nav navbar-nav navbar-nav-ul">
+                    <li><a class="links-nav-home" href="index.php#comofunciona">Como Funciona?</a></li>
+                    <li><a href="index.php#sobre">Quem Somos</a></li>
+                    <li><a href="index.php#ajuda">Ajuda</a></li>
+                </ul>
 
 				<!--  MODIFICAR ESSE BOTÃO  BOTÃO DE LOGOUT -->
 				<ul class="textCor nav navbar-nav navbar-right">

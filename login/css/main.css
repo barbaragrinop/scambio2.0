@@ -6,12 +6,24 @@ html {
     padding-bottom: 60px !important;
 }
 
+.img-login {
+    margin-top: -8px;
+}
+
+.navbar-collapse .textCor {
+    margin-left: -26px;
+}
+
 .img-nav {
     padding-left: -10px !important;
 }
 
 .link-entrar {
     width: 400px;
+}
+
+.navbar {
+    margin-bottom: 0 !important;
 }
 
 
@@ -420,9 +432,11 @@ iframe {
     transition: all 0.4s;
 }
 
-.login100-form-btn:hover {
-    background: #333333;
+.container-login100-form-btn a:hover {
+    text-decoration: none;
 }
+
+.login100-form-btn:hover
 
 
 /*------------------------------------------------------------------
