@@ -126,7 +126,7 @@
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Número Inválido!">
 								<small class="titleInputs">Número</small>
-								<input class="input100" type="number" name="numero" id="numero" placeholder="000">
+								<input class="input100" type="number" name="numero" id="numero" placeholder="999">
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Bairro Inválido!">

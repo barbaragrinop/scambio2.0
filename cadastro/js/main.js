@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $("#cep").focusout(function(){
         var cep = $("#cep").val();
         cep = cep.replace("-", "");
@@ -39,6 +40,7 @@ $(document).ready(function(){
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
+
             $('button').removeClass('pointer-some');
 
         }else {
@@ -46,14 +48,13 @@ $(document).ready(function(){
             $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
+
         }
 
     });
 
     $("#celular").focusout(function(){
         let celular = document.getElementById('celular').value.trim();
-        
-        
         if(celular == "(__) _____-____"){
             alert('Digite seu celular.');
             document.getElementById("salvar").disabled = true;
@@ -77,6 +78,7 @@ $(document).ready(function(){
         if(senha == ""){
             alert('Senha não informado.');
             document.getElementById("salvar").disabled = true;
+
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
             $('button').removeClass('pointer-some');
@@ -86,6 +88,7 @@ $(document).ready(function(){
             $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
+
         }
 
     });
@@ -98,6 +101,7 @@ $(document).ready(function(){
         if(senhaConfirmacao == ""){
             alert('Confirmação de senha não informado.');
             document.getElementById("salvar").disabled = true;
+
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
             $('button').removeClass('pointer-some');
@@ -111,6 +115,7 @@ $(document).ready(function(){
             $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
+
         }
 
     });
@@ -162,9 +167,17 @@ $(document).ready(function(){
     });
 
     $("#cep").focusout(function(){
-        let cep = document.getElementById('cep').value.trim();
+        var cep = document.getElementById('cep').value.trim();
+        var cep = cep.replace("-", "").replace(".", "");
+
+        let rua = document.getElementById('rua').value.trim();
+
+
+        // setTimeout(function(){ 
+        //     alert(rua)
+        // }, 1000);
         
-        
+ 
         if(cep == "_____-___"){
             alert('CEP não informado.');
             document.getElementById("salvar").disabled = true;
