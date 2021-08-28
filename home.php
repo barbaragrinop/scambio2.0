@@ -3,13 +3,14 @@
 	if(isset($_SESSION['id'])){
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<title>Scambio</title>
+    <link rel="shortcut icon" href="assets/imgs/logoFundo.png" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="login/images/icons/favicon.ico"/>
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="login/vendor/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->
@@ -23,34 +24,37 @@
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="login/css/util.css">
 	<link rel="stylesheet" type="text/css" href="login/css/main.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+
 	<!--===============================================================================================-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
 </head>
 <body>
 <nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="index.php">
-				<img src="login/images/logo1.png" alt="logo Scambio" width="110" height="38">
+				<img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link" href="index.php#comofunciona">Como Funciona?</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="index.php#sobre">Quem Somos</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="index.php#ajuda">Ajuda</a>
-					</li>
-				</ul>
+			<div class="collapse navbar-collapse" style="background-color: #F2EEE8;" id="navbarSupportedContent">
+				<ul class="textCor nav navbar-nav navbar-nav-ul">
+                    <li><a class="links-nav-home" href="index.php#comofunciona">Como Funciona?</a></li>
+                    <li><a href="index.php#sobre">Quem Somos</a></li>
+                    <li><a href="index.php#ajuda">Ajuda</a></li>
+                </ul>
 
 				<!--  MODIFICAR ESSE BOTÃO  BOTÃO DE LOGOUT -->
-				<form action="logout.php">
-                    <input id="inpkill"  class="inpkill glyphicon" name="DestroySession" type="submit" value="Logout">
-                </form>
+				<ul class="textCor nav navbar-nav navbar-right">
+					<form action="logout.php" style="text-align: right;">
+						<input id="inpkill" class="inpkill glyphicon buttonLogout btnClass2" name="DestroySession" type="submit" value="Sair">
+					</form>
+				</ul>
 			</div>
 		</div>
 	</nav>

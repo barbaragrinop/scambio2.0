@@ -40,34 +40,33 @@ $(document).ready(function(){
             document.getElementById("salvar").disabled = true;
             $('button').removeClass('classHover');
             $('button').addClass('pointer-none');
-            // document.getElementById("salvar").style.visibility = "hidden";
+
+            $('button').removeClass('pointer-some');
 
         }else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            // document.getElementById("salvar").style.visibility = "initial";
+
         }
 
     });
 
     $("#celular").focusout(function(){
         let celular = document.getElementById('celular').value.trim();
-        
-        
         if(celular == "(__) _____-____"){
             alert('Digite seu celular.');
             document.getElementById("salvar").disabled = true;
-            $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("salvar").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -79,15 +78,17 @@ $(document).ready(function(){
         if(senha == ""){
             alert('Senha não informado.');
             document.getElementById("salvar").disabled = true;
-            $('button').addClass('pointer-none');
+
             $('button').removeClass('classHover');
-            document.getElementById("salvar").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("salvar").style.visibility = "initial";
+
         }
 
     });
@@ -100,19 +101,21 @@ $(document).ready(function(){
         if(senhaConfirmacao == ""){
             alert('Confirmação de senha não informado.');
             document.getElementById("salvar").disabled = true;
-            $('button').addClass('pointer-none');
+
             $('button').removeClass('classHover');
-            document.getElementById("salvar").style.visibility = "hidden";
-        } else if (senha != senhaConfirmacao) {
-            alert("As senhas não coincidem!!")
-            document.getElementById("senhaConfirmacao").value = ""
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
+        } else if(senha != senhaConfirmacao){
+            alert('Senhas não coincidem!')
+            document.getElementById('senhaConfirmacao').value = ""
         }
         else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("salvar").style.visibility = "initial";
+
         }
 
     });
@@ -124,15 +127,15 @@ $(document).ready(function(){
         if(dtnasc == ""){
             alert('Data de Nascimento não informado.');
             document.getElementById("salvar").disabled = true;
-            $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("salvar").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -146,19 +149,19 @@ $(document).ready(function(){
         if(email == ""){
             alert('Email não informado.');
             document.getElementById("salvar").disabled = true;
-            $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("salvar").style.visibility = "hidden";
-        } else if (!email.match(pattern)){
-            alert("Digite um email valido!")
-            document.getElementById("email").value = "";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
+        } else if(!email.match(pattern)) {
+            alert('Email inválido!')
+            document.getElementById('email').value = ""
         }
         else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -174,24 +177,20 @@ $(document).ready(function(){
         //     alert(rua)
         // }, 1000);
         
-        
-        
-        // if(cep == "_____-___"){
-        //     alert('CEP não informado.');
-        //     document.getElementById("salvar").disabled = true;
-        //     $('button').addClass('pointer-none');
-        //     $('button').removeClass('classHover');
-        //     document.getElementById("salvar").style.visibility = "hidden";
-        // } else if(validacep.test(cep)) {
-        //     alert("Digite um CEP válido!")
-        // }
-        // else {
-        //     document.getElementById("salvar").disabled = false;
-        //     $('button').removeClass('pointer-none');
-        //     $('button').addClass('pointer-some');
-        //     $('button').addClass('classHover');
-        //     document.getElementById("salvar").style.visibility = "initial";
-        // }
+ 
+        if(cep == "_____-___"){
+            alert('CEP não informado.');
+            document.getElementById("salvar").disabled = true;
+            $('button').removeClass('classHover');
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
+        }else {
+            document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
+            $('button').removeClass('pointer-none');
+            $('button').addClass('pointer-some');
+        }
 
     });
 
@@ -202,15 +201,15 @@ $(document).ready(function(){
         if(cidade == ""){
             alert('Cidade não informado.');
             document.getElementById("salvar").disabled = true;
-            $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("salvar").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -222,15 +221,15 @@ $(document).ready(function(){
         if(rua == ""){
             alert('Rua não informado.');
             document.getElementById("salvar").disabled = true;
-            $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("salvar").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -242,15 +241,15 @@ $(document).ready(function(){
         if(numero == ""){
             alert('Numero não informado.');
             document.getElementById("salvar").disabled = true;
-            $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("salvar").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("salvar").style.visibility = "initial";
         }
 
 
@@ -264,15 +263,15 @@ $(document).ready(function(){
         if(bairro == ""){
             alert('Bairro não informado.');
             document.getElementById("salvar").disabled = true;
-            $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("salvar").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("salvar").style.visibility = "initial";
         }
 
     });
@@ -284,15 +283,15 @@ $(document).ready(function(){
         if(estado == ""){
             alert('Estado não informado.');
             document.getElementById("salvar").disabled = true;
-            $('button').addClass('pointer-none');
             $('button').removeClass('classHover');
-            document.getElementById("salvar").style.visibility = "hidden";
+            $('button').addClass('pointer-none');
+            $('button').removeClass('pointer-some');
+
         }else {
             document.getElementById("salvar").disabled = false;
+            $('button').addClass('classHover');
             $('button').removeClass('pointer-none');
             $('button').addClass('pointer-some');
-            $('button').addClass('classHover');
-            document.getElementById("salvar").style.visibility = "initial";
         }
 
     }); 

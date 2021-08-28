@@ -13,6 +13,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/imgs/logoFundo.png" />
     <title>Scambio</title>
 </head>
 
@@ -25,29 +29,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">
-                    <img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
+                <a class="navbar-brand navbar-brand-top" href="index.php">
+                    <img class="img-index" src="assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
                 </a>
             </div>
             <div class="collapse navbar-collapse" style="background-color: #F2EEE8;" id="myNavbar">
                 <ul class="textCor nav navbar-nav">
-                    <li><a href="#comofunciona">Como Funciona?</a></li>
-                    <li><a href="#sobre">Quem Somos</a></li>
-                    <li><a href="#ajuda">Ajuda</a></li>
+                    <li><a class="links-nav-index" href="#comofunciona">Como Funciona?</a></li>
+                    <li><a class="links-nav-index" href="#sobre">Quem Somos</a></li>
+                    <li><a class="links-nav-index" href="#ajuda">Ajuda</a></li>
                 </ul>
                 <?php
                     if(isset($_SESSION['id'])){
                 ?>
                 <!-- Modificar este Botão  ----  Botão Logout -->
                     <form action="logout.php">
-                        <input id="inpkill"  class="inpkill glyphicon" name="DestroySession" type="submit" value="Logout">
+                        <input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
                     </form>
                 <?php
                     }else{
                 ?>
-                <ul class=" textCor nav navbar-nav navbar-right">
-                    <li><a href="cadastro/cadastro.php"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
-                    <li><a href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+                <ul class="textCor nav navbar-nav navbar-right">
+                    <li><a class="links-nav-index" href="cadastro/cadastro.php"><span class="glyphicon glyphicon-user "></span> Cadastre-se</a></li>
+                    <li><a class="links-nav-index" href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
                 </ul>
                 <?php                   
                     }

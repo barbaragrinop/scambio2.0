@@ -6,13 +6,14 @@
 	}if(isset($_SESSION['recuperacao'])){
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<title>Scambio</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="shortcut icon" href="../assets/imgs/logoFundo.png" />
+
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -74,13 +75,14 @@
 					<img src="images/book.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" id="frmRecupera" method="post" action="../validarcodigo.php" >
+				<form class="login100-form validate-form" id="frmRecuperaCodigo" >
 					<span id="titlePrincipal" class="login100-form-title">
-						Verifique se você recebeu um email contendo seu código. Seu código tem 6 digitos.
+						Verifique se você recebeu um email com um código de 6 digitos.
 					</span>
+					
 
-					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
-						<input class="input100" type="text" name="codigo" placeholder="Código de 6 digitos." id="codigo">
+					<div class="wrap-input100 validate-input" data-validate = "Código Inválido!">
+						<input class="input100" type="text" name="codigo" placeholder="Código de 6 digitos." id="codigo" maxlength="6">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-code" aria-hidden="true"></i>

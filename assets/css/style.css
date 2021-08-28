@@ -6,9 +6,29 @@ html {
     font-family: sans-serif;
 }
 
-.secondaryColor {
-    background-color: #f2eee8;
+.secondaryColor, .vsc-initialized {
+    background-color: #f2eee8 !important;
     border: #f2eee8;
+}
+
+.img-index {
+    margin-top: 0.15px;
+}
+
+.links-nav-index:hover {
+    transition: .5s;
+} 
+
+.navbar-nav li a {
+    font-family: sans-serif;
+}
+
+.navbar-nav-ul {
+    margin-left: -26px;
+}
+
+.navbar-expand-lg {
+    margin-left: -9px;
 }
 
 .body {
@@ -36,7 +56,7 @@ html {
     color: #000000;
     background-color: #f2eee8;
     text-align: center;
-    font-family: Cutive;
+    font-family: sans-serif;
 }
 
 .sobre {
@@ -52,10 +72,19 @@ html {
     color: #000000;
     background-color: #f2eee8;
     text-align: center;
+    font-family: sans-serif;
 }
 
 .textCor {
     color: #000000;
+}
+
+.textCor li a {
+    color: #9d9d9d;
+}
+
+.textCor li a:hover {
+    color: #fff;
 }
 
 .header {
@@ -112,7 +141,7 @@ html {
 }
 
 .navbar {
-    height: 15px;
+    height: 52px;
 }
 
 .navbar-brand {
@@ -176,8 +205,8 @@ html {
 }
 
 .div-label-input input:valid, input:focus {
-    border-bottom: 2px solid #7ba7a2;
-    border-radius: 4px;
+    /* border-bottom: 2px solid #7ba7a2;
+    border-radius: 4px; */
 }
 
 input:valid + label, input:focus + label {
@@ -289,6 +318,13 @@ div.box {
     margin-right: 10px;
 }
 
+.text-container a:hover {
+    border: none;
+    transition: .5s;
+    background-color: #57509696;
+    /* color: rgb(82, 37, 37); */
+}
+
 .image-container {
     margin-left: 10px;
 }
@@ -341,18 +377,49 @@ label {
     display: inline-block;
 }
 
-input[type="submit"] {
-    background-color: #04aa6d;
+.buttonLogout {
+    background-color: #7c8380;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 30px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     float: right;
+    border-radius: 20px;
+    /* border: 1px inset  #594cda; */
+    background-color: rgb(223, 221, 221);
+    color: #594cda;
+    text-decoration: none;
+    margin-top: 7px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.btnClass2 {
+    background-color: #7c8380;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    border-radius: 20px;
+    /* border: 1px inset  #594cda; */
+    background-color: rgb(223, 221, 221);
+    color: #594cda;
+    text-decoration: none;
+    margin-top: 5px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.navbar-nav-home {
+    margin-left: -25.5px;
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+    transition: .45s;
+    background-color: #a5a1a5;
 }
 
 .div-login {

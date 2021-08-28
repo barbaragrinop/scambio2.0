@@ -14,7 +14,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="shortcut icon" href="../assets/imgs/logoFundo.png" />
+
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -33,6 +34,11 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
+
     <script src="../assets/js/validacao.js"></script>
     <script src="../assets/js/cadastroUsuario.js"></script>
     <script src="../assets/js/script.js"></script>
@@ -49,16 +55,17 @@
 					<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-							<li class="nav-item">
-								<a class="nav-link" href="../index.php#comofunciona">Como Funciona?</a>
+						<ul class="textCor nav navbar-nav navbar-left">
+							<li>
+								<a href="../index.php#comofunciona"> Como Funciona?</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="../index.php#sobre">Quem Somos</a>
+							<li class="links-cadastro">
+								<a href="../index.php#quemsomos">Quem Somos</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="../index.php#ajuda">Ajuda</a>
+							<li class="links-cadastro">
+								<a href="../index.php#ajuda"> Ajuda</a>
 							</li>
+						
 						</ul>
 					</div>
 				</div>
@@ -67,14 +74,14 @@
 			<div class="limiter">
 				<div class="container-login100">
 					<div class="wrap-login100 container">
-						<form autocomplete="no" id="frm" class="login100-form validate-form row" id="frm" method="post" action="../cadastroUsuario.php">
+						<form class="login100-form validate-form row" id="frm" method="post" action="../cadastroUsuario.php" autocomplete="no">
 							<span class="login100-form-title">
 								Cadastre-se na plataforma!
 							</span>
 
 							<div class="wrap-input100 validate-input col" data-validate = "Digite seu nome completo!">
 								<small class="titleInputs">Nome</small>
-								<input autocomplete="no" class="input100" type="text" name="nome" id="nome" placeholder="Nome Completo" required>
+								<input autocomplete="no" class="input100" type="text" name="nome" id="nome" placeholder="Nome Completo">
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Celular Inválido!">
@@ -131,9 +138,9 @@
 								<small class="titleInputs">Estado</small>
 								<input class="input100" type="text" name="estado" id="estado" placeholder="Estado" readonly>
 							</div>
-							<div class="container-login100-form-btn">
+							<div class="container-login100-form-btn pointer-none">
 								<a class="link-entrar" href="#">
-									<button class="login100-form-btn" id="salvar">
+									<button class="login100-form-btn classHover" id="salvar">
 										Cadastro
 									</button>
 								</a>
@@ -141,7 +148,7 @@
 						</form>
 					</div>
 				</div>
-			</div>,
+			</div>
 		
 
 	<!--===============================================================================================-->	

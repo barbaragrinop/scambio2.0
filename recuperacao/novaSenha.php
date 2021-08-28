@@ -7,13 +7,12 @@
 	}else{
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<title>Scambio</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	
 	<link rel="shortcut icon" href="../assets/imgs/logoFundo.png" />
 
 <!--===============================================================================================-->
@@ -77,29 +76,40 @@
 					<img src="images/book.png" alt="IMG">
 				</div>
 
-				<!-- <form class="login100-form validate-form" id="frmRecupera" method="post" action="../esqueciSenha.php"> -->
-				<form class="login100-form validate-form" id="frmRecupera" method="post" action="../esqueciSenha.php">
+				<form class="login100-form validate-form" method="post" action="../alteraSenha.php">
+				<!-- <form class="login100-form validate-form" id="frmRestauraSenha"> -->
 					<span id="titlePrincipal" class="login100-form-title">
-						Digite o email cadastrado para receber o código de verificação.
+						Digite uma senha confiável.
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
-						<input class="input100" type="email" name="recemail" placeholder="Email" id="recemail">
+						<input class="input100" type="password" name="novaSenha1" placeholder="Senha" id="novaSenha1">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "E-mail Inválido!">
+						<input class="input100" type="password" name="novaSenha2" placeholder="Confirme a senha" id="novaSenha2">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button id="btnEnviar" type="submit" class="login100-form-btn">
-							Enviar
+						<button id="btnRedefinirSenha" type="submit" class="login100-form-btn">
+							Redefinir Senha
 						</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+	
+	
+
 	
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -116,8 +126,8 @@
 		})
 	</script>
 <!--===============================================================================================-->
-	<!-- <script src="js/main.js"></script> -->
-
+	<script src="js/main.js"></script>
+	<script src="../assets/js/recuperaSenha.js"></script>
 
 </body>
 </html>
