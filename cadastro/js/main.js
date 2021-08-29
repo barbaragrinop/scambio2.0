@@ -132,7 +132,7 @@ $(document).ready(function(){
         let dtnasc = document.getElementById('dtnasc').value.trim();
         
         
-        if(dtnasc == ""){
+        if(dtnasc == "__/__/____"){
             var x = document.getElementById("snackbardtnasc");
             x.className = "show";
             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
