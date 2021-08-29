@@ -29,13 +29,14 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="css/toast.css">
 <!--===============================================================================================-->
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
 
@@ -49,7 +50,7 @@
 		<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
 				<div class="container-fluid">
 					<a class="navbar-brand" href="../index.php">
-						<img src="images/logo1.png" alt="logo Scambio" width="110" height="38">
+						<img src="../assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -82,61 +83,73 @@
 							<div class="wrap-input100 validate-input col" data-validate = "Digite seu nome completo!">
 								<small class="titleInputs">Nome</small>
 								<input autocomplete="no" class="input100" type="text" name="nome" id="nome" placeholder="Nome Completo">
+    							<div id="snackbarnome">Digite seu nome completo!</div>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Celular Inválido!">
 								<small class="titleInputs">Celular</small>
 								<input class="input100" type="text" name="celular" id="celular" placeholder="(99) 99999-9999">
+    							<div id="snackbarcelular">Digite seu número celular!</div>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Digite uma senha válida!">
 								<small class="titleInputs">Senha</small>
 								<input class="input100" type="password" name="senha" id="senha" placeholder="********">
+    							<div id="snackbarsenha">Digite uma senha válida!</div>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Digite uma senha válida!">
 								<small class="titleInputs">Confirmar senha</small>
 								<input class="input100" type="password" name="senhaConfirmacao" id="senhaConfirmacao" placeholder="********">
+    							<div id="snackbarSenhaConfirmacao">Digite sua confirmação de senha!</div>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Data Inválida!">
 								<small class="titleInputs">Data de nascimento</small>
 								<input class="input100" type="text" name="dtnasc" id="dtnasc" placeholder="17/01/2004">
+    							<div id="snackbardtnasc">Digite sua data de nascimento!</div>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Email Inválido!">
 								<small class="titleInputs">Email</small>
 								<input class="input100" type="text" name="email" id="email" placeholder="Email">
+    							<div id="snackbaremail">Digite seu Email!</div>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "CEP Inválido!">
 								<small class="titleInputs">CEP</small>
 								<input class="input100" name="cep" id="cep" placeholder="_____-___">
+    							<div id="snackbarcep">Digite seu CEP!</div>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Cidade Inválida!">
 								<small class="titleInputs">Cidade</small>
 								<input class="input100" type="text" name="cidade" id="cidade" placeholder="Cidade" readonly>
+    							<div id="snackbarcidade">Digite sua cidade!</div>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Rua Inválida!">
 								<small class="titleInputs">Rua</small>
 								<input class="input100" type="text" name="rua" id="rua" placeholder="Nome da Rua" readonly>
+    							<div id="snackbarrua">Digite sua rua!</div>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Número Inválido!">
 								<small class="titleInputs">Número</small>
 								<input class="input100" type="number" name="numero" id="numero" placeholder="999">
+    							<div id="snackbarnumero">Digite o número da sua casa!</div>
 							</div>
 
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Bairro Inválido!">
 								<small class="titleInputs">Bairro</small>
 								<input class="input100" type="text" name="bairro" id="bairro" placeholder="Nome do Bairro" readonly>
+    							<div id="snackbarbairro">Digite seu bairro!</div>
 							</div>
 							
 							<div class="wrap-input100 validate-input col-md-6" data-validate = "Estado Inválido!">
 								<small class="titleInputs">Estado</small>
 								<input class="input100" type="text" name="estado" id="estado" placeholder="Estado" readonly>
+    							<div id="snackbarestado">Digite seu estado!</div>
 							</div>
 							<div class="container-login100-form-btn pointer-none">
 								<a class="link-entrar" href="#">
