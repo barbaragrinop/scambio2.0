@@ -30,7 +30,7 @@
 <!--===============================================================================================-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 <!--===============================================================================================-->
 	<script src="../assets/js/recuperaSenhacod.js"></script>
 <!--===============================================================================================-->
@@ -44,10 +44,10 @@
 	</style>
 </head>
 <body>
-	<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light bg-light-nav">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="../index.php">
-				<img src="images/logo1.png" alt="logo Scambio" width="110" height="38">
+				<img src="../assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -57,10 +57,10 @@
 					<li class="nav-item">
 						<a class="nav-link" href="../index.php#comofunciona">Como Funciona?</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item nav-item-2">
 						<a class="nav-link" href="../index.php#sobre">Quem Somos</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item nav-item-2">
 						<a class="nav-link" href="../index.php#ajuda">Ajuda</a>
 					</li>
 				</ul>
