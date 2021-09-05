@@ -10,31 +10,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<!--===============================================================================================-->	
-	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="login/vendor/bootstrap/css/bootstrap.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="login/vendor/animate/animate.css">
-	<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="login/vendor/css-hamburgers/hamburgers.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="login/vendor/select2/select2.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="login/css/util.css">
-	<link rel="stylesheet" type="text/css" href="login/css/main.css">
-    <link href="assets/css/style.css" rel="stylesheet">
 
-	<!--===============================================================================================-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
 </head>
 <body>
-<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="index.php">
 				<img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
@@ -49,7 +31,6 @@
                     <li><a href="index.php#ajuda">Ajuda</a></li>
                 </ul>
 
-				<!--  MODIFICAR ESSE BOTÃO  BOTÃO DE LOGOUT -->
 				<ul class="textCor nav navbar-nav navbar-right">
 					<form action="logout.php" style="text-align: right;">
 						<input id="inpkill" class="inpkill glyphicon buttonLogout btnClass2" name="DestroySession" type="submit" value="Sair">
@@ -58,6 +39,8 @@
 			</div>
 		</div>
 	</nav>
+
+	
 	
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
