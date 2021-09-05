@@ -58,5 +58,3 @@ $query = $pdo->prepare("UPDATE db_scambio.tb_usuario SET cd_recuperacao = :codig
     // echo $email;
 
 //-----------------------------------------------------------------------------
-
-?>

@@ -65,5 +65,4 @@ header('Location: ./recuperacao/codigo.php');
 echo "<script>window.location.href='./recuperacao/codigo.php';</script>";
 if(isset($_SESSION['recuperacao'])){
         header("Location: ./recuperacao/codigo.php");
-   }  
-?>
+   }

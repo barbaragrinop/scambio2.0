@@ -12,5 +12,3 @@ if(isset($_POST['check_submit_btn'])){
         echo "E-mail disponível";
     }
 }
-
-?>

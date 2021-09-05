@@ -1,6 +1,6 @@
 <?php
-	//Validadar se existe SESSION
-    session_start();
+//Validadar se existe SESSION
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,21 +40,21 @@
                     <li><a class="links-nav-index" href="#ajuda">Ajuda</a></li>
                 </ul>
                 <?php
-                    if(isset($_SESSION['id'])){
+                if (isset($_SESSION['id'])) {
                 ?>
-                <!-- Modificar este Botão  ----  Botão Logout -->
+                    <!-- Modificar este Botão  ----  Botão Logout -->
                     <form action="logout.php">
                         <input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
                     </form>
                 <?php
-                    }else{
+                } else {
                 ?>
-                <ul class="textCor nav navbar-nav navbar-right">
-                    <li><a class="links-nav-index" href="cadastro/cadastro.php"><span class="glyphicon glyphicon-user "></span> Cadastre-se</a></li>
-                    <li><a class="links-nav-index" href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
-                </ul>
-                <?php                   
-                    }
+                    <ul class="textCor nav navbar-nav navbar-right">
+                        <li><a class="links-nav-index" href="cadastro/cadastro.php"><span class="glyphicon glyphicon-user "></span> Cadastre-se</a></li>
+                        <li><a class="links-nav-index" href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+                    </ul>
+                <?php
+                }
                 ?>
             </div>
         </div>
@@ -68,28 +68,28 @@
                         <h1 class="h1-large">Troca de livro? Dê um match no Scambio.</h1>
                         <p class="p-large">Venha fazer parte de uma comunidade de troca de livros, tenha novas experiências e novos livros.</p>
                         <?php
-                            if(isset($_SESSION['id'])){
+                        if (isset($_SESSION['id'])) {
                         ?>
-                                <a class="btn-solid-lg" href="home.php"><i class="fab fa-apple"></i>Acessar Scambio</a>
+                            <a class="btn-solid-lg" href="home.php"><i class="fab fa-apple"></i>Acessar Scambio</a>
                         <?php
-                            }else{
+                        } else {
                         ?>
-                                <a class="btn-solid-lg" href="cadastro/cadastro.php"><i class="fab fa-apple"></i>Cadastre-se</a>
-                                <a class="btn-solid-lg secondary" href="login/login.php"><i class="fab fa-google-play"></i>Entrar</a>
+                            <a class="btn-solid-lg" href="cadastro/cadastro.php"><i class="fab fa-apple"></i>Cadastre-se</a>
+                            <a class="btn-solid-lg secondary" href="login/login.php"><i class="fab fa-google-play"></i>Entrar</a>
                         <?php
-                            }
+                        }
                         ?>
-                    </div> 
-                </div> 
+                    </div>
+                </div>
                 <div class="col-lg-6">
                     <div class="image-container">
                         <img class="img-fluid" width="350px" src="assets/imgs/inicial.png" alt="alternative">
-                    </div> 
-                </div> 
-            </div> 
-        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
-    
+
     <div id="comofunciona" class="container-fluid">
         <h2 class="h1-large" style="font-family: Cutive;">Como Funciona?</h2>
         <br>
@@ -98,11 +98,11 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="image-container">
-                    <img class="img-fluid" width="1200px" src="assets/imgs/comodescricao.png" alt="alternative">
-                    </div> 
-                </div> 
-            </div> 
-        </div>  
+                        <img class="img-fluid" width="1200px" src="assets/imgs/comodescricao.png" alt="alternative">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="sobre" class="container-fluid sobre">
@@ -122,7 +122,7 @@
             <span class="name-int"> São Vicente - SP </span>
             <br>
             <span class="name-int"> 20 anos </span>
-            
+
         </div>
         <div class="box">
             <img class="img-beatriz int-generic" src="assets/imgs/beatriz.jpg" />
@@ -159,9 +159,9 @@
             <span class="name-int"> 19 anos </span>
         </div>
     </div>
- 
+
     <div id="ajuda" class="container-fluid">
-        <h2 class="h1-large" style="font-family: Cutive;" >Precisa de Ajuda?</h2>
+        <h2 class="h1-large" style="font-family: Cutive;">Precisa de Ajuda?</h2>
         <br>
         <br>
         <span class="span-ajuda">Deixe aqui sua dúvida, sugestão ou comentário sobre o projeto</span>
@@ -169,20 +169,20 @@
         <div class="row div-ajuda">
             <form action="">
                 <div class="row">
-                <div class="col-25">
-                    <label for="nome">Nome</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome..">
-                </div>
+                    <div class="col-25">
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome..">
+                    </div>
                 </div>
                 <div class="row">
-                <div class="col-25">
-                    <label for="email">E-mail</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="email" name="email" placeholder="Seu e-mail..">
-                </div>
+                    <div class="col-25">
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="email" name="email" placeholder="Seu e-mail..">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
