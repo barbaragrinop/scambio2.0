@@ -199,8 +199,8 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Follow</button>
-                <button class="btn draw-border">Message</button>
+                <button class="btn draw-border">Perfil</button>
+                <button class="btn draw-border">Messagem</button>
             </div>
             <div class="card">
                 <img src="cabana.jpg" alt="Livro" class="card__image">
@@ -216,8 +216,8 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Follow</button>
-                <button class="btn draw-border">Message</button>
+                <button class="btn draw-border">Perfil</button>
+                <button class="btn draw-border">Messagem</button>
             </div>
             <div class="card">
                 <img src="aculpa.jpg" alt="Livro" class="card__image">
@@ -233,8 +233,8 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Follow</button>
-                <button class="btn draw-border">Message</button>
+                <button class="btn draw-border">Perfil</button>
+                <button class="btn draw-border">Messagem</button>
             </div>
             <div class="card">
                 <img src="cabana.jpg" alt="Livro" class="card__image">
@@ -250,8 +250,8 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Follow</button>
-                <button class="btn draw-border">Message</button>
+                <button class="btn draw-border">Perfil</button>
+                <button class="btn draw-border">Messagem</button>
             </div>
             <div class="card">
                 <img src="aculpa.jpg" alt="Livro" class="card__image">
@@ -267,8 +267,8 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Follow</button>
-                <button class="btn draw-border">Message</button>
+                <button class="btn draw-border">Perfil</button>
+                <button class="btn draw-border">Messagem</button>
             </div>
             <div class="card">
                 <img src="cabana.jpg" alt="Livro" class="card__image">
@@ -284,8 +284,8 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Follow</button>
-                <button class="btn draw-border">Message</button>
+                <button class="btn draw-border">Perfil</button>
+                <button class="btn draw-border">Messagem</button>
             </div>
             <div class="card">
                 <img src="aculpa.jpg" alt="Livro" class="card__image">
@@ -301,8 +301,8 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Follow</button>
-                <button class="btn draw-border">Message</button>
+                <button class="btn draw-border">Perfil</button>
+                <button class="btn draw-border">Messagem</button>
             </div>
             <div class="card">
                 <img src="cabana.jpg" alt="Livro" class="card__image">
@@ -318,8 +318,8 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Follow</button>
-                <button class="btn draw-border">Message</button>
+                <button class="btn draw-border">Perfil</button>
+                <button class="btn draw-border">Messagem</button>
             </div>
             <div class="card">
                 <img src="aculpa.jpg" alt="Livro" class="card__image">
@@ -335,8 +335,8 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Follow</button>
-                <button class="btn draw-border">Message</button>
+                <button class="btn draw-border">Perfil</button>
+                <button class="btn draw-border">Messagem</button>
             </div>
         </div>
 
