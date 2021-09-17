@@ -15,7 +15,7 @@ body {
 
 .card {
     background-color: #dfd6ca;
-    height: 35rem;
+    /* height: 35rem; */
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -27,6 +27,33 @@ body {
 .card__name {
     margin-top: 15px;
     font-size: 1.5em;
+}
+
+.w3-white {
+    width: 900px;
+}
+
+.w3-row-padding {
+    display: flex;
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+}
+
+.w3-opacity {
+    font-size: 1.3rem;
+}
+
+.w3-input-livro {
+    width: 740px;
+}
+
+.w3-button {
+    border-radius: 2px;
+}
+
+.w3-div-caixa {
+    margin-left: 22%;
 }
 
 .w3-col.m12 {
@@ -59,6 +86,15 @@ body {
     height: 0;
     bottom: 0;
     right: 0;
+}
+
+.textCor li {
+    padding-left: 10px;
+    /* transition: 2s; */
+}
+
+.navbar-brand {
+    margin-left: -20px !important;
 }
 
 .draw-border::before {
@@ -102,7 +138,7 @@ body {
     font: 700 1.2rem 'Roboto Slab', sans-serif;
     padding: 0.75em 2em;
     letter-spacing: 0.05rem;
-    margin: 1em;
+    margin: .65em;
     width: 13rem;
 }
 
@@ -118,8 +154,11 @@ body {
 }
 
 .h1-large {
-    padding-top: 15px;
+    /* padding-top: 15px; */
     text-align: center;
+    font-family: sans-serif !important;
+    font-size: 55px;
+    color: black;
 }
 
 @media only screen and (min-width: 150px) and (max-width: 530px) {
