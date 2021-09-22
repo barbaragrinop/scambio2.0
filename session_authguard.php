@@ -14,7 +14,7 @@ if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['pass']) &&
 
     if($u->login($email,$senha) == true){
         if(isset($_SESSION['id'])){
-            header("Location: home.php");
+            header("Location: home/home.php");
         }else{
             header("Location: login/login.php");
         } 
