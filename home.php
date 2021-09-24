@@ -49,11 +49,12 @@ if (isset($_SESSION['id'])) {
         </nav>
         <h2 class="h1-large" style="font-family: Cutive;">Procure por uma nova história!</h2>
         <div class="w3-row-padding" style=" padding-top: 60px; ">
-            <div class="w3-col m12">
+            <div class="w3-col m12 w3-div-caixa">
                 <div class="w3-card w3-round w3-white ">
-                    <div class="w3-container w3-padding ">
-                        <h6 class="w3-opacity ">Procure por um livro novo aqui!</h6>
-                        <p contenteditable="true" class="w3-border w3-padding">Status: Pesquisar</p>
+                    <div class="w3-container w3-padding">
+                        <h6 class="w3-opacity ">Procure por um livro novo aqui:</h6>
+                        <!-- <p ></p> -->
+                        <input type="text" class="w3-border w3-padding w3-input-livro" contenteditable="true">
                         <button type="button " class="w3-button " style="background-color: #dfd6ca; "><i class="fa fa-pencil "></i> Pesquisar</button>
                     </div>
                 </div>
