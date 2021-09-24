@@ -97,7 +97,7 @@ if (isset($_SESSION['id'])) {
 						</div>
 
 						<div class="container-login100-form-btn">
-							<a class="link-entrar" href="#">
+							<a class="link-entrar" href="../home/home.php">
 								<button class="login100-form-btn">
 									Entrar
 								</button>
