@@ -53,9 +53,10 @@ if (isset($_SESSION['id'])) {
                 <div class="w3-card w3-round w3-white ">
                     <div class="w3-container w3-padding">
                         <h6 class="w3-opacity ">Procure por um livro novo aqui:</h6>
-                        <!-- <p ></p> -->
-                        <input type="text" class="w3-border w3-padding w3-input-livro" contenteditable="true">
-                        <button type="button " class="w3-button " style="background-color: #dfd6ca; "><i class="fa fa-pencil "></i> Pesquisar</button>
+                        <input type="text" class="w3-border w3-padding w3-input-livro " contenteditable="true">
+                        <button type="button" class="w3-button" style="background-color: #dfd6ca; ">
+                            <i class="fa fa-pencil"> Pesquisar</i>
+                        </button>
                     </div>
                 </div>
             </div>
