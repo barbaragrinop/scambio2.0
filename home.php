@@ -16,6 +16,8 @@ if (isset($_SESSION['id'])) {
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link href="assets/css/style.css" rel="stylesheet">
 
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
+
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
@@ -55,7 +57,7 @@ if (isset($_SESSION['id'])) {
                         <h6 class="w3-opacity ">Procure por um livro novo aqui:</h6>
                         <input type="text" class="w3-border w3-padding w3-input-livro " contenteditable="true">
                         <button type="button" class="w3-button" style="background-color: #dfd6ca; ">
-                            <i class="fa fa-pencil"> Pesquisar</i>
+                            <i class="fas fa-search"> </i>
                         </button>
                     </div>
                 </div>
@@ -65,7 +67,7 @@ if (isset($_SESSION['id'])) {
 
         <div class="container-card">
             <div class="card">
-                <img src="aculpa.jpg" alt="Livro" class="card__image">
+                <img src="./assets/imgs/aculpaedasestrelas.jpg" alt="Livro" class="card__image">
                 <p class="card__name">A Culpa é das Estrelas</p>
                 <div class="grid-container">
 
@@ -78,11 +80,14 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Perfil</button>
-                <button class="btn draw-border">Messagem</button>
+                <div class="social">
+                    <a href="#" title=" Mais Detalhes"><img width="25" src="./assets/imgs/information.png" alt="Detalhes"></a>
+                    <a href="#" title="Enviar Mensagem"><img width="22" src="./assets/imgs/message.png" alt=""></a>
+                    <a href="#" title="Ver Perfil"><img width="23" src="./assets/imgs/profile.png" alt=""></a>
+                </div>
             </div>
             <div class="card">
-                <img src="cabana.jpg" alt="Livro" class="card__image">
+                <img src="./assets/imgs/acabana.jpg" alt="Livro" class="card__image">
                 <p class="card__name">A Cabana</p>
                 <div class="grid-container">
 
@@ -95,11 +100,15 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Perfil</button>
-                <button class="btn draw-border">Messagem</button>
+                <div class="social">
+                    <a href="#" title=" Mais Detalhes"><img width="25" src="./assets/imgs/information.png" alt="Detalhes"></a>
+                    <a href="#" title="Enviar Mensagem"><img width="22" src="./assets/imgs/message.png" alt=""></a>
+                    <a href="#" title="Ver Perfil"><img width="23" src="./assets/imgs/profile.png" alt=""></a>
+                </div>
             </div>
+
             <div class="card">
-                <img src="aculpa.jpg" alt="Livro" class="card__image">
+                <img src="./assets/imgs/aculpaedasestrelas.jpg" alt="Livro" class="card__image">
                 <p class="card__name">A Culpa é das Estrelas</p>
                 <div class="grid-container">
 
@@ -112,11 +121,14 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Perfil</button>
-                <button class="btn draw-border">Messagem</button>
+                <div class="social">
+                    <a href="#" title=" Mais Detalhes"><img width="25" src="./assets/imgs/information.png" alt="Detalhes"></a>
+                    <a href="#" title="Enviar Mensagem"><img width="22" src="./assets/imgs/message.png" alt=""></a>
+                    <a href="#" title="Ver Perfil"><img width="23" src="./assets/imgs/profile.png" alt=""></a>
+                </div>
             </div>
             <div class="card">
-                <img src="cabana.jpg" alt="Livro" class="card__image">
+                <img src="./assets/imgs/acabana.jpg" alt="Livro" class="card__image">
                 <p class="card__name">A Cabana</p>
                 <div class="grid-container">
 
@@ -129,11 +141,15 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Perfil</button>
-                <button class="btn draw-border">Messagem</button>
+                <div class="social">
+                    <a href="#" title=" Mais Detalhes"><img width="25" src="./assets/imgs/information.png" alt="Detalhes"></a>
+                    <a href="#" title="Enviar Mensagem"><img width="22" src="./assets/imgs/message.png" alt=""></a>
+                    <a href="#" title="Ver Perfil"><img width="23" src="./assets/imgs/profile.png" alt=""></a>
+                </div>
             </div>
+
             <div class="card">
-                <img src="aculpa.jpg" alt="Livro" class="card__image">
+                <img src="./assets/imgs/aculpaedasestrelas.jpg" alt="Livro" class="card__image">
                 <p class="card__name">A Culpa é das Estrelas</p>
                 <div class="grid-container">
 
@@ -146,11 +162,14 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Perfil</button>
-                <button class="btn draw-border">Messagem</button>
+                <div class="social">
+                    <a href="#" title=" Mais Detalhes"><img width="25" src="./assets/imgs/information.png" alt="Detalhes"></a>
+                    <a href="#" title="Enviar Mensagem"><img width="22" src="./assets/imgs/message.png" alt=""></a>
+                    <a href="#" title="Ver Perfil"><img width="23" src="./assets/imgs/profile.png" alt=""></a>
+                </div>
             </div>
             <div class="card">
-                <img src="cabana.jpg" alt="Livro" class="card__image">
+                <img src="./assets/imgs/acabana.jpg" alt="Livro" class="card__image">
                 <p class="card__name">A Cabana</p>
                 <div class="grid-container">
 
@@ -163,60 +182,14 @@ if (isset($_SESSION['id'])) {
                     </div>
 
                 </div>
-                <button class="btn draw-border">Perfil</button>
-                <button class="btn draw-border">Messagem</button>
-            </div>
-            <div class="card">
-                <img src="aculpa.jpg" alt="Livro" class="card__image">
-                <p class="card__name">A Culpa é das Estrelas</p>
-                <div class="grid-container">
-
-                    <div class="grid-child-autor">
-                        Jhon Green
-                    </div>
-
-                    <div class="grid-child-genere">
-                        Romance
-                    </div>
-
+                <div class="social">
+                    <a href="#" title=" Mais Detalhes"><img width="25" src="./assets/imgs/information.png" alt="Detalhes"></a>
+                    <a href="#" title="Enviar Mensagem"><img width="22" src="./assets/imgs/message.png" alt=""></a>
+                    <a href="#" title="Ver Perfil"><img width="23" src="./assets/imgs/profile.png" alt=""></a>
                 </div>
-                <button class="btn draw-border">Perfil</button>
-                <button class="btn draw-border">Messagem</button>
             </div>
-            <div class="card">
-                <img src="cabana.jpg" alt="Livro" class="card__image">
-                <p class="card__name">A Cabana</p>
-                <div class="grid-container">
 
-                    <div class="grid-child-autor">
-                        William P. Young
-                    </div>
 
-                    <div class="grid-child-genere">
-                        Ficção Religiosa
-                    </div>
-
-                </div>
-                <button class="btn draw-border">Perfil</button>
-                <button class="btn draw-border">Messagem</button>
-            </div>
-            <div class="card">
-                <img src="aculpa.jpg" alt="Livro" class="card__image">
-                <p class="card__name">A Culpa é das Estrelas</p>
-                <div class="grid-container">
-
-                    <div class="grid-child-autor">
-                        Jhon Green
-                    </div>
-
-                    <div class="grid-child-genere">
-                        Romance
-                    </div>
-
-                </div>
-                <button class="btn draw-border">Perfil</button>
-                <button class="btn draw-border">Messagem</button>
-            </div>
         </div>
 
 
