@@ -54,6 +54,20 @@ session_start();
 			background-color: #f2eee8 !important;
 
 		}
+
+		.carousel-control-next-icon {
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+		}
+
+		.carousel-control-prev-icon {
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+		}
+
+		#carouselExampleControls {
+			/* width: 50%; */
+			padding-left: 30%;
+			padding-right: 30%;
+		}
 	</style>
 </head>
 
@@ -115,6 +129,7 @@ session_start();
 					<i class="fas fa-search fa-sm"></i>
 				</button>
 			</div>
+			<!-- CARD 1 -->
 			<div class="carding">
 				<div class="card">
 					<div class="card-body">
@@ -122,13 +137,10 @@ session_start();
 							<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 								<div class="carousel-inner">
 									<div class="carousel-item active">
-										<img src="img/photo1.png" class="d-block w-100" alt="...">
+										<img src="img/senhordosaneis1.png" class="d-block w-100" alt="...">
 									</div>
 									<div class="carousel-item">
-										<img src="img/photo2.jpg" class="d-block w-100" alt="...">
-									</div>
-									<div class="carousel-item">
-										<img src="img/photo3.jpg" class="d-block w-100" alt="...">
+										<img src="img/senhordosaneis2.png" class="d-block w-100" alt="...">
 									</div>
 								</div>
 								<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -142,7 +154,7 @@ session_start();
 							</div>
 						</div>
 						<div class="right">
-							<span class="titulo">O nevoeiro</span>
+							<span class="titulo">O Senhor dos Anéis</span>
 							<p>Estou doando esse livro. Interessados, dm.</p>
 
 							<span class="links-card-dentro">
@@ -165,7 +177,7 @@ session_start();
 					</div>
 				</div>
 			</div>
-
+			<!-- CARD 2 -->
 			<div class="carding">
 				<div class="card">
 					<div class="card-body">
@@ -173,13 +185,10 @@ session_start();
 							<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 								<div class="carousel-inner">
 									<div class="carousel-item active">
-										<img src="img/photo1.png" class="d-block w-100" alt="...">
+										<img src="img/harrypotter1.png" class="d-block w-100" alt="...">
 									</div>
 									<div class="carousel-item">
-										<img src="img/photo2.jpg" class="d-block w-100" alt="...">
-									</div>
-									<div class="carousel-item">
-										<img src="img/photo3.jpg" class="d-block w-100" alt="...">
+										<img src="img/harrypotter2.png" class="d-block w-100" alt="...">
 									</div>
 								</div>
 								<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -193,18 +202,66 @@ session_start();
 							</div>
 						</div>
 						<div class="right">
-							<span class="titulo">O nevoeiro</span>
+							<span class="titulo">Harry Potter</span>
+							<p>Estou doando esse livro. Interessados, dm.</p>
+
+							<span class="links-card-dentro">
+								<a href="">
+									<i class="fas fa-user fa-sm"></i>
+									Beatriz Martins
+								</a> <br>
+
+								<a href="">
+									<i class="fas fa-map fa-sm"></i>
+									Santos/SP
+								</a> <br>
+
+								<a href="">
+									<i class="fas fa-envelope fa-sm"></i>
+									Match!
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- CARD 3 -->
+			<div class="carding">
+				<div class="card">
+					<div class="card-body">
+						<div class="left">
+							<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<img src="img/pqnprincipe1.jpg" class="d-block w-100" alt="...">
+									</div>
+									<div class="carousel-item">
+										<img src="img/pqnprincipe2.jpg" class="d-block w-100" alt="...">
+									</div>
+								</div>
+								<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Previous</span>
+								</button>
+								<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Next</span>
+								</button>
+							</div>
+						</div>
+						<div class="right">
+							<span class="titulo">O pequeno Príncipe</span>
 							<p>Estou doando esse livro. Interessados, dm.</p>
 
 							<span>
 								<a href="">
 									<i class="fas fa-user fa-sm"></i>
-									Barbara Hellen
+									Yago Felipe
 								</a> <br>
 
 								<a href="">
 									<i class="fas fa-map fa-sm"></i>
-									São Vicente/SP
+									Praia Grande/SP
 								</a> <br>
 
 								<a href="">
