@@ -231,6 +231,7 @@ if (isset($_SESSION['id'])) {
                 <button class="btn draw-border">Ver Anuncio</button>
                 <button class="btn draw-border">Messagem</button>
             </div>
+			</div>
         </div>
 
 
