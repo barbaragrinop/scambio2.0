@@ -65,8 +65,8 @@ session_start();
 
 		#carouselExampleControls {
 			/* width: 50%; */
-			padding-left: 30%;
-			padding-right: 30%;
+			padding-left: 34%;
+			padding-right: 34%;
 		}
 	</style>
 </head>
