@@ -52,15 +52,15 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
-			<img class="img-index" src="../assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
+			<a href="../index.php"><img class="img-index" src="../assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="textCor nav navbar-nav">
-					<li><a class="links-nav-index" href="../perfil/perfil.php">Perfil</a></li>
+					<li><a class="links-nav-index" href="../perfil.php">Perfil</a></li>
 					<li><a class="links-nav-index" href="../mensagem/mensagem.php">Mensagem</a></li>
-					<li><a class="links-nav-index" href="index.php/#ajuda">Ajuda</a></li>
+					<li><a class="links-nav-index" href="../index.php#ajuda">Ajuda</a></li>
 				</ul>
 				<?php
 				if (isset($_SESSION['id'])) {
@@ -102,9 +102,10 @@
 			</div> -->
 			<div class="input-group input-align">
 				<input type="text" class="form-control" placeholder="O que procura?" aria-label="Username" aria-describedby="addon-wrapping">
-				<span class="input-group-text" id="addon-wrapping">
+
+				<button class="input-group-text" id="addon-wrapping">
 					<i class="fas fa-search fa-sm"></i>
-				</span>
+				</button>
 			</div>
 			<div class="carding">
 				<div class="card">
