@@ -2,7 +2,7 @@
 //Validadar se existe SESSION
 session_start();
 if (isset($_SESSION['id'])) {
-	header('Location: ../home.php');
+	header('Location: ../home/home.php');
 } else {
 ?>
 	<!DOCTYPE html>

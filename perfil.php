@@ -25,7 +25,7 @@
 
 
     <link rel="stylesheet" href="assets/css/perfil.css">
-    <title>Perfil</title>
+    <title>Scambio | Perfil</title>
 </head>
 
 <body>
@@ -39,8 +39,8 @@
             </button>
             <div class="collapse navbar-collapse" style="background-color: #F2EEE8;" id="navbarSupportedContent">
                 <ul class="textCor nav navbar-nav navbar-nav-ul">
-                    <li><a class="links-nav-home" href="home.php">Home</a></li>
-                    <li><a href="mensage.php">Mensagens</a></li>
+                    <li><a class="links-nav-home" href="home/home.php">Home</a></li>
+                    <li><a href="mensagem/mensagem.php">Mensagens</a></li>
                     <li><a href="index.php#ajuda">Ajuda</a></li>
                 </ul>
 
