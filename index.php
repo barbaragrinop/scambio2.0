@@ -71,7 +71,7 @@ session_start();
                         <?php
                         if (isset($_SESSION['id'])) {
                         ?>
-                            <a class="btn-solid-lg" href="home.php"><i class="fab fa-apple"></i>Acessar Scambio</a>
+                            <a class="btn-solid-lg" href="home/home.php"><i class="fab fa-apple"></i>Acessar Scambio</a>
                         <?php
                         } else {
                         ?>
