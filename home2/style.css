@@ -4,6 +4,18 @@ font-family: 'Roboto', sans-serif; }
 body {
 background-image: linear-gradient(to right, #f2eee8, #d4c1a5, #f2eee8); }
 
+.links-card-dentro {
+    margin-top: 5px;
+}
+
+.form-control {
+    width: 200px !important;
+}
+
+.textCor a:hover {
+    transition: .4s;
+}
+
 .wrapper {
 display: flex;
 flex-direction: row; }
