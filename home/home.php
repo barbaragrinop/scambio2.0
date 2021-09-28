@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<?php
+session_start();
+
+?>
+
 <head>
 	<title>Scambio | Home</title>
 	<!-- <link rel="stylesheet" type="text/css" href="css/home.css"> -->
@@ -69,7 +74,7 @@
 				if (isset($_SESSION['id'])) {
 				?>
 					<!-- Modificar este Botão  ----  Botão Logout -->
-					<form action="logout.php">
+					<form action="../logout.php">
 						<input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
 					</form>
 				<?php
