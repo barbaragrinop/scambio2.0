@@ -341,7 +341,7 @@ div.box {
 
 .h1-large {
   font-size: 60px;
-  padding-bottom: 8px;
+  margin-bottom: -7px;
 }
 
 .description-quemsomos {
@@ -353,6 +353,10 @@ div.box {
   padding-top: 20px;
   display: block;
   margin: auto;
+}
+
+.div-ajuda label {
+  font-size: 1.55rem;
 }
 
 #ajuda .span-ajuda {

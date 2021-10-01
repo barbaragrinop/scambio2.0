@@ -92,7 +92,7 @@ session_start();
     </header>
 
     <div id="comofunciona" class="container-fluid">
-        <h2 class="h1-large" style="font-family: Cutive;">Como Funciona?</h2>
+        <h2 class="h1-large" style="font-family: sans-serif;">Como Funciona?</h2>
         <br>
         <br>
         <div class="container">
@@ -107,7 +107,7 @@ session_start();
     </div>
 
     <div id="sobre" class="container-fluid sobre">
-        <h2 class="h1-large" style="font-family: Cutive;">Sobre Nós e o Projeto</h2>
+        <h2 class="h1-large" style="font-family: sans-serif;">Sobre Nós e o Projeto</h2>
         <br>
         <br>
         <h2 class="h4 description-quemsomos" style="line-height: 30px;">Somos alunos do curso técnico em Desenvolvimento de Sistemas na ETEC Dra Ruth Cardoso em São Vicente. Atualmente no terceiro módulo e último. </h2>
@@ -162,7 +162,7 @@ session_start();
     </div>
 
     <div id="ajuda" class="container-fluid">
-        <h2 class="h1-large" style="font-family: Cutive;">Precisa de Ajuda?</h2>
+        <h2 class="h1-large" style="font-family: sans-serif;">Precisa de Ajuda?</h2>
         <br>
         <br>
         <span class="span-ajuda">Deixe aqui sua dúvida, sugestão ou comentário sobre o projeto</span>
@@ -237,9 +237,15 @@ session_start();
 
     <script>
         function alertaBtnAjuda() {
-            let input = document.querySelector('#nome');
-            let nome = input.value;
-            alert("Olá " + nome + ". Você receberá uma resposta em breve!");
+            let nome = document.querySelector('#nome').value;
+            let email = document.querySelector('#email').value;
+            let estado = document.querySelector('#estado').value;
+            let mensagem = document.querySelector('#mensagem').value;
+            if (nome && email && estado && mensagem != "") {
+                alert("Obrigado por entrar em contato, " + nome + ". Você receberá uma resposta em breve!");
+            } else {
+                alert('Preencha todos os campos do formulário corretamente!')
+            }
         }
     </script>
 </body>
