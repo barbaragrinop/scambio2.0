@@ -129,7 +129,27 @@ session_start();
 					<i class="fas fa-search fa-sm"></i>
 				</button>
 			</div>
-			<!-- CARD 1 -->
+			<?php
+				include_once('../config/conexao.php');
+				$sql = "SELECT ANUN.CD_ANUNCIO as cda,ANUN.DS_ANUNCIO as ds,ANUN.DS_IMG1 as img1,ANUN.DS_IMG2 as img2,US.nm_usuario as user,LOC.NM_LOGRADOURO as loc,LOC.CD_CASA as casa,";
+				$sql .= " BAIRRO.NM_BAIRRO as bairro,CITY.NM_CIDADE as cid,UF.SG_UF as u,LIV.NM_LIVRO as livro,LIV.DT_LANCAMENTO as lanc, AUT.NM_AUTOR AS AUTOR, GE.NM_GENERO AS genero FROM db_scambio.TB_ANUNCIO AS ANUN INNER JOIN db_scambio.tb_usuario AS US ON";
+				$sql .= " ANUN.cd_usuario = US.cd_usuario INNER JOIN db_scambio.tb_logradouro AS LOC ON US.cd_logradouro = LOC.CD_LOGRADOURO INNER JOIN db_scambio.TB_BAIRRO AS BAIRRO ON";
+				$sql .= " BAIRRO.cd_BAIRRO = LOC.cd_BAIRRO INNER JOIN db_scambio.TB_CIDADE AS CITY ON CITY.cd_CIDADE = BAIRRO.cd_CIDADE INNER JOIN db_scambio.TB_UF AS UF ON";
+				$sql .= " UF.CD_UF = CITY.CD_UF INNER JOIN db_scambio.TB_LIVRO AS LIV ON LIV.CD_LIVRO = ANUN.CD_LIVRO INNER JOIN db_scambio.TB_AUTOR AS AUT ON AUT.CD_AUTOR = LIV.CD_AUTOR";
+				$sql .= " INNER JOIN DB_SCAMBIO.livro_genero AS LIVG ON  LIVG.CD_LIVRO = LIV.CD_LIVRO INNER JOIN  DB_SCAMBIO.tb_genero AS GE ON  GE.cd_genero = LIVG.cd_genero";
+
+				$query = $pdo->prepare($sql);
+				$query->execute();
+				$result = $query->fetchAll(PDO::FETCH_OBJ);
+
+				/* CODE PARA TRANSFORMAR IMAGEM EM BASE64 
+				$data = file_get_contents('C:\xampp\htdocs\scambio2.0\515vbT3t2UL.jpg');
+				$data = base64_encode($data);
+				$query2 = $pdo->prepare('UPDATE DB_SCAMBIO.TB_ANUNCIO SET DS_IMG1 = "'. $data .'" WHERE CD_ANUNCIO = 1');
+				$query2->execute(); */
+
+				foreach ($result as $key => $row) {
+			?>
 			<div class="carding">
 				<div class="card">
 					<div class="card-body">
@@ -137,10 +157,10 @@ session_start();
 							<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 								<div class="carousel-inner">
 									<div class="carousel-item active">
-										<img src="img/senhordosaneis1.png" class="d-block w-100" alt="...">
+										<img src="data:image/jpg;base64,<?php echo $row->img1?>" class="d-block w-100" alt="...">
 									</div>
 									<div class="carousel-item">
-										<img src="img/senhordosaneis2.png" class="d-block w-100" alt="...">
+										<img src="data:image/jpg;base64,<?php echo $row->img2?>" class="d-block w-100" alt="...">
 									</div>
 								</div>
 								<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -154,18 +174,18 @@ session_start();
 							</div>
 						</div>
 						<div class="right">
-							<span class="titulo">O Senhor dos Anéis</span>
-							<p>Estou doando esse livro. Interessados, dm.</p>
+							<span class="titulo"><?php echo $row->livro;?></span>
+							<p><?php echo $row->ds;?></p>
 
 							<span class="links-card-dentro">
 								<a href="">
 									<i class="fas fa-user fa-sm"></i>
-									Barbara Hellen
+									<?php echo $row->user;?>
 								</a> <br>
 
 								<a href="">
 									<i class="fas fa-map fa-sm"></i>
-									São Vicente/SP
+									<?php echo($row->cid . "/" . $row->u);?>
 								</a> <br>
 
 								<a href="">
@@ -177,102 +197,9 @@ session_start();
 					</div>
 				</div>
 			</div>
-			<!-- CARD 2 -->
-			<div class="carding">
-				<div class="card">
-					<div class="card-body">
-						<div class="left">
-							<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-								<div class="carousel-inner">
-									<div class="carousel-item active">
-										<img src="img/harrypotter1.png" class="d-block w-100" alt="...">
-									</div>
-									<div class="carousel-item">
-										<img src="img/harrypotter2.png" class="d-block w-100" alt="...">
-									</div>
-								</div>
-								<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Previous</span>
-								</button>
-								<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-									<span class="carousel-control-next-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Next</span>
-								</button>
-							</div>
-						</div>
-						<div class="right">
-							<span class="titulo">Harry Potter</span>
-							<p>Estou doando esse livro. Interessados, dm.</p>
-
-							<span class="links-card-dentro">
-								<a href="">
-									<i class="fas fa-user fa-sm"></i>
-									Beatriz Martins
-								</a> <br>
-
-								<a href="">
-									<i class="fas fa-map fa-sm"></i>
-									Santos/SP
-								</a> <br>
-
-								<a href="">
-									<i class="fas fa-envelope fa-sm"></i>
-									Match!
-								</a>
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- CARD 3 -->
-			<div class="carding">
-				<div class="card">
-					<div class="card-body">
-						<div class="left">
-							<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-								<div class="carousel-inner">
-									<div class="carousel-item active">
-										<img src="img/pqnprincipe1.jpg" class="d-block w-100" alt="...">
-									</div>
-									<div class="carousel-item">
-										<img src="img/pqnprincipe2.jpg" class="d-block w-100" alt="...">
-									</div>
-								</div>
-								<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Previous</span>
-								</button>
-								<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-									<span class="carousel-control-next-icon" aria-hidden="true"></span>
-									<span class="visually-hidden">Next</span>
-								</button>
-							</div>
-						</div>
-						<div class="right">
-							<span class="titulo">O pequeno Príncipe</span>
-							<p>Estou doando esse livro. Interessados, dm.</p>
-
-							<span>
-								<a href="">
-									<i class="fas fa-user fa-sm"></i>
-									Yago Felipe
-								</a> <br>
-
-								<a href="">
-									<i class="fas fa-map fa-sm"></i>
-									Praia Grande/SP
-								</a> <br>
-
-								<a href="">
-									<i class="fas fa-envelope fa-sm"></i>
-									Match!
-								</a>
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php
+				}
+			?>
 		</div>
 
 		<!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
