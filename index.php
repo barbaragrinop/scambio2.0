@@ -264,9 +264,9 @@ session_start();
                 </div>
             </li>
             <li>
-                <span class="fab-labelll"><a style="text-decoration: none; color: white;" href="#">Meu Perfil</a></span>
+                <span class="fab-labelll"><a style="text-decoration: none; color: white;" href="./perfil.php">Meu Perfil</a></span>
                 <div class="fab-icon-holderrr">
-                    <a style="text-decoration: none;" href="#"><i class="fas fa-user"></i></a>
+                    <a style="text-decoration: none;" href="./perfil.php"><i class="fas fa-user"></i></a>
                 </div>
             </li>
         </ul>
