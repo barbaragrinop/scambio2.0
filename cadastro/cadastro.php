@@ -45,6 +45,12 @@ if (isset($_SESSION['id'])) {
 		<script src="../assets/js/script.js"></script>
 		<script src="../assets/js/confirmacao-senha.js"></script>
 
+		<style>
+			body {
+				zoom: 0.9
+			}
+		</style>
+
 	</head>
 
 	<body>
