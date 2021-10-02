@@ -18,6 +18,10 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/imgs/logoFundo.png" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./fab/fab.css">
+
     <title>Scambio</title>
 </head>
 
@@ -71,12 +75,12 @@ session_start();
                         <?php
                         if (isset($_SESSION['id'])) {
                         ?>
-                            <a class="btn-solid-lg" href="home/home.php"><i class="fab fa-apple"></i>Acessar Scambio</a>
+                            <a class="btn-solid-lg" href="home/home.php"><i class="fab"></i>Acessar Scambio</a>
                         <?php
                         } else {
                         ?>
-                            <a class="btn-solid-lg" href="cadastro/cadastro.php"><i class="fab fa-apple"></i>Cadastre-se</a>
-                            <a class="btn-solid-lg secondary" href="login/login.php"><i class="fab fa-google-play"></i>Entrar</a>
+                            <a class="btn-solid-lg" href="cadastro/cadastro.php"><i class="fab"></i>Cadastre-se</a>
+                            <a class="btn-solid-lg secondary" href="login/login.php"><i></i>Entrar</a>
                         <?php
                         }
                         ?>
@@ -233,6 +237,39 @@ session_start();
                 </div>
             </form>
         </div>
+    </div>
+
+    <div class="fab-containerrr">
+        <div class="fabbb fab-icon-holderrr">
+            <i class="fas fa-question"></i>
+        </div>
+
+        <ul class="fab-optionsss">
+            <li>
+                <span class="fab-labelll">Documentation</span>
+                <div class="fab-icon-holderrr">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+            </li>
+            <li>
+                <span class="fab-labelll">Video Tutorials</span>
+                <div class="fab-icon-holderrr">
+                    <i class="fas fa-video"></i>
+                </div>
+            </li>
+            <li>
+                <span class="fab-labelll">Live Chat</span>
+                <div class="fab-icon-holderrr">
+                    <i class="fas fa-comments"></i>
+                </div>
+            </li>
+            <li>
+                <span class="fab-labelll">Feedback</span>
+                <div class="fab-icon-holderrr">
+                    <i class="fas fa-comment-alt"></i>
+                </div>
+            </li>
+        </ul>
     </div>
 
     <script>
