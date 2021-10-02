@@ -4,8 +4,16 @@
 
 .navbar-left li a {
   color: #9d9d9d;
-  font: 14px sans-serif;
+  font: 17px sans-serif;
   padding: 15px;
+}
+
+.navbar-brand {
+  margin-top: 4px;
+}
+
+.navbar-collapse {
+  margin-top: 5px;
 }
 
 .navbar-left li a:hover {
@@ -18,7 +26,7 @@
 }
 
 .navbar {
-  height: 52px !important;
+  height: 54px !important;
   color: #c5af99 !important;
 }
 

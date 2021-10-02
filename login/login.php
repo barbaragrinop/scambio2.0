@@ -35,6 +35,16 @@ if (isset($_SESSION['id'])) {
 		<link href="assets/css/style.css" rel="stylesheet">
 		<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
 		<!--===============================================================================================-->
+
+		<style>
+			.textCor li a {
+				font-size: 15px;
+			}
+
+			.navbar-brand {
+				margin-top: 0.5px;
+			}
+		</style>
 	</head>
 
 	<body>
