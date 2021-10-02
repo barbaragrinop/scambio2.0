@@ -246,27 +246,27 @@ session_start();
 
         <ul class="fab-optionsss">
             <li>
-                <span class="fab-labelll">Documentation</span>
+                <span class="fab-labelll"><a style="text-decoration: none; color: white;" href="./home/home.php">Home</a></span>
                 <div class="fab-icon-holderrr">
-                    <i class="fas fa-file-alt"></i>
+                    <a style="text-decoration: none;" href="./home/home.php"><i class="fas fa-file-alt"></i></a>
                 </div>
             </li>
             <li>
-                <span class="fab-labelll">Video Tutorials</span>
+                <span class="fab-labelll"><a style="text-decoration: none; color: white;" href="#">Publicar Livro</a></span>
                 <div class="fab-icon-holderrr">
-                    <i class="fas fa-video"></i>
+                    <a style="text-decoration: none;" href="#"><i class="fas fa-book"></i></a>
                 </div>
             </li>
             <li>
-                <span class="fab-labelll">Live Chat</span>
+                <span class="fab-labelll"><a style="text-decoration: none; color: white;" href="#">Mensagens</a></span>
                 <div class="fab-icon-holderrr">
-                    <i class="fas fa-comments"></i>
+                    <a style="text-decoration: none;" href="#"><i class="fas fa-comments"></i></a>
                 </div>
             </li>
             <li>
-                <span class="fab-labelll">Feedback</span>
+                <span class="fab-labelll"><a style="text-decoration: none; color: white;" href="#">Meu Perfil</a></span>
                 <div class="fab-icon-holderrr">
-                    <i class="fas fa-comment-alt"></i>
+                    <a style="text-decoration: none;" href="#"><i class="fas fa-user"></i></a>
                 </div>
             </li>
         </ul>
