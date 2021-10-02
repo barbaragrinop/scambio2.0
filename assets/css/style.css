@@ -6,6 +6,10 @@ html {
   font-family: sans-serif;
 }
 
+.container-fluid {
+  font-size: 15px;
+}
+
 .secondaryColor,
 .vsc-initialized {
   background-color: #f2eee8 !important;
@@ -18,6 +22,10 @@ html {
 
 .links-nav-index:hover {
   transition: 0.5s;
+}
+
+.navbar-nav {
+  padding-top: 1.5px;
 }
 
 .navbar-nav li a {
