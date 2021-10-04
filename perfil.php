@@ -61,11 +61,15 @@ if (isset($_SESSION['id'])) {
     // ALL QUERY
     include_once('config/conexao.php');
 
+    $data = file_get_contents('C:\xampp\htdocs\scambio2.0\babi.jpg');
+    $data = base64_encode($data);
+    $query2 = $pdo->prepare('UPDATE DB_SCAMBIO.TB_USUARIO SET DS_IMGP = "'. $data .'" WHERE CD_usuario = ' . $_SESSION['id']);
+    $query2->execute();
+
     // QUERY PARA PUXAR INFORMAÇÃO DO USUPARIO
     $usuario = $pdo->prepare("SELECT * FROM DB_SCAMBIO.TB_USUARIO WHERE CD_USUARIO =  " . $_SESSION['id']);
     $usuario->execute();
     $result = $usuario->fetch();
-
 
     // QUERY PARA PUXAR LIVROS POSTADOS PELO USUARIO
     $sql = "SELECT LIV.NM_LIVRO AS NML, ANUN.CD_ANUNCIO AS CDANUN  FROM DB_SCAMBIO.TB_lIVRO AS LIV";
@@ -74,6 +78,13 @@ if (isset($_SESSION['id'])) {
     $livrouser = $pdo->prepare($sql);
     $livrouser->execute();
     $result2 = $livrouser->fetchAll(PDO::FETCH_OBJ);
+
+    $sql2 = "SELECT COUNT(*) as total, LIV.NM_LIVRO AS NML, ANUN.CD_ANUNCIO AS CDANUN  FROM DB_SCAMBIO.TB_lIVRO AS LIV";
+    $sql2 .= " INNER JOIN DB_SCAMBIO.TB_ANUNCIO AS ANUN ON ANUN.CD_LIVRO = LIV.CD_LIVRO";
+    $sql2 .= " INNER JOIN DB_SCAMBIO.TB_USUARIO AS US ON US.CD_USUARIO = ANUN.CD_USUARIO WHERE US.CD_USUARIO = " . $_SESSION['id'];
+    $countpublic = $pdo->prepare($sql2);
+    $countpublic->execute();
+    $result3 = $countpublic->fetch(PDO::FETCH_ASSOC);
     ?>
     <div class="container">
         <div class="main">
@@ -81,13 +92,19 @@ if (isset($_SESSION['id'])) {
                 <div class="col-md-4 mt-1">
                     <div class="card text-center sidebar">
                         <div class="card-body">
-                            <img src="https://github.com/munirarabi.png" class="rounded-circle" alt="" width="170" height="170">
+                       <!--  DENTRO DA TABELA USUARIO NO BANCO ADICIONEI UMA COLUNA CHAMADA DS_IMGP - PARA IMAGEM DE PERFIL DO USUARIO
+                        USEI O SCRIPT ABAIXO PARA ADICIONAR A FOTO DO USUARIO NO BANCO COMO ESTOU COM O USUARIO DA BABIS ADICIONEI A FOTO DELA
+                        $data = file_get_contents('C:\xampp\htdocs\scambio2.0\babi.jpg');
+                        $data = base64_encode($data);
+                        $query2 = $pdo->prepare('UPDATE DB_SCAMBIO.TB_USUARIO SET DS_IMGP = "'. $data .'" WHERE CD_usuario = ' . $_SESSION['id']);
+                        $query2->execute(); -->
+                            <img src="data:image;base64,<?php echo $result["DS_IMGP"];?>" class="rounded-circle" alt="" width="170" height="170">
                             <div class="mt-3">
                                 <h2>Perfil</h2>
                                 <hr>
                                 <h4>Nome: <span id="nomeUsuario"><?php echo($result['nm_usuario']); ?></span></h4>
                                 <h4>Livros Trocados: <span id="livrosTrocados">0</span></h4>
-                                <h4>Livros Postados: <span id="livrosPostados">1</span></h4>
+                                <h4>Livros Postados: <span id="livrosPostados"><?php print_r($result3['total']);?></span></h4>
                             </div>
                         </div>
                     </div>
