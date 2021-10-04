@@ -1,3 +1,7 @@
+<?php 
+session_start();
+if (isset($_SESSION['id'])) {
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -52,6 +56,25 @@
             </div>
         </div>
     </nav>
+    <?php
+
+    // ALL QUERY
+    include_once('config/conexao.php');
+
+    // QUERY PARA PUXAR INFORMAÇÃO DO USUPARIO
+    $usuario = $pdo->prepare("SELECT * FROM DB_SCAMBIO.TB_USUARIO WHERE CD_USUARIO =  " . $_SESSION['id']);
+    $usuario->execute();
+    $result = $usuario->fetch();
+
+
+    // QUERY PARA PUXAR LIVROS POSTADOS PELO USUARIO
+    $sql = "SELECT LIV.NM_LIVRO AS NML, ANUN.CD_ANUNCIO AS CDANUN  FROM DB_SCAMBIO.TB_lIVRO AS LIV";
+    $sql .= " INNER JOIN DB_SCAMBIO.TB_ANUNCIO AS ANUN ON ANUN.CD_LIVRO = LIV.CD_LIVRO";
+    $sql .= " INNER JOIN DB_SCAMBIO.TB_USUARIO AS US ON US.CD_USUARIO = ANUN.CD_USUARIO WHERE US.CD_USUARIO = " . $_SESSION['id'];
+    $livrouser = $pdo->prepare($sql);
+    $livrouser->execute();
+    $result2 = $livrouser->fetchAll(PDO::FETCH_OBJ);
+    ?>
     <div class="container">
         <div class="main">
             <div class="row">
@@ -62,7 +85,7 @@
                             <div class="mt-3">
                                 <h2>Perfil</h2>
                                 <hr>
-                                <h4>Nome: <span id="nomeUsuario">Munir Arabi</span></h4>
+                                <h4>Nome: <span id="nomeUsuario"><?php echo($result['nm_usuario']); ?></span></h4>
                                 <h4>Livros Trocados: <span id="livrosTrocados">0</span></h4>
                                 <h4>Livros Postados: <span id="livrosPostados">1</span></h4>
                             </div>
@@ -128,16 +151,22 @@
                     <div class="card mb-3 content">
                         <h1 class="m-3">Livros Postados</h1>
                         <div class="card-body">
+                            <?php 
+                            foreach ($result2 as $key => $row) {
+                            ?>
                             <div class="row">
                                 <div class="col-md-3">
                                     <div>
-                                        <h5>Harry Potter</h5>
+                                        <h5><?php echo $row->NML;?></h5>
                                     </div>
                                 </div>
                                 <div class="col-md-9 text-secondary">
                                     <div class="div-link-postado"><a class="link-livro-postado" href="">Ver postagem</a></div>
                                 </div>
                             </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -145,8 +174,12 @@
         </div>
     </div>
     <script>
-        feather.replace()
+        feather.replace();
     </script>
 </body>
-
 </html>
+<?php
+} else {
+    header('Location: login/login.php');
+}
+?>
