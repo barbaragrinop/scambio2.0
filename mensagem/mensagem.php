@@ -279,6 +279,6 @@ if (isset($_SESSION['id'])) {
     </html>
 <?php
 } else {
-    header('Location: login/login.php');
+    header('Location: ../login/login.php');
 }
 ?>
