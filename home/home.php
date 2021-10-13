@@ -217,6 +217,8 @@ include_once('../config/conexao.php');
 			?>
 		</div>
 
+		<?php include_once('../menu/menu.php');?>
+
 		<!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
 	</div>
 
@@ -244,6 +246,8 @@ include_once('../config/conexao.php');
 			</div>
 		</div>
 	</div>
+
+	
 </body>
 
 </html>
