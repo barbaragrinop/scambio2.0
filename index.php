@@ -239,38 +239,7 @@ session_start();
         </div>
     </div>
 
-    <div class="fab-containerrr">
-        <div class="fabbb fab-icon-holderrr">
-            <i class="fas fa-question"></i>
-        </div>
-
-        <ul class="fab-optionsss">
-            <li>
-                <span class="fab-labelll"><a style="text-decoration: none; color: white;" href="./home/home.php">Home</a></span>
-                <div class="fab-icon-holderrr">
-                    <a style="text-decoration: none;" href="./home/home.php"><i class="fas fa-file-alt"></i></a>
-                </div>
-            </li>
-            <li>
-                <span class="fab-labelll"><a style="text-decoration: none; color: white;" href="#">Publicar Livro</a></span>
-                <div class="fab-icon-holderrr">
-                    <a style="text-decoration: none;" href="#"><i class="fas fa-book"></i></a>
-                </div>
-            </li>
-            <li>
-                <span class="fab-labelll"><a style="text-decoration: none; color: white;" href="#">Mensagens</a></span>
-                <div class="fab-icon-holderrr">
-                    <a style="text-decoration: none;" href="#"><i class="fas fa-comments"></i></a>
-                </div>
-            </li>
-            <li>
-                <span class="fab-labelll"><a style="text-decoration: none; color: white;" href="./perfil.php">Meu Perfil</a></span>
-                <div class="fab-icon-holderrr">
-                    <a style="text-decoration: none;" href="./perfil.php"><i class="fas fa-user"></i></a>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <?php include('./menu/menu.php') ?>
 
     <script>
         function alertaBtnAjuda() {

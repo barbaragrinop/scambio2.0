@@ -4,6 +4,8 @@
 --
 -- Host: 127.0.0.1:3308
 -- Generation Time: Oct 06, 2021 at 12:46 AM
+create database db_scambio;
+use db_scambio;
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
