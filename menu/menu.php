@@ -57,7 +57,7 @@
             }
 
             function redirectChat() {
-                window.location.replace('../chat/users.php');
+                window.location.replace('../chat/users-all.php');
             }
 
             function redirectPerfil() {
