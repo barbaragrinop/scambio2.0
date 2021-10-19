@@ -71,6 +71,29 @@ include_once('../config/conexao.php');
 
 		.buttonLogout {
 			margin-top: 5.5px;
+			background-color: #7c8380;
+			color: white;
+			padding: 12px 30px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			float: right;
+			border-radius: 20px;
+			/* border: 1px inset #594cda; */
+			background-color: rgb(223, 221, 221);
+			color: #594cda;
+			text-decoration: none;
+			margin-top: 7px;
+			font-family: sans-serif;
+			font-weight: 700;
+		}
+
+		.input-group-text {
+			height: 34px;
+		}
+
+		.buttonLogout {
+			height: 40px;
 		}
 	</style>
 </head>
@@ -93,7 +116,7 @@ include_once('../config/conexao.php');
 				?>
 					<!-- Modificar este Botão  ----  Botão Logout -->
 					<form action="../logout.php">
-						<input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+						<input id="inpkill" class="inpkill buttonLogout" name="DestroySession" type="submit" value="Sair">
 					</form>
 				<?php
 				} else {
@@ -129,21 +152,20 @@ include_once('../config/conexao.php');
 			<div class="input-group input-align">
 				<!-- MODIFICAR INPUT NOVAMENTE POIS TIVE QUE COLOCAR UM FORM PARA FAZER O FILTRO  !!!! IMPORTANTE -->
 				<form action="" method="post">
-				<input name="filtro" type="text" class="form-control" placeholder="O que procura?" aria-label="Username" aria-describedby="addon-wrapping">
+					<input name="filtro" type="text" class="form-control" placeholder="O que procura?" aria-label="Username" aria-describedby="addon-wrapping">
 
-				<button class="input-group-text" id="addon-wrapping">
-					<i class="fas fa-search fa-sm"></i>
-				</button>
+					<button class="input-group-text" id="addon-wrapping">
+						<i class="fas fa-search fa-sm"></i>
+					</button>
 				</form>
 			</div>
 			<?php
-			if(isset($_POST['filtro'])){
+			if (isset($_POST['filtro'])) {
 				$nmliv = $_POST['filtro'];
-			}
-			else{
+			} else {
 				$nmliv = "";
 			}
-			
+
 			$sql = "SELECT ANUN.CD_ANUNCIO as cda,ANUN.DS_ANUNCIO as ds,ANUN.DS_IMG1 as img1,ANUN.DS_IMG2 as img2,US.nm_usuario as user,LOC.NM_LOGRADOURO as loc,LOC.CD_CASA as casa,";
 			$sql .= " BAIRRO.NM_BAIRRO as bairro,CITY.NM_CIDADE as cid,UF.SG_UF as u,LIV.NM_LIVRO as livro,LIV.DT_LANCAMENTO as lanc, AUT.NM_AUTOR AS AUTOR, GE.NM_GENERO AS genero FROM db_scambio.TB_ANUNCIO AS ANUN INNER JOIN db_scambio.tb_usuario AS US ON";
 			$sql .= " ANUN.cd_usuario = US.cd_usuario INNER JOIN db_scambio.tb_logradouro AS LOC ON US.cd_logradouro = LOC.CD_LOGRADOURO INNER JOIN db_scambio.TB_BAIRRO AS BAIRRO ON";
@@ -164,7 +186,7 @@ include_once('../config/conexao.php');
 			foreach ($result as $key => $row) {
 			?>
 
-		<!-- 	!! IMPORTANTE ARRUMAR OS CARDS POIS O CLIQUE NO SEGUNDO CARD ESTÁ PASSANDO A FOTO DO PRIMEIRO -->
+				<!-- 	!! IMPORTANTE ARRUMAR OS CARDS POIS O CLIQUE NO SEGUNDO CARD ESTÁ PASSANDO A FOTO DO PRIMEIRO -->
 				<div class="carding">
 					<div class="card">
 						<div class="card-body">
@@ -217,7 +239,7 @@ include_once('../config/conexao.php');
 			?>
 		</div>
 
-		<?php include_once('../menu/menu.php');?>
+		<?php include_once('../menu/menu.php'); ?>
 
 		<!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
 	</div>
@@ -247,7 +269,7 @@ include_once('../config/conexao.php');
 		</div>
 	</div>
 
-	
+
 </body>
 
 </html>

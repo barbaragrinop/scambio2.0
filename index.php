@@ -23,6 +23,19 @@ session_start();
     <link rel="stylesheet" href="./fab/fab.css">
 
     <title>Scambio</title>
+
+    <style>
+        .label-btn {
+            margin-left: 330px;
+            border-radius: 12px;
+            border: none;
+            background-color: #AC7E55;
+            width: 80px;
+            height: 32px;
+            font-size: 1.45rem !important;
+            font-weight: 600;
+        }
+    </style>
 </head>
 
 <body class="body">
@@ -233,7 +246,7 @@ session_start();
                     </div>
                 </div>
                 <div class="row btn-submit">
-                    <input onclick="alertaBtnAjuda()" type="submit" value="Enviar">
+                    <input class="label-btn" onclick="alertaBtnAjuda()" type="submit" value="Enviar">
                 </div>
             </form>
         </div>

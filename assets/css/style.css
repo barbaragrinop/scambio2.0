@@ -10,8 +10,7 @@ html {
   font-size: 15px;
 }
 
-.secondaryColor,
-.vsc-initialized {
+.secondaryColor, .vsc-initialized {
   background-color: #f2eee8 !important;
   border: #f2eee8;
 }
@@ -208,21 +207,18 @@ html {
   box-sizing: border-box;
 }
 
-.div-label-input input,
-label {
+.div-label-input input, label {
   width: 70%;
   height: 3rem;
   font-size: 1.3rem;
 }
 
-.div-label-input input:valid,
-input:focus {
+.div-label-input input:valid, input:focus {
   /* border-bottom: 2px solid #7ba7a2;
     border-radius: 4px; */
 }
 
-input:valid + label,
-input:focus + label {
+input:valid+label, input:focus+label {
   color: #26a69a;
   /* font-size: .8rem; */
   top: -30px;
@@ -379,9 +375,7 @@ div.box {
   margin-left: 13px;
 }
 
-.div-ajuda form div input[type="text"],
-select,
-textarea {
+.div-ajuda form div input[type="text"], select, textarea {
   width: 400px;
   padding: 12px;
   border: 1px solid #ccc;
@@ -408,8 +402,8 @@ label {
   color: #594cda;
   text-decoration: none;
   margin-top: 7px;
-  font-family: sans-serif;
-  font-weight: 700;
+  font-family: sans-serif !important;
+  font-weight: 700 !important;
 }
 
 .btnClass2 {
