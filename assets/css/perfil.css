@@ -52,23 +52,17 @@ input[type="file"] {
 
 .custom-file-upload {
   margin-top: 5px;
-
   background: #df464a;
-
   color: white;
   font-size: 16px;
   font-family: sans-serif;
   font-weight: bold;
-
   border-radius: 8px;
   border: 0;
-
   padding: 8px 35px;
   cursor: pointer;
-
   display: flex;
   align-items: center;
-
   width: 200px;
   height: 33px;
 }
@@ -111,6 +105,7 @@ input[type="file"] {
 }
 
 /* NAVBAR */
+
 .navbar {
   margin-top: -21px;
   margin-left: -15px;
