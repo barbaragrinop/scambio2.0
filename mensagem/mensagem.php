@@ -21,6 +21,29 @@ if (isset($_SESSION['id'])) {
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="../../assets/imgs/logoFundo.png" />
 
+        <style>
+            span.name {
+                font-size: 14px;
+            }
+
+            span.time {
+                font-size: 12px !important;
+                margin-left: 10px;
+            }
+
+            .chat-name {
+                font-size: 13px !important;
+            }
+
+            .chat-hour {
+                font-size: 12px !important;
+            }
+
+            .fa-check-circle {
+                padding-left: 3px;
+            }
+        </style>
+
     </head>
 
     <body style="background-color: #F2EEE8;">
@@ -203,40 +226,12 @@ if (isset($_SESSION['id'])) {
                                             <li class="chat-right">
                                                 <div class="chat-hour">08:56 <span class="fa fa-check-circle"></span></div>
                                                 <div class="chat-text">Está sim.
-                                                    <br>Ele apenas esta com marcas de uso
+                                                    <br>Ele apenas esta com marcas de uso!
                                                 </div>
                                                 <div class="chat-avatar">
                                                     <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
                                                     <div class="chat-name">Marcos</div>
                                                 </div>
-                                            </li>
-                                            <li class="chat-left">
-                                                <div class="chat-avatar">
-                                                    <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                                    <div class="chat-name">Russell</div>
-                                                </div>
-                                                <div class="chat-text">Está tudo bem!
-                                                    <br>Moramos na mesma cidade, onde posso te encontrar?
-                                                </div>
-                                                <div class="chat-hour">08:57 <span class="fa fa-check-circle"></span></div>
-                                            </li>
-                                            <li class="chat-right">
-                                                <div class="chat-hour">08:59 <span class="fa fa-check-circle"></span></div>
-                                                <div class="chat-text">hoje as 15h no shopping, pode ser?</div>
-                                                <div class="chat-avatar">
-                                                    <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
-                                                    <div class="chat-name">Marcos</div>
-                                                </div>
-                                            </li>
-                                            <li class="chat-left">
-                                                <div class="chat-avatar">
-                                                    <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                                    <div class="chat-name">Russell</div>
-                                                </div>
-                                                <div class="chat-text">Claro!
-                                                    <br>hoje te econtro lá então, obrigada!.
-                                                </div>
-                                                <div class="chat-hour">09:00 <span class="fa fa-check-circle"></span></div>
                                             </li>
                                         </ul>
                                         <div class="form-group mt-3 mb-0">

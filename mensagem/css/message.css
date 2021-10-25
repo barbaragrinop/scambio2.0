@@ -2,22 +2,6 @@ body {
     margin-top: 20px;
 }
 
-
-/*************** 1.Variables ***************/
-
-
-/* ------------------ Color Pallet ------------------ */
-
-
-/*************** 2.Mixins ***************/
-
-
-/************************************************
-    ************************************************
-										Search Box
-	************************************************
-************************************************/
-
 .chat-search-box {
     -webkit-border-radius: 3px 0 0 0;
     -moz-border-radius: 3px 0 0 0;
@@ -58,7 +42,6 @@ body {
     }
 }
 
-
 /************************************************
 	************************************************
 									Users Container
@@ -75,7 +58,6 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
 }
-
 
 /************************************************
 	************************************************
@@ -199,7 +181,6 @@ body {
     }
 }
 
-
 /************************************************
 	************************************************
 									Chat right side
@@ -230,8 +211,7 @@ body {
     padding: 1rem;
 }
 
-.chat-container li.chat-left,
-.chat-container li.chat-right {
+.chat-container li.chat-left, .chat-container li.chat-right {
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -318,8 +298,7 @@ body {
 }
 
 @media (max-width: 767px) {
-    .chat-container li.chat-left,
-    .chat-container li.chat-right {
+    .chat-container li.chat-left, .chat-container li.chat-right {
         flex-direction: column;
         margin-bottom: 30px;
     }
