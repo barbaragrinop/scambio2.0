@@ -226,7 +226,7 @@ if (isset($_SESSION['id'])) {
                                             <li class="chat-right">
                                                 <div class="chat-hour">08:56 <span class="fa fa-check-circle"></span></div>
                                                 <div class="chat-text">Está sim.
-                                                    <br>Ele apenas esta com marcas de uso
+                                                    <br>Ele apenas esta com marcas de uso!
                                                 </div>
                                                 <div class="chat-avatar">
                                                     <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
