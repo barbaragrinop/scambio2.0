@@ -50,16 +50,33 @@ if (!isset($_SESSION['id'])) {
             border-top: 0px solid #dee2e6 !important;
             color: #313336 !important;
         }
+
+        #inpkill {
+            margin-top: -24px;
+        }
     </style>
 </head>
 
 <body style="background-image: linear-gradient(#f2eee8, #d4c1a5, #f2eee8);">
-<div class="container-fluid">
-			<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="35" style="padding-top: 5px;"></a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="container-fluid">
+        <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="35" style="padding-top: 5px;"></a>
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
-			</button>
-</div>
+			</button> -->
+        <?php
+        if (isset($_SESSION['id'])) {
+        ?>
+            <form action="logout.php">
+                <input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+            </form>
+        <?php
+        } else {
+        ?>
+            header("Location: index.php");
+        <?php
+        }
+        ?>
+    </div>
     <div class="container" style="background-color: #fff; width: 70%; border-radius: 1%; margin-top: 50px;">
         <div class="col-md-12">
             <div class="card">
