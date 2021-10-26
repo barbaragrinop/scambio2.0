@@ -99,8 +99,8 @@ include_once('../config/conexao.php');
 		<div class="row">
 		<?php
 		//FOREACH DO SELECT ANUNCIO
-		foreach ($result_select_anuncio as $key => $row) {
-		?>
+        foreach ($result_select_anuncio as $key => $row) {
+            ?>
 			<div class="card col-3">
 				<div class="marcando">
 					<i id="marcador" class="fas fa-bookmark"></i>
@@ -120,17 +120,9 @@ include_once('../config/conexao.php');
 					</div>
 				</div>
 			</div>
-			<div class="card col-3">
-				<div class="card-body">
-					olá
-				</div>
-			</div>
-			<div class="card col-3">
-				<div class="card-body">
-					olá
-				</div>
-			</div>
-
+			<?php
+        	}
+			?>
 		</div>
 	</div>
 
@@ -161,8 +153,5 @@ include_once('../config/conexao.php');
 		</div>
 	</div> -->
 	<?php include('../menu/menu.php') ?>
-
-
-</body>
-
+	</body>
 </html>
