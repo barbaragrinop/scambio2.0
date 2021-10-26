@@ -33,19 +33,43 @@ include_once('../config/conexao.php');
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/">
-	
 
 
+	<style>
+		#inpkill {
+			margin-right: 20px;
+			margin-top: -25px;
+		}
+
+		.img-index {
+			width: 100px;
+			height: 32px;
+			margin-top: 5px;
+		}
+	</style>
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 
 <body>
-		<div class="container-fluid">
-			<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="35" style="padding-top: 5px;"></a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-		</div>
+	<div class="container-fluid">
+		<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 5px;"></a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<?php
+		if (isset($_SESSION['id'])) {
+		?>
+			<form action="logout.php">
+				<input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+			</form>
+		<?php
+		} else {
+		?>
+			header("Location: index.php");
+		<?php
+		}
+		?>
+	</div>
 
 	<div class="input-group input-align">
 		<!-- MODIFICAR INPUT NOVAMENTE POIS TIVE QUE COLOCAR UM FORM PARA FAZER O FILTRO  !!!! IMPORTANTE -->
@@ -95,10 +119,18 @@ include_once('../config/conexao.php');
 						<button><i class="fas fa-envelope"></i></button>
 					</div>
 				</div>
-			</div>	
-			<?php
-            	} 
-			?>									
+			</div>
+			<div class="card col-3">
+				<div class="card-body">
+					olá
+				</div>
+			</div>
+			<div class="card col-3">
+				<div class="card-body">
+					olá
+				</div>
+			</div>
+
 		</div>
 	</div>
 
@@ -128,6 +160,7 @@ include_once('../config/conexao.php');
 			</div>
 		</div>
 	</div> -->
+	<?php include('../menu/menu.php') ?>
 
 
 </body>

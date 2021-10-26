@@ -76,7 +76,7 @@ if (!isset($_SESSION['id'])) {
 
             </div>
 
-            <form action="#" class="typing-area">
+            <form action="#" class="typing-area" style="width: 90%;">
                 <input type="text" name="cd_enviada" value="<?php echo $_SESSION['id']; ?>" hidden>
                 <input type="text" name="cd_recebida" value="<?php echo $user_id; ?>" hidden>
                 <input type="text" name="message" class="input-field" placeholder="Digite sua mensagem..">
@@ -85,6 +85,8 @@ if (!isset($_SESSION['id'])) {
 
         </section>
     </div>
+    <?php include('../menu/menu.php') ?>
+
 
 
     <script src="javascript/users.js"></script>
