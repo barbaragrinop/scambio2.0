@@ -104,31 +104,33 @@ if (isset($_SESSION['id'])) {
         // ALL QUERY
         include_once('config/conexao.php');
 
-
+        /*
         $data = file_get_contents('C:\xampp\htdocs\scambio2.0\babi.jpg');
         $data = base64_encode($data);
-        $query2 = $pdo->prepare('UPDATE DB_SCAMBIO.TB_USUARIO SET DS_IMGP = "' . $data . '" WHERE CD_usuario = ' . $_SESSION['id']);
-        $query2->execute();
+        $query2 = $pdo->prepare('UPDATE DB_SCAMBIO.TB_USUARIO SET DS_IMGP = "'. $data .'" WHERE CD_usuario = ' . $_SESSION['id']);
+        $query2->execute(); */
 
         // QUERY PARA PUXAR INFORMAÇÃO DO USUPARIO
         $usuario = $pdo->prepare("SELECT * FROM DB_SCAMBIO.TB_USUARIO WHERE CD_USUARIO =  " . $_SESSION['id']);
         $usuario->execute();
-        $result = $usuario->fetch();
+        $select_info_usuario = $usuario->fetch();
 
         // QUERY PARA PUXAR LIVROS POSTADOS PELO USUARIO
-        $sql = "SELECT LIV.NM_LIVRO AS NML, ANUN.CD_ANUNCIO AS CDANUN  FROM DB_SCAMBIO.TB_lIVRO AS LIV";
-        $sql .= " INNER JOIN DB_SCAMBIO.TB_ANUNCIO AS ANUN ON ANUN.CD_LIVRO = LIV.CD_LIVRO";
-        $sql .= " INNER JOIN DB_SCAMBIO.TB_USUARIO AS US ON US.CD_USUARIO = ANUN.CD_USUARIO WHERE US.CD_USUARIO = " . $_SESSION['id'];
+        $sql = "SELECT ANUN.CD_ANUNCIO as cda,ANUN.DS_ANUNCIO as ds,ANUN.DS_IMG1 as img1,ANUN.DS_IMG2 as img2,US.nm_usuario as user,LOC.NM_LOGRADOURO as loc,LOC.CD_CASA as casa,";
+		$sql .= " BAIRRO.NM_BAIRRO as bairro,CITY.NM_CIDADE as cid,UF.SG_UF as u,LIV.NM_LIVRO as livro,LIV.DT_LANCAMENTO as lanc, AUT.NM_AUTOR AS AUTOR FROM db_scambio.TB_ANUNCIO AS ANUN INNER JOIN db_scambio.tb_usuario AS US ON";
+		$sql .= " ANUN.cd_usuario = US.cd_usuario INNER JOIN db_scambio.tb_logradouro AS LOC ON US.cd_logradouro = LOC.CD_LOGRADOURO INNER JOIN db_scambio.TB_BAIRRO AS BAIRRO ON";
+		$sql .= " BAIRRO.cd_BAIRRO = LOC.cd_BAIRRO INNER JOIN db_scambio.TB_CIDADE AS CITY ON CITY.cd_CIDADE = BAIRRO.cd_CIDADE INNER JOIN db_scambio.TB_UF AS UF ON";
+		$sql .= " UF.CD_UF = CITY.CD_UF INNER JOIN db_scambio.TB_LIVRO AS LIV ON LIV.CD_LIVRO = ANUN.CD_LIVRO INNER JOIN db_scambio.TB_AUTOR AS AUT ON AUT.CD_AUTOR = LIV.CD_AUTOR WHERE US.CD_USUARIO = " . $_SESSION["id"];
         $livrouser = $pdo->prepare($sql);
         $livrouser->execute();
-        $result2 = $livrouser->fetchAll(PDO::FETCH_OBJ);
+        $select_info_livro = $livrouser->fetchAll(PDO::FETCH_OBJ);
 
         $sql2 = "SELECT COUNT(*) as total, LIV.NM_LIVRO AS NML, ANUN.CD_ANUNCIO AS CDANUN  FROM DB_SCAMBIO.TB_lIVRO AS LIV";
         $sql2 .= " INNER JOIN DB_SCAMBIO.TB_ANUNCIO AS ANUN ON ANUN.CD_LIVRO = LIV.CD_LIVRO";
         $sql2 .= " INNER JOIN DB_SCAMBIO.TB_USUARIO AS US ON US.CD_USUARIO = ANUN.CD_USUARIO WHERE US.CD_USUARIO = " . $_SESSION['id'];
         $countpublic = $pdo->prepare($sql2);
         $countpublic->execute();
-        $result3 = $countpublic->fetch(PDO::FETCH_ASSOC);
+        $select_count_liv_publicados = $countpublic->fetch(PDO::FETCH_ASSOC);
         ?>
         <div class="container">
             <div class="main">
@@ -136,19 +138,15 @@ if (isset($_SESSION['id'])) {
                     <div class="col-md-4 mt-1" style="max-height: 500px;">
                         <div class="card text-center sidebar">
                             <div class="card-body">
-                                <!--  DENTRO DA TABELA USUARIO NO BANCO ADICIONEI UMA COLUNA CHAMADA DS_IMGP - PARA IMAGEM DE PERFIL DO USUARIO
-                        USEI O SCRIPT ABAIXO PARA ADICIONAR A FOTO DO USUARIO NO BANCO COMO ESTOU COM O USUARIO DA BABIS ADICIONEI A FOTO DELA
-                        $data = file_get_contents('C:\xampp\htdocs\scambio2.0\babi.jpg');
-                        $data = base64_encode($data);
-                        $query2 = $pdo->prepare('UPDATE DB_SCAMBIO.TB_USUARIO SET DS_IMGP = "'. $data .'" WHERE CD_usuario = ' . $_SESSION['id']);
-                        $query2->execute(); -->
-                                <img src="data:image;base64,<?php echo $result["DS_IMGP"]; ?>" class="rounded-circle" alt="" width="165" height="170">
+
+
+                        
+                                <img src="data:image;base64,<?php echo $select_info_usuario["DS_IMGP"]; ?>" class="rounded-circle" alt="" width="165" height="170">
                                 <div class="mt-3">
                                     <h2>Perfil</h2>
                                     <hr>
-                                    <h4>Nome: <span id="nomeUsuario"><?php echo ($result['nm_usuario']); ?></span></h4>
+                                    <h4>Nome: <span id="nomeUsuario"><?php echo ($select_info_usuario['nm_usuario']); ?></span></h4>
                                     <h4>Livros Trocados: <span id="livrosTrocados">0</span></h4>
-                                    <h4>Livros Postados: <span id="livrosPostados"><?php print_r($result3['total']); ?></span></h4>
                                 </div>
                             </div>
                         </div>
@@ -209,8 +207,11 @@ if (isset($_SESSION['id'])) {
                                 </div>
                             </div>
                         </div>
+                        <h1 class="m-3">Livros Postados <span>(<?php print_r($select_count_liv_publicados['total']);?>)</span> </h1>
+                        <?php 
+                            foreach ($select_info_livro as $key => $row) {
+                                ?>
                         <div class="card mb-3 content">
-                            <h1 class="m-3">Livros Postados <span>(1)</span> </h1>
                             <div class="cards-posts">
                                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
@@ -268,6 +269,9 @@ if (isset($_SESSION['id'])) {
                                 ?>
                             </div>
                         </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
