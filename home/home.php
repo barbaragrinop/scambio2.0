@@ -59,8 +59,24 @@ include_once('../config/conexao.php');
 		</form>
 	</div>
 	<!-- 	!! IMPORTANTE ARRUMAR OS CARDS POIS O CLIQUE NO SEGUNDO CARD ESTÁ PASSANDO A FOTO DO PRIMEIRO -->
+
+	<!-- SELECT INFO LIVRO PUBLICADO -->
+
+	<?php
+	$sql_info_anun = "SELECT US.NM_USUARIO as NM, ANUN.DS_IMG1 as img1, ANUN.DS_IMG2 as img2 ";
+	$sql_info_anun .= "FROM db_scambio.TB_ANUNCIO AS ANUN INNER JOIN db_scambio.tb_usuario AS US ON ANUN.cd_usuario = us.cd_usuario";
+	$SQLANUN = $pdo->prepare($sql_info_anun);
+	$SQLANUN->execute();
+	$result_select_anuncio = $SQLANUN->fetchAll(PDO::FETCH_OBJ);
+
+	?>
+
 	<div class="wrapper">
 		<div class="row">
+		<?php
+		//FOREACH DO SELECT ANUNCIO
+		foreach ($result_select_anuncio as $key => $row) {
+		?>
 			<div class="card col-3">
 				<div class="marcando">
 					<i id="marcador" class="fas fa-bookmark"></i>
@@ -69,7 +85,7 @@ include_once('../config/conexao.php');
 					<img class="img-fluid" id="img-book" src="https://upload.wikimedia.org/wikipedia/commons/7/70/Austria_-_Admont_Abbey_Library_-_1407.jpg" alt="">
 					<div class="detalhes">
 						<img id="img-profile" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Demi_Lovato_Interview_Feb_2020.png" alt="" class="img-fluid">
-						<p>Barbara Hellen</p>
+						<p><?php echo $row->NM ?></p>
 					</div>
 					<div class="possivel-chamada">
 						<button>
@@ -79,18 +95,10 @@ include_once('../config/conexao.php');
 						<button><i class="fas fa-envelope"></i></button>
 					</div>
 				</div>
-			</div>						
-			<div class="card col-3">
-				<div class="card-body">
-					olá
-				</div>
-			</div>
-			<div class="card col-3">
-				<div class="card-body">
-					olá
-				</div>
-			</div>		
-			
+			</div>	
+			<?php
+            	} 
+			?>									
 		</div>
 	</div>
 
