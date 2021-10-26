@@ -40,21 +40,13 @@ include_once('../config/conexao.php');
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
-			<a href="../index.php"><img class="img-index" src="../assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38"></a>
+			<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="35" style="padding-top: 5px;"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="textCor nav navbar-nav">
-					<li><a class="links-nav-index" href="../perfil.php">Perfil</a></li>
-					<li><a class="links-nav-index" href="../mensagem/mensagem.php">Mensagem</a></li>
-					<li><a class="links-nav-index" href="../index.php#ajuda">Ajuda</a></li>
-				</ul>
-			</div>
 		</div>
-	</nav>
+
 	<div class="input-group input-align">
 		<!-- MODIFICAR INPUT NOVAMENTE POIS TIVE QUE COLOCAR UM FORM PARA FAZER O FILTRO  !!!! IMPORTANTE -->
 		<form action="" method="post">

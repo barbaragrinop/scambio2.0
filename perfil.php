@@ -91,40 +91,22 @@ if (isset($_SESSION['id'])) {
     </head>
 
     <body>
-        <nav class="navbar secondaryColor navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">
-                    <img src="assets/imgs/logo1.PNG" alt="logo Scambio" width="110" height="38">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" style="background-color: #F2EEE8;" id="navbarSupportedContent">
-                    <ul class="textCor nav navbar-nav navbar-nav-ul">
-                        <li><a class="links-nav-home" href="home/home.php">Home</a></li>
-                        <li><a href="mensagem/mensagem.php">Mensagens</a></li>
-                        <li><a href="index.php#ajuda">Ajuda</a></li>
-                    </ul>
-
-                    <ul class="textCor nav navbar-nav navbar-right">
-                        <form action="logout.php" style="text-align: right;">
-                            <input id="inpkill" class="inpkill glyphicon buttonLogout btnClass2" name="DestroySession" type="submit" value="Sair">
-                        </form>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <div class="container-fluid">
+			<a href="index.php"><img class="img-index" src="assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="35" style="padding-top: 5px;"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+</div>
         <?php
 
         // ALL QUERY
         include_once('config/conexao.php');
 
-       /*  <!--  DENTRO DA TABELA USUARIO NO BANCO ADICIONEI UMA COLUNA CHAMADA DS_IMGP - PARA IMAGEM DE PERFIL DO USUARIO
-        USEI O SCRIPT ABAIXO PARA ADICIONAR A FOTO DO USUARIO NO BANCO COMO ESTOU COM O USUARIO DA BABIS ADICIONEI A FOTO DELA
+        /*
         $data = file_get_contents('C:\xampp\htdocs\scambio2.0\babi.jpg');
         $data = base64_encode($data);
         $query2 = $pdo->prepare('UPDATE DB_SCAMBIO.TB_USUARIO SET DS_IMGP = "'. $data .'" WHERE CD_usuario = ' . $_SESSION['id']);
-        $query2->execute(); --> */
+        $query2->execute(); */
 
         // QUERY PARA PUXAR INFORMAÇÃO DO USUPARIO
         $usuario = $pdo->prepare("SELECT * FROM DB_SCAMBIO.TB_USUARIO WHERE CD_USUARIO =  " . $_SESSION['id']);
@@ -266,6 +248,24 @@ if (isset($_SESSION['id'])) {
                                     </span>
                                 </div>
                             </div>
+                            <div class="card-body">
+                                <?php
+                                foreach ($result2 as $key => $row) {
+                                ?>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div>
+                                                <h5><?php echo $row->NML; ?></h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9 text-secondary">
+                                            <div class="div-link-postado"><a class="link-livro-postado" href="">Ver postagem</a></div>
+                                        </div>
+                                    </div>
+                                <?php
+                                } 
+                                ?>
+                            </div>
                         </div>
                         <?php
                             }
@@ -274,6 +274,7 @@ if (isset($_SESSION['id'])) {
                 </div>
             </div>
         </div>
+
         <script>
             feather.replace();
         </script>
@@ -281,7 +282,6 @@ if (isset($_SESSION['id'])) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
         <script src="https://use.fontawesome.com/88a6c0ea9a.js"></script>
-
     </body>
 
     </html>
