@@ -60,7 +60,6 @@ session_start();
                 <?php
                 if (isset($_SESSION['id'])) {
                 ?>
-                    <!-- Modificar este Botão  ----  Botão Logout -->
                     <form action="logout.php">
                         <input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
                     </form>
