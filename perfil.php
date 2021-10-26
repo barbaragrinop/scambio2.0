@@ -138,9 +138,6 @@ if (isset($_SESSION['id'])) {
                     <div class="col-md-4 mt-1" style="max-height: 500px;">
                         <div class="card text-center sidebar">
                             <div class="card-body">
-
-
-                        
                                 <img src="data:image;base64,<?php echo $select_info_usuario["DS_IMGP"]; ?>" class="rounded-circle" alt="" width="165" height="170">
                                 <div class="mt-3">
                                     <h2>Perfil</h2>
@@ -249,24 +246,6 @@ if (isset($_SESSION['id'])) {
                                         <button class="btn-edit">Editar publicação</button>
                                     </span>
                                 </div>
-                            </div>
-                            <div class="card-body">
-                                <?php
-                                foreach ($result2 as $key => $row) {
-                                ?>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div>
-                                                <h5><?php echo $row->NML; ?></h5>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-9 text-secondary">
-                                            <div class="div-link-postado"><a class="link-livro-postado" href="">Ver postagem</a></div>
-                                        </div>
-                                    </div>
-                                <?php
-                                }
-                                ?>
                             </div>
                         </div>
                         <?php
