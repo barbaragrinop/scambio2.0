@@ -2,8 +2,6 @@ html {
     overflow-y: hidden;
 }
 
-
-
 .div-improv {
     padding-bottom: 60px !important;
 }
@@ -256,8 +254,7 @@ iframe {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background: rgb(242, 238, 232);
-    background: linear-gradient(90deg, rgba(242, 238, 232, 1) 5%, rgba(186, 146, 112, 1) 39%, rgba(216, 226, 227, 1) 93%);
+    background-image: linear-gradient(#f2eee8, #d4c1a5, #f2eee8)!important;
 }
 
 .wrap-login100 {
@@ -419,7 +416,7 @@ iframe {
     width: 100%;
     height: 50px;
     border-radius: 25px;
-    background: #A77A53;
+    background-color: #a77a53;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -438,7 +435,7 @@ iframe {
     text-decoration: none;
 }
 
-.login100-form-btn:hover
+.login100-form-btn:hover {}
 
 
 /*------------------------------------------------------------------

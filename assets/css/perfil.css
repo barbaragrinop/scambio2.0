@@ -1,112 +1,112 @@
 body {
-  margin-top: 20px;
-  background-color: #f2eee8;
+    margin-top: 20px;
 }
 
 hr {
-  margin-top: 7px;
-  margin-bottom: 7px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 input[type="file"] {
-  display: none;
+    display: none;
 }
 
 .container {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 .main {
-  margin: -20px -80px 0 -80px;
-  font-family: Arial, Helvetica, sans-serif;
+    margin: -20px -80px 0 -80px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .sidebar {
-  background-color: #5824248e;
-  color: white;
-  height: 100%;
+    background-color: #5824248e;
+    color: white;
+    height: 100%;
 }
 
 .sidebar a {
-  margin-left: 10px;
-  display: block;
-  color: white;
-  padding-bottom: 10px;
-  font-size: 30px;
-  text-decoration: none;
+    margin-left: 10px;
+    display: block;
+    color: white;
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-decoration: none;
 }
 
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .content {
-  background-color: whitesmoke;
+    background-color: whitesmoke;
 }
 
 .text-secondary {
-  padding-top: 10.5px;
+    padding-top: 10.5px;
 }
 
 .custom-file-upload {
-  margin-top: 5px;
-  background: #df464a;
-  color: white;
-  font-size: 16px;
-  font-family: sans-serif;
-  font-weight: bold;
-  border-radius: 8px;
-  border: 0;
-  padding: 8px 35px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  width: 200px;
-  height: 33px;
+    margin-top: 5px;
+    background: #df464a;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 0;
+    padding: 8px 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 33px;
 }
 
 .img-upload {
-  padding-left: 12px;
+    padding-left: 12px;
 }
 
 .input-css {
-  margin-top: -9px;
-  border-radius: 20px;
-  outline: none;
-  border: none;
-  color: #666666;
-  background: #e6e6e6;
-  width: 200px;
-  height: 35px;
-  padding: 0 20px 0 15px;
-  font-size: 17px;
-  font-weight: 600;
+    margin-top: -9px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    color: #666666;
+    background: #e6e6e6;
+    width: 200px;
+    height: 35px;
+    padding: 0 20px 0 15px;
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .div-link-postado {
-  background: rgba(163, 161, 161, 0.904);
-  width: 140px;
-  border-radius: 15px;
+    background: rgba(163, 161, 161, 0.904);
+    width: 140px;
+    border-radius: 15px;
 }
 
 .link-livro-postado {
-  padding-left: 20px;
-  border-radius: 5px;
-  color: aliceblue;
+    padding-left: 20px;
+    border-radius: 5px;
+    color: aliceblue;
 }
 
 .link-livro-postado:hover {
-  text-decoration: none;
-  transition: 0.3s;
-  color: #eee;
-  font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    color: #eee;
+    font-weight: 600;
 }
+
 
 /* NAVBAR */
 
 .navbar {
-  margin-top: -21px;
-  margin-left: -15px;
+    margin-top: -21px;
+    margin-left: -15px;
 }

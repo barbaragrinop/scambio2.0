@@ -16,6 +16,7 @@ if (!isset($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scambio</title>
     <link href="../css/produto.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
         body {
@@ -52,8 +53,14 @@ if (!isset($_SESSION['id'])) {
     </style>
 </head>
 
-<body style="background-image: linear-gradient(#f2eee8, #d4c1a5, #f2eee8);margin-top: 40px;">
-    <div class="container" style="background-color: #fff; width: 70%; border-radius: 1%;">
+<body style="background-image: linear-gradient(#f2eee8, #d4c1a5, #f2eee8);">
+<div class="container-fluid">
+			<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="35" style="padding-top: 5px;"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+</div>
+    <div class="container" style="background-color: #fff; width: 70%; border-radius: 1%; margin-top: 50px;">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
