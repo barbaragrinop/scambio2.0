@@ -46,6 +46,17 @@ include_once('../config/conexao.php');
 			height: 32px;
 			margin-top: 5px;
 		}
+		.wrapper .row .card {
+    		border-radius: 10px;
+   			 box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.15);
+    		width: 15%;
+		}
+		.row .card .possivel-chamada button {
+    		margin-top: 10px;
+    		width: 150px;
+    		border-radius: 10000000px;
+		}
+		
 	</style>
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
@@ -71,17 +82,7 @@ include_once('../config/conexao.php');
 		?>
 	</div>
 
-	<div class="input-group input-align">
-		<!-- MODIFICAR INPUT NOVAMENTE POIS TIVE QUE COLOCAR UM FORM PARA FAZER O FILTRO  !!!! IMPORTANTE -->
-		<form action="" method="post">
-			<div class="wrapping-form">
-				<input name="filtro" type="text" class="form-control" placeholder="O que procura?" aria-label="Username" aria-describedby="addon-wrapping">
-				<button class="input-group-text" id="addon-wrapping">
-					<i class="fas fa-search fa-sm"></i>
-				</button>
-			</div>
-		</form>
-	</div>
+	  
 	<!-- 	!! IMPORTANTE ARRUMAR OS CARDS POIS O CLIQUE NO SEGUNDO CARD ESTÁ PASSANDO A FOTO DO PRIMEIRO -->
 
 	<!-- SELECT INFO LIVRO PUBLICADO -->
@@ -102,21 +103,50 @@ include_once('../config/conexao.php');
         foreach ($result_select_anuncio as $key => $row) {
             ?>
 			<div class="card col-3">
-				<div class="marcando">
-					<i id="marcador" class="fas fa-bookmark"></i>
-				</div>
 				<div class="card-body">
-					<img class="img-fluid" id="img-book" src="https://upload.wikimedia.org/wikipedia/commons/7/70/Austria_-_Admont_Abbey_Library_-_1407.jpg" alt="">
+					<img class="img-fluid" id="img-book" src="img/harrypotter1.png" alt="">
 					<div class="detalhes">
 						<img id="img-profile" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Demi_Lovato_Interview_Feb_2020.png" alt="" class="img-fluid">
 						<p><?php echo $row->NM ?></p>
 					</div>
 					<div class="possivel-chamada">
 						<button>
-							<i class="fas fa-envelope"></i>
+							<i class="	fa fa-ellipsis-h"></i>
+							Ver mais
 						</button>
-						<button><i class="fas fa-envelope"></i></button>
-						<button><i class="fas fa-envelope"></i></button>
+						<button><i class="fas fa-envelope"></i>
+						Chat
+					</button>
+					</div>
+				</div>
+			</div>
+			<?php
+        	}
+			?>
+		</div>
+		<br>
+		<br>
+		<div class="wrapper">
+		<div class="row">
+		<?php
+		//FOREACH DO SELECT ANUNCIO
+        foreach ($result_select_anuncio as $key => $row) {
+            ?>
+			<div class="card col-3">
+				<div class="card-body">
+				<img class="img-fluid" id="img-book" src="img/harrypotter1.png" alt="">
+					<div class="detalhes">
+						<img id="img-profile" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Demi_Lovato_Interview_Feb_2020.png" alt="" class="img-fluid">
+						<p><?php echo $row->NM ?></p>
+					</div>
+					<div class="possivel-chamada">
+						<button>
+							<i class="	fa fa-ellipsis-h"></i>
+							Ver mais
+						</button>
+						<button><i class="fas fa-envelope"></i>
+						Chat
+					</button>
 					</div>
 				</div>
 			</div>
@@ -125,6 +155,12 @@ include_once('../config/conexao.php');
 			?>
 		</div>
 	</div>
+
+
+<!--
+https://saranyamk.github.io/images-repo/book-top.svg
+https://saranyamk.github.io/images-repo/book-side.svg
+-->
 
 	<!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
 
