@@ -49,6 +49,10 @@ if (isset($_SESSION['id'])) {
 			body {
 				zoom: 0.9
 			}
+
+			label {
+				margin-bottom: -2px !important;
+			}
 		</style>
 
 	</head>
@@ -158,6 +162,14 @@ if (isset($_SESSION['id'])) {
 							<input class="input100" type="text" name="estado" id="estado" placeholder="Estado" readonly>
 							<div id="snackbarestado">Digite seu estado!</div>
 						</div>
+
+						<div class="wrap-input100 validate-input col-md-6" data-validate="Estado Inválido!" style="display: flex;">
+							<div style="display: flex;">
+								<!-- <input type="checkbox" id="termos" name="termos"> -->
+								<label for="termos" style="width: 800px;">Ao continuar, você concorda com a <small> <a style="font-weight: 800; color: blue; font-size: 14.5px; letter-spacing: 0.6px;" target="_blank" href="../politica-privacidade.php">Política de Privacidade</a> </small> do Scambio.</label>
+							</div>
+						</div>
+
 						<div class="container-login100-form-btn pointer-none">
 							<a class="link-entrar" href="#">
 								<button class="login100-form-btn classHover" id="salvar">

@@ -11,11 +11,10 @@
 	height: 50px;
 	border-radius: 100%;
 	background: #57076b;
-
-	box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.fab-icon-holderrr:hover{
+.fab-icon-holderrr:hover {
 	opacity: 0.8;
 }
 
@@ -23,7 +22,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	height: 100%;
 	font-size: 25px;
 	color: #ffffff;
@@ -38,19 +36,16 @@
 .fab-optionsss {
 	list-style-type: none;
 	margin: 0;
-
 	position: absolute;
 	bottom: 70px;
 	right: 0;
-
 	opacity: 0;
-
 	transition: all 0.3s ease;
 	transform: scale(0);
 	transform-origin: 85% bottom;
 }
 
-.fabbb:hover + .fab-optionsss, .fab-optionsss:hover {
+.fabbb:hover+.fab-optionsss, .fab-optionsss:hover {
 	opacity: 1;
 	transform: scale(1);
 }
@@ -70,12 +65,6 @@
 	font-size: 16px;
 	background: #666666;
 	color: #ffffff;
-	box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 	margin-right: 10px;
 }
-
-
-
-
-
-
