@@ -82,7 +82,7 @@ session_start();
                         <br>
                         2. Informações coletadas, recebidas e armazenadas
                         <br>
-                        As seguintes informações são coletadas, recebidas e armazenadas pela OLX:
+                        As seguintes informações são coletadas, recebidas e armazenadas pelo Scambio:
                         <br>
 
                         a) Informações da conta. Quando você cria uma conta no Scambio ou interage de qualquer outra forma no Site, nós coletamos algumas informações, como o seu nome, endereço de e-mail, senha, número de telefone e fotos dentro da nossa plataforma.
@@ -92,7 +92,7 @@ session_start();
                         seu perfil, como seu nome.
                         Note que suas publicações ficam acessíveis a terceiros, podendo ser listadas como resultados de ferramentas de pesquisa, inclusive no cache destas ferramentas de pesquisa. Você reconhece que o Scambio não tem ingerência sobre os sites de terceiros e suas indexações;
                         <br>
-                        c) Chat. As comunicações realizadas por meio do nosso Chat não têm caráter privado e as mensagens são armazenadas nos servidores da OLX;
+                        c) Chat. As comunicações realizadas por meio do nosso Chat não têm caráter privado e as mensagens são armazenadas nos servidores do Scambio;
                         <br>
                         3. Uso da Informação
                         <br>
