@@ -97,10 +97,10 @@ if (isset($_SESSION['id'])) {
 							<div id="snackbarnome">Digite seu nome completo!</div>
 						</div>
 
-						<div class="wrap-input100 validate-input col-md-6" data-validate="Celular Inválido!">
-							<small class="titleInputs">Celular</small>
-							<input class="input100" type="text" name="celular" id="celular" placeholder="(99) 99999-9999">
-							<div id="snackbarcelular">Digite seu número celular!</div>
+						<div class="wrap-input100 validate-input col-md-6" data-validate="Email Inválido!">
+							<small class="titleInputs">Email</small>
+							<input class="input100" type="text" name="email" id="email" placeholder="Email">
+							<div id="snackbaremail">Digite seu Email!</div>
 						</div>
 
 						<div class="wrap-input100 validate-input col-md-6" data-validate="Digite uma senha válida!">
@@ -121,12 +121,6 @@ if (isset($_SESSION['id'])) {
 							<div id="snackbardtnasc">Digite sua data de nascimento!</div>
 						</div>
 
-						<div class="wrap-input100 validate-input col-md-6" data-validate="Email Inválido!">
-							<small class="titleInputs">Email</small>
-							<input class="input100" type="text" name="email" id="email" placeholder="Email">
-							<div id="snackbaremail">Digite seu Email!</div>
-						</div>
-
 						<div class="wrap-input100 validate-input col-md-6" data-validate="CEP Inválido!">
 							<small class="titleInputs">CEP</small>
 							<input class="input100" name="cep" id="cep" placeholder="_____-___">
@@ -137,24 +131,6 @@ if (isset($_SESSION['id'])) {
 							<small class="titleInputs">Cidade</small>
 							<input class="input100" type="text" name="cidade" id="cidade" placeholder="Cidade" readonly>
 							<div id="snackbarcidade">Digite sua cidade!</div>
-						</div>
-
-						<div class="wrap-input100 validate-input col-md-6" data-validate="Rua Inválida!">
-							<small class="titleInputs">Rua</small>
-							<input class="input100" type="text" name="rua" id="rua" placeholder="Nome da Rua" readonly>
-							<div id="snackbarrua">Digite sua rua!</div>
-						</div>
-
-						<div class="wrap-input100 validate-input col-md-6" data-validate="Número Inválido!">
-							<small class="titleInputs">Número</small>
-							<input class="input100" type="number" name="numero" id="numero" placeholder="999">
-							<div id="snackbarnumero">Digite o número da sua casa!</div>
-						</div>
-
-						<div class="wrap-input100 validate-input col-md-6" data-validate="Bairro Inválido!">
-							<small class="titleInputs">Bairro</small>
-							<input class="input100" type="text" name="bairro" id="bairro" placeholder="Nome do Bairro" readonly>
-							<div id="snackbarbairro">Digite seu bairro!</div>
 						</div>
 
 						<div class="wrap-input100 validate-input col-md-6" data-validate="Estado Inválido!">
