@@ -111,16 +111,16 @@ include_once('../config/conexao.php');
 		<div class="form-filtro">
 			<form method="post" action="filtro.php" style="display: flex; flex-direction: column; margin-bottom: 20px;">
 				<div>
-					<small style="font-size: 15px;">Filtrar por:</small>
+					<small style="font-size: 15px; font-weight: 560;">Filtrar por:</small>
 					<select name="opcao_filtro" class="opcao_filtro">
-						<option value="idade">Nome</option>
+						<option selected="selected" value="dataPublicacao">Data de publicação</option>
 						<option value="cidade">Cidade</option>
-						<option value="formacao">Data de publicação</option>
+						<option value="nome">Nome</option>
 					</select>
 				</div>
-				<div>
-					<input type="text" name="valor_filtro" />
-					<input type="submit" name="Pesquisar" />
+				<div style="margin-top: 5px;">
+					<input type="text" name="valor_filtro" style="border: none; height: 30px;" placeholder="Nome do livro" />
+					<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 30px;" />
 				</div>
 			</form>
 		</div>
