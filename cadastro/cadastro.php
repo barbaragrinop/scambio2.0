@@ -95,55 +95,58 @@ if (isset($_SESSION['id'])) {
 						<div class="wrap-input100 validate-input col" data-validate="Digite seu nome completo!">
 							<small class="titleInputs">Nome</small>
 							<input autocomplete="no" class="input100" type="text" name="nome" id="nome" placeholder="Nome Completo">
-							<div id="snackbarnome">Digite seu nome completo!</div>
+							<!-- <div id="snackbarnome">Digite seu nome completo!</div> -->
 						</div>
 
 						<div class="wrap-input100 validate-input col-md-6" data-validate="Email Inválido!">
 							<small class="titleInputs">Email</small>
 							<input class="input100" type="text" name="email" id="email" placeholder="Email">
-							<div id="snackbaremail">Digite seu Email!</div>
+							<!-- <div id="snackbaremail">Digite seu Email!</div> -->
 						</div>
 
 						<div class="wrap-input100 validate-input col-md-6" data-validate="Digite uma senha válida!">
-							<small class="titleInputs">Senha</small>
-							<input class="input100" type="password" name="senha" id="senha" placeholder="********">
-							<div id="snackbarsenha">Digite uma senha válida!</div>
+							<div>
+								<small class="titleInputs">Senha</small>
+								<small id="impSenha"></small>
+							</div>
+							<input class="input100" type="password" name="senha" id="senha" placeholder="********" onkeyup="validarSenhaForca()">
+							<!-- <div id="snackbarsenha">Digite uma senha válida!</div> -->
 						</div>
 
 						<div class="wrap-input100 validate-input col-md-6" data-validate="Digite uma senha válida!">
 							<small class="titleInputs">Confirmar senha</small>
 							<input class="input100" type="password" name="senhaConfirmacao" id="senhaConfirmacao" placeholder="********">
-							<div id="snackbarSenhaConfirmacao">Digite sua confirmação de senha!</div>
+							<!-- <div id="snackbarSenhaConfirmacao">Digite sua confirmação de senha!</div> -->
 						</div>
 
 						<div class="wrap-input100 validate-input col-md-6" data-validate="Data Inválida!">
 							<small class="titleInputs">Data de nascimento</small>
 							<input class="input100" type="text" name="dtnasc" id="dtnasc" placeholder="17/01/2004">
-							<div id="snackbardtnasc">Digite sua data de nascimento!</div>
+							<!-- <div id="snackbardtnasc">Digite sua data de nascimento!</div> -->
 						</div>
 
 						<div class="wrap-input100 validate-input col-md-6" data-validate="CEP Inválido!">
 							<small class="titleInputs">CEP</small>
 							<input class="input100" name="cep" id="cep" placeholder="_____-___">
-							<div id="snackbarcep">Digite seu CEP!</div>
+							<!-- <div id="snackbarcep">Digite seu CEP!</div> -->
 						</div>
 
 						<div class="wrap-input100 validate-input col-md-6" data-validate="Cidade Inválida!">
 							<small class="titleInputs">Cidade</small>
 							<input class="input100" type="text" name="cidade" id="cidade" placeholder="Cidade" readonly>
-							<div id="snackbarcidade">Digite sua cidade!</div>
+							<!-- <div id="snackbarcidade">Digite sua cidade!</div> -->
 						</div>
 
 						<div class="wrap-input100 validate-input col-md-6" data-validate="Estado Inválido!">
 							<small class="titleInputs">Estado</small>
 							<input class="input100" type="text" name="estado" id="estado" placeholder="Estado" readonly>
-							<div id="snackbarestado">Digite seu estado!</div>
+							<!-- <div id="snackbarestado">Digite seu estado!</div> -->
 						</div>
 
 						<div class="wrap-input100 validate-input col-md-6" data-validate="Estado Inválido!" style="display: flex;">
 							<div style="display: flex;">
 								<!-- <input type="checkbox" id="termos" name="termos"> -->
-								<label for="termos" style="width: 800px;">Ao continuar, você concorda com a <small> <a style="font-weight: 800; color: blue; font-size: 14.5px; letter-spacing: 0.6px;" target="_blank" href="../politica-privacidade.php">Política de Privacidade</a> </small> do Scambio.</label>
+								<label for="termos" style="width: 800px;">Ao continuar, você concorda com a <small> <a style="font-weight: 800; color: blue; font-size: 14.5px; letter-spacing: 0.6px;" target="_blank" href="../politica-privacidade.php">Política de Privacidade</a> e </small><a style="font-weight: 800; color: blue; font-size: 14.5px; letter-spacing: 0.6px;" target="_blank" href="../termos-de-uso.php"> Termos de uso</a> </small> do Scambio.</label>
 							</div>
 						</div>
 
@@ -159,29 +162,14 @@ if (isset($_SESSION['id'])) {
 			</div>
 		</div>
 
-
-		<!--===============================================================================================-->
-		<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
-		<!--===============================================================================================-->
 		<script src="vendor/bootstrap/js/popper.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<!--===============================================================================================-->
 		<script src="vendor/select2/select2.min.js"></script>
-		<!--===============================================================================================-->
-		<!-- <script src="vendor/tilt/tilt.jquery.min.js"></script> -->
-		<!-- <script >
-			$('.js-tilt').tilt({
-				scale: 1.1
-			})
-		</script> -->
-		<!--===============================================================================================-->
-		<script src="js/main.js"></script>
 
-		<!--  -->
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+		<script src="js/main.js"></script>
+		<script src="js/senhaForca.js"></script>
+
 		<script>
-			$("#celular").mask("(99) 99999-9999");
 			$("#cep").mask("99999-999");
 			$("#dtnasc").mask("99/99/9999");
 		</script>
