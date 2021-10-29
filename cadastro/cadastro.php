@@ -47,7 +47,8 @@ if (isset($_SESSION['id'])) {
 
 		<style>
 			body {
-				zoom: 0.9
+				zoom: 0.9;
+				background-color: #F1ECE6;
 			}
 
 			label {
