@@ -100,8 +100,10 @@ if (isset($_SESSION['id'])) {
     </head>
 
     <body>
-        <div class="container-fluid">
-            <a href="index.php"><img class="img-index" src="assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="35" style="padding-top: 5px;"></a>
+        <div class="container-fluid" style="margin-top: 10px;">
+            <a href="index.php">
+                <img class="img-index" src="assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 6.5px; margin-top: -6px; padding-left: 5px;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
