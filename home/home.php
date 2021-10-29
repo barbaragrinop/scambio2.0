@@ -63,6 +63,15 @@ include_once('../config/conexao.php');
 		.possivel-chamada button {
 			border: none;
 		}
+
+		.form-filtro {
+			display: flex;
+			justify-content: center;
+		}
+
+		.opcao_filtro {
+			width: 140px;
+		}
 	</style>
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
@@ -100,15 +109,19 @@ include_once('../config/conexao.php');
 	<div class="wrapper">
 
 		<div class="form-filtro">
-			<form method="post" action="filtro.php">
-				Filtrar por:
-				<select name="opcao_filtro">
-					<option value="idade">Idade</option>
-					<option value="cidade">Cidade</option>
-					<option value="formacao">Formação</option>
-				</select>
-				<input type="text" name="valor_filtro" /><br>
-				<input type="submit" name="Pesquisar" />
+			<form method="post" action="filtro.php" style="display: flex; flex-direction: column; margin-bottom: 20px;">
+				<div>
+					<small style="font-size: 15px;">Filtrar por:</small>
+					<select name="opcao_filtro" class="opcao_filtro">
+						<option value="idade">Idade</option>
+						<option value="cidade">Cidade</option>
+						<option value="formacao">Formação</option>
+					</select>
+				</div>
+				<div>
+					<input type="text" name="valor_filtro" />
+					<input type="submit" name="Pesquisar" />
+				</div>
 			</form>
 		</div>
 

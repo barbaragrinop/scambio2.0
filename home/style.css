@@ -51,11 +51,6 @@ a {
     font-weight: 700;
 }
 
-.form-filtro {
-    display: flex;
-    justify-content: center;
-}
-
 .wrapping-form {
     display: flex;
     flex-direction: row;
