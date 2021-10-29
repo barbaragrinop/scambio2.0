@@ -122,7 +122,7 @@ include_once('../config/conexao.php');
 						<img class="img-fluid" id="img-book" src="img/harrypotter1.png" alt="">
 						<div class="detalhes">
 							<img id="img-profile" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Demi_Lovato_Interview_Feb_2020.png" alt="" class="img-fluid">
-							<p><?php echo $row->NM ?></p>
+							<p style="width: 130px;"><?php echo $row->NM ?></p>
 						</div>
 						<div class="possivel-chamada">
 							<button>
