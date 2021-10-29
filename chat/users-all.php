@@ -33,7 +33,7 @@ if (!isset($_SESSION['id'])) {
             ?>
             <header>
                 <div class="content">
-                    <img src="https://i.ytimg.com/vi/hMrYuuOq0Jg/mqdefault.jpg">
+                    <img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1">
                     <div class="details">
                         <span><?= $row['nm_usuario'] ?></span>
                         <p><?= $row['nm_status'] ?></p>
@@ -65,7 +65,7 @@ if (!isset($_SESSION['id'])) {
                     $row = $sql->fetch(PDO::FETCH_ASSOC);
                 }
                 ?>
-                <img src="https://img.quizur.com/f/img5c3158b9422aa3.01608156.jpg?lastEdited=1546737932" alt="" srcset="">
+                <img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">
                 <a href="users-all.php"></a>
                 <div class="details">
                     <span><?= $row['nm_usuario'] ?></span>

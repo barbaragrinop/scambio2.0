@@ -41,6 +41,7 @@ setInterval(() => {
                 let data = xhr.response;
                 if(!searchBar.classList.contains("active")){ //se ativo, não vai ter a barra de pesquisa e vai adicionar esse parte
                     usersList.innerHTML = data;
+                    console.log(data)
                 }
             }   
         }

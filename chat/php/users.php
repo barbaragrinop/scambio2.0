@@ -10,7 +10,8 @@ $sql = $pdo->prepare("SELECT DISTINCT * from db_scambio.tb_usuario
                         left join db_scambio.messages on 
                         tb_usuario.cd_usuario = messages.outgoing_msg_id 
                         where not cd_usuario = :user
-                        order by datemessage desc 
+                        group by cd_usuario
+                        order by datemessage desc
 ");
 $sql->execute(array(':user' => $outgoing_id));
 

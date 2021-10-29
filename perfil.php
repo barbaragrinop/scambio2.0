@@ -112,10 +112,10 @@ if (isset($_SESSION['id'])) {
         include_once('config/conexao.php');
 
 
-        $data = file_get_contents('C:\xampp\htdocs\scambio2.0\babi.jpg');
-        $data = base64_encode($data);
-        $query2 = $pdo->prepare('UPDATE DB_SCAMBIO.TB_USUARIO SET DS_IMGP = "' . $data . '" WHERE CD_usuario = ' . $_SESSION['id']);
-        $query2->execute();
+        // $data = file_get_contents('C:\xampp\htdocs\asd\scambio2.0\babi.jpg');
+        // $data = base64_encode($data);
+        // $query2 = $pdo->prepare('UPDATE DB_SCAMBIO.TB_USUARIO SET DS_IMGP = "' . $data . '" WHERE CD_usuario = ' . $_SESSION['id']);
+        // $query2->execute();
 
         // QUERY PARA PUXAR INFORMAÇÃO DO USUPARIO
         $usuario = $pdo->prepare("SELECT * FROM DB_SCAMBIO.TB_USUARIO WHERE CD_USUARIO =  " . $_SESSION['id']);

@@ -70,7 +70,7 @@ include_once('../config/conexao.php');
 		<?php
 		if (isset($_SESSION['id'])) {
 		?>
-			<form action="logout.php">
+			<form action="../logout.php">
 				<input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
 			</form>
 		<?php

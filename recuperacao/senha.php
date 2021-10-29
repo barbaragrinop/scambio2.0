@@ -80,7 +80,7 @@ if (isset($_SESSION['id'])) {
 					</div>
 
 					<!-- <form class="login100-form validate-form" id="frmRecupera" method="post" action="../esqueciSenha.php"> -->
-					<form class="login100-form validate-form" id="frmRecupera" method="post" action="../esqueciSenha.php">
+					<form class="login100-form validate-form" method="post" action="../esqueciSenha.php">
 						<span id="titlePrincipal" class="login100-form-title">
 							Digite o email cadastrado para receber o código de verificação.
 						</span>
