@@ -30,7 +30,7 @@ function validarSenhaForca() {
 function mostrarForca(forca) {
 
     if (forca < 1) {
-        document.getElementById("impSenha").innerHTML = "Digite uma senha com mais de 3 caraceteres.";
+        document.getElementById("impSenha").innerHTML = "Digite uma senha com mais de 3 caracteres.";
     }
     else if (forca < 20) {
         document.getElementById("impSenha").innerHTML = "Senha fraca.";
