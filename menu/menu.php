@@ -16,7 +16,7 @@
 
 <div class="fab-containerrr">
     <div class="fabbb fab-icon-holderrr">
-        <i class="fas fa-question"></i>
+        <i class="fas fa-bars"></i>
     </div>
 
     <ul class="fab-optionsss">
@@ -44,6 +44,12 @@
                 <a id="perfil" style="text-decoration: none;" onclick="redirectPerfil()"><i class="fas fa-user"></i></a>
             </div>
         </li>
+        <li>
+            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Ajuda</a></span>
+            <div class="fab-icon-holderrr">
+                <a id="ajuda" style="text-decoration: none;" onclick="redirectAjuda()"><i class="fas fa-question"></i></a>
+            </div>
+        </li>
     </ul>
 
     <script>
@@ -61,6 +67,9 @@
 
         function redirectPerfil() {
             window.location.replace('../perfil.php');
+        }
+        function redirectAjuda() {
+            window.location.replace('../index.php#ajuda');
         }
     </script>
 </div>
