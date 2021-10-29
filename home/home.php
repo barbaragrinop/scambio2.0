@@ -70,7 +70,7 @@ include_once('../config/conexao.php');
 		}
 
 		.opcao_filtro {
-			width: 140px;
+			width: 170px;
 		}
 	</style>
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
@@ -113,9 +113,9 @@ include_once('../config/conexao.php');
 				<div>
 					<small style="font-size: 15px;">Filtrar por:</small>
 					<select name="opcao_filtro" class="opcao_filtro">
-						<option value="idade">Idade</option>
+						<option value="idade">Nome</option>
 						<option value="cidade">Cidade</option>
-						<option value="formacao">Formação</option>
+						<option value="formacao">Data de publicação</option>
 					</select>
 				</div>
 				<div>
