@@ -46,17 +46,23 @@ include_once('../config/conexao.php');
 			height: 32px;
 			margin-top: 5px;
 		}
+
 		.wrapper .row .card {
-    		border-radius: 10px;
-   			 box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.15);
-    		width: 15%;
+			border-radius: 10px;
+			box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.15);
+			width: 15%;
 		}
+
 		.row .card .possivel-chamada button {
-    		margin-top: 10px;
-    		width: 150px;
-    		border-radius: 10000000px;
+			margin-top: 10px;
+			width: 180px;
+			height: 30px;
+			border-radius: 100px;
 		}
-		
+
+		.possivel-chamada button {
+			border: none;
+		}
 	</style>
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
@@ -82,11 +88,6 @@ include_once('../config/conexao.php');
 		?>
 	</div>
 
-	  
-	<!-- 	!! IMPORTANTE ARRUMAR OS CARDS POIS O CLIQUE NO SEGUNDO CARD ESTÁ PASSANDO A FOTO DO PRIMEIRO -->
-
-	<!-- SELECT INFO LIVRO PUBLICADO -->
-
 	<?php
 	$sql_info_anun = "SELECT US.NM_USUARIO as NM, ANUN.DS_IMG1 as img1, ANUN.DS_IMG2 as img2 ";
 	$sql_info_anun .= "FROM db_scambio.TB_ANUNCIO AS ANUN INNER JOIN db_scambio.tb_usuario AS US ON ANUN.cd_usuario = us.cd_usuario";
@@ -97,75 +98,91 @@ include_once('../config/conexao.php');
 	?>
 
 	<div class="wrapper">
+
+		<div class="form-filtro">
+			<form method="post" action="filtro.php">
+				Filtrar por:
+				<select name="opcao_filtro">
+					<option value="idade">Idade</option>
+					<option value="cidade">Cidade</option>
+					<option value="formacao">Formação</option>
+				</select>
+				<input type="text" name="valor_filtro" /><br>
+				<input type="submit" name="Pesquisar" />
+			</form>
+		</div>
+
 		<div class="row">
-		<?php
-		//FOREACH DO SELECT ANUNCIO
-        foreach ($result_select_anuncio as $key => $row) {
-            ?>
-			<div class="card col-3">
-				<div class="card-body">
-					<img class="img-fluid" id="img-book" src="img/harrypotter1.png" alt="">
-					<div class="detalhes">
-						<img id="img-profile" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Demi_Lovato_Interview_Feb_2020.png" alt="" class="img-fluid">
-						<p><?php echo $row->NM ?></p>
-					</div>
-					<div class="possivel-chamada">
-						<button>
-							<i class="	fa fa-ellipsis-h"></i>
-							Ver mais
-						</button>
-						<button><i class="fas fa-envelope"></i>
-						Chat
-					</button>
+			<?php
+			//FOREACH DO SELECT ANUNCIO
+			foreach ($result_select_anuncio as $key => $row) {
+			?>
+				<div class="card col-3">
+					<div class="card-body">
+						<img class="img-fluid" id="img-book" src="img/harrypotter1.png" alt="">
+						<div class="detalhes">
+							<img id="img-profile" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Demi_Lovato_Interview_Feb_2020.png" alt="" class="img-fluid">
+							<p><?php echo $row->NM ?></p>
+						</div>
+						<div class="possivel-chamada">
+							<button>
+								<a href="" style="color: black;">
+									<i class="	fa fa-ellipsis-h"></i>
+								</a>
+							</button>
+							<button>
+								<a href="" style="color: black;">
+									<i class="fas fa-envelope"></i>
+								</a>
+							</button>
+						</div>
 					</div>
 				</div>
-			</div>
 			<?php
-        	}
+			}
 			?>
 		</div>
 		<br>
 		<br>
 		<div class="wrapper">
-		<div class="row">
-		<?php
-		//FOREACH DO SELECT ANUNCIO
-        foreach ($result_select_anuncio as $key => $row) {
-            ?>
-			<div class="card col-3">
-				<div class="card-body">
-				<img class="img-fluid" id="img-book" src="img/harrypotter1.png" alt="">
-					<div class="detalhes">
-						<img id="img-profile" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Demi_Lovato_Interview_Feb_2020.png" alt="" class="img-fluid">
-						<p><?php echo $row->NM ?></p>
+			<div class="row">
+				<?php
+				//FOREACH DO SELECT ANUNCIO
+				foreach ($result_select_anuncio as $key => $row) {
+				?>
+					<div class="card col-3">
+						<div class="card-body">
+							<img class="img-fluid" id="img-book" src="img/harrypotter1.png" alt="">
+							<div class="detalhes">
+								<img id="img-profile" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Demi_Lovato_Interview_Feb_2020.png" alt="" class="img-fluid">
+								<p class="name-a-book"><?php echo $row->NM ?></p>
+							</div>
+							<div class="possivel-chamada">
+								<button>
+									<i class="	fa fa-ellipsis-h"></i>
+								</button>
+								<button>
+									<i class="fas fa-envelope"></i>
+								</button>
+							</div>
+						</div>
 					</div>
-					<div class="possivel-chamada">
-						<button>
-							<i class="	fa fa-ellipsis-h"></i>
-							Ver mais
-						</button>
-						<button><i class="fas fa-envelope"></i>
-						Chat
-					</button>
-					</div>
-				</div>
+				<?php
+				}
+				?>
 			</div>
-			<?php
-        	}
-			?>
 		</div>
-	</div>
 
 
-<!--
+		<!--
 https://saranyamk.github.io/images-repo/book-top.svg
 https://saranyamk.github.io/images-repo/book-side.svg
 -->
 
-	<!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
+		<!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
 
 
-	<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -188,6 +205,7 @@ https://saranyamk.github.io/images-repo/book-side.svg
 			</div>
 		</div>
 	</div> -->
-	<?php include('../menu/menu.php') ?>
-	</body>
+		<?php include('../menu/menu.php') ?>
+</body>
+
 </html>
