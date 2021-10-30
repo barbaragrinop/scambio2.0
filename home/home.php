@@ -48,7 +48,7 @@ include_once('../config/conexao.php');
 		}
 
 		.opcao_filtro {
-			width: 170px;
+			width: 200px;
 		}
 
 		.row {
@@ -130,19 +130,16 @@ include_once('../config/conexao.php');
 	<div class="wrapper">
 
 		<div class="form-filtro">
-			<form method="post" action="filtro.php" style="display: flex; flex-direction: column; margin-bottom: 20px;">
-				<div>
-					<small style="font-size: 15px; font-weight: 560;">Filtrar por:</small>
-					<select name="opcao_filtro" class="opcao_filtro">
-						<option value="nome">Nome</option>
-						<option value="cidade">Cidade</option>
-						<option value="genero">Genêro</option>
-						<option selected="selected" value="dataPublicacao">Data de publicação</option>
-					</select>
-				</div>
-				<div style="margin-top: 5px;">
-					<input type="text" name="valor_filtro" style="border: none; height: 30px;" placeholder="Nome do livro" />
-					<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 30px;" />
+			<form method="post" action="filtro.php" style="display: flex; flex-direction: row; margin-bottom: 20px; margin-left: 17px;">
+				<select name="opcao_filtro" class="opcao_filtro">
+					<option value="nome">Nome</option>
+					<option value="cidade">Cidade</option>
+					<option value="genero">Genêro</option>
+					<option selected="selected" value="dataPublicacao">Data de publicação</option>
+				</select>
+				<div style="margin-top: 1px;">
+					<input type="text" name="valor_filtro" style="border: none; height: 45px; border-radius: 5px; margin-left: 10px; padding-left: 10px; width: 270px;" placeholder="Nome do livro" />
+					<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px;" />
 				</div>
 			</form>
 		</div>
