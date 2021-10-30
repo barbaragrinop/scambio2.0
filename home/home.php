@@ -134,9 +134,10 @@ include_once('../config/conexao.php');
 				<div>
 					<small style="font-size: 15px; font-weight: 560;">Filtrar por:</small>
 					<select name="opcao_filtro" class="opcao_filtro">
-						<option selected="selected" value="dataPublicacao">Data de publicação</option>
-						<option value="cidade">Cidade</option>
 						<option value="nome">Nome</option>
+						<option value="cidade">Cidade</option>
+						<option value="genero">Genêro</option>
+						<option selected="selected" value="dataPublicacao">Data de publicação</option>
 					</select>
 				</div>
 				<div style="margin-top: 5px;">
