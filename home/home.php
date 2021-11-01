@@ -49,10 +49,13 @@ include_once('../config/conexao.php');
 		.form-filtro {
 			display: flex;
 			justify-content: center;
+			margin-top: 40px;
+    		margin-bottom: 60px;
 		}
 
 		.opcao_filtro {
 			width: 200px;
+			border-radius: 10px;
 		}
 
 		.row {
@@ -65,6 +68,8 @@ include_once('../config/conexao.php');
 		.row .card img {
 			width: 73% !important;
 			height: 12rem !important;
+			margin-top: 20px !important;
+
 		}
 
 		.card {
@@ -137,6 +142,7 @@ include_once('../config/conexao.php');
 			box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
 			animation-name: modalopen;
 			animation-duration: var(--modal-duration);
+			border-radius: 20px;
 		}
 
 		.modal-header h2,
@@ -150,8 +156,8 @@ include_once('../config/conexao.php');
 			background: var(--modal-color);
 			padding: 15px;
 			color: rgb(32, 28, 29);
-			border-top-left-radius: 5px;
-			border-top-right-radius: 5px;
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
 		}
 
 		.modal-body {
@@ -167,8 +173,8 @@ include_once('../config/conexao.php');
 			padding: 10px;
 			color: #fff;
 			text-align: center;
-			border-bottom-left-radius: 5px;
-			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
 		}
 
 		.close {
@@ -228,7 +234,7 @@ include_once('../config/conexao.php');
 	<div class="wrapper">
 
 		<div class="form-filtro">
-			<form method="post" action="filtro.php" style="display: flex; flex-direction: row; margin-bottom: 20px; margin-left: 17px;">
+			<form method="post" action="filtro.php" style="display: flex; flex-direction: row; margin-bottom: 20px; margin-left: 35px;">
 				<select name="opcao_filtro" class="opcao_filtro">
 					<option value="nome">Nome</option>
 					<option value="cidade">Cidade</option>
@@ -236,8 +242,8 @@ include_once('../config/conexao.php');
 					<option selected="selected" value="dataPublicacao">Data de publicação</option>
 				</select>
 				<div style="margin-top: 1px;">
-					<input type="text" name="valor_filtro" style="border: none; height: 45px; border-radius: 5px; margin-left: 10px; padding-left: 10px; width: 270px;" placeholder="Nome do livro" />
-					<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px;" />
+					<input type="text" name="valor_filtro" style="border: none; height: 45px; border-radius: 5px; margin-left: 10px; padding-left: 10px; width: 595px;" placeholder="Nome do livro" />
+					<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 8px; width: 90px; background-color: #AC7E55; color: #ffffffff" />
 				</div>
 			</form>
 		</div>
@@ -370,7 +376,50 @@ include_once('../config/conexao.php');
 				</div>
 			</div>
 		</div>
+		<div class="card col-md-6" style="width: 13rem;">
+			<img src="./img/Romeu-e-Julieta-de-Shakespeare-181x300.jpg" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-name" style="margin-top: -11px;">Romeu e Julieta</h5>
+				<p class="card-city" style="margin-top: -6px; font-size: 15px;">São Vicente/SP</p>
+				<p class="card-gen" style="margin-top: -21px; font-size: 15px;">Suspense</p>
+				<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;">30/25/2021</p>
+				<div class="btns">
+					<button>
+						<a href="">
+							<i class="fa fa-ellipsis-h"></i>
+						</a>
+					</button>
+					<button>
+						<a href="">
+							<i class="fas fa-envelope"></i>
+						</a>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="card col-md-6" style="width: 13rem;">
+			<img src="./img/Romeu-e-Julieta-de-Shakespeare-181x300.jpg" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-name" style="margin-top: -11px;">Romeu e Julieta</h5>
+				<p class="card-city" style="margin-top: -6px; font-size: 15px;">São Vicente/SP</p>
+				<p class="card-gen" style="margin-top: -21px; font-size: 15px;">Suspense</p>
+				<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;">30/25/2021</p>
+				<div class="btns">
+					<button>
+						<a href="">
+							<i class="fa fa-ellipsis-h"></i>
+						</a>
+					</button>
+					<button>
+						<a href="">
+							<i class="fas fa-envelope"></i>
+						</a>
+					</button>
+				</div>
+			</div>
+		</div>
 	</div>
+	
 
 	<div class="box-modal">
 
@@ -436,7 +485,7 @@ include_once('../config/conexao.php');
 				</div>
 				<div class="modal-footer">
 					<a href="">
-						<button>Publicar</button>
+						<button style="border: none; border-radius: 10px; background-color: #AC7E55; WIDTH: 90PX; COLOR: WHITE;height: 30px">Publicar</button>
 					</a>
 				</div>
 			</div>
