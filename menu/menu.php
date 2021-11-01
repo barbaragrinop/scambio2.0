@@ -66,7 +66,7 @@
         }
 
         function redirectPerfil() {
-            window.location.replace('../perfil.php');
+            window.location.replace('../perfil/perfil.php');
         }
 
         function redirectAjuda() {
