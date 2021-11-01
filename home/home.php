@@ -374,7 +374,7 @@ include_once('../config/conexao.php');
 
 	<div class="box-modal">
 
-		<div id="my-modal" class="modal" style="display: block;">
+		<div id="my-modal" class="modal">
 			<div class="modal-content" style="margin-top: 100px;">
 				<div class="modal-header">
 					<h5>Publicar um livro</h5>
