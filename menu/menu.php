@@ -27,9 +27,9 @@
             </div>
         </li>
         <li>
-            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Publicar Livro</a></span>
+            <span class="fab-labelll"><a id="modal-btn" style="text-decoration: none; color: white;">Publicar Livro</a></span>
             <div class="fab-icon-holderrr">
-                <a id="publicar" style="text-decoration: none;" onclick="redirectPublicacao()"><i class="fas fa-book"></i></a>
+                <a id="modal-btn" style="text-decoration: none;" onclick="redirectPublicacao()"><i class="fas fa-book"></i></a>
             </div>
         </li>
         <li>
