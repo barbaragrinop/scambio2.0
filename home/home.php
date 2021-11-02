@@ -223,9 +223,21 @@ include_once('../config/conexao.php');
 	</div>
 
 	<?php
-	$sql_info_anun = "SELECT US.NM_USUARIO as NM, ANUN.DS_IMG1 as img1, ANUN.DS_IMG2 as img2 ";
-	$sql_info_anun .= "FROM db_scambio.TB_ANUNCIO AS ANUN INNER JOIN db_scambio.tb_usuario AS US ON ANUN.cd_usuario = us.cd_usuario";
-	$SQLANUN = $pdo->prepare($sql_info_anun);
+
+	 if(isset($_POST["search"])){
+		$filtro = $_POST["search"];
+	}else{
+		$filtro = "";
+	}
+
+
+	$sql = "SELECT ANUN.CD_ANUNCIO as cda,ANUN.DS_ANUNCIO as ds,ANUN.DS_IMG1 as img1,ANUN.DS_IMG2 as img2, ANUN.dt_anuncio as dta,US.nm_usuario as user,LOC.NM_LOGRADOURO as loc,LOC.CD_CASA as casa,";
+	$sql .= " BAIRRO.NM_BAIRRO as bairro,CITY.NM_CIDADE as cid,UF.SG_UF as u,LIV.NM_LIVRO as livro,LIV.DT_LANCAMENTO as lanc, AUT.NM_AUTOR AS AUTOR, GE.NM_GENERO AS genero FROM db_scambio.TB_ANUNCIO AS ANUN INNER JOIN db_scambio.tb_usuario AS US ON";
+	$sql .= " ANUN.cd_usuario = US.cd_usuario INNER JOIN db_scambio.tb_logradouro AS LOC ON US.cd_logradouro = LOC.CD_LOGRADOURO INNER JOIN db_scambio.TB_BAIRRO AS BAIRRO ON";
+	$sql .= " BAIRRO.cd_BAIRRO = LOC.cd_BAIRRO INNER JOIN db_scambio.TB_CIDADE AS CITY ON CITY.cd_CIDADE = BAIRRO.cd_CIDADE INNER JOIN db_scambio.TB_UF AS UF ON";
+	$sql .= " UF.CD_UF = CITY.CD_UF INNER JOIN db_scambio.TB_LIVRO AS LIV ON LIV.CD_LIVRO = ANUN.CD_LIVRO INNER JOIN db_scambio.TB_AUTOR AS AUT ON AUT.CD_AUTOR = LIV.CD_AUTOR";
+	$sql .= " INNER JOIN DB_SCAMBIO.livro_genero AS LIVG ON  LIVG.CD_LIVRO = LIV.CD_LIVRO INNER JOIN  DB_SCAMBIO.tb_genero AS GE ON  GE.cd_genero = LIVG.cd_genero WHERE NM_LIVRO LIKE '" . $filtro . "%'";
+	$SQLANUN = $pdo->prepare($sql);
 	$SQLANUN->execute();
 	$result_select_anuncio = $SQLANUN->fetchAll(PDO::FETCH_OBJ);
 
@@ -242,180 +254,41 @@ include_once('../config/conexao.php');
 					<option selected="selected" value="dataPublicacao">Data de publicação</option>
 				</select>
 				<div style="margin-top: 1px;">
-					<input type="text" name="valor_filtro" style="border: none; height: 45px; border-radius: 5px; margin-left: 10px; padding-left: 10px; width: 595px;" placeholder="Nome do livro" />
-					<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 8px; width: 90px; background-color: #AC7E55; color: #ffffffff" />
+					<input type="text" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 10px; padding-left: 10px; width: 270px;" placeholder="Nome do livro" />
+					<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px;" />
 				</div>
 			</form>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="card col-md-6" style="width: 13rem;">
-			<img src="./img/a-divina-comédia-191x300.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-name" style="margin-top: -11px;">A divina comédia</h5>
-				<p class="card-city" style="margin-top: -6px; font-size: 15px;">São Vicente/SP</p>
-				<p class="card-gen" style="margin-top: -21px; font-size: 15px;">Comédia</p>
-				<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;">28/10/2021</p>
-				<div class="btns">
-					<button>
-						<a href="">
-							<i class="fa fa-ellipsis-h"></i>
-						</a>
-					</button>
-					<button>
-						<a href="">
-							<i class="fas fa-envelope"></i>
-						</a>
-					</button>
+		<?php 
+            foreach ($result_select_anuncio as $key => $row) {
+                ?>
+				<div class="card col-md-6" style="width: 13rem;">
+					<img src="./img/a-divina-comédia-191x300.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-name" style="margin-top: -11px;"><?php echo $row->livro ?></h5>
+						<p class="card-city" style="margin-top: -6px; font-size: 15px;"><?php echo $row->cid . "/" . $row->u ?></p>
+						<p class="card-gen" style="margin-top: -21px; font-size: 15px;"><?php echo $row->genero ?></p>
+						<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;"><?php echo $row->dta ?></p>
+						<div class="btns">
+							<button>
+								<a href="">
+									<i class="fa fa-ellipsis-h"></i>
+								</a>
+							</button>
+							<button>
+								<a href="">
+									<i class="fas fa-envelope"></i>
+								</a>
+							</button>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="card col-md-6" style="width: 13rem;">
-			<img src="./img/harrypotter1.png" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-name" style="margin-top: -11px;">Harry potter</h5>
-				<p class="card-city" style="margin-top: -6px; font-size: 15px;">Santos/SP</p>
-				<p class="card-gen" style="margin-top: -21px; font-size: 15px;">Terror</p>
-				<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;">30/10/2021</p>
-				<div class="btns">
-					<button>
-						<a href="">
-							<i class="fa fa-ellipsis-h"></i>
-						</a>
-					</button>
-					<button>
-						<a href="">
-							<i class="fas fa-envelope"></i>
-						</a>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="card col-md-6" style="width: 13rem;">
-			<img src="./img/a-república-194x300.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-name" style="margin-top: -11px;">A republica</h5>
-				<p class="card-city" style="margin-top: -6px; font-size: 15px;">São Paulo/SP</p>
-				<p class="card-gen" style="margin-top: -21px; font-size: 15px;">Comédia</p>
-				<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;">20/10/2021</p>
-				<div class="btns">
-					<button>
-						<a href="">
-							<i class="fa fa-ellipsis-h"></i>
-						</a>
-					</button>
-					<button>
-						<a href="">
-							<i class="fas fa-envelope"></i>
-						</a>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="card col-md-6" style="width: 13rem;">
-			<img src="./img/Romeu-e-Julieta-de-Shakespeare-181x300.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-name" style="margin-top: -11px;">Romeu e Julieta</h5>
-				<p class="card-city" style="margin-top: -6px; font-size: 15px;">São Vicente/SP</p>
-				<p class="card-gen" style="margin-top: -21px; font-size: 15px;">Suspense</p>
-				<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;">30/25/2021</p>
-				<div class="btns">
-					<button>
-						<a href="">
-							<i class="fa fa-ellipsis-h"></i>
-						</a>
-					</button>
-					<button>
-						<a href="">
-							<i class="fas fa-envelope"></i>
-						</a>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="card col-md-6" style="width: 13rem;">
-			<img src="./img/Riqueza-das-Nações-Adam-Smith-203x300.jpeg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-name" style="margin-top: -11px;">Riqueza das nações</h5>
-				<p class="card-city" style="margin-top: -6px; font-size: 15px;">Santos/SP</p>
-				<p class="card-gen" style="margin-top: -21px; font-size: 15px;">Terror</p>
-				<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;">31/10/2021</p>
-				<div class="btns">
-					<button>
-						<a href="">
-							<i class="fa fa-ellipsis-h"></i>
-						</a>
-					</button>
-					<button>
-						<a href="">
-							<i class="fas fa-envelope"></i>
-						</a>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="card col-md-6" style="width: 13rem;">
-			<img src="./img/odisseia-210x300.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-name" style="margin-top: -11px;">Odisséia</h5>
-				<p class="card-city" style="margin-top: -6px; font-size: 15px;">São Paulo/SP</p>
-				<p class="card-gen" style="margin-top: -21px; font-size: 15px;">Comédia</p>
-				<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;">31/10/2021</p>
-				<div class="btns">
-					<button>
-						<a href="">
-							<i class="fa fa-ellipsis-h"></i>
-						</a>
-					</button>
-					<button>
-						<a href="">
-							<i class="fas fa-envelope"></i>
-						</a>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="card col-md-6" style="width: 13rem;">
-			<img src="./img/Romeu-e-Julieta-de-Shakespeare-181x300.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-name" style="margin-top: -11px;">Romeu e Julieta</h5>
-				<p class="card-city" style="margin-top: -6px; font-size: 15px;">São Vicente/SP</p>
-				<p class="card-gen" style="margin-top: -21px; font-size: 15px;">Suspense</p>
-				<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;">30/25/2021</p>
-				<div class="btns">
-					<button>
-						<a href="">
-							<i class="fa fa-ellipsis-h"></i>
-						</a>
-					</button>
-					<button>
-						<a href="">
-							<i class="fas fa-envelope"></i>
-						</a>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="card col-md-6" style="width: 13rem;">
-			<img src="./img/Romeu-e-Julieta-de-Shakespeare-181x300.jpg" class="card-img-top" alt="...">
-			<div class="card-body">
-				<h5 class="card-name" style="margin-top: -11px;">Romeu e Julieta</h5>
-				<p class="card-city" style="margin-top: -6px; font-size: 15px;">São Vicente/SP</p>
-				<p class="card-gen" style="margin-top: -21px; font-size: 15px;">Suspense</p>
-				<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;">30/25/2021</p>
-				<div class="btns">
-					<button>
-						<a href="">
-							<i class="fa fa-ellipsis-h"></i>
-						</a>
-					</button>
-					<button>
-						<a href="">
-							<i class="fas fa-envelope"></i>
-						</a>
-					</button>
-				</div>
+				<?php
+            		}
+				?>
 			</div>
 		</div>
 	</div>

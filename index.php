@@ -251,7 +251,65 @@ session_start();
         </div>
     </div>
 
-    <?php include('./menu/menu.php') ?>
+    <div class="fab-containerrr">
+    <div class="fabbb fab-icon-holderrr">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="fab-optionsss">
+        <li>
+            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Home</a></span>
+            <div class="fab-icon-holderrr">
+                <a id="home" style="text-decoration: none;" onclick="redirectHome()"><i class="fas fa-file-alt"></i></a>
+            </div>
+        </li>
+        <li>
+            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Publicar Livro</a></span>
+            <div class="fab-icon-holderrr">
+                <a id="publicar" style="text-decoration: none;" onclick="redirectPublicacao()"><i class="fas fa-book"></i></a>
+            </div>
+        </li>
+        <li>
+            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Mensagens</a></span>
+            <div class="fab-icon-holderrr">
+                <a id="chat" style="text-decoration: none;" onclick="redirectChat()"><i class="fas fa-comments"></i></a>
+            </div>
+        </li>
+        <li>
+            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Meu Perfil</a></span>
+            <div class="fab-icon-holderrr">
+                <a id="perfil" style="text-decoration: none;" onclick="redirectPerfil()"><i class="fas fa-user"></i></a>
+            </div>
+        </li>
+        <li>
+            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Ajuda</a></span>
+            <div class="fab-icon-holderrr">
+                <a id="ajuda" style="text-decoration: none;" onclick="redirectAjuda()"><i class="fas fa-question"></i></a>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        function redirectHome() {
+            window.location.replace('home/home.php');
+        }
+
+        function redirectPublicacao() {
+            window.location.replace('home/home.php');
+        }
+
+        function redirectChat() {
+            window.location.replace('chat/users-all.php');
+        }
+
+        function redirectPerfil() {
+            window.location.replace('perfil/perfil.php');
+        }
+
+        function redirectAjuda() {
+            window.location.replace('index.php#ajuda');
+        }
+    </script>
 
     <script>
         function alertaBtnAjuda() {
