@@ -14,4 +14,4 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (Exception $e) {
     echo "Erro ao conectar com o banco de dados! " . $e;
-}
+};
