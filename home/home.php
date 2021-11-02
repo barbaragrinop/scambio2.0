@@ -24,6 +24,10 @@ include_once('../config/conexao.php');
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="../fab/fab.css">
+
+
 	<style>
 		html,
 		body {
@@ -45,10 +49,13 @@ include_once('../config/conexao.php');
 		.form-filtro {
 			display: flex;
 			justify-content: center;
+			margin-top: 40px;
+    		margin-bottom: 60px;
 		}
 
 		.opcao_filtro {
 			width: 200px;
+			border-radius: 10px;
 		}
 
 		.row {
@@ -61,6 +68,8 @@ include_once('../config/conexao.php');
 		.row .card img {
 			width: 73% !important;
 			height: 12rem !important;
+			margin-top: 20px !important;
+
 		}
 
 		.card {
@@ -86,6 +95,11 @@ include_once('../config/conexao.php');
 			justify-content: space-between;
 		}
 
+		:root {
+			--modal-duration: 1s;
+			--modal-color: #D9C8B0;
+		}
+
 		.btns button {
 			border: none;
 			border-radius: 5px;
@@ -95,6 +109,96 @@ include_once('../config/conexao.php');
 		.btns a {
 			text-decoration: none;
 			color: black;
+		}
+
+		.button {
+			background: #b160a6;
+			padding: 1em 2em;
+			color: #fff;
+			border: 0;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.button:hover {
+			background: #3876ac;
+		}
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		.modal-content {
+			margin: 10% auto;
+			width: 60%;
+			box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+			animation-name: modalopen;
+			animation-duration: var(--modal-duration);
+			border-radius: 20px;
+		}
+
+		.modal-header h2,
+		.modal-footer h3 {
+			margin: 0;
+		}
+
+		.modal-header {
+			height: 60px;
+			margin-top: -60px;
+			background: var(--modal-color);
+			padding: 15px;
+			color: rgb(32, 28, 29);
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
+		}
+
+		.modal-body {
+			margin-bottom: 60px;
+			padding: 10px 20px;
+			background: #fff;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.modal-footer {
+			background: var(--modal-color);
+			padding: 10px;
+			color: #fff;
+			text-align: center;
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+
+		.close {
+			color: #ccc;
+			float: right;
+			font-size: 30px;
+			color: #fff;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		@keyframes modalopen {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
 		}
 	</style>
 </head>
@@ -142,7 +246,7 @@ include_once('../config/conexao.php');
 	<div class="wrapper">
 
 		<div class="form-filtro">
-			<form method="post"  style="display: flex; flex-direction: row; margin-bottom: 20px; margin-left: 17px;">
+			<form method="post" action="filtro.php" style="display: flex; flex-direction: row; margin-bottom: 20px; margin-left: 35px;">
 				<select name="opcao_filtro" class="opcao_filtro">
 					<option value="nome">Nome</option>
 					<option value="cidade">Cidade</option>
@@ -159,8 +263,8 @@ include_once('../config/conexao.php');
 
 	<div class="row">
 		<?php 
-			foreach ($result_select_anuncio as $key => $row) {
-		?>
+            foreach ($result_select_anuncio as $key => $row) {
+                ?>
 				<div class="card col-md-6" style="width: 13rem;">
 					<img src="./img/a-divina-comédia-191x300.jpg" class="card-img-top" alt="...">
 					<div class="card-body">
@@ -182,12 +286,184 @@ include_once('../config/conexao.php');
 						</div>
 					</div>
 				</div>
-			<?php 
-			}
-		?>
+				<?php
+            		}
+				?>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="box-modal">
+
+		<div id="my-modal" class="modal">
+			<div class="modal-content" style="margin-top: 100px;">
+				<form id="form-cadastro-publicacao">
+				<div class="modal-header">
+					<h5>Publicar um livro</h5>
+					<span class="close">&times;</span>
+				</div>
+				<div class="modal-body">
+					<label style="font-size: 16px;">Nome: </label> <input type="text">
+					<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea name="descricao" style="width: 100%; max-height: 200px;"> </textarea>
+					<div style="display: flex; flex-direction: row;">
+						<div style="width: 310px;">
+
+							<label style="font-size: 16px;" for="cars">Gênero:</label>
+							<select style="width: 117%; font-size: 14.5px;" id="cars" name="carlist" form="carform">
+								<option value="biografia">Biografia</option>
+								<option value="carta">Carta</option>
+								<option value="chicklit">Chick-Lit</option>
+								<option value="conto">Conto</option>
+								<option value="cronica">Crônica</option>
+								<option value="drama">Drama</option>
+								<option value="ensaio">Ensaio</option>
+								<option value="ficcao">Ficção</option>
+								<option value="historiaemquadrinhos">História em Quadrinhos (HQ)</option>
+								<option value="ladlit">Lad-Lit</option>
+								<option value="literaturafantastica">Literatura Fantástica</option>
+								<option value="literaturainfantil">Literatura Infantil</option>
+								<option value="literaturainfantojuvenil">Literatura Infanto-juvenil</option>
+								<option value="literaturanacional">Literatura Nacional</option>
+								<option value="memorias">Memórias</option>
+								<option value="newadult">New Adult</option>
+								<option value="novela">Novela</option>
+								<option value="poesia">Poesia</option>
+								<option value="realismomagico">Realismo Mágico </option>
+								<option value="romance">Romance</option>
+								<option value="sick-lit">Sick-Lit</option>
+								<option value="terror">Terror</option>
+							</select>
+						</div>
+						<div style="margin-left: 90px;">
+
+							<label style="font-size: 16px;">Autor: </label>
+							<input style="height: 45px; width: 135%;" type="text">
+						</div>
+
+					</div>
+
+
+					<label>Fotos: <span style="font-size: 12px;">(Máx 3 imagens)</span> </label>
+					<label style="background: white; color: white; font-family: sans-serif; font-weight: bold; border-radius: 8px; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: start; margin-top: -10px;">
+						<div style="margin-left: 5px;">
+							<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 1</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file1" id="file1">
+						</div>
+						<div style="margin-left: 5px;">
+							<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 2</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file2" id="file2">
+						</div>
+						<div style="margin-left: 5px;">
+							<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 3</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file3" id="file3">
+						</div>
+					</label>
+				</div>
+				<div class="modal-footer">
+					<a href="">
+						<button style="border: none; border-radius: 10px; background-color: #AC7E55; WIDTH: 90PX; COLOR: WHITE;height: 30px">Publicar</button>
+					</a>
+				</div>
+				</form>
+			</div>
+		</div>
 	</div>
 
-	<?php include('../menu/menu.php') ?>
+	<div class="fab-containerrr">
+		<div class="fabbb fab-icon-holderrr">
+			<i class="fas fa-bars"></i>
+		</div>
+
+		<ul class="fab-optionsss">
+			<li>
+				<span class="fab-labelll"><a style="text-decoration: none; color: white;">Home</a></span>
+				<div class="fab-icon-holderrr">
+					<a id="home" style="text-decoration: none;" onclick="redirectHome()"><i class="fas fa-file-alt"></i></a>
+				</div>
+			</li>
+			<li>
+				<span class="fab-labelll">
+					<a id="modal-btn" style="text-decoration: none; color: white;">Publicar Livro</a>
+				</span>
+				<span class="fab-icon-holderrr">
+					<a id="modal-btn" style="text-decoration: none;" onclick="redirectPublicacao()">
+						<i class="fas fa-book"></i>
+					</a>
+				</span>
+				<!-- <div class="fab-icon-holderrr"> -->
+				<!-- </div> -->
+
+			</li>
+			<li>
+				<span class="fab-labelll"><a style="text-decoration: none; color: white;">Mensagens</a></span>
+				<div class="fab-icon-holderrr">
+					<a id="chat" style="text-decoration: none;" onclick="redirectChat()"><i class="fas fa-comments"></i></a>
+				</div>
+			</li>
+			<li>
+				<span class="fab-labelll"><a style="text-decoration: none; color: white;">Meu Perfil</a></span>
+				<div class="fab-icon-holderrr">
+					<a id="perfil" style="text-decoration: none;" onclick="redirectPerfil()"><i class="fas fa-user"></i></a>
+				</div>
+			</li>
+			<li>
+				<span class="fab-labelll"><a style="text-decoration: none; color: white;">Ajuda</a></span>
+				<div class="fab-icon-holderrr">
+					<a id="ajuda" style="text-decoration: none;" onclick="redirectAjuda()"><i class="fas fa-question"></i></a>
+				</div>
+			</li>
+		</ul>
+
+		<script>
+			function redirectHome() {
+				window.location.replace('../home/home.php');
+			}
+
+			function redirectPublicacao() {
+				window.location.replace('../home/home.php');
+			}
+
+			function redirectChat() {
+				window.location.replace('../chat/users-all.php');
+			}
+
+			function redirectPerfil() {
+				window.location.replace('../perfil2.php');
+			}
+
+			function redirectAjuda() {
+				window.location.replace('../index.php#ajuda');
+			}
+		</script>
+	</div>
+
+	<script>
+		// Get DOM Elements
+		const modal = document.querySelector('#my-modal');
+		const modalBtn = document.querySelector('#modal-btn');
+		const closeBtn = document.querySelector('.close');
+
+		// Events
+		modalBtn.addEventListener('click', openModal);
+		closeBtn.addEventListener('click', closeModal);
+		window.addEventListener('click', outsideClick);
+
+		// Open
+		function openModal() {
+			modal.style.display = 'block';
+		}
+
+		// Close
+		function closeModal() {
+			modal.style.display = 'none';
+		}
+
+		// Close If Outside Click
+		function outsideClick(e) {
+			if (e.target == modal) {
+				modal.style.display = 'none';
+			}
+		}
+	</script>
+	<script src=""></script>
 </body>
 
 </html>
