@@ -1,6 +1,9 @@
 <?php
 session_start();
 if (isset($_SESSION['id'])) {
+    
+    include_once('../config/conexao.php');
+  
 ?>
     <!DOCTYPE html>
     <html lang="pt-br">
@@ -20,7 +23,8 @@ if (isset($_SESSION['id'])) {
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><div class=""></div>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <link rel="stylesheet" href="../fab/fab.css">
 
@@ -74,6 +78,7 @@ if (isset($_SESSION['id'])) {
                 margin-bottom: 6.5px;
                 color: white;
                 border: none;
+                text-align: center;
             }
 
             .btn-edit {
@@ -81,6 +86,7 @@ if (isset($_SESSION['id'])) {
                 color: white;
                 width: 150px;
                 border: none;
+                text-align: center;
             }
 
             .btn-delete:hover,
@@ -109,37 +115,11 @@ if (isset($_SESSION['id'])) {
             </button>
         </div>
         <?php
+            /* SELECT PARA TRAZER INFORMAÇÕES DO USUARIO */
+            include_once('PHP/select_info_user.php');
 
-        // ALL QUERY
-        include_once('../config/conexao.php');
-
-
-        // $data = file_get_contents('C:\xampp\htdocs\asd\scambio2.0\babi.jpg');
-        // $data = base64_encode($data);
-        // $query2 = $pdo->prepare('UPDATE DB_SCAMBIO.TB_USUARIO SET DS_IMGP = "' . $data . '" WHERE CD_usuario = ' . $_SESSION['id']);
-        // $query2->execute();
-
-        // QUERY PARA PUXAR INFORMAÇÃO DO USUPARIO
-        $usuario = $pdo->prepare("SELECT * FROM DB_SCAMBIO.TB_USUARIO WHERE CD_USUARIO =  " . $_SESSION['id']);
-        $usuario->execute();
-        $select_info_usuario = $usuario->fetch();
-
-        // QUERY PARA PUXAR LIVROS POSTADOS PELO USUARIO
-        $sql = "SELECT ANUN.CD_ANUNCIO as cda,ANUN.DS_ANUNCIO as ds,ANUN.DS_IMG1 as img1,ANUN.DS_IMG2 as img2,US.nm_usuario as user,LOC.NM_LOGRADOURO as loc,LOC.CD_CASA as casa,";
-        $sql .= " BAIRRO.NM_BAIRRO as bairro,CITY.NM_CIDADE as cid,UF.SG_UF as u,LIV.NM_LIVRO as livro,LIV.DT_LANCAMENTO as lanc, AUT.NM_AUTOR AS AUTOR FROM db_scambio.TB_ANUNCIO AS ANUN INNER JOIN db_scambio.tb_usuario AS US ON";
-        $sql .= " ANUN.cd_usuario = US.cd_usuario INNER JOIN db_scambio.tb_logradouro AS LOC ON US.cd_logradouro = LOC.CD_LOGRADOURO INNER JOIN db_scambio.TB_BAIRRO AS BAIRRO ON";
-        $sql .= " BAIRRO.cd_BAIRRO = LOC.cd_BAIRRO INNER JOIN db_scambio.TB_CIDADE AS CITY ON CITY.cd_CIDADE = BAIRRO.cd_CIDADE INNER JOIN db_scambio.TB_UF AS UF ON";
-        $sql .= " UF.CD_UF = CITY.CD_UF INNER JOIN db_scambio.TB_LIVRO AS LIV ON LIV.CD_LIVRO = ANUN.CD_LIVRO INNER JOIN db_scambio.TB_AUTOR AS AUT ON AUT.CD_AUTOR = LIV.CD_AUTOR WHERE US.CD_USUARIO = " . $_SESSION["id"];
-        $livrouser = $pdo->prepare($sql);
-        $livrouser->execute();
-        $select_info_livro = $livrouser->fetchAll(PDO::FETCH_OBJ);
-
-        $sql2 = "SELECT COUNT(*) as total, LIV.NM_LIVRO AS NML, ANUN.CD_ANUNCIO AS CDANUN  FROM DB_SCAMBIO.TB_lIVRO AS LIV";
-        $sql2 .= " INNER JOIN DB_SCAMBIO.TB_ANUNCIO AS ANUN ON ANUN.CD_LIVRO = LIV.CD_LIVRO";
-        $sql2 .= " INNER JOIN DB_SCAMBIO.TB_USUARIO AS US ON US.CD_USUARIO = ANUN.CD_USUARIO WHERE US.CD_USUARIO = " . $_SESSION['id'];
-        $countpublic = $pdo->prepare($sql2);
-        $countpublic->execute();
-        $select_count_liv_publicados = $countpublic->fetch(PDO::FETCH_ASSOC);
+            /*  SELECT PARA TRAZER INFORMAÇÕES DOS LIVROS PUBLICADOS PELO USER E QUANTIDADE DE LIVRO PUBLICADOS */
+            include_once('PHP/select_info_livro.php')
         ?>
         <div class="container" style="margin-top: 38px;">
             <div class="main">
@@ -215,56 +195,62 @@ if (isset($_SESSION['id'])) {
                         </div>
                         <h1 class="m-3">Livros Postados <span>(<?php print_r($select_count_liv_publicados['total']); ?>)</span> </h1>
                         <?php
-                        foreach ($select_info_livro as $key => $row) {
+
+                            /* FOREACH PORA POPULAR LIVROS POSTADOS */
+                            foreach ($select_info_livro as $key => $row) {
                         ?>
-                            <div class="card mb-3 content">
-                                <div class="cards-posts">
-                                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img src="./home/img/photo1.png" class="d-block w-100" alt="...">
+                                <div class="card mb-3 content">
+                                    <div class="cards-posts">
+                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="./home/img/photo1.png" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="./home/img/photo2.jpg" class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="./home/img/photo3.jpg" class="d-block w-100" alt="...">
+                                                </div>
                                             </div>
-                                            <div class="carousel-item">
-                                                <img src="./home/img/photo2.jpg" class="d-block w-100" alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="./home/img/photo3.jpg" class="d-block w-100" alt="...">
-                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
                                         </div>
-                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
+                                        <div class="infos-publi">
+                                            <span class="name-livro-publi">
+                                                Nome: <span><?php echo $row->livro ?></span>
+                                            </span>
+                                            <span class="desciption-publi">
+                                                Descrição: <span><?php echo $row->ds ?></span>
+                                            </span>
+                                            <span>
+                                                Cidade: <span><?php echo $row->cid . "/" . $row->u?></span>
+                                            </span>
+                                            <span style="display: flex; flex-direction: column;">
+                                                    <button class="btn-delete" data-toggle="modal" data-target="#exampleModalLongD<?php echo $row->cda?>">Deletar publicação</button>
+                                                    <button class="btn-edit" data-toggle="modal" data-target="#exampleModalLongE<?php echo $row->cda?>">Editar publicação</button>
+                                            </span>
+                                        </div>
                                     </div>
-                                    <div class="infos-publi">
-                                        <span class="name-livro-publi">
-                                            Nome: <span>CINQUENTA</span>
-                                        </span>
-                                        <span class="desciption-publi">
-                                            Descrição: <span>Estou querendo trocar esse livro para achar um livro do meu interesse.</span>
-                                        </span>
-                                        <span>
-                                            Cidade: <span>São Vicente/SP</span>
-                                        </span>
-                                        <span style="display: flex; flex-direction: column;">
-                                            <button class="btn-delete">Deletar publicação</button>
-                                            <button class="btn-edit">Editar publicação</button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                                </div> 
                         <?php
-                        }
+                                /* INCLUDE MODAL COM OPÇÃO DE DELETAR PUBLICACAO */
+                                include('includes/modaldel.php');
+
+                                /* INCLUDE MODAL COM OPÇÃO DE EDITAR PUBLICACAO */
+                                include('includes/modaledit.php');
+                            }
                         ?>
                     </div>
                 </div>
             </div>
         </div>
-
         <script>
             feather.replace();
         </script>
@@ -272,6 +258,7 @@ if (isset($_SESSION['id'])) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
         <script src="https://use.fontawesome.com/88a6c0ea9a.js"></script>
+        <script src="../assets/js/pagereload.js"></script>
         <?php include('../menu/menu.php') ?>
     </body>
 
