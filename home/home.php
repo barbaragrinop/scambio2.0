@@ -425,6 +425,7 @@ include_once('../config/conexao.php');
 
 		<div id="my-modal" class="modal">
 			<div class="modal-content" style="margin-top: 100px;">
+				<form id="form-cadastro-publicacao">
 				<div class="modal-header">
 					<h5>Publicar um livro</h5>
 					<span class="close">&times;</span>
@@ -488,6 +489,7 @@ include_once('../config/conexao.php');
 						<button style="border: none; border-radius: 10px; background-color: #AC7E55; WIDTH: 90PX; COLOR: WHITE;height: 30px">Publicar</button>
 					</a>
 				</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -588,7 +590,7 @@ include_once('../config/conexao.php');
 			}
 		}
 	</script>
-
+	<script src=""></script>
 </body>
 
 </html>

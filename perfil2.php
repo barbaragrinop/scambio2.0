@@ -1,3 +1,34 @@
+<?php 
+session_start();
+include_once './config/conexao.php';
+
+if(!isset($_SESSION['id'])){
+    header("Location: index.php");
+}
+
+$id = $_SESSION['id'];
+
+
+$sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
+                        inner join db_scambio.tb_logradouro
+                        on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
+                        inner join db_scambio.tb_bairro 
+                        on tb_bairro.cd_bairro = tb_logradouro.cd_bairro
+                        inner join db_scambio.tb_cidade
+                        on tb_cidade.cd_cidade = tb_bairro.cd_cidade
+                        inner join db_scambio.tb_uf
+                        on tb_uf.cd_uf = tb_cidade.cd_uf
+                        where cd_usuario = :id");
+$sql->execute(array(':id' => $id));
+if($sql->rowCount() >=1 ){
+    $row = $sql->fetch((PDO::FETCH_ASSOC));
+}
+
+function transformAge($date){
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,46 +46,46 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container bootstrap snippets bootdey">
 <div class="row">
-  <div class="profile-nav col-md-3">
-      <div class="panel">
-          <div class="user-heading round">
-              <a href="#">
-                  <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-              </a>
-              <h1>Beatriz Martins</h1>
-          </div>
+    <div class="profile-nav col-md-3">
+        <div class="panel">
+            <div class="user-heading round">
+                <a href="#">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                </a>
+                <h1><?= $row['nm_usuario']?></h1>
+            </div>
 
-          <ul class="nav nav-pills nav-stacked">
-              <li class="active"><a href="#"> <i class="fa fa-user"></i> Perfil</a></li>
-              <li><a href="#"> <i class="fa fa-calendar"></i>Anuncios<span class="label label-warning pull-right r-activity">9</span></a></li>
-              <li><a href="#"> <i class="fa fa-edit"></i>Editar Perfil</a></li>
-          </ul>
-      </div>
-  </div>
-  <div class="profile-info col-md-9">
-      <div class="panel">
-          <div class="panel-body bio-graph-info">
-              <h1>Biografia</h1>
-              <div class="row">
-                  <div class="bio-row">
-                      <p><span>Nome:</span>Beatriz Martins</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Estado:</span>Sao Paulo</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Cidade:</span>Sao Vicente</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Aniversario:</span>24/07/2003</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Status:</span>Online</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-</div>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#"> <i class="fa fa-user"></i> Perfil</a></li>
+                <li><a href="#"> <i class="fa fa-calendar"></i>Anuncios<span class="label label-warning pull-right r-activity">9</span></a></li>
+                <li><a href="#"> <i class="fa fa-edit"></i>Editar Perfil</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="profile-info col-md-9">
+        <div class="panel">
+            <div class="panel-body bio-graph-info">
+                <h1>Biografia</h1>
+                <div class="row">
+                    <div class="bio-row">
+                        <p><span>Nome:</span><?= $row['nm_usuario']?></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Estado:</span><?= $row['sg_uf']?></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Cidade:</span><?= $row['nm_cidade']?></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Aniversario:</span><?= date('d/m/Y', strtotime(($row['dt_nascimento'])))?></p>
+                    </div>
+                    <div class="bio-row">
+                        <p><span>Status:</span>Online</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style type="text/css">
