@@ -269,13 +269,11 @@ include_once('../config/conexao.php');
 					</div>
 				</div>
 				<?php
-            		}
+					}
 				?>
 			</div>
 		</div>
 	</div>
-	
-
 	<div class="box-modal">
 
 		<div id="my-modal" class="modal">
