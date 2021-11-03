@@ -51,7 +51,7 @@ include_once('../config/conexao.php');
 			display: flex;
 			justify-content: center;
 			margin-top: 40px;
-    		margin-bottom: 60px;
+			margin-bottom: 60px;
 		}
 
 		.opcao_filtro {
@@ -222,8 +222,8 @@ include_once('../config/conexao.php');
 	</div>
 
 	<?php
-		/* SELECT PARA TRAZER TODOS OS LIVROS PUBLICADOS */
-		include('PHP/SELECT_LIVROS_PUBLICADOS.PHP');
+	/* SELECT PARA TRAZER TODOS OS LIVROS PUBLICADOS */
+	include('PHP/SELECT_LIVROS_PUBLICADOS.PHP');
 	?>
 
 	<div class="wrapper">
@@ -245,35 +245,35 @@ include_once('../config/conexao.php');
 	</div>
 
 	<div class="row">
-		<?php 
-            foreach ($result_select_anuncio as $key => $row) {
-                ?>
-				<div class="card col-md-6" style="width: 13rem;">
-					<img src="./img/a-divina-comédia-191x300.jpg" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-name" style="margin-top: -11px;"><?php echo $row->livro ?></h5>
-						<p class="card-city" style="margin-top: -6px; font-size: 15px;"><?php echo $row->cid . "/" . $row->u ?></p>
-						<p class="card-gen" style="margin-top: -21px; font-size: 15px;"><?php echo $row->genero ?></p>
-						<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;"><?php echo $row->dta ?></p>
-						<div class="btns">
-							<button>
-								<a href="">
-									<i class="fa fa-ellipsis-h"></i>
-								</a>
-							</button>
-							<button>
-								<a href="">
-									<i class="fas fa-envelope"></i>
-								</a>
-							</button>
-						</div>
+		<?php
+		foreach ($result_select_anuncio as $key => $row) {
+		?>
+			<div class="card col-md-6" style="width: 13rem;">
+				<img src="./img/a-divina-comédia-191x300.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-name" style="margin-top: -11px;"><?php echo $row->livro ?></h5>
+					<p class="card-city" style="margin-top: -6px; font-size: 15px;"><?php echo $row->cid . "/" . $row->u ?></p>
+					<p class="card-gen" style="margin-top: -21px; font-size: 15px;"><?php echo $row->genero ?></p>
+					<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;"><?php echo $row->dta ?></p>
+					<div class="btns">
+						<button>
+							<a href="">
+								<i class="fa fa-ellipsis-h"></i>
+							</a>
+						</button>
+						<button>
+							<a href="">
+								<i class="fas fa-envelope"></i>
+							</a>
+						</button>
 					</div>
 				</div>
-				<?php
-					}
-				?>
 			</div>
-		</div>
+		<?php
+		}
+		?>
+	</div>
+	</div>
 	</div>
 	<div class="box-modal">
 
@@ -287,11 +287,10 @@ include_once('../config/conexao.php');
 					<div class="modal-body">
 						<label style="font-size: 16px;">Nome: </label> <input type="text">
 						<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea name="descricao" style="width: 100%; max-height: 200px;"> </textarea>
-						<div style="display: flex; flex-direction: row;">
-							<div style="width: 310px;">
-
-								<label style="font-size: 16px;" for="cars">Gênero:</label>
-								<select style="width: 117%; font-size: 14.5px;" id="cars" name="carlist" form="carform">
+						<div style="display: flex;">
+							<div style="width: 100%;">
+								<label style="font-size: 16px;" for="book">Gênero:</label>
+								<select style="width: 370px; font-size: 14.5px;" id="book" name="genero" form="carform">
 									<option value="biografia">Biografia</option>
 									<option value="carta">Carta</option>
 									<option value="chicklit">Chick-Lit</option>
@@ -316,12 +315,10 @@ include_once('../config/conexao.php');
 									<option value="terror">Terror</option>
 								</select>
 							</div>
-							<div style="margin-left: 90px;">
-
+							<div style="width: 100%; margin-left: 30px;">
 								<label style="font-size: 16px;">Autor: </label>
-								<input style="height: 45px; width: 135%;" type="text" name="autor">
+								<input style="height: 45px; width: 100%;" type="text" name="autor">
 							</div>
-
 						</div>
 
 
@@ -340,7 +337,7 @@ include_once('../config/conexao.php');
 					</div>
 					<div class="modal-footer">
 						<a href="">
-							<input type="submit" id= "btnCadastrar" value="Publicar" style="border: none; border-radius: 10px; background-color: #AC7E55; WIDTH: 90PX; COLOR: WHITE;height: 30px">
+							<input type="submit" id="btnCadastrar" value="Publicar" style="border: none; border-radius: 10px; background-color: #AC7E55; WIDTH: 90PX; COLOR: WHITE;height: 30px">
 						</a>
 					</div>
 				</form>
