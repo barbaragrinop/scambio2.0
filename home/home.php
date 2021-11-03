@@ -319,7 +319,7 @@ include_once('../config/conexao.php');
 							<div style="margin-left: 90px;">
 
 								<label style="font-size: 16px;">Autor: </label>
-								<input style="height: 45px; width: 135%;" type="text">
+								<input style="height: 45px; width: 135%;" type="text" name="autor">
 							</div>
 
 						</div>
