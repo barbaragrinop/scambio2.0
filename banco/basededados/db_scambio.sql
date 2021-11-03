@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `db_scambio`
+create database db_scambio;
+use db_scambio;
 --
 
 DELIMITER $$

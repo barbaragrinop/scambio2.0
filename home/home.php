@@ -362,7 +362,7 @@ include_once('../config/conexao.php');
 					<a id="modal-btn" style="text-decoration: none; color: white;">Publicar Livro</a>
 				</span>
 				<span class="fab-icon-holderrr">
-					<a id="modal-btn" style="text-decoration: none;" onclick="redirectPublicacao()">
+					<a id="modal-btn2" style="text-decoration: none;">
 						<i class="fas fa-book"></i>
 					</a>
 				</span>
@@ -417,10 +417,12 @@ include_once('../config/conexao.php');
 		// Get DOM Elements
 		const modal = document.querySelector('#my-modal');
 		const modalBtn = document.querySelector('#modal-btn');
+		const modalBtn2 = document.querySelector('#modal-btn2');
 		const closeBtn = document.querySelector('.close');
 
 		// Events
 		modalBtn.addEventListener('click', openModal);
+		modalBtn2.addEventListener('click', openModal);
 		closeBtn.addEventListener('click', closeModal);
 		window.addEventListener('click', outsideClick);
 
