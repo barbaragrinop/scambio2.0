@@ -18,6 +18,7 @@ include_once('../config/conexao.php');
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
 
 	<link href="../assets/css/style.css" rel="stylesheet">
 
@@ -278,70 +279,70 @@ include_once('../config/conexao.php');
 
 		<div id="my-modal" class="modal">
 			<div class="modal-content" style="margin-top: 100px;">
-				<form id="form-cadastro-publicacao">
-				<div class="modal-header">
-					<h5>Publicar um livro</h5>
-					<span class="close">&times;</span>
-				</div>
-				<div class="modal-body">
-					<label style="font-size: 16px;">Nome: </label> <input type="text">
-					<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea name="descricao" style="width: 100%; max-height: 200px;"> </textarea>
-					<div style="display: flex; flex-direction: row;">
-						<div style="width: 310px;">
-
-							<label style="font-size: 16px;" for="cars">Gênero:</label>
-							<select style="width: 117%; font-size: 14.5px;" id="cars" name="carlist" form="carform">
-								<option value="biografia">Biografia</option>
-								<option value="carta">Carta</option>
-								<option value="chicklit">Chick-Lit</option>
-								<option value="conto">Conto</option>
-								<option value="cronica">Crônica</option>
-								<option value="drama">Drama</option>
-								<option value="ensaio">Ensaio</option>
-								<option value="ficcao">Ficção</option>
-								<option value="historiaemquadrinhos">História em Quadrinhos (HQ)</option>
-								<option value="ladlit">Lad-Lit</option>
-								<option value="literaturafantastica">Literatura Fantástica</option>
-								<option value="literaturainfantil">Literatura Infantil</option>
-								<option value="literaturainfantojuvenil">Literatura Infanto-juvenil</option>
-								<option value="literaturanacional">Literatura Nacional</option>
-								<option value="memorias">Memórias</option>
-								<option value="newadult">New Adult</option>
-								<option value="novela">Novela</option>
-								<option value="poesia">Poesia</option>
-								<option value="realismomagico">Realismo Mágico </option>
-								<option value="romance">Romance</option>
-								<option value="sick-lit">Sick-Lit</option>
-								<option value="terror">Terror</option>
-							</select>
-						</div>
-						<div style="margin-left: 90px;">
-
-							<label style="font-size: 16px;">Autor: </label>
-							<input style="height: 45px; width: 135%;" type="text">
-						</div>
-
+				<form id="frmRecuperaCodigo">
+					<div class="modal-header">
+						<h5>Publicar um livro</h5>
+						<span class="close">&times;</span>
 					</div>
+					<div class="modal-body">
+						<label style="font-size: 16px;">Nome: </label> <input type="text">
+						<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea name="descricao" style="width: 100%; max-height: 200px;"> </textarea>
+						<div style="display: flex; flex-direction: row;">
+							<div style="width: 310px;">
+
+								<label style="font-size: 16px;" for="cars">Gênero:</label>
+								<select style="width: 117%; font-size: 14.5px;" id="cars" name="carlist" form="carform">
+									<option value="biografia">Biografia</option>
+									<option value="carta">Carta</option>
+									<option value="chicklit">Chick-Lit</option>
+									<option value="conto">Conto</option>
+									<option value="cronica">Crônica</option>
+									<option value="drama">Drama</option>
+									<option value="ensaio">Ensaio</option>
+									<option value="ficcao">Ficção</option>
+									<option value="historiaemquadrinhos">História em Quadrinhos (HQ)</option>
+									<option value="ladlit">Lad-Lit</option>
+									<option value="literaturafantastica">Literatura Fantástica</option>
+									<option value="literaturainfantil">Literatura Infantil</option>
+									<option value="literaturainfantojuvenil">Literatura Infanto-juvenil</option>
+									<option value="literaturanacional">Literatura Nacional</option>
+									<option value="memorias">Memórias</option>
+									<option value="newadult">New Adult</option>
+									<option value="novela">Novela</option>
+									<option value="poesia">Poesia</option>
+									<option value="realismomagico">Realismo Mágico </option>
+									<option value="romance">Romance</option>
+									<option value="sick-lit">Sick-Lit</option>
+									<option value="terror">Terror</option>
+								</select>
+							</div>
+							<div style="margin-left: 90px;">
+
+								<label style="font-size: 16px;">Autor: </label>
+								<input style="height: 45px; width: 135%;" type="text" name="autor">
+							</div>
+
+						</div>
 
 
-					<label>Fotos: <span style="font-size: 12px;">(Máx 3 imagens)</span> </label>
-					<label style="background: white; color: white; font-family: sans-serif; font-weight: bold; border-radius: 8px; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: start; margin-top: -10px;">
-						<div style="margin-left: 5px;">
-							<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 1</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file1" id="file1">
-						</div>
-						<div style="margin-left: 5px;">
-							<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 2</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file2" id="file2">
-						</div>
-						<div style="margin-left: 5px;">
-							<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 3</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file3" id="file3">
-						</div>
-					</label>
-				</div>
-				<div class="modal-footer">
-					<a href="">
-						<button style="border: none; border-radius: 10px; background-color: #AC7E55; WIDTH: 90PX; COLOR: WHITE;height: 30px">Publicar</button>
-					</a>
-				</div>
+						<label>Fotos: <span style="font-size: 12px;">(Máx 3 imagens)</span> </label>
+						<label style="background: white; color: white; font-family: sans-serif; font-weight: bold; border-radius: 8px; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: start; margin-top: -10px;">
+							<div style="margin-left: 5px;">
+								<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 1</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file1" id="file1">
+							</div>
+							<div style="margin-left: 5px;">
+								<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 2</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file2" id="file2">
+							</div>
+							<div style="margin-left: 5px;">
+								<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 3</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file3" id="file3">
+							</div>
+						</label>
+					</div>
+					<div class="modal-footer">
+						<a href="">
+							<input type="submit" id= "btnCadastrar" value="Publicar" style="border: none; border-radius: 10px; background-color: #AC7E55; WIDTH: 90PX; COLOR: WHITE;height: 30px">
+						</a>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -443,7 +444,7 @@ include_once('../config/conexao.php');
 			}
 		}
 	</script>
-	<script src=""></script>
+	<script src="../assets/js/cadastroPublicacao.js"></script>
 </body>
 
 </html>
