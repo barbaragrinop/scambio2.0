@@ -27,14 +27,11 @@ if (!isset($_SESSION['id'])) {
 
         .card {
             margin-bottom: 30px;
-        }
-
-        .card {
             position: relative;
             display: flex;
             flex-direction: column;
             word-wrap: break-word;
-            background-color: #fff;
+            /* background-color: #fff; */
             background-clip: border-box;
         }
 
@@ -59,7 +56,7 @@ if (!isset($_SESSION['id'])) {
 
         .container-fluid {
             margin-top: -45px;
-            margin-left: 10px;
+            /* margin-left: 10px; */
         }
 
         .white-box {
@@ -88,7 +85,9 @@ if (!isset($_SESSION['id'])) {
         }
         ?>
     </div>
-    <div class="container" style="background-color: #fff; width: 70%; border-radius: 1%; margin-top: 50px;">
+    <div style="display: flex; justify-content: center">
+
+    <div class="container" style="width: 70%; border-radius: 1%; margin-top: 50px;">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -140,6 +139,8 @@ if (!isset($_SESSION['id'])) {
             </div>
         </div>
     </div>
+    </div>
+
 
     <?php include_once('../menu/menu.php'); ?>
 
