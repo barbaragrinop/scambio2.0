@@ -285,34 +285,35 @@ include_once('../config/conexao.php');
 						<span class="close">&times;</span>
 					</div>
 					<div class="modal-body">
-						<label style="font-size: 16px;">Nome: </label> <input type="text">
+						<label style="font-size: 16px;">Nome: </label> <input type="text" name="nome" > 
 						<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea name="descricao" style="width: 100%; max-height: 200px;"> </textarea>
-						<div style="display: flex;">
-							<div style="width: 100%;">
-								<label style="font-size: 16px;" for="book">Gênero:</label>
-								<select style="width: 370px; font-size: 14.5px;" id="book" name="genero" form="carform">
-									<option value="biografia">Biografia</option>
-									<option value="carta">Carta</option>
-									<option value="chicklit">Chick-Lit</option>
-									<option value="conto">Conto</option>
-									<option value="cronica">Crônica</option>
-									<option value="drama">Drama</option>
-									<option value="ensaio">Ensaio</option>
-									<option value="ficcao">Ficção</option>
-									<option value="historiaemquadrinhos">História em Quadrinhos (HQ)</option>
+						<div style="display: flex; flex-direction: row;">
+							<div style="width: 310px;">
+
+								<label style="font-size: 16px;" for="genero">Gênero:</label>
+								<select style="width: 117%; font-size: 14.5px;" id="genero" name="genero">
+									<option value="Biografia">Biografia</option>
+									<option value="Carta">Carta</option>
+									<option value="Chick-Lit">Chick-Lit</option>
+									<option value="Conto">Conto</option>
+									<option value="Crônica">Crônica</option>
+									<option value="Drama">Drama</option>
+									<option value="Ensaio">Ensaio</option>
+									<option value="Ficção">Ficção</option>
+									<option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
 									<option value="ladlit">Lad-Lit</option>
-									<option value="literaturafantastica">Literatura Fantástica</option>
-									<option value="literaturainfantil">Literatura Infantil</option>
-									<option value="literaturainfantojuvenil">Literatura Infanto-juvenil</option>
-									<option value="literaturanacional">Literatura Nacional</option>
-									<option value="memorias">Memórias</option>
-									<option value="newadult">New Adult</option>
-									<option value="novela">Novela</option>
-									<option value="poesia">Poesia</option>
-									<option value="realismomagico">Realismo Mágico </option>
-									<option value="romance">Romance</option>
-									<option value="sick-lit">Sick-Lit</option>
-									<option value="terror">Terror</option>
+									<option value="Literatura Fantástica">Literatura Fantástica</option>
+									<option value="Literatura Infantil">Literatura Infantil</option>
+									<option value="Literatura Infanto-juvenil">Literatura Infanto-juvenil</option>
+									<option value="Literatura Nacional">Literatura Nacional</option>
+									<option value="Memórias">Memórias</option>
+									<option value="New Adult">New Adult</option>
+									<option value="Novela">Novela</option>
+									<option value="Poesia">Poesia</option>
+									<option value="Realismo Mágico ">Realismo Mágico</option>
+									<option value="Romance">Romance</option>
+									<option value="Sick-Lit">Sick-Lit</option>
+									<option value="Terror">Terror</option>
 								</select>
 							</div>
 							<div style="width: 100%; margin-left: 30px;">
@@ -325,13 +326,13 @@ include_once('../config/conexao.php');
 						<label>Fotos: <span style="font-size: 12px;">(Máx 3 imagens)</span> </label>
 						<label style="background: white; color: white; font-family: sans-serif; font-weight: bold; border-radius: 8px; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: start; margin-top: -10px;">
 							<div style="margin-left: 5px;">
-								<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 1</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file1" id="file1">
+								<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 1</span> <input style="color: black; font-size: 13px;" type="file" name="file1" id="file1">
 							</div>
 							<div style="margin-left: 5px;">
-								<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 2</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file2" id="file2">
+								<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 2</span> <input style="color: black; font-size: 13px;" type="file" name="file2" id="file2">
 							</div>
 							<div style="margin-left: 5px;">
-								<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 3</span> <input style="color: black; font-size: 13px;" type="file" accept="image/*" name="file3" id="file3">
+								<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 3</span> <input style="color: black; font-size: 13px;" type="file" name="file3" id="file3">
 							</div>
 						</label>
 					</div>
