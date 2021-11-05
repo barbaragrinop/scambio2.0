@@ -24,9 +24,7 @@ if ($sql->rowCount() >= 1) {
     $row = $sql->fetch((PDO::FETCH_ASSOC));
 }
 
-function transformAge($date)
-{
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -107,7 +105,7 @@ function transformAge($date)
                                 <p><span>Aniversario:</span><?= date('d/m/Y', strtotime(($row['dt_nascimento']))) ?></p>
                             </div>
                             <div class="bio-row">
-                                <p><span>Status:</span>Online</p>
+                                <p><span>Status:</span><?= $_SESSION['status'] ?></p>
                             </div>
                         </div>
                     </div>
