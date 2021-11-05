@@ -150,7 +150,7 @@ if (isset($_SESSION['id'])) {
 							</div>
 						</div>
 
-						<div class="container-login100-form-btn pointer-none">
+						<div class="container-login100-form-btn">
 							<a class="link-entrar" href="#">
 								<button class="login100-form-btn classHover" id="salvar">
 									Cadastro
