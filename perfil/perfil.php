@@ -128,7 +128,7 @@ if (isset($_SESSION['id'])) {
                         <div class="card text-center sidebar">
                             <div class="card-body">
                                 <img src="data:image;base64,<?php echo $select_info_usuario["DS_IMGP"]; ?>" class="rounded-circle" alt="" width="165" height="170">
-                                <div class="mt-3">
+                                <div class="mt-3"> 
                                     <h2>Perfil</h2>
                                     <hr>
                                     <h4>Nome: <span id="nomeUsuario"><?php echo ($select_info_usuario['nm_usuario']); ?></span></h4>
@@ -199,46 +199,46 @@ if (isset($_SESSION['id'])) {
                             /* FOREACH PORA POPULAR LIVROS POSTADOS */
                             foreach ($select_info_livro as $key => $row) {
                         ?>
-                                <div class="card mb-3 content">
-                                    <div class="cards-posts">
-                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item active">
-                                                    <img src="./home/img/photo1.png" class="d-block w-100" alt="...">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="./home/img/photo2.jpg" class="d-block w-100" alt="...">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="./home/img/photo3.jpg" class="d-block w-100" alt="...">
-                                                </div>
-                                            </div>
-                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Next</span>
-                                            </a>
+                        <div class="card mb-3 content">
+                            <div class="cards-posts">
+                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="./home/img/photo1.png" class="d-block w-100" alt="...">
                                         </div>
-                                        <div class="infos-publi">
-                                            <span class="name-livro-publi">
-                                                Nome: <span><?php echo $row->livro ?></span>
-                                            </span>
-                                            <span class="desciption-publi">
-                                                Descrição: <span><?php echo $row->ds ?></span>
-                                            </span>
-                                            <span>
-                                                Cidade: <span><?php echo $row->cid . "/" . $row->u?></span>
-                                            </span>
-                                            <span style="display: flex; flex-direction: column;">
-                                                    <button class="btn-delete" data-toggle="modal" data-target="#exampleModalLongD<?php echo $row->cda?>">Deletar publicação</button>
-                                                    <button class="btn-edit" data-toggle="modal" data-target="#exampleModalLongE<?php echo $row->cda?>">Editar publicação</button>
-                                            </span>
+                                        <div class="carousel-item">
+                                            <img src="./home/img/photo2.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="./home/img/photo3.jpg" class="d-block w-100" alt="...">
                                         </div>
                                     </div>
-                                </div> 
+                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <div class="infos-publi">
+                                    <span class="name-livro-publi">
+                                        Nome: <span><?php echo $row->livro ?></span>
+                                    </span>
+                                    <span class="desciption-publi">
+                                        Descrição: <span><?php echo $row->ds ?></span>
+                                    </span>
+                                    <span>
+                                        Cidade: <span><?php echo $row->cid . "/" . $row->u?></span>
+                                    </span>
+                                    <span style="display: flex; flex-direction: column;">
+                                            <button class="btn-delete" data-toggle="modal" data-target="#exampleModalLongD<?php echo $row->cda?>">Deletar publicação</button>
+                                            <button class="btn-edit" data-toggle="modal" data-target="#exampleModalLongE<?php echo $row->cda?>">Editar publicação</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div> 
                         <?php
                                 /* INCLUDE MODAL COM OPÇÃO DE DELETAR PUBLICACAO */
                                 include('includes/modaldel.php');
