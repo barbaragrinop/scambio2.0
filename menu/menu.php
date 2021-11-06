@@ -54,7 +54,7 @@
 
     <script>
         function redirectHome() {
-            window.location.replace('../home/home.php');
+            location.replace('http://localhost/asd/scambio2.0/home/home.php');
         }
 
         function redirectPublicacao() {
@@ -62,15 +62,15 @@
         }
 
         function redirectChat() {
-            window.location.replace('../chat/users-all.php');
+            window.location.replace('http://localhost/asd/scambio2.0/chat/users-all.php');
         }
 
         function redirectPerfil() {
-            window.location.replace('../perfil2.php');
+            window.location.replace('http://localhost/asd/scambio2.0/perfil2.php');
         }
 
         function redirectAjuda() {
-            window.location.replace('../index.php#ajuda');
+            window.location.replace('http://localhost/asd/scambio2.0/index.php#ajuda');
         }
     </script>
 </div>
