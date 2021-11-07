@@ -17,10 +17,51 @@ if (!isset($_SESSION['id'])) {
     <title>Scambio</title>
     <link rel="shortcut icon" href="../assets/imgs/logoFundo.png" />
     <link rel="stylesheet" href="css/style.css">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="login/vendor/bootstrap/css/bootstrap.min.css">
+
+
+    <style>
+        .img-index {
+            width: 100px;
+            height: 34px;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        #inpkill {
+            margin-top: -30px;
+            margin-right: 20px;
+        }
+
+        .wrapper {
+            height: 88vh;
+            margin-top: 20px;
+            margin-left: 33px;
+        }
+    </style>
 </head>
 
-<body>
+<body style="display: block;">
+    <div class="container-fluid">
+        <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 7.5px;"></a>
+        </button>
+        <?php
+        if (isset($_SESSION['id'])) {
+        ?>
+            <form action="../logout.php">
+                <input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+            </form>
+        <?php
+        } else {
+            header("Location: index.php");
+        }
+        ?>
+    </div>
+
+
     <div class="wrapper">
         <section class="users">
             <?php

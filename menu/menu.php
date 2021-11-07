@@ -1,10 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/responsivoIndex.css" rel="stylesheet">
-<!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/heroes/"> -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet">
@@ -54,23 +50,23 @@
 
     <script>
         function redirectHome() {
-            location.replace('http://localhost/asd/scambio2.0/home/home.php');
+            location.replace('http://localhost/scambio2.0/home/home.php');
         }
 
         function redirectPublicacao() {
-            window.location.replace('../home/home.php');
+            location.replace('http://localhost/scambio2.0/home/home.php');
         }
 
         function redirectChat() {
-            window.location.replace('http://localhost/asd/scambio2.0/chat/users-all.php');
+            location.replace('http://localhost/scambio2.0/chat/users-all.php');
         }
 
         function redirectPerfil() {
-            window.location.replace('http://localhost/asd/scambio2.0/perfil2.php');
+            location.replace('http://localhost/scambio2.0/perfil2.php');
         }
 
         function redirectAjuda() {
-            window.location.replace('http://localhost/asd/scambio2.0/index.php#ajuda');
+            location.replace('http://localhost/scambio2.0/index.php#ajuda');
         }
     </script>
 </div>
