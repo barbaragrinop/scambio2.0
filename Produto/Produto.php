@@ -85,60 +85,66 @@ if (!isset($_SESSION['id'])) {
         }
         ?>
     </div>
-    <div style="display: flex; justify-content: center">
+    <div style="display: flex; justify-content: center; flex-direction: column;">
 
-    <div class="container" style="width: 70%; border-radius: 1%; margin-top: 50px;">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="card-title">Harry Potter e a Pedra Filosofal</h3>
-                        <h5 class="card-subtitle">@Beatriz Martins</h6>
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-5" style="margin-top: 10px;">
-                                    <div class="white-box text-center"><img src="img/harrypotter1.png" class="img-responsive"></div>
-                                </div>
-                                <div class="col-lg-8 col-md-4 col-sm-9">
-                                    <h3 class="box-title mt-5">Descrição do produto</h4>
-                                        <p style="font-size: 18px;">Livro em perfeito estado, com pouco tempo de uso e comprado em 2019. Aprenta algumas marcas de uso, mas nada que atrapalhe a leitura.</p>
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8">
-                                    <h3 class="box-title mt-5">Outras Informações</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-product">
-                                            <tbody>
-                                                <tr>
-                                                    <td width="200">Nome do livro</td>
-                                                    <td>Harry Potter e a Pedra Filosofal</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Autor</td>
-                                                    <td>J. K. Rowling</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Gênero</td>
-                                                    <td>Romance, Literatura infantil, Literatura fantástica, Alta fantasia</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Idioma</td>
-                                                    <td>Portugês</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+        <div class="container" style="width: 170vh; border-radius: 1%; margin-top: 28px; background-color: white; margin-left: 110px;">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body" style="margin-left: 20px;">
+                        <h2 class="card-title">O Pequeno Principe</h3>
+                            <h5 class="card-subtitle">@Beatriz Martins</h6>
+                                <div class="row" style="display: flex; flex-direction: row;">
+                                    <div class="col-lg-3 col-md-3 col-sm-5" style="margin-top: 10px;">
+                                        <div class="white-box text-center"><img width="215" src="img/pqnprincipe1.jpg" class="img-responsive"></div>
                                     </div>
-                                    <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
-                                        <i class="fa fa-user"></i>
-                                        Perfil
-                                    </button>
-                                    <button class="btn btn-success btn-rounded" style="margin-left: 10px;">
-                                        <i class="fa fa-comments"></i>
-                                        Chat
-                                    </button>
+                                    <div style="margin-left: 150px;">
+                                        <div class="col-lg-8 col-md-4 col-sm-9">
+                                            <h3 class="box-title mt-5">Descrição do produto</h4>
+                                                <p style="font-size: 18px;">Livro em perfeito estado, com pouco tempo de uso e comprado em 2019. Aprenta algumas marcas de uso, mas nada que atrapalhe a leitura.</p>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                            <h3 class="box-title mt-5">Outras Informações</h3>
+                                            <div class="table-responsive">
+                                                <table class="table table-striped table-product">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="200">Nome do livro</td>
+                                                            <td>O Pequeno Principe</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Autor</td>
+                                                            <td>J. K. Rowling</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Gênero</td>
+                                                            <td>Romance, Literatura infantil, Literatura fantástica, Alta fantasia</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Idioma</td>
+                                                            <td>Portugês</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
+                                                <i class="fa fa-user"></i>
+                                                Perfil
+                                            </button>
+                                            <button class="btn btn-success btn-rounded" style="margin-left: 10px;">
+                                                <i class="fa fa-comments"></i>
+                                                Chat
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <h2 displ>Livros que podem te interessar</h2>
+
+        </div>
     </div>
 
 
