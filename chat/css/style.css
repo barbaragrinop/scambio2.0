@@ -8,30 +8,28 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
-body{
+body {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: linear-gradient(to left bottom , #f2eee8, #d4c1a5, #f2eee8); 
+    background-image: linear-gradient(to left bottom, #f2eee8, #d4c1a5, #f2eee8);
 }
 
-.wrapper{
+.wrapper {
     position: relative;
     background: #fff;
     width: 95%;
-    height: 95vh;
+    height: 90vh;
     border-radius: 16px;
-    box-shadow: 
-        0 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     margin: 10px;
 }
 
 /* Users */
 
-.users{
+.users {
     position: absolute;
     padding: 25px 30px;
     height: 100%;
@@ -39,8 +37,7 @@ body{
     border-radius: 16px;
 }
 
-.users header,
-.users-list a{
+.users header, .users-list a {
     display: flex;
     align-items: center;
     padding-bottom: 20px;
@@ -48,37 +45,37 @@ body{
     border-bottom: 1px solid #e6e6e6;
 }
 
-.wrapper img{
+.wrapper img {
     object-fit: cover;
     border-radius: 50%;
 }
 
-:is(.users, .users-list) .content,
-a .content{
+:is(.users, .users-list) .content, a .content {
     display: flex;
     align-items: center;
 }
-.users header .content img{
+
+.users header .content img {
     height: 50px;
     width: 50px;
 }
 
-:is(.users, .users-list) .details{
+:is(.users, .users-list) .details {
     color: #000;
     margin-left: 15px;
 }
 
-:is(.users, .users-list) .details span{
+:is(.users, .users-list) .details span {
     font-size: 18px;
     font-weight: 500;
 }
 
-:is(.users, .users-list) header .details p{
+:is(.users, .users-list) header .details p {
     font-size: 14px;
     font-weight: 400;
 }
 
-.users header .logout{
+.users header .logout {
     color: #fff;
     font-size: 17px;
     padding: 7px 15px;
@@ -86,21 +83,19 @@ a .content{
     border-radius: 5px;
 }
 
-.users .search{
+.users .search {
     margin: 20px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
- 
 }
 
-.users .search .text{
+.users .search .text {
     font-size: 18px;
-
 }
 
-.users .search input{
+.users .search input {
     position: absolute;
     height: 42px;
     width: calc(100% - 50px);
@@ -114,12 +109,12 @@ a .content{
     transition: all .3s ease;
 }
 
-.users .search input.active{
+.users .search input.active {
     opacity: 1;
     pointer-events: auto;
 }
 
-.users .search button{
+.users .search button {
     width: 47px;
     height: 42px;
     border: 1px solid #333;
@@ -128,28 +123,26 @@ a .content{
     background: #fff;
     cursor: pointer;
     font-size: 17px;
-    border-radius:  5px ;
+    border-radius: 5px;
     transition: all .3s ease;
-
 }
 
-.users .search button.active{
+.users .search button.active {
     color: #fff;
     background: #333;
     border-radius: 0 5px 5px 0;
 }
 
-.users .search button.active i::before{
+.users .search button.active i::before {
     content: "\f00d";
 }
 
-
-.users-list{
+.users-list {
     max-height: 350px;
     overflow-y: auto;
 }
 
-:is(.users-list, .chat-box)::-webkit-scrollbar{
+:is(.users-list, .chat-box)::-webkit-scrollbar {
     width: 0;
 }
 
@@ -158,43 +151,42 @@ a .content{
     padding-right: 15px;
 }
 
-.users-list a:last-child{
+.users-list a:last-child {
     border: none;
     margin-bottom: 0px;
 }
 
-.users-list a .content p{
-    color: #67676a ;
+.users-list a .content p {
+    color: #67676a;
     font-size: 14px;
     font-weight: 400;
 }
 
-.users-list a .content img{
+.users-list a .content img {
     height: 40px;
     width: 40px;
 }
 
-.users-list a .content{
+.users-list a .content {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.users-list a .status-dot{
+.users-list a .status-dot {
     font-size: 12px;
     color: #468669;
 }
 
 /* offline status */
 
-.users-list a .status-dot.offline{
+.users-list a .status-dot.offline {
     color: #ccc;
 }
 
-
 /* Chat */
 
-.chat-area{
+.chat-area {
     position: absolute;
     left: 31%;
     height: 100%;
@@ -202,7 +194,7 @@ a .content{
     border-radius: 16px;
 }
 
-.chat-area header{
+.chat-area header {
     display: flex;
     align-items: center;
     padding: 18px 30px;
@@ -215,52 +207,51 @@ a .content{
     color: #333;
 } */
 
-.chat-area header img{
+.chat-area header img {
     height: 45px;
-    width: 45px ;
+    width: 45px;
     margin: 0 15px;
 }
 
-.chat-area header span{
+.chat-area header span {
     font-size: 17px;
     font-weight: 500;
 }
 
-.chat-area header p{
+.chat-area header p {
     font-size: 14px;
     font-weight: 300;
 }
 
-.chat-box{
+.chat-box {
     overflow-y: auto;
     height: 427px;
     background: #f7f7f7;
     margin-top: -9px;
     padding: 10px 30px 20px 30px;
-    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%), 
-                inset 0 32px 32px -32px rgb(0 0 0 / 5%);
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%), inset 0 32px 32px -32px rgb(0 0 0 / 5%);
 }
 
-.chat-box .chat{
+.chat-box .chat {
     margin: 15px 0;
 }
 
-.chat-box .chat p{
+.chat-box .chat p {
     word-wrap: break-word;
     padding: 8px 16px;
-    box-shadow: 0 0 32px rgb(0 0 0 / 8%),
-                0 16px 16px -16px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 32px rgb(0 0 0 / 8%), 0 16px 16px -16px rgb(0 0 0 / 10%);
 }
-.chat-box .outgoing{
+
+.chat-box .outgoing {
     display: flex;
 }
 
-.outgoing .details{
+.outgoing .details {
     margin-left: auto;
     max-width: calc(100% - 130px);
 }
 
-.outgoing .details p{
+.outgoing .details p {
     background: #333;
     color: #fff;
     border-radius: 19px 19px 0 19px;
@@ -271,30 +262,30 @@ a .content{
     align-items: center;
 }
 
-.chat-box .incoming img{
+.chat-box .incoming img {
     height: 35px;
     width: 35px;
 }
 
-.incoming .details{
+.incoming .details {
     margin-left: 10px;
     margin-right: auto;
     max-width: calc(100% - 130px);
 }
 
-.incoming .details p{
+.incoming .details p {
     background: #fff;
     color: #333;
     border-radius: 18px 18px 18px 0;
 }
 
-.chat-area .typing-area{
+.chat-area .typing-area {
     padding: 14px 19px 0px 14px;
     display: flex;
     justify-content: space-between;
 }
 
-.typing-area input{
+.typing-area input {
     height: 45px;
     width: 100%;
     font-size: 17px;
@@ -304,7 +295,7 @@ a .content{
     outline: none;
 }
 
-.typing-area button{
+.typing-area button {
     width: 55px;
     border: none;
     outline: none;
@@ -312,5 +303,5 @@ a .content{
     color: #fff;
     cursor: pointer;
     font-size: 19px;
-    border-radius:  0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
 }
