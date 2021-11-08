@@ -81,9 +81,9 @@ if ($sql->rowCount() >= 1) {
                     </div>
 
                     <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#"> <i class="fa fa-user"></i> Perfil</a></li>
-                        <li><a href="#"> <i class="fa fa-calendar"></i>,Match <span class="label label-warning pull-right r-activity">9</span></a></li>
-                        <li><a href="#"> <i class="fa fa-edit"></i>Editar Perfil</a></li>
+                        <li id="tagPerfil" class="active"><a onclick="abrirDivPerfil()" href="#"> <i class="fa fa-user"></i> Perfil</a></li>
+                        <li id="tagMatch"><a onclick="abrirDivMatch()" href="#"> <i class="fa fa-calendar"></i>Match <span class="label label-warning pull-right r-activity">9</span></a></li>
+                        <li id="tagEditarPerfil"><a onclick="abrirDivEditarPerfil()" href="#"> <i class="fa fa-edit"></i>Editar Perfil</a></li>
                     </ul>
                 </div>
             </div>
@@ -110,169 +110,179 @@ if ($sql->rowCount() >= 1) {
                         </div>
                     </div>
                 </div>
-                <div class="container" style="margin-left: -27px; width: 107%;">
-                    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-                        <!-- product -->
-                        <div class="product-content product-wrap clearfix">
-                            <div class="row">
-                                <div class="col-md-5 col-sm-12 col-xs-12">
-                                    <div class="product-image">
-                                        <img src="assets/imgs/livrover.jpg" alt="194x228" class="img-responsive">
+
+                <div id="perfil">
+                    <div class="container" style="margin-left: -27px; width: 107%;">
+                        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+                            <!-- product -->
+                            <div class="product-content product-wrap clearfix">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-12 col-xs-12">
+                                        <div class="product-image">
+                                            <img src="assets/imgs/livrover.jpg" alt="194x228" class="img-responsive">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-7 col-sm-12 col-xs-12">
-                                    <div class="product-deatil">
-                                        <h5 class="name">
-                                            <a href="#">
-                                                Livro Verde <span>Autor Verde</span>
-                                            </a>
-                                        </h5>
-                                        <p class="status-container">
-                                            <span>status: ativo</span>
-                                        </p>
-                                        <span class="tag1"></span>
-                                    </div>
-                                    <div class="description">
-                                        <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-                                    </div>
-                                    <div class="product-info smart-form">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                                <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-4">
-                                                <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
+                                    <div class="col-md-7 col-sm-12 col-xs-12">
+                                        <div class="product-deatil">
+                                            <h5 class="name">
+                                                <a href="#">
+                                                    Livro Verde <span>Autor Verde</span>
+                                                </a>
+                                            </h5>
+                                            <p class="status-container">
+                                                <span>status: ativo</span>
+                                            </p>
+                                            <span class="tag1"></span>
+                                        </div>
+                                        <div class="description">
+                                            <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
+                                        </div>
+                                        <div class="product-info smart-form">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- end product -->
                         </div>
-                        <!-- end product -->
-                    </div>
-                    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-                        <!-- product -->
-                        <div class="product-content product-wrap clearfix">
-                            <div class="row">
-                                <div class="col-md-5 col-sm-12 col-xs-12">
-                                    <div class="product-image">
-                                        <img src="assets/imgs/livrozul.jpg" alt="194x228" class="img-responsive">
+                        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+                            <!-- product -->
+                            <div class="product-content product-wrap clearfix">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-12 col-xs-12">
+                                        <div class="product-image">
+                                            <img src="assets/imgs/livrozul.jpg" alt="194x228" class="img-responsive">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-7 col-sm-12 col-xs-12">
-                                    <div class="product-deatil">
-                                        <h5 class="name">
-                                            <a href="#">
-                                                Livro Azul <span>Autor Azul</span>
-                                            </a>
-                                        </h5>
-                                        <p class="status-container">
-                                            <span>status: match</span>
-                                        </p>
-                                        <span class="tag1"></span>
-                                    </div>
-                                    <div class="description">
-                                        <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-                                    </div>
-                                    <div class="product-info smart-form">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                                <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-4">
-                                                <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
+                                    <div class="col-md-7 col-sm-12 col-xs-12">
+                                        <div class="product-deatil">
+                                            <h5 class="name">
+                                                <a href="#">
+                                                    Livro Azul <span>Autor Azul</span>
+                                                </a>
+                                            </h5>
+                                            <p class="status-container">
+                                                <span>status: match</span>
+                                            </p>
+                                            <span class="tag1"></span>
+                                        </div>
+                                        <div class="description">
+                                            <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
+                                        </div>
+                                        <div class="product-info smart-form">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- end product -->
                         </div>
-                        <!-- end product -->
-                    </div>
-                    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-                        <!-- product -->
-                        <div class="product-content product-wrap clearfix">
-                            <div class="row">
-                                <div class="col-md-5 col-sm-12 col-xs-12">
-                                    <div class="product-image">
-                                        <img src="assets/imgs/acabana.jpg" alt="194x228" class="img-responsive">
+                        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+                            <!-- product -->
+                            <div class="product-content product-wrap clearfix">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-12 col-xs-12">
+                                        <div class="product-image">
+                                            <img src="assets/imgs/acabana.jpg" alt="194x228" class="img-responsive">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-7 col-sm-12 col-xs-12">
-                                    <div class="product-deatil">
-                                        <h5 class="name">
-                                            <a href="#">
-                                                A Cabana <span>Desconhecido</span>
-                                            </a>
-                                        </h5>
-                                        <p class="status-container">
-                                            <span>status: ativo</span>
-                                        </p>
-                                        <span class="tag1"></span>
-                                    </div>
-                                    <div class="description">
-                                        <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-                                    </div>
-                                    <div class="product-info smart-form">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                                <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-4">
-                                                <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
+                                    <div class="col-md-7 col-sm-12 col-xs-12">
+                                        <div class="product-deatil">
+                                            <h5 class="name">
+                                                <a href="#">
+                                                    A Cabana <span>Desconhecido</span>
+                                                </a>
+                                            </h5>
+                                            <p class="status-container">
+                                                <span>status: ativo</span>
+                                            </p>
+                                            <span class="tag1"></span>
+                                        </div>
+                                        <div class="description">
+                                            <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
+                                        </div>
+                                        <div class="product-info smart-form">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- end product -->
                         </div>
-                        <!-- end product -->
-                    </div>
-                    <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-                        <!-- product -->
-                        <div class="product-content product-wrap clearfix">
-                            <div class="row">
-                                <div class="col-md-5 col-sm-12 col-xs-12">
-                                    <div class="product-image">
-                                        <img src="assets/imgs/aculpaedasestrelas.jpg" alt="194x228" class="img-responsive">
+                        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+                            <!-- product -->
+                            <div class="product-content product-wrap clearfix">
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-12 col-xs-12">
+                                        <div class="product-image">
+                                            <img src="assets/imgs/aculpaedasestrelas.jpg" alt="194x228" class="img-responsive">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-7 col-sm-12 col-xs-12">
-                                    <div class="product-deatil">
-                                        <h5 class="name">
-                                            <a href="#">
-                                                A Culpa E Das Estrelas <span>John Green</span>
-                                            </a>
-                                        </h5>
-                                        <p class="status-container">
-                                            <span>status: ativo</span>
-                                        </p>
-                                        <span class="tag1"></span>
-                                    </div>
-                                    <div class="description">
-                                        <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-                                    </div>
-                                    <div class="product-info smart-form">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                                <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-4">
-                                                <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
+                                    <div class="col-md-7 col-sm-12 col-xs-12">
+                                        <div class="product-deatil">
+                                            <h5 class="name">
+                                                <a href="#">
+                                                    A Culpa E Das Estrelas <span>John Green</span>
+                                                </a>
+                                            </h5>
+                                            <p class="status-container">
+                                                <span>status: ativo</span>
+                                            </p>
+                                            <span class="tag1"></span>
+                                        </div>
+                                        <div class="description">
+                                            <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
+                                        </div>
+                                        <div class="product-info smart-form">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- end product -->
                         </div>
-                        <!-- end product -->
                     </div>
+                </div>
+
+                <div id="match" style="display: none;">
+                    <p>match</p>
+                </div>
+
+                <div id="editarPerfil" style="display: none;">
+                    <p>editar perfil</p>
                 </div>
             </div>
         </div>
 
         <?php include('./menu/menu.php') ?>
-
 
         <style type="text/css">
             body {
@@ -687,9 +697,10 @@ if ($sql->rowCount() >= 1) {
             }
 
             .profile-nav ul>li>a>i {
-                font-size: 16px;
+                font-size: 24px;
                 padding-right: 10px;
                 color: #bcb3aa;
+                
             }
 
             .r-activity {
@@ -733,7 +744,7 @@ if ($sql->rowCount() >= 1) {
             }
 
             .bio-graph-info h1 {
-                font-size: 22px;
+                font-size: 27px;
                 font-weight: 300;
                 margin: 0 0 20px;
             }
@@ -743,6 +754,7 @@ if ($sql->rowCount() >= 1) {
                 float: left;
                 margin-bottom: 10px;
                 padding: 0 15px;
+                font-size: 16px;
             }
 
             .label-warning {
@@ -996,12 +1008,28 @@ if ($sql->rowCount() >= 1) {
             }
         </style>
 
-
-
         <script src="javascript/users.js"></script>
         <script src="javascript/chat.js"></script>
         <script type="text/javascript">
+            function abrirDivPerfil() {
+                document.getElementById('perfil').style.display = "block";
+                document.getElementById('match').style.display = "none";
+                document.getElementById('editarPerfil').style.display = "none";
+            }
+            
+            function abrirDivMatch() {
+                document.getElementById('perfil').style.display = "none";
+                document.getElementById('match').style.display = "block";
+                document.getElementById('editarPerfil').style.display = "none";
+                document.getElementById('tagPerfil').classList.remove("active");
+            }
 
+            function abrirDivEditarPerfil() {
+                document.getElementById('perfil').style.display = "none";
+                document.getElementById('match').style.display = "none";
+                document.getElementById('editarPerfil').style.display = "block";
+                document.getElementById('tagPerfil').classList.remove("active");
+            }
         </script>
 </body>
 
