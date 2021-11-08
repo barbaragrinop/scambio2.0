@@ -700,6 +700,7 @@ if ($sql->rowCount() >= 1) {
                 font-size: 24px;
                 padding-right: 10px;
                 color: #bcb3aa;
+                
             }
 
             .r-activity {
