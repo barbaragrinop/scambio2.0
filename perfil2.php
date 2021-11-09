@@ -48,28 +48,67 @@ if ($sql->rowCount() >= 1) {
         #inpkill {
             /* margin-right: 9px; */
             /* margin-top: -25px; */
-            
+
+        }
+
+        @media screen and (min-width: 1368px) and (max-width: 1919px) {
+            #panel {
+                width: 101%;
+            }
+        }
+
+        @media screen and (min-width: 1367px) {
+            .container {
+                width: 1320px;
+            }
+        }
+
+        @media screen and (min-width: 1920px) {
+            .container {
+                width: 1655px;
+            }
+
+            #panel {
+                width: 102.3%;
+            }
+
+        }
+
+        @media screen and (max-width: 1134px) {
+            .container {
+                width: 1140px;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .container {
+                width: 840px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container-fluid">
-        <div style="display: flex; justify-content: center;">
+        <div style="display: flex; justify-content: space-around;">
+                <div style="display: flex; flex-direction: row;">
+                    <img src="./assets/imgs/munir.jpeg" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+                    <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;">Munir</p>
+                </div>
+                <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
+                </button>
+                <?php
+                if (isset($_SESSION['id'])) {
+                ?>
+                    <form action="./logout.php">
+                        <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+                    </form>
+                <?php
+                } else {
+                    header("Location: index.php");
+                }
+                ?>
 
-            <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
-            </button>
-            <?php
-            if (isset($_SESSION['id'])) {
-            ?>
-                <form action="./logout.php">
-                    <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
-                </form>
-            <?php
-            } else {
-                header("Location: index.php");
-            }
-            ?>
         </div>
     </div>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -727,7 +766,7 @@ if ($sql->rowCount() >= 1) {
                 font-size: 24px;
                 padding-right: 10px;
                 color: #bcb3aa;
-                
+
             }
 
             .r-activity {
@@ -1044,7 +1083,7 @@ if ($sql->rowCount() >= 1) {
                 document.getElementById('panelEditPerfil').style.display = "none";
                 document.getElementById('panel').style.display = "block";
             }
-            
+
             function abrirDivMatch() {
                 document.getElementById('perfil').style.display = "none";
                 document.getElementById('match').style.display = "block";
