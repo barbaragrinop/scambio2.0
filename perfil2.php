@@ -48,28 +48,38 @@ if ($sql->rowCount() >= 1) {
         #inpkill {
             /* margin-right: 9px; */
             /* margin-top: -25px; */
-            
+
+        }
+
+        @media screen and (min-width: 1200px) {
+            .container {
+                width: 1351px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container-fluid">
-        <div style="display: flex; justify-content: center;">
+        <div style="display: flex; justify-content: space-around;">
+                <div>
+                    <img src="" alt="">
+                    <p>Munir</p>
+                </div>
+                <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
+                </button>
+                <?php
+                if (isset($_SESSION['id'])) {
+                ?>
+                    <form action="./logout.php">
+                        <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+                    </form>
+                <?php
+                } else {
+                    header("Location: index.php");
+                }
+                ?>
 
-            <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
-            </button>
-            <?php
-            if (isset($_SESSION['id'])) {
-            ?>
-                <form action="./logout.php">
-                    <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
-                </form>
-            <?php
-            } else {
-                header("Location: index.php");
-            }
-            ?>
         </div>
     </div>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -727,7 +737,7 @@ if ($sql->rowCount() >= 1) {
                 font-size: 24px;
                 padding-right: 10px;
                 color: #bcb3aa;
-                
+
             }
 
             .r-activity {
@@ -1044,7 +1054,7 @@ if ($sql->rowCount() >= 1) {
                 document.getElementById('panelEditPerfil').style.display = "none";
                 document.getElementById('panel').style.display = "block";
             }
-            
+
             function abrirDivMatch() {
                 document.getElementById('perfil').style.display = "none";
                 document.getElementById('match').style.display = "block";
