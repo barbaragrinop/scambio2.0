@@ -87,8 +87,8 @@ if ($sql->rowCount() >= 1) {
                     </ul>
                 </div>
             </div>
-            <div class="profile-info col-md-9">
-                <div class="panel">
+            <div class="profile-info col-md-9" style="display: block;">
+                <div id="panel" class="panel">
                     <div class="panel-body bio-graph-info">
                         <h1>Biografia</h1>
                         <div class="row">
@@ -106,6 +106,33 @@ if ($sql->rowCount() >= 1) {
                             </div>
                             <div class="bio-row">
                                 <p><span>Status:</span><?= $_SESSION['status'] ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="panelEditPerfil" class="panel" style="display: none; height: 400px;">
+                    <div class="panel-body bio-graph-info">
+                        <h1>Biografia | Editar</h1>
+                        <div class="row" style="margin-top: 50px;">
+                            <div class="bio-row">
+                                <p><span>Nome:</span><input type="text" name="" id=""></p>
+                            </div>
+                            <div class="bio-row">
+                                <p><span>Estado:</span><input type="text"></p>
+                            </div>
+                            <div class="bio-row" style="margin-top: 20px;">
+                                <p><span>Cidade:</span><input type="text"></p>
+                            </div>
+                            <div class="bio-row" style="margin-top: 20px;">
+                                <p><span>Aniversario:</span><input type="text"></p>
+                            </div>
+                            <div class="up-img" style="padding-top: 20px; padding-left: 17px; display: flex; flex-direction: row;">
+                                <span style="font-size: 15px;">Imagem de Perfil</span>
+                                <input type="file" style="margin-left: 20px;">
+                            </div>
+                            <div class="btn-confirm-edit">
+                                <button style="margin-top: 100px; margin-left: 730px;">Confirmar</button>
                             </div>
                         </div>
                     </div>
@@ -274,10 +301,6 @@ if ($sql->rowCount() >= 1) {
 
                 <div id="match" style="display: none;">
                     <p>match</p>
-                </div>
-
-                <div id="editarPerfil" style="display: none;">
-                    <p>editar perfil</p>
                 </div>
             </div>
         </div>
@@ -1014,21 +1037,24 @@ if ($sql->rowCount() >= 1) {
             function abrirDivPerfil() {
                 document.getElementById('perfil').style.display = "block";
                 document.getElementById('match').style.display = "none";
-                document.getElementById('editarPerfil').style.display = "none";
+                document.getElementById('panelEditPerfil').style.display = "none";
+                document.getElementById('panel').style.display = "block";
             }
             
             function abrirDivMatch() {
                 document.getElementById('perfil').style.display = "none";
                 document.getElementById('match').style.display = "block";
-                document.getElementById('editarPerfil').style.display = "none";
                 document.getElementById('tagPerfil').classList.remove("active");
+                document.getElementById('panelEditPerfil').style.display = "none";
+                document.getElementById('panel').style.display = "block";
             }
 
             function abrirDivEditarPerfil() {
                 document.getElementById('perfil').style.display = "none";
                 document.getElementById('match').style.display = "none";
-                document.getElementById('editarPerfil').style.display = "block";
                 document.getElementById('tagPerfil').classList.remove("active");
+                document.getElementById('panelEditPerfil').style.display = "block";
+                document.getElementById('panel').style.display = "none";
             }
         </script>
 </body>
