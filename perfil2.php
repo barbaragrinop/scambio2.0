@@ -56,6 +56,18 @@ if ($sql->rowCount() >= 1) {
                 width: 1355px;
             }
         }
+
+        @media screen and (max-width: 1134px) {
+            .container {
+                width: 1140px;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .container {
+                width: 840px;
+            }
+        }
     </style>
 </head>
 
