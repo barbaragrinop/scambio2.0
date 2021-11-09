@@ -13,6 +13,7 @@ btnCad.onclick = () => {
     xhr.onload = () => {
         if(xhr.readyState === XMLHttpRequest.DONE){
             let data = xhr.response
+            console.log(data);
             
         }
     }

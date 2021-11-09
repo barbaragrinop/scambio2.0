@@ -20,15 +20,18 @@ if (isset($_POST['nome'])) {
 
 
 if (isset($_FILES['file1'])) {
-    $file1 = $_POST['file1'] ?? '';
+    $file1 = $_FILES['file1'] ?? '';
+    $file1 = base64_encode($file1['tmp_name']) ?? '';
 }
 
 if (isset($_FILES['file2'])) {
-    $file2 = $_POST['file2'] ?? '';
+    $file2 = $_FILES['file2'] ?? '';
+    $file2 = base64_encode($file2['tmp_name'] ?? '');
 }
 
 if (isset($_FILES['file3'])) {
-    $file3 = $_POST['file3'] ?? '';
+    $file3 = $_FILES['file3'] ?? '';
+    $file3 = base64_encode($file3['tmp_name'] ?? '');
 }
 
 
