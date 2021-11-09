@@ -48,6 +48,7 @@ if ($sql->rowCount() >= 1) {
         #inpkill {
             /* margin-right: 9px; */
             /* margin-top: -25px; */
+            
         }
     </style>
 </head>
