@@ -51,6 +51,12 @@ if ($sql->rowCount() >= 1) {
 
         }
 
+        @media screen and (min-width: 1368px) and (max-width: 1919px) {
+            #panel {
+                width: 101%;
+            }
+        }
+
         @media screen and (min-width: 1367px) {
             .container {
                 width: 1320px;
@@ -61,6 +67,11 @@ if ($sql->rowCount() >= 1) {
             .container {
                 width: 1655px;
             }
+
+            #panel {
+                width: 102.3%;
+            }
+
         }
 
         @media screen and (max-width: 1134px) {
@@ -80,9 +91,9 @@ if ($sql->rowCount() >= 1) {
 <body>
     <div class="container-fluid">
         <div style="display: flex; justify-content: space-around;">
-                <div>
-                    <img src="" alt="">
-                    <p>Munir</p>
+                <div style="display: flex; flex-direction: row;">
+                    <img src="./assets/imgs/munir.jpeg" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+                    <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;">Munir</p>
                 </div>
                 <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
                 </button>
