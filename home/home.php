@@ -201,6 +201,36 @@ include_once('../config/conexao.php');
 				opacity: 1;
 			}
 		}
+
+
+		@media (min-width: 1700) {
+			.inpAutor {
+				/* width: 100% !important; */
+			}
+
+			.selectGenero {
+				width: 650px !important;
+			}
+		}
+		@media (max-width: 1325px) {
+			.inpAutor {
+				/* width: 100% !important; */
+			}
+
+			.selectGenero {
+				width: 350px !important;
+			}
+		}
+
+		@media (min-width: 1443px) {
+			.inpAutor {
+				width: 100% !important;
+			}
+
+			select {
+				width: 460px;
+			}
+		}
 	</style>
 </head>
 
@@ -288,10 +318,9 @@ include_once('../config/conexao.php');
 						<label style="font-size: 16px;">Nome: </label> <input type="text" name="nome" > 
 						<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea name="descricao" style="width: 100%; max-height: 200px;"> </textarea>
 						<div style="display: flex; flex-direction: row;">
-							<div style="width: 310px;">
-
+							<div>
 								<label style="font-size: 16px;" for="genero">Gênero:</label>
-								<select style="width: 117%; font-size: 14.5px;" id="genero" name="genero">
+								<select class="selectGenero" style="font-size: 14.5px;" id="genero" name="genero">
 									<option value="Biografia">Biografia</option>
 									<option value="Carta">Carta</option>
 									<option value="Chick-Lit">Chick-Lit</option>
@@ -318,7 +347,7 @@ include_once('../config/conexao.php');
 							</div>
 							<div style="width: 100%; margin-left: 30px;">
 								<label style="font-size: 16px;">Autor: </label>
-								<input style="height: 45px; width: 100%;" type="text" name="autor">
+								<input class="inpAutor" style="height: 45px; width: 100%;" type="text" name="autor">
 							</div>
 						</div>
 
