@@ -53,7 +53,13 @@ if ($sql->rowCount() >= 1) {
 
         @media screen and (min-width: 1367px) {
             .container {
-                width: 1355px;
+                width: 1320px;
+            }
+        }
+
+        @media screen and (min-width: 1920px) {
+            .container {
+                width: 1655px;
             }
         }
 
