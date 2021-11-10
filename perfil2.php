@@ -51,6 +51,29 @@ if ($sql->rowCount() >= 1) {
 
         }
 
+        .img-responsive {
+            width: 165px;
+            height: 238px;
+        }
+
+        .product-info,
+        .card {
+            width: 125px;
+        }
+
+        .product-info .row {
+            margin-left: -21px;
+        }
+
+        .product-content .row {
+            display: flex;
+        }
+
+        .div-inff {
+            height: 238px;
+            width: 280px;
+        }
+
         @media screen and (min-width: 1368px) and (max-width: 1919px) {
             #panel {
                 width: 101%;
@@ -74,6 +97,12 @@ if ($sql->rowCount() >= 1) {
 
         }
 
+        @media (min-width: 992px) {
+            .col-md-5 {
+                width: 29.99667%;
+            }
+        }
+
         @media screen and (max-width: 1134px) {
             .container {
                 width: 1140px;
@@ -85,29 +114,51 @@ if ($sql->rowCount() >= 1) {
                 width: 840px;
             }
         }
+
+        @media screen and (max-width: 900px) {
+            .col-md-5 {
+                width: 32.99667%;
+            }
+        }
+
+        @media screen and (max-width: 1369px) {
+            @media (min-width: 992px) {
+                .col-md-5 {
+                    width: 36.99667%;
+                }
+            }
+        }
+
+        @media screen and (max-width: 1669px) {
+            .col-md-5 {
+                width: 32.99667%;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container-fluid">
         <div style="display: flex; justify-content: space-around;">
-                <div style="display: flex; flex-direction: row;">
+            <div style="display: flex; flex-direction: row;">
+                <a href="">
                     <img src="./assets/imgs/munir.jpeg" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
-                    <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;">Munir</p>
-                </div>
-                <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
-                </button>
-                <?php
-                if (isset($_SESSION['id'])) {
-                ?>
-                    <form action="./logout.php">
-                        <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
-                    </form>
-                <?php
-                } else {
-                    header("Location: index.php");
-                }
-                ?>
+                </a>
+                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"> <a href="" style="text-decoration: none;">Munir</a> </p>
+            </div>
+            <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
+            </button>
+            <?php
+            if (isset($_SESSION['id'])) {
+            ?>
+                <form action="./logout.php">
+                    <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+                </form>
+            <?php
+            } else {
+                header("Location: index.php");
+            }
+            ?>
 
         </div>
     </div>
@@ -125,7 +176,7 @@ if ($sql->rowCount() >= 1) {
 
                     <ul class="nav nav-pills nav-stacked">
                         <li id="tagPerfil" class="active"><a onclick="abrirDivPerfil()" href="#"> <i class="fa fa-user"></i> Perfil</a></li>
-                        <li id="tagMatch"><a onclick="abrirDivMatch()" href="#"> <i class="fa fa-calendar"></i>Match <span class="label label-warning pull-right r-activity">9</span></a></li>
+                        <li id="tagMatch"><a onclick="abrirDivMatch()" href="#"> <i class="fa fa-calendar"></i>Match <span class="label label-warning pull-right r-activity"><span class="nmr-match">0</span></span></a></li>
                         <li id="tagEditarPerfil"><a onclick="abrirDivEditarPerfil()" href="#"> <i class="fa fa-edit"></i>Editar Perfil</a></li>
                     </ul>
                 </div>
@@ -192,15 +243,15 @@ if ($sql->rowCount() >= 1) {
                                             <img src="assets/imgs/livrover.jpg" alt="194x228" class="img-responsive">
                                         </div>
                                     </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12">
+                                    <div class="col-md-7 col-sm-12 col-xs-12 div-inff" style="height: 238px;">
                                         <div class="product-deatil">
                                             <h5 class="name">
                                                 <a href="#">
-                                                    Livro Verde <span>Autor Verde</span>
+                                                    Livro Verde <span style="font-size: 14px;">Autor Verde</span>
                                                 </a>
                                             </h5>
                                             <p class="status-container">
-                                                <span>status: ativo</span>
+                                                <span>Status: Ativo</span>
                                             </p>
                                             <span class="tag1"></span>
                                         </div>
@@ -217,6 +268,9 @@ if ($sql->rowCount() >= 1) {
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12 col-xs-12">
+                                        <h3>Adicionar foto das duas pessoas, e se tem match ou não.</h3>
                                     </div>
                                 </div>
                             </div>
@@ -231,15 +285,15 @@ if ($sql->rowCount() >= 1) {
                                             <img src="assets/imgs/livrozul.jpg" alt="194x228" class="img-responsive">
                                         </div>
                                     </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12">
+                                    <div class="col-md-7 col-sm-12 col-xs-12 div-inff" style="height: 238px;">
                                         <div class="product-deatil">
                                             <h5 class="name">
                                                 <a href="#">
-                                                    Livro Azul <span>Autor Azul</span>
+                                                    Livro Azul <span style="font-size: 14px;">Autor Azul</span>
                                                 </a>
                                             </h5>
                                             <p class="status-container">
-                                                <span>status: match</span>
+                                                <span>Status: Match</span>
                                             </p>
                                             <span class="tag1"></span>
                                         </div>
@@ -256,6 +310,9 @@ if ($sql->rowCount() >= 1) {
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12 col-xs-12">
+                                        <h3>Adicionar foto das duas pessoas, e se tem match ou não.</h3>
                                     </div>
                                 </div>
                             </div>
@@ -270,15 +327,15 @@ if ($sql->rowCount() >= 1) {
                                             <img src="assets/imgs/acabana.jpg" alt="194x228" class="img-responsive">
                                         </div>
                                     </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12">
+                                    <div class="col-md-7 col-sm-12 col-xs-12 div-inff">
                                         <div class="product-deatil">
                                             <h5 class="name">
                                                 <a href="#">
-                                                    A Cabana <span>Desconhecido</span>
+                                                    A Cabana <span style="font-size: 14px;">Desconhecido</span>
                                                 </a>
                                             </h5>
                                             <p class="status-container">
-                                                <span>status: ativo</span>
+                                                <span>Status: Ativo</span>
                                             </p>
                                             <span class="tag1"></span>
                                         </div>
@@ -295,6 +352,9 @@ if ($sql->rowCount() >= 1) {
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12 col-xs-12">
+                                        <h3>Adicionar foto das duas pessoas, e se tem match ou não.</h3>
                                     </div>
                                 </div>
                             </div>
@@ -309,15 +369,15 @@ if ($sql->rowCount() >= 1) {
                                             <img src="assets/imgs/aculpaedasestrelas.jpg" alt="194x228" class="img-responsive">
                                         </div>
                                     </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12">
+                                    <div class="col-md-7 col-sm-12 col-xs-12 div-inff" style="height: 238px;">
                                         <div class="product-deatil">
                                             <h5 class="name">
                                                 <a href="#">
-                                                    A Culpa E Das Estrelas <span>John Green</span>
+                                                    A Culpa E Das Estrelas <span style="font-size: 14px;">John Green</span>
                                                 </a>
                                             </h5>
                                             <p class="status-container">
-                                                <span>status: ativo</span>
+                                                <span>Status: Ativo</span>
                                             </p>
                                             <span class="tag1"></span>
                                         </div>
@@ -334,6 +394,9 @@ if ($sql->rowCount() >= 1) {
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12 col-xs-12">
+                                        <h3>Adicionar foto das duas pessoas, e se tem match ou não.</h3>
                                     </div>
                                 </div>
                             </div>
