@@ -413,6 +413,12 @@ include_once('../config/conexao.php');
 				</div>
 			</li>
 			<li>
+				<span class="fab-labelll"><a style="text-decoration: none; color: white;">Fórum</a></span>
+				<div class="fab-icon-holderrr">
+					<a href="http://localhost/scambio2.0/forum/forum.php" id="perfil" style="text-decoration: none;"><i class="far fa-newspaper"></i></a>
+				</div>
+			</li>
+			<li>
 				<span class="fab-labelll"><a style="text-decoration: none; color: white;">Ajuda</a></span>
 				<div class="fab-icon-holderrr">
 					<a id="ajuda" style="text-decoration: none;" onclick="redirectAjuda()"><i class="fas fa-question"></i></a>
