@@ -41,6 +41,12 @@
             </div>
         </li>
         <li>
+            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Forum</a></span>
+            <div class="fab-icon-holderrr">
+                <a id="perfil" style="text-decoration: none;" onclick="redirectForum()"><i class="far fa-newspaper	"></i></a>
+            </div>
+        </li>
+        <li>
             <span class="fab-labelll"><a style="text-decoration: none; color: white;">Ajuda</a></span>
             <div class="fab-icon-holderrr">
                 <a id="ajuda" style="text-decoration: none;" onclick="redirectAjuda()"><i class="fas fa-question"></i></a>
@@ -63,6 +69,10 @@
 
         function redirectPerfil() {
             location.replace('http://localhost/scambio2.0/perfil2.php');
+        }
+
+        function redirectForum() {
+            location.replace('http://localhost/scambio2.0/forum/forum.php');
         }
 
         function redirectAjuda() {
