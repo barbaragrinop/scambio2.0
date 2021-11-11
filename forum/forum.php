@@ -182,9 +182,9 @@
   </div>
   <br>
   <br>
-  <div style="margin-top: 1px;">
-    <input type="text" name="search" style="border: none; height: 45px; border-radius: 2px; margin-left: 17.5%; padding-left: 10px; width: 60%;" placeholder="Nome do livro" />
-    <input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 3px;background-color: #AC7E55; color: #ffffff;" />
+  <div style="margin-top: 1px; display: flex; justify-content: center;">
+    <input type="text" name="search" style="border: none; height: 45px; border-radius: 2px; padding-left: 10px; width: 1020px; font-size: 16px;" placeholder="Nome do livro" />
+    <input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 3px;background-color: #AC7E55; color: #ffffff; font-size: 15px; margin-left: 13px;" />
   </div>
   <br>
   <br>
@@ -194,37 +194,40 @@
     <div class="col-md-12 bootstrap snippets">
       <div class="panel">
         <div class="panel-body">
-          <textarea class="form-control" rows="2" placeholder="O que voce esta pensando?"></textarea>
+          <textarea class="form-control" rows="2" placeholder="O que voce esta pensando?" style="font-size: 15px;"></textarea>
           <div class="mar-top clearfix">
-            <div style="width: 310px;">
-
-              <label style="font-size: 13px;" for="genero">Gênero:</label>
-              <select style="width: 100%; font-size: 12.5px;" id="genero" name="genero">
-                <option value="Biografia">Biografia</option>
-                <option value="Carta">Carta</option>
-                <option value="Chick-Lit">Chick-Lit</option>
-                <option value="Conto">Conto</option>
-                <option value="Crônica">Crônica</option>
-                <option value="Drama">Drama</option>
-                <option value="Ensaio">Ensaio</option>
-                <option value="Ficção">Ficção</option>
-                <option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
-                <option value="ladlit">Lad-Lit</option>
-                <option value="Literatura Fantástica">Literatura Fantástica</option>
-                <option value="Literatura Infantil">Literatura Infantil</option>
-                <option value="Literatura Infanto-juvenil">Literatura Infanto-juvenil</option>
-                <option value="Literatura Nacional">Literatura Nacional</option>
-                <option value="Memórias">Memórias</option>
-                <option value="New Adult">New Adult</option>
-                <option value="Novela">Novela</option>
-                <option value="Poesia">Poesia</option>
-                <option value="Realismo Mágico ">Realismo Mágico</option>
-                <option value="Romance">Romance</option>
-                <option value="Sick-Lit">Sick-Lit</option>
-                <option value="Terror">Terror</option>
-              </select>
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+              <div style="width: 310px;">
+                <label style="font-size: 13px;" for="genero">Gênero:</label>
+                <select style="width: 100%; font-size: 13.5px; width: 940px;" id="genero" name="genero">
+                  <option value="Biografia">Biografia</option>
+                  <option value="Carta">Carta</option>
+                  <option value="Chick-Lit">Chick-Lit</option>
+                  <option value="Conto">Conto</option>
+                  <option value="Crônica">Crônica</option>
+                  <option value="Drama">Drama</option>
+                  <option value="Ensaio">Ensaio</option>
+                  <option value="Ficção">Ficção</option>
+                  <option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
+                  <option value="ladlit">Lad-Lit</option>
+                  <option value="Literatura Fantástica">Literatura Fantástica</option>
+                  <option value="Literatura Infantil">Literatura Infantil</option>
+                  <option value="Literatura Infanto-juvenil">Literatura Infanto-juvenil</option>
+                  <option value="Literatura Nacional">Literatura Nacional</option>
+                  <option value="Memórias">Memórias</option>
+                  <option value="New Adult">New Adult</option>
+                  <option value="Novela">Novela</option>
+                  <option value="Poesia">Poesia</option>
+                  <option value="Realismo Mágico ">Realismo Mágico</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Sick-Lit">Sick-Lit</option>
+                  <option value="Terror">Terror</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+              <button class="btn btn-sm btn-primary pull-right" style="background-color: #AC7E55; border: none; width: 95px; height: 38px; margin-top: 37px; font-size: 14px;" type="submit"><i class="fa fa-pencil fa-fw"></i> Publicar</button>
             </div>
-            <button class="btn btn-sm btn-primary pull-right" style="background-color: #AC7E55; border: none;" type="submit"><i class="fa fa-pencil fa-fw"></i> Publicar</button>
+
           </div>
         </div>
       </div>
@@ -236,10 +239,10 @@
             <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
             <div class="media-body">
               <div class="mar-btm">
-                <a href="#" class="btn-link text-semibold media-heading box-inline">Lisa D.</a>
-                <p class="text-muted text-sm"> Romance - 11 min ago</p>
+                <a href="#" class="btn-link text-semibold media-heading box-inline">Beatriz M.</a>
+                <p class="text-muted text-sm"> Conto - 09/11/2021</p>
               </div>
-              <p>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+              <p>Eu comecei a ler um livro muito legal, ja estava querendo começar faz tempo. O nome dele é chapeuzinho vermelho, conta uma historia de uma vovo que tinha uma netinha que usava chapeuzinho vermelho.</p>
               <div class="pad-ver">
                 <div class="btn-group">
                   <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
@@ -254,10 +257,10 @@
                   <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
                   <div class="media-body">
                     <div class="mar-btm">
-                      <a href="#" class="btn-link text-semibold media-heading box-inline">Bobby Marz</a>
-                      <p class="text-muted text-sm"> 7 min ago</p>
+                      <a href="#" class="btn-link text-semibold media-heading box-inline">Yago M.</a>
+                      <p class="text-muted text-sm"> 09/11/2021</p>
                     </div>
-                    <p>Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p>Serio ?? Que legal, pretendo ler este livro tambem.</p>
                     <div class="pad-ver">
                       <div class="btn-group">
                         <a class="btn btn-sm btn-default btn-hover-success active" href="#"><i class="fa fa-thumbs-up"></i></a>
@@ -273,10 +276,10 @@
                   </a>
                   <div class="media-body">
                     <div class="mar-btm">
-                      <a href="#" class="btn-link text-semibold media-heading box-inline">Lucy Moon</a>
-                      <p class="text-muted text-sm"> 2 min ago</p>
+                      <a href="#" class="btn-link text-semibold media-heading box-inline">Beatriz M.</a>
+                      <p class="text-muted text-sm">10/11/2021</p>
                     </div>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate ?</p>
+                    <p>Sim! pode ler, que é muito bom.</p>
                     <div class="pad-ver">
                       <div class="btn-group">
                         <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
@@ -308,9 +311,9 @@
             <div class="media-body">
               <div class="mar-btm">
                 <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
-                <p class="text-muted text-sm"> Suspense - 11 min ago</p>
+                <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
               </div>
-              <p>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+              <p>Alguem ja leu 'Garota Exemplar' ? To querendo ler.</p>
               <div class="pad-ver">
                 <div class="btn-group">
                   <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
@@ -325,10 +328,10 @@
                   <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
                   <div class="media-body">
                     <div class="mar-btm">
-                      <a href="#" class="btn-link text-semibold media-heading box-inline">Martinez</a>
-                      <p class="text-muted text-sm"> 7 min ago</p>
+                      <a href="#" class="btn-link text-semibold media-heading box-inline">Martinez.</a>
+                      <p class="text-muted text-sm"> 13/11/2021</p>
                     </div>
-                    <p>Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p>Eu já! muito interessante.</p>
                     <div class="pad-ver">
                       <div class="btn-group">
                         <a class="btn btn-sm btn-default btn-hover-success active" href="#"><i class="fa fa-thumbs-up"></i></a>
@@ -344,10 +347,10 @@
                   </a>
                   <div class="media-body">
                     <div class="mar-btm">
-                      <a href="#" class="btn-link text-semibold media-heading box-inline">Luciana</a>
-                      <p class="text-muted text-sm"> 2 min ago</p>
+                      <a href="#" class="btn-link text-semibold media-heading box-inline">Luciana G.</a>
+                      <p class="text-muted text-sm"> 13/11/2021</p>
                     </div>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate ?</p>
+                    <p>Eu ainda não, mas to querendo.</p>
                     <div class="pad-ver">
                       <div class="btn-group">
                         <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
