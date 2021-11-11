@@ -1,4 +1,4 @@
-
+/* 
 $(document).ready(function(){
     $('#frmRecupera').submit(() => {
         var emailManda = $('#recemail').val();
@@ -21,4 +21,4 @@ $(document).ready(function(){
             }
         });
     });
-});
+}); */
