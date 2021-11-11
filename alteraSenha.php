@@ -2,28 +2,28 @@
 include("./config/conexao.php");
 session_start();
 
-$novaSenha2 = $_POST['novaSenha2'];
-$novaSenha1 = $_POST['novaSenha1'];
+$novaSenha2 = $_POST['senha1'];
+$novaSenha1 = $_POST['senha2'];
 
 if($novaSenha1 === $novaSenha2){
     $senha = $novaSenha2;
 }
 
-if(isset($_SESSION['recuperacao'])){
-    $email = $_SESSION['recuperacao'];
+if(isset($_SESSION['codigoRecuperacao'])){
+    $codigo = $_SESSION['codigoRecuperacao'];
 }
 
-$query = $pdo->prepare("UPDATE db_scambio.tb_usuario set nm_senha = :senha where cd_usuario = (SELECT cd_usuario from db_scambio.tb_usuario where nm_email = :email)");
+$query = $pdo->prepare("UPDATE db_scambio.tb_usuario set nm_senha = :senha where cd_recuperacao = :codigo");
 $query->execute(array(
-    ':email' => $email, 
+    ':codigo' => $codigo, 
     ':senha' => $senha
 ));
 
 if($query->rowCount() >= 1){ 
-    echo "<script>alert('Cadastro Realizado com Sucesso')</script>";
-    header("Location: index.php");
-    unset($_SESSION['recuperacao']);
-    unset($_SESSION['codigo']);       
+    echo 1;  
+    // header("Location: index.php");
+    unset($_SESSION['codigoRecuperacao']);
+    unset($_SESSION['codigo']);     
 }
 
-header("Location: index.php");
+// header("Location: index.php");
