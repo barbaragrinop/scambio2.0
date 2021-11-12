@@ -224,7 +224,7 @@ if (isset($_SESSION['id'])) {
                                 </div>
                                 <div class="infos-publi">
                                     <span class="name-livro-publi">
-                                        Nome: <span><?php echo $row->livro ?></span>
+                                        Nome: <span><?php echo $row->NMLV ?></span>
                                     </span>
                                     <span class="desciption-publi">
                                         Descrição: <span><?php echo $row->ds ?></span>

@@ -4,6 +4,8 @@
 <?php
 session_start();
 include_once('../config/conexao.php');
+
+if(isset($_SESSION['id'])){
 ?>
 
 <head>
@@ -284,17 +286,17 @@ include_once('../config/conexao.php');
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row return">
 		<?php
 		foreach ($result_select_anuncio as $key => $row) {
 		?>
 			<div class="card col-md-6" style="width: 13rem;">
 				<img src="./img/a-divina-comédia-191x300.jpg" class="card-img-top" alt="...">
 				<div class="card-body">
-					<h5 class="card-name" style="margin-top: -11px;"><?php echo $row->livro ?></h5>
-					<p class="card-city" style="margin-top: -6px; font-size: 15px;"><?php echo $row->cid . "/" . $row->u ?></p>
-					<p class="card-gen" style="margin-top: -21px; font-size: 15px;"><?php echo $row->genero ?></p>
-					<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;"><?php echo $row->dta ?></p>
+					<h5 class="card-name" style="margin-top: -11px;"><?=$row->NMLV ?></h5>
+					<p class="card-city" style="margin-top: -6px; font-size: 15px;"><?= $row->CITY . "/" . $row->UF ?></p>
+					<p class="card-gen" style="margin-top: -21px; font-size: 15px;"><?= $row->genero ?></p>
+					<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;"><?= date('d/m/Y', strtotime(($row -> dta))) ?></p>
 					<div class="btns">
 						<button>
 							<a href="">
@@ -410,6 +412,7 @@ include_once('../config/conexao.php');
 				<!-- </div> -->
 
 			</li>
+			
 			<li>
 				<span class="fab-labelll"><a style="text-decoration: none; color: white;">Mensagens</a></span>
 				<div class="fab-icon-holderrr">
@@ -491,5 +494,9 @@ include_once('../config/conexao.php');
 	</script>
 	<script src="../assets/js/cadastroPublicacao.js"></script>
 </body>
-
 </html>
+<?php
+}else{
+	header('Location:../login/login.php');
+}
+?>
