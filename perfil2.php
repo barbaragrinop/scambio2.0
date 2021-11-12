@@ -10,12 +10,8 @@ $id = $_SESSION['id'];
 
 
 $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
-                        inner join db_scambio.tb_logradouro
-                        on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
-                        inner join db_scambio.tb_bairro 
-                        on tb_bairro.cd_bairro = tb_logradouro.cd_bairro
                         inner join db_scambio.tb_cidade
-                        on tb_cidade.cd_cidade = tb_bairro.cd_cidade
+                        on tb_cidade.cd_cidade = tb_usuario.cd_cidade
                         inner join db_scambio.tb_uf
                         on tb_uf.cd_uf = tb_cidade.cd_uf
                         where cd_usuario = :id");
@@ -168,7 +164,7 @@ if ($sql->rowCount() >= 1) {
             <div class="profile-nav col-md-3">
                 <div class="panel">
                     <div class="user-heading round">
-                        <a href="#" class="profile-off">
+                        <a href="#" class="<?php  echo (isset($_SESSION['id']) ? 'profile-on' : 'profile-off'); ?>">
                             <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
                         </a>
                         <h1><?= $row['nm_usuario'] ?></h1>

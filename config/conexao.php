@@ -2,9 +2,9 @@
 
 
 //Alterar para Servidor = LocalHost
-$servidor = "127.0.0.1:3306";
+$servidor = "127.0.0.1:3308";
 $usuario = "root";
-$senha = "root";
+$senha = "";
 $banco = "db_scambio";
 
 date_default_timezone_set('America/Sao_Paulo');
