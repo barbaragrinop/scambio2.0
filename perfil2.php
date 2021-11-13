@@ -9,6 +9,7 @@ if (!isset($_SESSION['id'])) {
 $id = $_SESSION['id'];
 
 
+
 $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
                         inner join db_scambio.tb_cidade
                         on tb_cidade.cd_cidade = tb_usuario.cd_cidade
@@ -136,25 +137,23 @@ if ($sql->rowCount() >= 1) {
 <body>
     <div class="container-fluid">
         <div style="display: flex; justify-content: space-around;">
-            <div style="display: flex; flex-direction: row;">
-                <a href="">
-                    <img src="./assets/imgs/munir.jpeg" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
-                </a>
-                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"> <a href="" style="text-decoration: none;">Munir</a> </p>
-            </div>
-            <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
-            </button>
-            <?php
-            if (isset($_SESSION['id'])) {
-            ?>
-                <form action="./logout.php">
-                    <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
-                </form>
-            <?php
-            } else {
-                header("Location: index.php");
-            }
-            ?>
+                <div style="display: flex; flex-direction: row;">
+                    <img src="data:image;base64,<?php echo $row["DS_IMGP"];?> alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+                    <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
+                </div>
+                <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
+                </button>
+                <?php
+                if (isset($_SESSION['id'])) {
+                ?>
+                    <form action="./logout.php">
+                        <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+                    </form>
+                <?php
+                } else {
+                    header("Location: index.php");
+                }
+                ?>
 
         </div>
     </div>
@@ -164,8 +163,9 @@ if ($sql->rowCount() >= 1) {
             <div class="profile-nav col-md-3">
                 <div class="panel">
                     <div class="user-heading round">
-                        <a href="#" class="<?php  echo (isset($_SESSION['id']) ? 'profile-on' : 'profile-off'); ?>">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                        <a href="#" class="<?= $_SESSION['status'] == 'Online' ? 'profile-on' : 'profile-off' ?>">
+                            <img src="data:image;base64,<?php echo $row["DS_IMGP"];?> " alt="">
+
                         </a>
                         <h1><?= $row['nm_usuario'] ?></h1>
                     </div>
@@ -226,7 +226,8 @@ if ($sql->rowCount() >= 1) {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>               
+
 
                 <div id="perfil">
                     <div class="container" style="margin-left: -27px; width: 107%;">
