@@ -136,25 +136,23 @@ if ($sql->rowCount() >= 1) {
 <body>
     <div class="container-fluid">
         <div style="display: flex; justify-content: space-around;">
-            <div style="display: flex; flex-direction: row;">
-                <a href="">
-                    <img src="./assets/imgs/munir.jpeg" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
-                </a>
-                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"> <a href="" style="text-decoration: none;">Munir</a> </p>
-            </div>
-            <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
-            </button>
-            <?php
-            if (isset($_SESSION['id'])) {
-            ?>
-                <form action="./logout.php">
-                    <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
-                </form>
-            <?php
-            } else {
-                header("Location: index.php");
-            }
-            ?>
+                <div style="display: flex; flex-direction: row;">
+                    <img src="data:image;base64,<?php echo $row["DS_IMGP"];?> alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+                    <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
+                </div>
+                <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
+                </button>
+                <?php
+                if (isset($_SESSION['id'])) {
+                ?>
+                    <form action="./logout.php">
+                        <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+                    </form>
+                <?php
+                } else {
+                    header("Location: index.php");
+                }
+                ?>
 
         </div>
     </div>
@@ -164,8 +162,9 @@ if ($sql->rowCount() >= 1) {
             <div class="profile-nav col-md-3">
                 <div class="panel">
                     <div class="user-heading round">
-                        <a href="#" class="<?php  echo (isset($_SESSION['id']) ? 'profile-on' : 'profile-off'); ?>">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                        <a href="#" class="<?= $_SESSION['status'] == 'Online' ? 'profile-on' : 'profile-off' ?>">
+                            <img src="data:image;base64,<?php echo $row["DS_IMGP"];?> " alt="">
+
                         </a>
                         <h1><?= $row['nm_usuario'] ?></h1>
                     </div>
@@ -227,6 +226,7 @@ if ($sql->rowCount() >= 1) {
                         </div>
                     </div>
                 </div>
+                
 
                 <div id="perfil">
                     <div class="container" style="margin-left: -27px; width: 107%;">
@@ -328,48 +328,6 @@ if ($sql->rowCount() >= 1) {
                                             <h5 class="name">
                                                 <a href="#">
                                                     A Cabana <span style="font-size: 14px;">Desconhecido</span>
-                                                </a>
-                                            </h5>
-                                            <p class="status-container">
-                                                <span>Status: Ativo</span>
-                                            </p>
-                                            <span class="tag1"></span>
-                                        </div>
-                                        <div class="description">
-                                            <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-                                        </div>
-                                        <div class="product-info smart-form">
-                                            <div class="row">
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
-                                                </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-4">
-                                                    <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-12 col-xs-12">
-                                        <h3>Adicionar foto das duas pessoas, e se tem match ou não.</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end product -->
-                        </div>
-                        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-                            <!-- product -->
-                            <div class="product-content product-wrap clearfix">
-                                <div class="row">
-                                    <div class="col-md-5 col-sm-12 col-xs-12">
-                                        <div class="product-image">
-                                            <img src="assets/imgs/aculpaedasestrelas.jpg" alt="194x228" class="img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 div-inff" style="height: 238px;">
-                                        <div class="product-deatil">
-                                            <h5 class="name">
-                                                <a href="#">
-                                                    A Culpa E Das Estrelas <span style="font-size: 14px;">John Green</span>
                                                 </a>
                                             </h5>
                                             <p class="status-container">
