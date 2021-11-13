@@ -4,6 +4,8 @@
 <?php
 session_start();
 include_once('../config/conexao.php');
+
+if(isset($_SESSION['id'])){
 ?>
 
 <head>
@@ -44,7 +46,7 @@ include_once('../config/conexao.php');
 		.img-index {
 			width: 100px;
 			height: 32px;
-			margin-top: 5px;
+			margin-top: 10px;
 		}
 
 		.form-filtro {
@@ -212,6 +214,7 @@ include_once('../config/conexao.php');
 				width: 650px !important;
 			}
 		}
+
 		@media (max-width: 1325px) {
 			.inpAutor {
 				/* width: 100% !important; */
@@ -236,19 +239,28 @@ include_once('../config/conexao.php');
 
 <body>
 	<div class="container-fluid">
-		<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 5px;"></a>
-		</button>
-		<?php
-		if (isset($_SESSION['id'])) {
-		?>
-			<form action="../logout.php">
-				<input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
-			</form>
-		<?php
-		} else {
-			header("Location: index.php");
-		}
-		?>
+		<div style="display: flex; flex-direction: row; justify-content: space-around;">
+			<div style="display: flex; flex-direction: row;">
+				<a href="">
+					<img src="../assets/imgs/munir.jpeg" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+				</a>
+				<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"> <a href="" style="text-decoration: none;">Munir</a> </p>
+			</div>
+			<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 5px;"></a>
+			</button>
+			<?php
+			if (isset($_SESSION['id'])) {
+			?>
+				<form action="../logout.php" style="margin-top: 32px;">
+					<input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+				</form>
+			<?php
+			} else {
+				header("Location: index.php");
+			}
+			?>
+		</div>
+
 	</div>
 
 	<?php
@@ -274,17 +286,17 @@ include_once('../config/conexao.php');
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row return">
 		<?php
 		foreach ($result_select_anuncio as $key => $row) {
 		?>
 			<div class="card col-md-6" style="width: 13rem;">
 				<img src="./img/a-divina-comédia-191x300.jpg" class="card-img-top" alt="...">
 				<div class="card-body">
-					<h5 class="card-name" style="margin-top: -11px;"><?php echo $row->livro ?></h5>
-					<p class="card-city" style="margin-top: -6px; font-size: 15px;"><?php echo $row->cid . "/" . $row->u ?></p>
-					<p class="card-gen" style="margin-top: -21px; font-size: 15px;"><?php echo $row->genero ?></p>
-					<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;"><?php echo $row->dta ?></p>
+					<h5 class="card-name" style="margin-top: -11px;"><?=$row->NMLV ?></h5>
+					<p class="card-city" style="margin-top: -6px; font-size: 15px;"><?= $row->CITY . "/" . $row->UF ?></p>
+					<p class="card-gen" style="margin-top: -21px; font-size: 15px;"><?= $row->genero ?></p>
+					<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;"><?= date('d/m/Y', strtotime(($row -> dta))) ?></p>
 					<div class="btns">
 						<button>
 							<a href="">
@@ -315,7 +327,7 @@ include_once('../config/conexao.php');
 						<span class="close">&times;</span>
 					</div>
 					<div class="modal-body">
-						<label style="font-size: 16px;">Nome: </label> <input type="text" name="nome" > 
+						<label style="font-size: 16px;">Nome: </label> <input type="text" name="nome">
 						<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea name="descricao" style="width: 100%; max-height: 200px;"> </textarea>
 						<div style="display: flex; flex-direction: row;">
 							<div>
@@ -400,6 +412,7 @@ include_once('../config/conexao.php');
 				<!-- </div> -->
 
 			</li>
+			
 			<li>
 				<span class="fab-labelll"><a style="text-decoration: none; color: white;">Mensagens</a></span>
 				<div class="fab-icon-holderrr">
@@ -410,6 +423,12 @@ include_once('../config/conexao.php');
 				<span class="fab-labelll"><a style="text-decoration: none; color: white;">Meu Perfil</a></span>
 				<div class="fab-icon-holderrr">
 					<a id="perfil" style="text-decoration: none;" onclick="redirectPerfil()"><i class="fas fa-user"></i></a>
+				</div>
+			</li>
+			<li>
+				<span class="fab-labelll"><a style="text-decoration: none; color: white;">Fórum</a></span>
+				<div class="fab-icon-holderrr">
+					<a href="http://localhost/scambio2.0/forum/forum.php" id="perfil" style="text-decoration: none;"><i class="far fa-newspaper"></i></a>
 				</div>
 			</li>
 			<li>
@@ -475,5 +494,9 @@ include_once('../config/conexao.php');
 	</script>
 	<script src="../assets/js/cadastroPublicacao.js"></script>
 </body>
-
 </html>
+<?php
+}else{
+	header('Location:../login/login.php');
+}
+?>

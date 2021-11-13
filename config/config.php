@@ -3,7 +3,7 @@
 #Variáveis do Banco 
 $servidor = "localhost";
 $usuario = "root";
-$senha = "";
+$senha = "root";
 $banco = "db_scambio";
 
 ?>

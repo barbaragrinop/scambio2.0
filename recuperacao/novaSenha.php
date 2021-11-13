@@ -30,12 +30,13 @@ if (isset($_SESSION['id'])) {
 		<link rel="stylesheet" type="text/css" href="css/util.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<!--===============================================================================================-->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+		
 		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 		<!--===============================================================================================-->
-		<script src="../assets/js/recuperaSenha.js"></script>
-		<!--===============================================================================================-->
+		<!-- <script src="../assets/js/recuperaSenha.js"></script> -->
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 		<style>
 			.secondaryColor {
@@ -78,7 +79,7 @@ if (isset($_SESSION['id'])) {
 						<img src="images/book.png" alt="IMG">
 					</div>
 
-					<form class="login100-form validate-form" method="post" action="../alteraSenha.php">
+					<form class="login100-form validate-form" id=frmRestauraSenha ">
 						<!-- <form class="login100-form validate-form" id="frmRestauraSenha"> -->
 						<span id="titlePrincipal" class="login100-form-title">
 							Digite uma senha confiável.
@@ -112,7 +113,14 @@ if (isset($_SESSION['id'])) {
 
 
 
-
+		
+		<div class="position-absolute start-50 top-0 end-0 p-3" style="z-index: 11">
+			<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-body">
+					<p id="resToast"></p>
+				</div>
+			</div>
+		</div>
 		<!--===============================================================================================-->
 		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 		<!--===============================================================================================-->
@@ -129,8 +137,8 @@ if (isset($_SESSION['id'])) {
 		</script>
 		<!--===============================================================================================-->
 		<script src="js/main.js"></script>
-		<script src="../assets/js/recuperaSenha.js"></script>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="../assets/js/renovaSenha.js"></script>
 	</body>
 
 	</html>

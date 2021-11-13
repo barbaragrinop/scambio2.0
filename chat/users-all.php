@@ -46,19 +46,28 @@ if (!isset($_SESSION['id'])) {
 
 <body style="display: block;">
     <div class="container-fluid">
-        <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 7.5px;"></a>
-        </button>
-        <?php
-        if (isset($_SESSION['id'])) {
-        ?>
-            <form action="../logout.php">
-                <input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
-            </form>
-        <?php
-        } else {
-            header("Location: index.php");
-        }
-        ?>
+        <div style="display: flex; flex-direction: row; justify-content: space-around;">
+            <div style="display: flex; flex-direction: row;">
+                <a href="">
+                    <img src="../assets/imgs/munir.jpeg" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+                </a>
+                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"> <a href="" style="text-decoration: none;">Munir</a> </p>
+            </div>
+            <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 7.5px;"></a>
+            </button>
+            <?php
+            if (isset($_SESSION['id'])) {
+            ?>
+                <form action="../logout.php" style="margin-top: 38px;">
+                    <input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+                </form>
+            <?php
+            } else {
+                header("Location: index.php");
+            }
+            ?>
+        </div>
+
     </div>
 
 

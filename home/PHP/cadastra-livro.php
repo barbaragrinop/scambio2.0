@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 require_once '../../config/conexao.php';
 
 if (isset($_POST['autor'])) {
@@ -34,9 +35,10 @@ if (isset($_FILES['file3'])) {
     $file3 = base64_encode($file3['tmp_name'] ?? '');
 }
 
+$date = date("Y-m-d h:i:sa");
 
 try{
-    $sql = $pdo->prepare("CALL db_scambio.sp_cadastraPublicacao(:livro, :autor, :genero, :descricao, :ft1, :ft2, :ft3)");
+    $sql = $pdo->prepare("CALL db_scambio.sp_cadastraPublicacao(:livro, :descricao, :genero, :autor,  :ft1, :ft2, :ft3, :us, :dt)");
     $sql->execute(array(
         ':livro' => $nome,
         ':autor' => $autor,
@@ -44,7 +46,9 @@ try{
         ':descricao' => $descricao,
         ':ft1' => $file1,
         ':ft2' => $file2,
-        ':ft3' => $file3
+        ':ft3' => $file3,
+        ':us' => $_SESSION['id'],
+        ':dt' => $date
     ));
 
     if($sql->rowCount() >= 1) {
