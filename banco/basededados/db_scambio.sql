@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 13-Nov-2021 às 00:48
--- Versão do servidor: 10.4.21-MariaDB
--- versão do PHP: 8.0.12
+-- Host: 127.0.0.1:3308
+-- Generation Time: Nov 13, 2021 at 02:05 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,12 +18,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `db_scambio`
+-- Database: `db_scambio`
 --
+CREATE DATABASE IF NOT EXISTS `db_scambio` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `db_scambio`;
 
 DELIMITER $$
 --
--- Procedimentos
+-- Procedures
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_anunciousuario` (IN `codigo` INT)  BEGIN
 		SELECT 
@@ -82,7 +84,7 @@ else
 end if;
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cadastraPublicacao` (IN `nome` VARCHAR(50), IN `descricaso` VARCHAR(200), IN `genero` VARCHAR(50), IN `autor` VARCHAR(60), IN `fotoo1` VARCHAR(70000), IN `fotoo2` VARCHAR(700000), IN `fotoo3` VARCHAR(700000))  begin 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cadastraPublicacao` (IN `nome` VARCHAR(50), IN `descricaso` VARCHAR(200), IN `genero` VARCHAR(50), IN `autor` VARCHAR(60), IN `fotoo1` VARCHAR(70000), IN `fotoo2` VARCHAR(700000), IN `fotoo3` VARCHAR(700000), IN `usercd` INT(11), IN `dat` DATETIME)  begin 
 	insert into tb_livro (
 		nm_livro, 
         nm_autor,
@@ -90,7 +92,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cadastraPublicacao` (IN `nome` V
         descricao, 
         foto1, 
         foto2, 
-        foto3
+        foto3,
+        cd_usuario,
+        dt_publicacao
     ) values (
 		nome, 
         autor,
@@ -98,7 +102,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cadastraPublicacao` (IN `nome` V
         descricaso, 
         fotoo1, 
         fotoo2, 
-        fotoo3
+        fotoo3,
+        usercd,
+        dat
     );
         
  end$$
@@ -272,8 +278,8 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para vista `autor`
--- (Veja abaixo para a view atual)
+-- Stand-in structure for view `autor`
+-- (See below for the actual view)
 --
 CREATE TABLE `autor` (
 `NM_AUTOR` varchar(140)
@@ -284,8 +290,8 @@ CREATE TABLE `autor` (
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para vista `bairro_user`
--- (Veja abaixo para a view atual)
+-- Stand-in structure for view `bairro_user`
+-- (See below for the actual view)
 --
 CREATE TABLE `bairro_user` (
 `NM_USUARIO` varchar(150)
@@ -295,8 +301,8 @@ CREATE TABLE `bairro_user` (
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para vista `chat_user`
--- (Veja abaixo para a view atual)
+-- Stand-in structure for view `chat_user`
+-- (See below for the actual view)
 --
 CREATE TABLE `chat_user` (
 `NM_USUARIO` varchar(150)
@@ -307,8 +313,8 @@ CREATE TABLE `chat_user` (
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para vista `cit_bairro_rua`
--- (Veja abaixo para a view atual)
+-- Stand-in structure for view `cit_bairro_rua`
+-- (See below for the actual view)
 --
 CREATE TABLE `cit_bairro_rua` (
 `NM_CIDADE` varchar(50)
@@ -319,8 +325,8 @@ CREATE TABLE `cit_bairro_rua` (
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para vista `editora_livro`
--- (Veja abaixo para a view atual)
+-- Stand-in structure for view `editora_livro`
+-- (See below for the actual view)
 --
 CREATE TABLE `editora_livro` (
 `NM_LIVRO` varchar(100)
@@ -330,7 +336,7 @@ CREATE TABLE `editora_livro` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `livro_genero`
+-- Table structure for table `livro_genero`
 --
 
 CREATE TABLE `livro_genero` (
@@ -339,7 +345,7 @@ CREATE TABLE `livro_genero` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `livro_genero`
+-- Dumping data for table `livro_genero`
 --
 
 INSERT INTO `livro_genero` (`cd_livro`, `cd_genero`) VALUES
@@ -350,7 +356,7 @@ INSERT INTO `livro_genero` (`cd_livro`, `cd_genero`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `messages`
+-- Table structure for table `messages`
 --
 
 CREATE TABLE `messages` (
@@ -362,7 +368,7 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `messages`
+-- Dumping data for table `messages`
 --
 
 INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `datemessage`) VALUES
@@ -401,7 +407,7 @@ INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `
 (38, 49, 1, 'como vc tá cara', '2021-11-12 18:33:43');
 
 --
--- Acionadores `messages`
+-- Triggers `messages`
 --
 DELIMITER $$
 CREATE TRIGGER `trNotificaUsuarioMsg` AFTER INSERT ON `messages` FOR EACH ROW begin
@@ -431,7 +437,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `notificacao`
+-- Table structure for table `notificacao`
 --
 
 CREATE TABLE `notificacao` (
@@ -445,7 +451,7 @@ CREATE TABLE `notificacao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `notificacao`
+-- Dumping data for table `notificacao`
 --
 
 INSERT INTO `notificacao` (`cd_notificacao`, `ds_notificacao`, `dt_notificacao`, `nm_lugar`, `cd_usuario`, `de`, `para`) VALUES
@@ -455,7 +461,7 @@ INSERT INTO `notificacao` (`cd_notificacao`, `ds_notificacao`, `dt_notificacao`,
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `reclamacao`
+-- Table structure for table `reclamacao`
 --
 
 CREATE TABLE `reclamacao` (
@@ -467,7 +473,7 @@ CREATE TABLE `reclamacao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `reclamacao`
+-- Dumping data for table `reclamacao`
 --
 
 INSERT INTO `reclamacao` (`cd_reclamacao`, `cd_usuario`, `ds_reclamacao`, `dt_reclamacao`, `nm_email_rec`) VALUES
@@ -475,7 +481,7 @@ INSERT INTO `reclamacao` (`cd_reclamacao`, `cd_usuario`, `ds_reclamacao`, `dt_re
 (2, 48, 'meu deus uma reclamacao', '2021-11-12 22:15:03', 'b@c.com');
 
 --
--- Acionadores `reclamacao`
+-- Triggers `reclamacao`
 --
 DELIMITER $$
 CREATE TRIGGER `trNotificaUsuario` AFTER INSERT ON `reclamacao` FOR EACH ROW begin
@@ -493,7 +499,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_anuncio`
+-- Table structure for table `tb_anuncio`
 --
 
 CREATE TABLE `tb_anuncio` (
@@ -508,7 +514,7 @@ CREATE TABLE `tb_anuncio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tb_anuncio`
+-- Dumping data for table `tb_anuncio`
 --
 
 INSERT INTO `tb_anuncio` (`cd_anuncio`, `ds_anuncio`, `dt_anuncio`, `ds_img1`, `ds_img2`, `cd_logradouro`, `cd_livro`, `cd_usuario`) VALUES
@@ -519,7 +525,7 @@ INSERT INTO `tb_anuncio` (`cd_anuncio`, `ds_anuncio`, `dt_anuncio`, `ds_img1`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_autor`
+-- Table structure for table `tb_autor`
 --
 
 CREATE TABLE `tb_autor` (
@@ -528,7 +534,7 @@ CREATE TABLE `tb_autor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tb_autor`
+-- Dumping data for table `tb_autor`
 --
 
 INSERT INTO `tb_autor` (`cd_autor`, `nm_autor`) VALUES
@@ -544,7 +550,7 @@ INSERT INTO `tb_autor` (`cd_autor`, `nm_autor`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_bairro`
+-- Table structure for table `tb_bairro`
 --
 
 CREATE TABLE `tb_bairro` (
@@ -554,7 +560,7 @@ CREATE TABLE `tb_bairro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tb_bairro`
+-- Dumping data for table `tb_bairro`
 --
 
 INSERT INTO `tb_bairro` (`cd_bairro`, `nm_bairro`, `cd_cidade`) VALUES
@@ -578,7 +584,7 @@ INSERT INTO `tb_bairro` (`cd_bairro`, `nm_bairro`, `cd_cidade`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_cidade`
+-- Table structure for table `tb_cidade`
 --
 
 CREATE TABLE `tb_cidade` (
@@ -589,7 +595,7 @@ CREATE TABLE `tb_cidade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tb_cidade`
+-- Dumping data for table `tb_cidade`
 --
 
 INSERT INTO `tb_cidade` (`cd_cidade`, `nm_cidade`, `cd_uf`, `ibgd`) VALUES
@@ -615,7 +621,7 @@ INSERT INTO `tb_cidade` (`cd_cidade`, `nm_cidade`, `cd_uf`, `ibgd`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_conversa`
+-- Table structure for table `tb_conversa`
 --
 
 CREATE TABLE `tb_conversa` (
@@ -628,7 +634,7 @@ CREATE TABLE `tb_conversa` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_editora`
+-- Table structure for table `tb_editora`
 --
 
 CREATE TABLE `tb_editora` (
@@ -637,7 +643,7 @@ CREATE TABLE `tb_editora` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tb_editora`
+-- Dumping data for table `tb_editora`
 --
 
 INSERT INTO `tb_editora` (`cd_editora`, `nm_editora`) VALUES
@@ -653,7 +659,7 @@ INSERT INTO `tb_editora` (`cd_editora`, `nm_editora`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_genero`
+-- Table structure for table `tb_genero`
 --
 
 CREATE TABLE `tb_genero` (
@@ -662,7 +668,7 @@ CREATE TABLE `tb_genero` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tb_genero`
+-- Dumping data for table `tb_genero`
 --
 
 INSERT INTO `tb_genero` (`cd_genero`, `nm_genero`) VALUES
@@ -671,7 +677,7 @@ INSERT INTO `tb_genero` (`cd_genero`, `nm_genero`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_livro`
+-- Table structure for table `tb_livro`
 --
 
 CREATE TABLE `tb_livro` (
@@ -684,23 +690,27 @@ CREATE TABLE `tb_livro` (
   `foto1` mediumtext NOT NULL,
   `foto2` mediumtext NOT NULL,
   `foto3` mediumtext NOT NULL,
-  `descricao` varchar(200) NOT NULL
+  `descricao` varchar(200) NOT NULL,
+  `cd_usuario` int(11) DEFAULT NULL,
+  `dt_publicacao` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tb_livro`
+-- Dumping data for table `tb_livro`
 --
 
-INSERT INTO `tb_livro` (`cd_livro`, `nm_livro`, `cd_editora`, `cd_autor`, `nm_autor`, `nm_genero`, `foto1`, `foto2`, `foto3`, `descricao`) VALUES
-(6, 'Cinquenta', 1, 1, '', '', '', '', '', ''),
-(30, 'MR.Robot', NULL, 1, '', '', '', '', '', ''),
-(32, 'JOEL JOTA', NULL, 1, '', '', '', '', '', ''),
-(33, 'NomeLivro', NULL, NULL, 'autor', 'genero', 'fotoo1', 'fotoo2', 'fotoo3', 'descricaso');
+INSERT INTO `tb_livro` (`cd_livro`, `nm_livro`, `cd_editora`, `cd_autor`, `nm_autor`, `nm_genero`, `foto1`, `foto2`, `foto3`, `descricao`, `cd_usuario`, `dt_publicacao`) VALUES
+(6, 'Cinquenta', 1, 1, '', '', '', '', '', '', 1, NULL),
+(30, 'MR.Robot', NULL, 1, '', '', '', '', '', '', 1, NULL),
+(32, 'JOEL JOTA', NULL, 1, '', '', '', '', '', '', 1, NULL),
+(33, 'NomeLivro', NULL, NULL, 'autor', 'genero', 'fotoo1', 'fotoo2', 'fotoo3', 'descricaso', 1, NULL),
+(35, NULL, NULL, NULL, '', '', '', '', '', '', 1, NULL),
+(36, 'aaa', NULL, NULL, 'aaa', 'Biografia', '', '', '', ' aaa', 1, '2021-11-13 09:59:24');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_logradouro`
+-- Table structure for table `tb_logradouro`
 --
 
 CREATE TABLE `tb_logradouro` (
@@ -712,7 +722,7 @@ CREATE TABLE `tb_logradouro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tb_logradouro`
+-- Dumping data for table `tb_logradouro`
 --
 
 INSERT INTO `tb_logradouro` (`cd_logradouro`, `nm_logradouro`, `cd_cep`, `cd_bairro`, `cd_casa`) VALUES
@@ -746,7 +756,7 @@ INSERT INTO `tb_logradouro` (`cd_logradouro`, `nm_logradouro`, `cd_cep`, `cd_bai
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_mensagem`
+-- Table structure for table `tb_mensagem`
 --
 
 CREATE TABLE `tb_mensagem` (
@@ -759,7 +769,7 @@ CREATE TABLE `tb_mensagem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_uf`
+-- Table structure for table `tb_uf`
 --
 
 CREATE TABLE `tb_uf` (
@@ -768,7 +778,7 @@ CREATE TABLE `tb_uf` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tb_uf`
+-- Dumping data for table `tb_uf`
 --
 
 INSERT INTO `tb_uf` (`cd_uf`, `sg_uf`) VALUES
@@ -803,7 +813,7 @@ INSERT INTO `tb_uf` (`cd_uf`, `sg_uf`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tb_usuario`
+-- Table structure for table `tb_usuario`
 --
 
 CREATE TABLE `tb_usuario` (
@@ -822,7 +832,7 @@ CREATE TABLE `tb_usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `tb_usuario`
+-- Dumping data for table `tb_usuario`
 --
 
 INSERT INTO `tb_usuario` (`cd_usuario`, `nm_usuario`, `cd_celular`, `dt_nascimento`, `nm_email`, `nm_senha`, `nm_foto`, `cd_logradouro`, `cd_recuperacao`, `exp`, `DS_IMGP`, `nm_status`) VALUES
@@ -844,8 +854,8 @@ INSERT INTO `tb_usuario` (`cd_usuario`, `nm_usuario`, `cd_celular`, `dt_nascimen
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para vista `user_`
--- (Veja abaixo para a view atual)
+-- Stand-in structure for view `user_`
+-- (See below for the actual view)
 --
 CREATE TABLE `user_` (
 `NM_USUARIO` varchar(150)
@@ -856,8 +866,8 @@ CREATE TABLE `user_` (
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para vista `user_all_info`
--- (Veja abaixo para a view atual)
+-- Stand-in structure for view `user_all_info`
+-- (See below for the actual view)
 --
 CREATE TABLE `user_all_info` (
 `CD_USUARIO` int(11)
@@ -869,8 +879,8 @@ CREATE TABLE `user_all_info` (
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para vista `user_city`
--- (Veja abaixo para a view atual)
+-- Stand-in structure for view `user_city`
+-- (See below for the actual view)
 --
 CREATE TABLE `user_city` (
 `CD_LOGRADOURO` int(11)
@@ -884,8 +894,8 @@ CREATE TABLE `user_city` (
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para vista `user_public`
--- (Veja abaixo para a view atual)
+-- Stand-in structure for view `user_public`
+-- (See below for the actual view)
 --
 CREATE TABLE `user_public` (
 `CD_USUARIO` int(11)
@@ -896,8 +906,8 @@ CREATE TABLE `user_public` (
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para vista `user_uf`
--- (Veja abaixo para a view atual)
+-- Stand-in structure for view `user_uf`
+-- (See below for the actual view)
 --
 CREATE TABLE `user_uf` (
 `NM_USUARIO` varchar(150)
@@ -907,7 +917,7 @@ CREATE TABLE `user_uf` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para vista `autor`
+-- Structure for view `autor`
 --
 DROP TABLE IF EXISTS `autor`;
 
@@ -916,7 +926,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estrutura para vista `bairro_user`
+-- Structure for view `bairro_user`
 --
 DROP TABLE IF EXISTS `bairro_user`;
 
@@ -925,7 +935,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estrutura para vista `chat_user`
+-- Structure for view `chat_user`
 --
 DROP TABLE IF EXISTS `chat_user`;
 
@@ -934,7 +944,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estrutura para vista `cit_bairro_rua`
+-- Structure for view `cit_bairro_rua`
 --
 DROP TABLE IF EXISTS `cit_bairro_rua`;
 
@@ -943,7 +953,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estrutura para vista `editora_livro`
+-- Structure for view `editora_livro`
 --
 DROP TABLE IF EXISTS `editora_livro`;
 
@@ -952,7 +962,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estrutura para vista `user_`
+-- Structure for view `user_`
 --
 DROP TABLE IF EXISTS `user_`;
 
@@ -961,7 +971,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estrutura para vista `user_all_info`
+-- Structure for view `user_all_info`
 --
 DROP TABLE IF EXISTS `user_all_info`;
 
@@ -970,7 +980,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estrutura para vista `user_city`
+-- Structure for view `user_city`
 --
 DROP TABLE IF EXISTS `user_city`;
 
@@ -979,7 +989,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estrutura para vista `user_public`
+-- Structure for view `user_public`
 --
 DROP TABLE IF EXISTS `user_public`;
 
@@ -988,45 +998,45 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estrutura para vista `user_uf`
+-- Structure for view `user_uf`
 --
 DROP TABLE IF EXISTS `user_uf`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `user_uf`  AS SELECT `us`.`nm_usuario` AS `NM_USUARIO`, `uf`.`sg_uf` AS `SG_UF` FROM ((((`tb_usuario` `us` join `tb_logradouro` `lo` on(`lo`.`cd_logradouro` = `us`.`cd_logradouro`)) join `tb_bairro` `ba` on(`ba`.`cd_bairro` = `lo`.`cd_bairro`)) join `tb_cidade` `city` on(`city`.`cd_cidade` = `ba`.`cd_cidade`)) join `tb_uf` `uf` on(`uf`.`cd_uf` = `city`.`cd_uf`)) ;
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `livro_genero`
+-- Indexes for table `livro_genero`
 --
 ALTER TABLE `livro_genero`
   ADD KEY `fk_genero_livro` (`cd_livro`),
   ADD KEY `fk_livro_genero` (`cd_genero`);
 
 --
--- Índices para tabela `messages`
+-- Indexes for table `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`msg_id`);
 
 --
--- Índices para tabela `notificacao`
+-- Indexes for table `notificacao`
 --
 ALTER TABLE `notificacao`
   ADD PRIMARY KEY (`cd_notificacao`),
   ADD KEY `fk_notificacao_usuario` (`cd_usuario`);
 
 --
--- Índices para tabela `reclamacao`
+-- Indexes for table `reclamacao`
 --
 ALTER TABLE `reclamacao`
   ADD PRIMARY KEY (`cd_reclamacao`),
   ADD KEY `fk_reclamacao_usuario` (`cd_usuario`);
 
 --
--- Índices para tabela `tb_anuncio`
+-- Indexes for table `tb_anuncio`
 --
 ALTER TABLE `tb_anuncio`
   ADD PRIMARY KEY (`cd_anuncio`),
@@ -1035,74 +1045,75 @@ ALTER TABLE `tb_anuncio`
   ADD KEY `fk_anunc_usuario` (`cd_usuario`);
 
 --
--- Índices para tabela `tb_autor`
+-- Indexes for table `tb_autor`
 --
 ALTER TABLE `tb_autor`
   ADD PRIMARY KEY (`cd_autor`);
 
 --
--- Índices para tabela `tb_bairro`
+-- Indexes for table `tb_bairro`
 --
 ALTER TABLE `tb_bairro`
   ADD PRIMARY KEY (`cd_bairro`),
   ADD KEY `fk_bairro_cidade` (`cd_cidade`);
 
 --
--- Índices para tabela `tb_cidade`
+-- Indexes for table `tb_cidade`
 --
 ALTER TABLE `tb_cidade`
   ADD PRIMARY KEY (`cd_cidade`),
   ADD KEY `fk_cidade_uf` (`cd_uf`);
 
 --
--- Índices para tabela `tb_conversa`
+-- Indexes for table `tb_conversa`
 --
 ALTER TABLE `tb_conversa`
   ADD PRIMARY KEY (`cd_conversa`),
   ADD KEY `fk_conversa_usuario` (`cd_usuario`);
 
 --
--- Índices para tabela `tb_editora`
+-- Indexes for table `tb_editora`
 --
 ALTER TABLE `tb_editora`
   ADD PRIMARY KEY (`cd_editora`);
 
 --
--- Índices para tabela `tb_genero`
+-- Indexes for table `tb_genero`
 --
 ALTER TABLE `tb_genero`
   ADD PRIMARY KEY (`cd_genero`);
 
 --
--- Índices para tabela `tb_livro`
+-- Indexes for table `tb_livro`
 --
 ALTER TABLE `tb_livro`
   ADD PRIMARY KEY (`cd_livro`),
   ADD KEY `fk_livro_editora` (`cd_editora`),
-  ADD KEY `fk_livro_autor` (`cd_autor`);
+  ADD KEY `fk_livro_autor` (`cd_autor`),
+  ADD KEY `fk_cd_usuario` (`cd_usuario`);
 
 --
--- Índices para tabela `tb_logradouro`
+-- Indexes for table `tb_logradouro`
 --
 ALTER TABLE `tb_logradouro`
   ADD PRIMARY KEY (`cd_logradouro`),
   ADD KEY `fk_logradouro_bairro` (`cd_bairro`);
 
 --
--- Índices para tabela `tb_mensagem`
+-- Indexes for table `tb_mensagem`
 --
 ALTER TABLE `tb_mensagem`
   ADD PRIMARY KEY (`cd_mensagem`),
   ADD KEY `fk_mensagem_conversa` (`cd_conversa`);
 
 --
--- Índices para tabela `tb_uf`
+-- Indexes for table `tb_uf`
 --
 ALTER TABLE `tb_uf`
   ADD PRIMARY KEY (`cd_uf`);
 
 --
--- Índices para tabela `tb_usuario`
+-- Indexes for table `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
   ADD PRIMARY KEY (`cd_usuario`),
@@ -1110,124 +1121,124 @@ ALTER TABLE `tb_usuario`
   ADD KEY `fk_usuario_log` (`cd_logradouro`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `messages`
+-- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
   MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT de tabela `notificacao`
+-- AUTO_INCREMENT for table `notificacao`
 --
 ALTER TABLE `notificacao`
   MODIFY `cd_notificacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de tabela `reclamacao`
+-- AUTO_INCREMENT for table `reclamacao`
 --
 ALTER TABLE `reclamacao`
   MODIFY `cd_reclamacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `tb_anuncio`
+-- AUTO_INCREMENT for table `tb_anuncio`
 --
 ALTER TABLE `tb_anuncio`
   MODIFY `cd_anuncio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de tabela `tb_autor`
+-- AUTO_INCREMENT for table `tb_autor`
 --
 ALTER TABLE `tb_autor`
   MODIFY `cd_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
--- AUTO_INCREMENT de tabela `tb_bairro`
+-- AUTO_INCREMENT for table `tb_bairro`
 --
 ALTER TABLE `tb_bairro`
   MODIFY `cd_bairro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT de tabela `tb_cidade`
+-- AUTO_INCREMENT for table `tb_cidade`
 --
 ALTER TABLE `tb_cidade`
   MODIFY `cd_cidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5446;
 
 --
--- AUTO_INCREMENT de tabela `tb_conversa`
+-- AUTO_INCREMENT for table `tb_conversa`
 --
 ALTER TABLE `tb_conversa`
   MODIFY `cd_conversa` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_editora`
+-- AUTO_INCREMENT for table `tb_editora`
 --
 ALTER TABLE `tb_editora`
   MODIFY `cd_editora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT de tabela `tb_genero`
+-- AUTO_INCREMENT for table `tb_genero`
 --
 ALTER TABLE `tb_genero`
   MODIFY `cd_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `tb_livro`
+-- AUTO_INCREMENT for table `tb_livro`
 --
 ALTER TABLE `tb_livro`
-  MODIFY `cd_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `cd_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT de tabela `tb_logradouro`
+-- AUTO_INCREMENT for table `tb_logradouro`
 --
 ALTER TABLE `tb_logradouro`
   MODIFY `cd_logradouro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT de tabela `tb_mensagem`
+-- AUTO_INCREMENT for table `tb_mensagem`
 --
 ALTER TABLE `tb_mensagem`
   MODIFY `cd_mensagem` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `tb_uf`
+-- AUTO_INCREMENT for table `tb_uf`
 --
 ALTER TABLE `tb_uf`
   MODIFY `cd_uf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT de tabela `tb_usuario`
+-- AUTO_INCREMENT for table `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
   MODIFY `cd_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- Restrições para despejos de tabelas
+-- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `livro_genero`
+-- Constraints for table `livro_genero`
 --
 ALTER TABLE `livro_genero`
   ADD CONSTRAINT `fk_genero_livro` FOREIGN KEY (`cd_livro`) REFERENCES `tb_livro` (`cd_livro`),
   ADD CONSTRAINT `fk_livro_genero` FOREIGN KEY (`cd_genero`) REFERENCES `tb_genero` (`cd_genero`);
 
 --
--- Limitadores para a tabela `notificacao`
+-- Constraints for table `notificacao`
 --
 ALTER TABLE `notificacao`
   ADD CONSTRAINT `fk_notificacao_usuario` FOREIGN KEY (`cd_usuario`) REFERENCES `tb_usuario` (`cd_usuario`);
 
 --
--- Limitadores para a tabela `reclamacao`
+-- Constraints for table `reclamacao`
 --
 ALTER TABLE `reclamacao`
   ADD CONSTRAINT `fk_reclamacao_usuario` FOREIGN KEY (`cd_usuario`) REFERENCES `tb_usuario` (`cd_usuario`);
 
 --
--- Limitadores para a tabela `tb_anuncio`
+-- Constraints for table `tb_anuncio`
 --
 ALTER TABLE `tb_anuncio`
   ADD CONSTRAINT `fk_anunc_livro` FOREIGN KEY (`cd_livro`) REFERENCES `tb_livro` (`cd_livro`),
@@ -1235,44 +1246,45 @@ ALTER TABLE `tb_anuncio`
   ADD CONSTRAINT `fk_anunc_usuario` FOREIGN KEY (`cd_usuario`) REFERENCES `tb_usuario` (`cd_usuario`);
 
 --
--- Limitadores para a tabela `tb_bairro`
+-- Constraints for table `tb_bairro`
 --
 ALTER TABLE `tb_bairro`
   ADD CONSTRAINT `fk_bairro_cidade` FOREIGN KEY (`cd_cidade`) REFERENCES `tb_cidade` (`cd_cidade`);
 
 --
--- Limitadores para a tabela `tb_cidade`
+-- Constraints for table `tb_cidade`
 --
 ALTER TABLE `tb_cidade`
   ADD CONSTRAINT `fk_cidade_uf` FOREIGN KEY (`cd_uf`) REFERENCES `tb_uf` (`cd_uf`);
 
 --
--- Limitadores para a tabela `tb_conversa`
+-- Constraints for table `tb_conversa`
 --
 ALTER TABLE `tb_conversa`
   ADD CONSTRAINT `fk_conversa_usuario` FOREIGN KEY (`cd_usuario`) REFERENCES `tb_usuario` (`cd_usuario`);
 
 --
--- Limitadores para a tabela `tb_livro`
+-- Constraints for table `tb_livro`
 --
 ALTER TABLE `tb_livro`
+  ADD CONSTRAINT `fk_cd_usuario` FOREIGN KEY (`cd_usuario`) REFERENCES `tb_usuario` (`cd_usuario`),
   ADD CONSTRAINT `fk_livro_autor` FOREIGN KEY (`cd_autor`) REFERENCES `tb_autor` (`cd_autor`),
   ADD CONSTRAINT `fk_livro_editora` FOREIGN KEY (`cd_editora`) REFERENCES `tb_editora` (`cd_editora`);
 
 --
--- Limitadores para a tabela `tb_logradouro`
+-- Constraints for table `tb_logradouro`
 --
 ALTER TABLE `tb_logradouro`
   ADD CONSTRAINT `fk_logradouro_bairro` FOREIGN KEY (`cd_bairro`) REFERENCES `tb_bairro` (`cd_bairro`);
 
 --
--- Limitadores para a tabela `tb_mensagem`
+-- Constraints for table `tb_mensagem`
 --
 ALTER TABLE `tb_mensagem`
   ADD CONSTRAINT `fk_mensagem_conversa` FOREIGN KEY (`cd_conversa`) REFERENCES `tb_conversa` (`cd_conversa`);
 
 --
--- Limitadores para a tabela `tb_usuario`
+-- Constraints for table `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
   ADD CONSTRAINT `fk_usuario_log` FOREIGN KEY (`cd_logradouro`) REFERENCES `tb_logradouro` (`cd_logradouro`);
