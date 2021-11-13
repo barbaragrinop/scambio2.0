@@ -9,10 +9,13 @@ if (!isset($_SESSION['id'])) {
 $id = $_SESSION['id'];
 
 
-
 $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
+                        inner join db_scambio.tb_logradouro
+                        on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
+                        inner join db_scambio.tb_bairro 
+                        on tb_bairro.cd_bairro = tb_logradouro.cd_bairro
                         inner join db_scambio.tb_cidade
-                        on tb_cidade.cd_cidade = tb_usuario.cd_cidade
+                        on tb_cidade.cd_cidade = tb_bairro.cd_cidade
                         inner join db_scambio.tb_uf
                         on tb_uf.cd_uf = tb_cidade.cd_uf
                         where cd_usuario = :id");
@@ -20,7 +23,6 @@ $sql->execute(array(':id' => $id));
 if ($sql->rowCount() >= 1) {
     $row = $sql->fetch((PDO::FETCH_ASSOC));
 }
-
 
 ?>
 
