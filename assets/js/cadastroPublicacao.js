@@ -19,5 +19,18 @@ btnCad.onclick = () => {
     }
     let formData = new FormData(form);
     xhr.send(formData);
-
 }
+
+$("#btncadastrar").click( () => {
+    $.ajax({
+        type: "post",
+        url: "PHP/SELECT_LIVROS_PUBLICADOS.php",
+        data: {
+            "search": filtro,
+        },
+        success: function (response) {
+            $('.return').html(response);
+        }
+        
+    })
+})
