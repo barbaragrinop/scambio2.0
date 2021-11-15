@@ -19,7 +19,7 @@ $sql .= 'INNER JOIN DB_SCAMBIO.TB_CIDADE AS CI ON ';
 $sql .= 'BA.CD_CIDADE = CI.CD_CIDADE ';
 
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_UF AS U ON ';
-$sql .= 'U.CD_UF = CI.CD_UF WHERE LV.NM_LIVRO LIKE "%'. $filtro . '%"';
+$sql .= 'U.CD_UF = CI.CD_UF ';
 $SQLANUN = $pdo->prepare($sql);
 $SQLANUN->execute();
 
