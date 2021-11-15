@@ -6,6 +6,23 @@ session_start();
 include_once('../config/conexao.php');
 
 if(isset($_SESSION['id'])){
+
+$id = $_SESSION['id'];
+
+	$sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
+                        inner join db_scambio.tb_logradouro
+                        on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
+                        inner join db_scambio.tb_bairro 
+                        on tb_bairro.cd_bairro = tb_logradouro.cd_bairro
+                        inner join db_scambio.tb_cidade
+                        on tb_cidade.cd_cidade = tb_bairro.cd_cidade
+                        inner join db_scambio.tb_uf
+                        on tb_uf.cd_uf = tb_cidade.cd_uf
+                        where cd_usuario = :id");
+$sql->execute(array(':id' => $id));
+if ($sql->rowCount() >= 1) {
+    $userinfo = $sql->fetch((PDO::FETCH_ASSOC));
+}
 ?>
 
 <head>
@@ -241,10 +258,8 @@ if(isset($_SESSION['id'])){
 	<div class="container-fluid">
 		<div style="display: flex; flex-direction: row; justify-content: space-around;">
 			<div style="display: flex; flex-direction: row;">
-				<a href="">
-					<img src="../assets/imgs/munir.jpeg" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
-				</a>
-				<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"> <a href="" style="text-decoration: none;">Munir</a> </p>
+				<img src="data:image;base64,<?= $userinfo["DS_IMGP"];?> alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+				<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $userinfo['nm_usuario'] ?></p>
 			</div>
 			<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 5px;"></a>
 			</button>
@@ -260,18 +275,10 @@ if(isset($_SESSION['id'])){
 			}
 			?>
 		</div>
-
 	</div>
-
-	<?php
-	/* SELECT PARA TRAZER TODOS OS LIVROS PUBLICADOS */
-	include('PHP/SELECT_LIVROS_PUBLICADOS.PHP');
-	?>
-
 	<div class="wrapper">
-
 		<div class="form-filtro">
-			<form method="post" action="filtro.php" style="display: flex; flex-direction: row; margin-bottom: 20px; margin-left: 35px;">
+			<form class="filtro" style="display: flex; flex-direction: row; margin-bottom: 20px; margin-left: 35px;">
 				<select name="opcao_filtro" class="opcao_filtro">
 					<option value="nome">Nome</option>
 					<option value="cidade">Cidade</option>
@@ -279,7 +286,7 @@ if(isset($_SESSION['id'])){
 					<option selected="selected" value="dataPublicacao">Data de publicação</option>
 				</select>
 				<div style="margin-top: 1px;">
-					<input type="text" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 10px; padding-left: 10px; width: 270px;" placeholder="Nome do livro" />
+					<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 10px; padding-left: 10px; width: 270px;" placeholder="Nome do livro" />
 					<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px;" />
 				</div>
 			</form>
@@ -287,33 +294,6 @@ if(isset($_SESSION['id'])){
 	</div>
 
 	<div class="row return">
-		<?php
-		foreach ($result_select_anuncio as $key => $row) {
-		?>
-			<div class="card col-md-6" style="width: 13rem;">
-				<img src="./img/a-divina-comédia-191x300.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-name" style="margin-top: -11px;"><?=$row->NMLV ?></h5>
-					<p class="card-city" style="margin-top: -6px; font-size: 15px;"><?= $row->CITY . "/" . $row->UF ?></p>
-					<p class="card-gen" style="margin-top: -21px; font-size: 15px;"><?= $row->genero ?></p>
-					<p class="card-publi" style="margin-top: -9px; font-size: 12.5px; color: #858A8D;"><?= date('d/m/Y', strtotime(($row -> dta))) ?></p>
-					<div class="btns">
-						<button>
-							<a href="">
-								<i class="fa fa-ellipsis-h"></i>
-							</a>
-						</button>
-						<button>
-							<a href="">
-								<i class="fas fa-envelope"></i>
-							</a>
-						</button>
-					</div>
-				</div>
-			</div>
-		<?php
-		}
-		?>
 	</div>
 	</div>
 	</div>
@@ -493,6 +473,7 @@ if(isset($_SESSION['id'])){
 		}
 	</script>
 	<script src="../assets/js/cadastroPublicacao.js"></script>
+	<script src="../assets/js/ajaxhome.js"></script>
 </body>
 </html>
 <?php
