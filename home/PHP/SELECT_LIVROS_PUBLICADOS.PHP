@@ -17,7 +17,6 @@ $sql .= 'INNER JOIN DB_SCAMBIO.TB_BAIRRO AS BA ON ';
 $sql .= 'BA.CD_BAIRRO = LO.CD_BAIRRO ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_CIDADE AS CI ON ';
 $sql .= 'BA.CD_CIDADE = CI.CD_CIDADE ';
-
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_UF AS U ON ';
 $sql .= 'U.CD_UF = CI.CD_UF ';
 $SQLANUN = $pdo->prepare($sql);
@@ -26,7 +25,7 @@ $SQLANUN->execute();
 if($SQLANUN->rowCount() > 0){
    while ($row = $SQLANUN->fetch(PDO::FETCH_ASSOC)) {
       $out = '<div class="card col-md-6" style="width: 13rem;">
-				<img src="./img/a-divina-comédia-191x300.jpg" class="card-img-top" alt="...">
+				<img src="../fotos/'. $row['FT1'] .'" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-name" style="margin-top: -11px;">' . $row['NMLV'] . '</h5>
 					<p class="card-city" style="margin-top: -6px; font-size: 15px;">' . $row['CITY'] . "/" . $row['UF'] . '</p>

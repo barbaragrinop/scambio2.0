@@ -293,9 +293,8 @@ if ($sql->rowCount() >= 1) {
 		</div>
 	</div>
 
-	<div class="row return">
-	</div>
-	</div>
+	<div class="return row">
+
 	</div>
 	<div class="box-modal">
 
@@ -433,7 +432,7 @@ if ($sql->rowCount() >= 1) {
 			}
 
 			function redirectPerfil() {
-				window.location.replace('../perfil2.php');
+				window.location.replace('../perfil/perfil2.php');
 			}
 
 			function redirectAjuda() {

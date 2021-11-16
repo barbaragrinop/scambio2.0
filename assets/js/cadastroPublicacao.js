@@ -14,23 +14,10 @@ btnCad.onclick = () => {
         if(xhr.readyState === XMLHttpRequest.DONE){
             let data = xhr.response
             console.log(data);
+            $('.return').html(data);
             
         }
     }
     let formData = new FormData(form);
     xhr.send(formData);
 }
-
-$("#btncadastrar").click( () => {
-    $.ajax({
-        type: "post",
-        url: "PHP/SELECT_LIVROS_PUBLICADOS.php",
-        data: {
-            "search": filtro,
-        },
-        success: function (response) {
-            $('.return').html(response);
-        }
-        
-    })
-})

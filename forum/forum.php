@@ -433,7 +433,7 @@
         }
 
         function redirectPerfil() {
-          location.replace('http://localhost/scambio2.0/perfil2.php');
+          location.replace('http://localhost/scambio2.0/perfil/perfil2.php');
         }
 
         function redirectForum() {
