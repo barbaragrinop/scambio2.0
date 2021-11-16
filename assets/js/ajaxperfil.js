@@ -1,13 +1,10 @@
 $(document).ready( () => {
     $.ajax({
         type: "post",
-        url: "PHP/SELECT_LIVROS_PUBLICADOS.php",
+        url: "PHP/select_livro_user.php",
         success: function (response) {
             console.log(response);
-            $('.return').html(response);
+            $('.publicacoes').html(response);
         }    
     })
-});
-
-
-
+})

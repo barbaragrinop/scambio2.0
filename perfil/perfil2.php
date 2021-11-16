@@ -1,9 +1,9 @@
 <?php
 session_start();
-include_once './config/conexao.php';
+include_once '../config/conexao.php';
 
 if (!isset($_SESSION['id'])) {
-    header("Location: index.php");
+    header("Location: ../index.php");
 }
 
 $id = $_SESSION['id'];
@@ -39,8 +39,8 @@ if ($sql->rowCount() >= 1) {
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./home/style.css">
-    <link rel="stylesheet" href="./fab/fab.css">
+    <link rel="stylesheet" href="../home/style.css">
+    <link rel="stylesheet" href="../fab/fab.css">
 
 
     <style>
@@ -143,17 +143,17 @@ if ($sql->rowCount() >= 1) {
                     <img src="data:image;base64,<?php echo $row["DS_IMGP"];?> alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
                     <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
                 </div>
-                <a href="index.php"><img class="img-index" src="./assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
+                <a href="index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
                 </button>
                 <?php
                 if (isset($_SESSION['id'])) {
                 ?>
-                    <form action="./logout.php">
+                    <form action="../logout.php">
                         <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
                     </form>
                 <?php
                 } else {
-                    header("Location: index.php");
+                    header("Location: ../index.php");
                 }
                 ?>
 
@@ -232,175 +232,8 @@ if ($sql->rowCount() >= 1) {
 
 
                 <div id="perfil">
-                    <div class="container" style="margin-left: -27px; width: 107%;">
-                        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-                            <!-- product -->
-                            <div class="product-content product-wrap clearfix">
-                                <div class="row">
-                                    <div class="col-md-5 col-sm-12 col-xs-12">
-                                        <div class="product-image">
-                                            <img src="assets/imgs/livrover.jpg" alt="194x228" class="img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 div-inff" style="height: 238px;">
-                                        <div class="product-deatil">
-                                            <h5 class="name">
-                                                <a href="#">
-                                                    Livro Verde <span style="font-size: 14px;">Autor Verde</span>
-                                                </a>
-                                            </h5>
-                                            <p class="status-container">
-                                                <span>Status: Ativo</span>
-                                            </p>
-                                            <span class="tag1"></span>
-                                        </div>
-                                        <div class="description">
-                                            <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-                                        </div>
-                                        <div class="product-info smart-form">
-                                            <div class="row">
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
-                                                </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-4">
-                                                    <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-12 col-xs-12">
-                                        <h3>Adicionar foto das duas pessoas, e se tem match ou não.</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end product -->
-                        </div>
-                        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-                            <!-- product -->
-                            <div class="product-content product-wrap clearfix">
-                                <div class="row">
-                                    <div class="col-md-5 col-sm-12 col-xs-12">
-                                        <div class="product-image">
-                                            <img src="assets/imgs/livrozul.jpg" alt="194x228" class="img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 div-inff" style="height: 238px;">
-                                        <div class="product-deatil">
-                                            <h5 class="name">
-                                                <a href="#">
-                                                    Livro Azul <span style="font-size: 14px;">Autor Azul</span>
-                                                </a>
-                                            </h5>
-                                            <p class="status-container">
-                                                <span>Status: Match</span>
-                                            </p>
-                                            <span class="tag1"></span>
-                                        </div>
-                                        <div class="description">
-                                            <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-                                        </div>
-                                        <div class="product-info smart-form">
-                                            <div class="row">
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
-                                                </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-4">
-                                                    <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-12 col-xs-12">
-                                        <h3>Adicionar foto das duas pessoas, e se tem match ou não.</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end product -->
-                        </div>
-                        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-                            <!-- product -->
-                            <div class="product-content product-wrap clearfix">
-                                <div class="row">
-                                    <div class="col-md-5 col-sm-12 col-xs-12">
-                                        <div class="product-image">
-                                            <img src="assets/imgs/acabana.jpg" alt="194x228" class="img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 div-inff">
-                                        <div class="product-deatil">
-                                            <h5 class="name">
-                                                <a href="#">
-                                                    A Cabana <span style="font-size: 14px;">Desconhecido</span>
-                                                </a>
-                                            </h5>
-                                            <p class="status-container">
-                                                <span>Status: Ativo</span>
-                                            </p>
-                                            <span class="tag1"></span>
-                                        </div>
-                                        <div class="description">
-                                            <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-                                        </div>
-                                        <div class="product-info smart-form">
-                                            <div class="row">
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
-                                                </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-4">
-                                                    <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-12 col-xs-12">
-                                        <h3>Adicionar foto das duas pessoas, e se tem match ou não.</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end product -->
-                        </div>
-                        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-                            <!-- product -->
-                            <div class="product-content product-wrap clearfix">
-                                <div class="row">
-                                    <div class="col-md-5 col-sm-12 col-xs-12">
-                                        <div class="product-image">
-                                            <img src="assets/imgs/aculpaedasestrelas.jpg" alt="194x228" class="img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 div-inff" style="height: 238px;">
-                                        <div class="product-deatil">
-                                            <h5 class="name">
-                                                <a href="#">
-                                                    A Culpa E Das Estrelas <span style="font-size: 14px;">John Green</span>
-                                                </a>
-                                            </h5>
-                                            <p class="status-container">
-                                                <span>Status: Ativo</span>
-                                            </p>
-                                            <span class="tag1"></span>
-                                        </div>
-                                        <div class="description">
-                                            <p>Proin in ullamcorper lorem. Maecenas eu ipsum </p>
-                                        </div>
-                                        <div class="product-info smart-form">
-                                            <div class="row">
-                                                <div class="col-md-6 col-sm-6 col-xs-6">
-                                                    <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
-                                                </div>
-                                                <div class="col-md-4 col-sm-4 col-xs-4">
-                                                    <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-12 col-xs-12">
-                                        <h3>Adicionar foto das duas pessoas, e se tem match ou não.</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end product -->
-                        </div>
+                    <div class="container publicacoes" style="margin-left: -27px; width: 107%;">
+                        
                     </div>
                 </div>
 
@@ -410,7 +243,7 @@ if ($sql->rowCount() >= 1) {
             </div>
         </div>
 
-        <?php include('./menu/menu.php') ?>
+        <?php include('../menu/menu.php') ?>
 
         <style type="text/css">
             body {
@@ -1135,7 +968,7 @@ if ($sql->rowCount() >= 1) {
                 margin-right: 0px;
             }
         </style>
-
+        <script src="../assets/js/ajaxperfil.js"></script>
         <script src="javascript/users.js"></script>
         <script src="javascript/chat.js"></script>
         <script type="text/javascript">
