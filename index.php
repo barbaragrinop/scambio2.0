@@ -253,11 +253,11 @@ session_start();
 
     </div>
     <?php
-        if(isset($_SESSION['id'])){
-            include 'menu/menu.php';
-        }
+    if (isset($_SESSION['id'])) {
+        include 'menu/menu.php';
+    }
     ?>
-    
+
 
     <script>
         function alertaBtnAjuda() {
