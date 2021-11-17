@@ -139,23 +139,23 @@ if ($sql->rowCount() >= 1) {
 <body>
     <div class="container-fluid">
         <div style="display: flex; justify-content: space-around;">
-                <div style="display: flex; flex-direction: row;">
-                    <img src="data:image;base64,<?php echo $row["DS_IMGP"];?> alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
-                    <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
-                </div>
-                <a href="index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
-                </button>
-                <?php
-                if (isset($_SESSION['id'])) {
-                ?>
-                    <form action="../logout.php">
-                        <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
-                    </form>
-                <?php
-                } else {
-                    header("Location: ../index.php");
-                }
-                ?>
+            <div style="display: flex; flex-direction: row;">
+                <img src="data:image;base64,<?php echo $row["DS_IMGP"]; ?> alt="" width=" 40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
+            </div>
+            <a href="index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
+            </button>
+            <?php
+            if (isset($_SESSION['id'])) {
+            ?>
+                <form action="../logout.php">
+                    <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
+                </form>
+            <?php
+            } else {
+                header("Location: ../index.php");
+            }
+            ?>
 
         </div>
     </div>
@@ -166,7 +166,7 @@ if ($sql->rowCount() >= 1) {
                 <div class="panel">
                     <div class="user-heading round">
                         <a href="#" class="<?= $_SESSION['status'] == 'Online' ? 'profile-on' : 'profile-off' ?>">
-                            <img src="data:image;base64,<?php echo $row["DS_IMGP"];?> " alt="">
+                            <img src="data:image;base64,<?php echo $row["DS_IMGP"]; ?> " alt="">
 
                         </a>
                         <h1><?= $row['nm_usuario'] ?></h1>
@@ -205,35 +205,37 @@ if ($sql->rowCount() >= 1) {
 
                 <div id="panelEditPerfil" class="panel" style="display: none; height: 400px;">
                     <div class="panel-body bio-graph-info">
-                        <h1>Biografia | Editar</h1>
-                        <div class="row" style="margin-top: 50px;">
-                            <div class="bio-row">
-                                <p><span>Nome:</span><input type="text" name="" id=""></p>
-                            </div>
-                            <div class="bio-row">
-                                <p><span>Estado:</span><input type="text"></p>
-                            </div>
-                            <div class="bio-row" style="margin-top: 20px;">
-                                <p><span>Cidade:</span><input type="text"></p>
-                            </div>
-                            <div class="bio-row" style="margin-top: 20px;">
-                                <p><span>Aniversario:</span><input type="text"></p>
-                            </div>
-                            <div class="up-img" style="padding-top: 20px; padding-left: 17px; display: flex; flex-direction: row;">
-                                <span style="font-size: 15px;">Imagem de Perfil</span>
-                                <input type="file" style="margin-left: 20px;">
-                            </div>
-                            <div class="btn-confirm-edit">
-                                <button style="margin-top: 100px; margin-left: 730px;">Confirmar</button>
+                        <div style="display: flex; justify-content: center;">
+                            <div class="display: flex; justify-content: center;" style="margin-top: 50px;">
+                                <h1 style="padding-left: 15px;">Biografia | Editar</h1>
+                                <div class="bio-row">
+                                    <p><span>Nome:</span><input type="text" name="" id=""></p>
+                                </div>
+                                <div class="bio-row">
+                                    <p><span>E-mail:</span><input type="text"></p>
+                                </div>
+                                <div class="bio-row" style="margin-top: 20px;">
+                                    <p><span>Nascimento:</span><input type="text"></p>
+                                </div>
+                                <div class="bio-row" style="margin-top: 20px;">
+                                    <p><span>CEP: </span><input type="text"></p>
+                                </div>
+                                <div class="up-img" style="padding-top: 20px; padding-left: 17px; display: flex; flex-direction: row;">
+                                    <span style="font-size: 15px;">Imagem de Perfil</span>
+                                    <input type="file" style="margin-left: 20px;">
+                                </div>
+                                <div class="btn-confirm-edit">
+                                    <button>Confirmar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>               
+                </div>
 
 
                 <div id="perfil">
                     <div class="container publicacoes" style="margin-left: -27px; width: 107%;">
-                        
+
                     </div>
                 </div>
 
