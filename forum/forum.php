@@ -180,6 +180,10 @@
       font-size: 1.5rem;
       padding-left: 7px;
     }
+
+    a h6 {
+      font-size: 15px;
+    }
   </style>
 </head>
 
@@ -488,13 +492,13 @@
         </li>
       </ul>
       <!-- Modal -->
-      <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.5);">
+      <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.5); cursor: context-menu;">
         <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100%; display: flex; justify-content: center; align-items: center;">
           <div class="modal-content" style="width: 500px;">
             <div class="modal-header">
-              <h5 class="modal-title" id="TituloModalCentralizado">Últimas Notificações</h5>
+              <h5 class="modal-title" id="TituloModalCentralizado" style="font-size: 18.5px; color: black;">Últimas Notificações</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
+                <!-- <span aria-hidden="true">&times;</span> -->
               </button>
             </div>
 
