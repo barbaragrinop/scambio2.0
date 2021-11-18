@@ -97,7 +97,7 @@
     }
 
     .text-semibold {
-      font-size: 17px;
+      font-size: 17.5px;
     }
 
     .text-muted {
@@ -143,7 +143,7 @@
     }
 
     .media-body p {
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .btn-icon {
@@ -163,6 +163,22 @@
 
     .modal-backdrop {
       position: inherit;
+    }
+
+    .mar-btm button {
+      border: none;
+      background-color: rgba(229, 0, 0, 0.67);
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      height: 32px;
+    }
+
+    .dropdown-menu a {
+      /* text-decoration: none; */
+      color: black;
+      font-size: 1.5rem;
+      padding-left: 7px;
     }
   </style>
 </head>
@@ -187,8 +203,8 @@
   <br>
   <br>
   <div style="margin-top: 1px; display: flex; justify-content: center;">
-    <input type="text" name="search" style="border: none; height: 45px; border-radius: 2px; padding-left: 10px; width: 1020px; font-size: 16px;" placeholder="Nome do livro" />
-    <input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 3px;background-color: #AC7E55; color: #ffffff; font-size: 15px; margin-left: 13px;" />
+    <input type="text" name="search" style="border: none; height: 45px; border-radius: 2px; padding-left: 10px; width: 1020px; font-size: 17.5px;" placeholder="Pesquise por uma palavra chave." />
+    <input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 3px;background-color: #AC7E55; color: #ffffff; font-size: 16.5px; margin-left: 13px;" />
   </div>
   <br>
   <br>
@@ -198,12 +214,12 @@
     <div class="col-md-12 bootstrap snippets">
       <div class="panel">
         <div class="panel-body">
-          <textarea class="form-control" rows="2" placeholder="O que voce esta pensando?" style="font-size: 15px;"></textarea>
+          <textarea class="form-control" rows="2" placeholder="Sobre o que você quer conversar?" style="font-size: 16.5px;"></textarea>
           <div class="mar-top clearfix">
             <div style="display: flex; flex-direction: row; justify-content: space-between;">
               <div style="width: 310px;">
-                <label style="font-size: 13px;" for="genero">Gênero:</label>
-                <select style="width: 100%; font-size: 13.5px; width: 940px;" id="genero" name="genero">
+                <label style="font-size: 16px;" for="genero">Gênero:</label>
+                <select style="width: 100%; font-size: 16.5px; width: 940px;" id="genero" name="genero">
                   <option value="Biografia">Biografia</option>
                   <option value="Carta">Carta</option>
                   <option value="Chick-Lit">Chick-Lit</option>
@@ -229,7 +245,7 @@
                   <option value="Outro">Outro</option>
                 </select>
               </div>
-              <button class="btn btn-sm btn-primary pull-right" style="background-color: #AC7E55; border: none; width: 95px; height: 38px; margin-top: 37px; font-size: 14px;" type="submit"><i class="fa fa-pencil fa-fw"></i> Publicar</button>
+              <button class="btn btn-sm btn-primary pull-right" style="background-color: #AC7E55; border: none; width: 95px; height: 38px; margin-top: 37px; font-size: 15.5px;" type="submit"><i class="fa fa-pencil fa-fw"></i> <span style="font-size: 15.5px;"> Publicar</span></button>
             </div>
 
           </div>
@@ -243,16 +259,23 @@
             <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
             <div class="media-body">
               <div class="mar-btm">
-                <a href="#" class="btn-link text-semibold media-heading box-inline">Beatriz M.</a>
-                <p class="text-muted text-sm"> Conto - 09/11/2021</p>
-              </div>
-              <p>Eu comecei a ler um livro muito legal, ja estava querendo começar faz tempo. O nome dele é chapeuzinho vermelho, conta uma historia de uma vovo que tinha uma netinha que usava chapeuzinho vermelho.</p>
-              <div class="pad-ver">
-                <div class="btn-group">
-                  <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
-                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
+                <div style="display: flex; justify-content: space-between;">
+                  <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
+                  <!-- Default dropleft button -->
+                  <div class="btn-group dropleft">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      ...
+                    </button>
+                    <div class="dropdown-menu">
+                      <a href="">Reportar</a>
+                      <br>
+                      <a href="">Enviar mensagem</a>
+                    </div>
+                  </div>
                 </div>
+                <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
               </div>
+              <p style="font-size: 16.5px;">Eu comecei a ler um livro muito legal, ja estava querendo começar faz tempo. O nome dele é chapeuzinho vermelho, conta uma historia de uma vovo que tinha uma netinha que usava chapeuzinho vermelho.</p>
               <hr>
 
               <!-- Comments -->
@@ -261,16 +284,23 @@
                   <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
                   <div class="media-body">
                     <div class="mar-btm">
-                      <a href="#" class="btn-link text-semibold media-heading box-inline">Yago M.</a>
+                      <div style="display: flex; justify-content: space-between;">
+                        <a href="#" class="btn-link text-semibold media-heading box-inline">Yago M.</a>
+                        <!-- Default dropleft button -->
+                        <div class="btn-group dropleft">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="">Reportar</a>
+                            <br>
+                            <a href="">Enviar mensagem</a>
+                          </div>
+                        </div>
+                      </div>
                       <p class="text-muted text-sm"> 09/11/2021</p>
                     </div>
-                    <p>Serio ?? Que legal, pretendo ler este livro tambem.</p>
-                    <div class="pad-ver">
-                      <div class="btn-group">
-                        <a class="btn btn-sm btn-default btn-hover-success active" href="#"><i class="fa fa-thumbs-up"></i></a>
-                        <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
-                      </div>
-                    </div>
+                    <p style="font-size: 16.5px;">Serio ?? Que legal, pretendo ler este livro tambem.</p>
                     <hr>
                   </div>
                 </div>
@@ -280,16 +310,23 @@
                   </a>
                   <div class="media-body">
                     <div class="mar-btm">
-                      <a href="#" class="btn-link text-semibold media-heading box-inline">Beatriz M.</a>
+                      <div style="display: flex; justify-content: space-between;">
+                        <a href="#" class="btn-link text-semibold media-heading box-inline">Betriz M.</a>
+                        <!-- Default dropleft button -->
+                        <div class="btn-group dropleft">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="">Reportar</a>
+                            <br>
+                            <a href="">Enviar mensagem</a>
+                          </div>
+                        </div>
+                      </div>
                       <p class="text-muted text-sm">10/11/2021</p>
                     </div>
-                    <p>Sim! pode ler, que é muito bom.</p>
-                    <div class="pad-ver">
-                      <div class="btn-group">
-                        <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
-                        <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
-                      </div>
-                    </div>
+                    <p style="font-size: 16.5px;">Sim! pode ler, que é muito bom.</p>
                     <hr>
                   </div>
                 </div>
@@ -314,16 +351,23 @@
             <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
             <div class="media-body">
               <div class="mar-btm">
-                <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
+                <div style="display: flex; justify-content: space-between;">
+                  <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
+                  <!-- Default dropleft button -->
+                  <div class="btn-group dropleft">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      ...
+                    </button>
+                    <div class="dropdown-menu">
+                      <a href="">Reportar</a>
+                      <br>
+                      <a href="">Enviar mensagem</a>
+                    </div>
+                  </div>
+                </div>
                 <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
               </div>
-              <p>Alguem ja leu 'Garota Exemplar' ? To querendo ler.</p>
-              <div class="pad-ver">
-                <div class="btn-group">
-                  <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
-                  <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
-                </div>
-              </div>
+              <p style="font-size: 16.5px;">Alguem ja leu 'Garota Exemplar' ? To querendo ler.</p>
               <hr>
 
               <!-- Comments -->
@@ -332,16 +376,23 @@
                   <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
                   <div class="media-body">
                     <div class="mar-btm">
-                      <a href="#" class="btn-link text-semibold media-heading box-inline">Martinez.</a>
+                      <div style="display: flex; justify-content: space-between;">
+                        <a href="#" class="btn-link text-semibold media-heading box-inline">Martinez.</a>
+                        <!-- Default dropleft button -->
+                        <div class="btn-group dropleft">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="">Reportar</a>
+                            <br>
+                            <a href="">Enviar mensagem</a>
+                          </div>
+                        </div>
+                      </div>
                       <p class="text-muted text-sm"> 13/11/2021</p>
                     </div>
-                    <p>Eu já! muito interessante.</p>
-                    <div class="pad-ver">
-                      <div class="btn-group">
-                        <a class="btn btn-sm btn-default btn-hover-success active" href="#"><i class="fa fa-thumbs-up"></i></a>
-                        <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
-                      </div>
-                    </div>
+                    <p style="font-size: 16.5px;">Eu já! muito interessante.</p>
                     <hr>
                   </div>
                 </div>
@@ -351,16 +402,23 @@
                   </a>
                   <div class="media-body">
                     <div class="mar-btm">
-                      <a href="#" class="btn-link text-semibold media-heading box-inline">Luciana G.</a>
+                      <div style="display: flex; justify-content: space-between;">
+                        <a href="#" class="btn-link text-semibold media-heading box-inline">Luciana G.</a>
+                        <!-- Default dropleft button -->
+                        <div class="btn-group dropleft">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="">Reportar</a>
+                            <br>
+                            <a href="">Enviar mensagem</a>
+                          </div>
+                        </div>
+                      </div>
                       <p class="text-muted text-sm"> 13/11/2021</p>
                     </div>
-                    <p>Eu ainda não, mas to querendo.</p>
-                    <div class="pad-ver">
-                      <div class="btn-group">
-                        <a class="btn btn-sm btn-default btn-hover-success" href="#"><i class="fa fa-thumbs-up"></i></a>
-                        <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>
-                      </div>
-                    </div>
+                    <p style="font-size: 16.5px;">Eu ainda não, mas to querendo.</p>
                     <hr>
                   </div>
                 </div>
