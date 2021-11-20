@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Nov 13, 2021 at 02:05 PM
+-- Generation Time: Nov 20, 2021 at 08:31 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
@@ -687,25 +687,24 @@ CREATE TABLE `tb_livro` (
   `cd_autor` int(11) DEFAULT NULL,
   `nm_autor` varchar(60) NOT NULL,
   `nm_genero` varchar(60) NOT NULL,
-  `foto1` mediumtext NOT NULL,
-  `foto2` mediumtext NOT NULL,
-  `foto3` mediumtext NOT NULL,
+  `foto1` longtext NOT NULL,
+  `foto2` longtext NOT NULL,
+  `foto3` longtext NOT NULL,
   `descricao` varchar(200) NOT NULL,
   `cd_usuario` int(11) DEFAULT NULL,
-  `dt_publicacao` datetime DEFAULT NULL
+  `dt_publicacao` datetime DEFAULT NULL,
+  `status_pub` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_livro`
 --
 
-INSERT INTO `tb_livro` (`cd_livro`, `nm_livro`, `cd_editora`, `cd_autor`, `nm_autor`, `nm_genero`, `foto1`, `foto2`, `foto3`, `descricao`, `cd_usuario`, `dt_publicacao`) VALUES
-(6, 'Cinquenta', 1, 1, '', '', '', '', '', '', 1, NULL),
-(30, 'MR.Robot', NULL, 1, '', '', '', '', '', '', 1, NULL),
-(32, 'JOEL JOTA', NULL, 1, '', '', '', '', '', '', 1, NULL),
-(33, 'NomeLivro', NULL, NULL, 'autor', 'genero', 'fotoo1', 'fotoo2', 'fotoo3', 'descricaso', 1, NULL),
-(35, NULL, NULL, NULL, '', '', '', '', '', '', 1, NULL),
-(36, 'aaa', NULL, NULL, 'aaa', 'Biografia', '', '', '', ' aaa', 1, '2021-11-13 09:59:24');
+INSERT INTO `tb_livro` (`cd_livro`, `nm_livro`, `cd_editora`, `cd_autor`, `nm_autor`, `nm_genero`, `foto1`, `foto2`, `foto3`, `descricao`, `cd_usuario`, `dt_publicacao`, `status_pub`) VALUES
+(6, 'Cinquenta', 1, 1, 'Felipe', 'Romance', '', '', '', 'loco', 1, '2021-11-13 12:27:07', 1),
+(30, 'MR.Robot', NULL, 1, 'Felipe', '', '', '', '', 'a', 1, '2021-11-13 12:42:18', 1),
+(32, 'JOEL JOTA', NULL, 1, 'Julian', '', '', '', '', 'b', 1, '2021-11-15 14:14:27', 0),
+(109, 'Shanks', NULL, NULL, 'Shanks', 'Biografia', '59d7445441e839412845d6ab094c7ec31.jpg', '59d7445441e839412845d6ab094c7ec32', '59d7445441e839412845d6ab094c7ec33', ' Shanks', 1, '2021-11-16 01:24:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -1188,7 +1187,7 @@ ALTER TABLE `tb_genero`
 -- AUTO_INCREMENT for table `tb_livro`
 --
 ALTER TABLE `tb_livro`
-  MODIFY `cd_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `cd_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `tb_logradouro`
