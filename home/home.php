@@ -68,6 +68,10 @@ if (isset($_SESSION['id'])) {
 				margin-top: 10px;
 			}
 
+			a {
+				color: black;
+			}
+
 			.form-filtro {
 				display: flex;
 				justify-content: center;
