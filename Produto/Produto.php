@@ -19,7 +19,7 @@ if (!isset($_SESSION['id'])) {
 
     <link href="../css/produto.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
         body {
             margin-top: 50px;
@@ -66,62 +66,66 @@ if (!isset($_SESSION['id'])) {
 </head>
 
 <body style="background-image: linear-gradient(#f2eee8, #d4c1a5, #f2eee8);">
-    <div class="container-fluid" style="margin-left: 10px;">
-        <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="105" height="28" style="padding-top: 5px;"></a>
-        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button> -->
-        <?php
-        if (isset($_SESSION['id'])) {
-        ?>
-            <form action="logout.php">
-                <input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
-            </form>
-        <?php
-        } else {
-        ?>
-            header("Location: index.php");
-        <?php
-        }
-        ?>
+    <div class="container-fluid">
+        <div style="display: flex; justify-content: space-around;">
+            <div style="display: flex; flex-direction: row;">
+                <img src="../assets/imgs/munir.jpeg" alt="" width=" 40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;">Munir</p>
+            </div>
+            <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="90" height="30" style="padding-top: 4px; margin-top: 3px;"></a>
+            <?php
+            if (isset($_SESSION['id'])) {
+            ?>
+                <form action="logout.php" style="margin-top: 27px;">
+                    <input id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair" style="height: 42px;">
+                </form>
+            <?php
+            } else {
+            ?>
+                header("Location: index.php");
+            <?php
+            }
+            ?>
+        </div>
+
     </div>
     <div style="display: flex; justify-content: center; flex-direction: column;">
 
-        <div class="container" style="width: 170vh; border-radius: 1%; margin-top: 28px; background-color: white; margin-left: 110px;">
+        <div class="container" style="width: 170vh; border-radius: 1%; margin-top: 28px; margin-left: 110px;">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-body" style="margin-left: 20px;">
-                        <h2 class="card-title">O Pequeno Principe</h3>
-                            <h5 class="card-subtitle">@Beatriz Martins</h6>
-                                <div class="row" style="display: flex; flex-direction: row;">
-                                    <div class="col-lg-3 col-md-3 col-sm-5" style="margin-top: 10px;">
+                    <div class="card-body">
+                        <h2 class="card-title" style="font-size: 24px;">O Pequeno Principe</h3>
+                            <h5 class="card-subtitle" style="font-size: 16px;">@Beatriz Martins</h6>
+                                <div style="display: flex; flex-direction: row;">
+                                    <div class="col-lg-3 col-md-3 col-sm-5" style="margin-top: 10px; height: 290px;">
                                         <div class="white-box text-center"><img width="215" src="img/pqnprincipe1.jpg" class="img-responsive"></div>
                                     </div>
-                                    <div style="margin-left: 150px;">
-                                        <div class="col-lg-8 col-md-4 col-sm-9">
-                                            <h3 class="box-title mt-5">Descrição do produto</h4>
-                                                <p style="font-size: 18px;">Livro em perfeito estado, com pouco tempo de uso e comprado em 2019. Aprenta algumas marcas de uso, mas nada que atrapalhe a leitura.</p>
+                                    <div style="margin-left: 20px;">
+                                        <div class="col-lg-8 col-md-4 col-sm-9" style="max-width: 100%;">
+                                            <h3 class="box-title mt-5" style="font-size: 21px;">Descrição do produto</h3>
+                                            <p style="font-size: 16px;">Livro em perfeito estado, com pouco tempo de uso e comprado em 2019. Aprenta algumas marcas de uso, mas nada que atrapalhe a leitura.</p>
                                         </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8">
-                                            <h3 class="box-title mt-5">Outras Informações</h3>
+                                        <div class="col-lg-8 col-md-8 col-sm-8" style="max-width: 100%;">
+                                            <h3 class="box-title mt-5" style="font-size: 20px;">Outras Informações</h3>
                                             <div class="table-responsive">
                                                 <table class="table table-striped table-product">
                                                     <tbody>
                                                         <tr>
-                                                            <td width="200">Nome do livro</td>
-                                                            <td>O Pequeno Principe</td>
+                                                            <td width="200" style="font-size: 15px;">Nome do livro</td>
+                                                            <td style="font-size: 14px;">O Pequeno Principe</td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Autor</td>
-                                                            <td>J. K. Rowling</td>
+                                                            <td style="font-size: 15px;">Autor</td>
+                                                            <td style="font-size: 14px;">J. K. Rowling</td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Gênero</td>
-                                                            <td>Romance, Literatura infantil, Literatura fantástica, Alta fantasia</td>
+                                                            <td style="font-size: 15px;">Gênero</td>
+                                                            <td style="font-size: 14px;">Romance, Literatura infantil, Literatura fantástica, Alta fantasia</td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Idioma</td>
-                                                            <td>Portugês</td>
+                                                            <td style="font-size: 15px;">Idioma</td>
+                                                            <td style="font-size: 14px;">Portugês</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -141,10 +145,10 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <h2 displ>Livros que podem te interessar</h2>
+        <!-- <div style="display: flex; justify-content: center; align-items: center;">
+            <h2 style="font-size: 21px;">Livros que podem te interessar</h2>
 
-        </div>
+        </div> -->
     </div>
 
 
