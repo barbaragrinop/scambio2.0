@@ -91,7 +91,7 @@ if (!isset($_SESSION['id'])) {
     </div>
     <div style="display: flex; justify-content: center; flex-direction: column;">
 
-        <div class="container" style="width: 170vh; border-radius: 1%; margin-top: 28px; margin-left: 110px;">
+        <div class="container" style="width: 170vh; border-radius: 1%; margin-top: 8px; margin-left: 110px;">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
