@@ -26,6 +26,17 @@
     .modal-header h5 {
         font-size: 18px;
     }
+
+    .modal-footer button:hover {
+        transition: .5s;
+        background-color: #5c636a;
+        color: #fff;
+        border-color: #565e64;
+    }
+
+    .modal-body a {
+        text-decoration: none;
+    }
 </style>
 </meta>
 
