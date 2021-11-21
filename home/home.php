@@ -44,6 +44,8 @@ if (isset($_SESSION['id'])) {
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+		<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 		<link rel="stylesheet" href="../fab/fab.css">
 
@@ -165,6 +167,10 @@ if (isset($_SESSION['id'])) {
 				border-radius: 20px;
 			}
 
+			.modal-content a {
+				text-decoration: none;
+			}
+
 			.modal-header h2,
 			.modal-footer h3 {
 				margin: 0;
@@ -173,15 +179,27 @@ if (isset($_SESSION['id'])) {
 			.modal-header {
 				height: 60px;
 				margin-top: -60px;
-				background: var(--modal-color);
+				background: inherit;
 				padding: 15px;
 				color: rgb(32, 28, 29);
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+			}
+
+			.modal-header h5 {
+				font-size: 18px;
+			}
+
+			.modal-body h6 {
+				font-size: 14.5px;
+			}
+
+			.modal-body hr {
+				border-top: 1px solid #ccc;
 			}
 
 			.modal-body {
-				margin-bottom: 60px;
+				/* margin-bottom: 60px; */
 				padding: 10px 20px;
 				background: #fff;
 				display: flex;
@@ -189,12 +207,21 @@ if (isset($_SESSION['id'])) {
 			}
 
 			.modal-footer {
-				background: var(--modal-color);
+				background: inherit;
 				padding: 10px;
 				color: #fff;
 				text-align: center;
-				border-bottom-left-radius: 20px;
-				border-bottom-right-radius: 20px;
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+
+			.modal-footer button {
+				font-size: 14px;
+				line-height: 1.42875;
+				border: 1px solid transparent;
+				font-weight: 400;
+				background-color: #eee;
+				color: black;
 			}
 
 			.close {
@@ -209,6 +236,22 @@ if (isset($_SESSION['id'])) {
 				color: #000;
 				text-decoration: none;
 				cursor: pointer;
+			}
+
+			.modal {
+				cursor: context-menu;
+			}
+
+			.modal-content {
+				width: 500px;
+			}
+
+			.modal-backdrop.show {
+				opacity: 0;
+			}
+
+			.modal-backdrop {
+				position: inherit;
 			}
 
 			@keyframes modalopen {
@@ -299,13 +342,13 @@ if (isset($_SESSION['id'])) {
 		<div class="box-modal">
 
 			<div id="my-modal" class="modal">
-				<div class="modal-content" style="margin-top: 100px;">
+				<div class="modal-content" style="margin-top: 100px; width: 60%;">
 					<form id="frmRecuperaCodigo">
-						<div class="modal-header">
+						<div class="modal-header" style="background: var(--modal-color);">
 							<h5>Publicar um livro</h5>
 							<span class="close">&times;</span>
 						</div>
-						<div class="modal-body">
+						<div class="modal-body" style="margin-bottom: 60px;">
 							<label style="font-size: 16px;">Nome: </label> <input type="text" name="nome">
 							<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea name="descricao" style="width: 100%; max-height: 200px;"> </textarea>
 							<div style="display: flex; flex-direction: row;">
@@ -356,7 +399,7 @@ if (isset($_SESSION['id'])) {
 								</div>
 							</label>
 						</div>
-						<div class="modal-footer">
+						<div class="modal-footer" style="background: inherit;">
 							<a href="">
 								<input type="submit" id="btnCadastrar" value="Publicar" style="border: none; border-radius: 10px; background-color: #AC7E55; WIDTH: 90PX; COLOR: WHITE;height: 30px">
 							</a>
@@ -416,7 +459,45 @@ if (isset($_SESSION['id'])) {
 						<a id="ajuda" style="text-decoration: none;" onclick="redirectAjuda()"><i class="fas fa-question"></i></a>
 					</div>
 				</li>
+				<li>
+					<span class="fab-labelll"><a style="text-decoration: none; color: white;">Notificações</a></span>
+					<div class="fab-icon-holderrr">
+						<!-- <span>1</span> -->
+						<a id="notificacoes" data-toggle="modal" data-target="#ExemploModalCentralizado" style="text-decoration: none;"><i class="fas fa-bell"></i></a>
+					</div>
+				</li>
 			</ul>
+
+			<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header" style="margin-top: 0;">
+							<h5 class="modal-title" id="TituloModalCentralizado">Últimas Notificações</h5>
+						</div>
+
+
+						<div class="modal-body">
+							<a href="#">
+								<h6>Yago comentou na sua postagem do fórum.</h6>
+							</a>
+							<hr>
+							<a href="#">
+								<h6>Você recebeu uma mensagem de Josefa.</h6>
+							</a>
+							<hr>
+							<a href="#">
+								<h6>Você publicou o livro Cinquenta...</h6>
+							</a>
+						</div>
+
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+							<!-- <button type="button" class="btn btn-primary">Salvar mudanças</button> -->
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<script>
 				function redirectHome() {
@@ -473,6 +554,10 @@ if (isset($_SESSION['id'])) {
 		</script>
 		<script src="../assets/js/cadastroPublicacao.js"></script>
 		<script src="../assets/js/ajaxhome.js"></script>
+
+		<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	</body>
 
 </html>

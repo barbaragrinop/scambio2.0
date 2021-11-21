@@ -143,7 +143,7 @@ if ($sql->rowCount() >= 1) {
                 <img src="data:image;base64,<?php echo $row["DS_IMGP"]; ?> alt="" width=" 40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
                 <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
             </div>
-            <a href="index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
+            <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
             </button>
             <?php
             if (isset($_SESSION['id'])) {
