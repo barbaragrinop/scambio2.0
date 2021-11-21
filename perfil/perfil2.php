@@ -73,6 +73,15 @@ if ($sql->rowCount() >= 1) {
             width: 280px;
         }
 
+        .modal-header,
+        .modal-footer {
+            background-image: none;
+        }
+
+        .btn-secondary {
+            color: black;
+        }
+
         @media screen and (min-width: 1368px) and (max-width: 1919px) {
             #panel {
                 width: 101%;
