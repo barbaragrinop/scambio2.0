@@ -49,7 +49,6 @@ if (!isset($_SESSION['id'])) {
         .wrapper {
             height: 88vh;
             margin-top: 20px;
-            margin-left: 33px;
         }
 
         .modal {
@@ -85,70 +84,71 @@ if (!isset($_SESSION['id'])) {
     </div>
 
 
-    <div class="wrapper">
-        <section class="users">
-            <?php
-            include_once('../config/conexao.php');
-            $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario where cd_usuario = {$_SESSION['id']}");
-            $sql->execute();
-            if ($sql->rowCount() > 0) {
-                $row = $sql->fetch(PDO::FETCH_ASSOC);
-            }
-            ?>
-            <header>
-                <div class="content">
-                    <img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1">
+    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+        <div class="wrapper" style="width: 85%;">
+            <section class="users">
+                <?php
+                include_once('../config/conexao.php');
+                $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario where cd_usuario = {$_SESSION['id']}");
+                $sql->execute();
+                if ($sql->rowCount() > 0) {
+                    $row = $sql->fetch(PDO::FETCH_ASSOC);
+                }
+                ?>
+                <header>
+                    <div class="content">
+                        <img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1">
+                        <div class="details">
+                            <span><?= $row['nm_usuario'] ?></span>
+                            <p><?= $row['nm_status'] ?></p>
+                        </div>
+                    </div>
+                </header>
+                <div class="search">
+                    <span class="text">Selecione um usuário para conversar</span>
+                    <input type="text" id'="name-user">
+                    <button> <i class="fas fa-search"></i> </button>
+                </div>
+                <div class="users-list"></div>
+            </section>
+
+            <section class="chat-area">
+                <header>
+                    <?php
+                    include('../config/conexao.php');
+                    if (isset($_GET['user_id'])) {
+                        $user_id = $_GET['user_id'];
+                    } else {
+                        $user_id = 47;
+                    }
+                    $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario where cd_usuario = :user ");
+                    $sql->execute(array(':user' => $user_id));
+                    if ($sql->rowCount() >= 1) {
+                        $row = $sql->fetch(PDO::FETCH_ASSOC);
+                    }
+                    ?>
+                    <img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">
+                    <a href="users-all.php"></a>
                     <div class="details">
                         <span><?= $row['nm_usuario'] ?></span>
                         <p><?= $row['nm_status'] ?></p>
                     </div>
+                </header>
+                <div class="chat-box">
+
                 </div>
-            </header>
-            <div class="search">
-                <span class="text">Selecione um usuário para conversar</span>
-                <input type="text" id="name-user">
-                <button> <i class="fas fa-search"></i> </button>
-            </div>
-            <div class="users-list">
 
-            </div>
-        </section>
+                <form action="#" class="typing-area" style="width: 90%;">
+                    <input type="text" name="cd_enviada" value="<?php echo $_SESSION['id']; ?>" hidden>
+                    <input type="text" name="cd_recebida" value="<?php echo $user_id; ?>" hidden>
+                    <input type="text" name="message" class="input-field" placeholder="Digite sua mensagem..">
+                    <button><i class="fab fa-telegram plane"></i></button>
+                </form>
 
-        <section class="chat-area">
-            <header>
-                <?php
-                include('../config/conexao.php');
-                if (isset($_GET['user_id'])) {
-                    $user_id = $_GET['user_id'];
-                } else {
-                    $user_id = 47;
-                }
-                $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario where cd_usuario = :user ");
-                $sql->execute(array(':user' => $user_id));
-                if ($sql->rowCount() >= 1) {
-                    $row = $sql->fetch(PDO::FETCH_ASSOC);
-                }
-                ?>
-                <img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">
-                <a href="users-all.php"></a>
-                <div class="details">
-                    <span><?= $row['nm_usuario'] ?></span>
-                    <p><?= $row['nm_status'] ?></p>
-                </div>
-            </header>
-            <div class="chat-box">
-
-            </div>
-
-            <form action="#" class="typing-area" style="width: 90%;">
-                <input type="text" name="cd_enviada" value="<?php echo $_SESSION['id']; ?>" hidden>
-                <input type="text" name="cd_recebida" value="<?php echo $user_id; ?>" hidden>
-                <input type="text" name="message" class="input-field" placeholder="Digite sua mensagem..">
-                <button><i class="fab fa-telegram plane"></i></button>
-            </form>
-
-        </section>
+            </section>
+        </div>
     </div>
+
     <?php
     if (isset($_SESSION['id'])) {
         include '../menu/menu.php';
