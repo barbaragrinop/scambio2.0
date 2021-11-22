@@ -83,6 +83,53 @@ body {
     border-radius: 5px;
 }
 
+
+@media only screen and (max-height: 1000px) and (min-height: 832px) {
+    .users-list {
+        /* background-color: red; */
+        max-height: 64vh !important;
+    }
+
+    .chat-box {
+        height: 69vh !important;
+    }
+}
+
+@media only screen and (max-height: 830px) and (min-height: 741px) {
+    .users-list {
+        /* background-color: blue; */
+        max-height: 61vh !important;
+    }
+
+    .chat-box {
+        height: 65vh !important;
+    }
+}
+
+@media only screen and (max-height: 740px) and (min-height: 678px) {
+    .users-list {
+        /* background-color: #ccc; */
+        max-height: 58vh !important;
+    }
+
+    .chat-box {
+        height: 62vh !important;
+    }
+}
+
+@media only screen and (max-height: 678px) and (min-height: 500px) {
+    .users-list {
+        /* background-color: #000; */
+        max-height: 56vh !important;
+    }
+
+    .chat-box {
+        height: 57vh !important;
+    }
+}
+
+
+
 .users .search {
     margin: 20px 0;
     display: flex;
