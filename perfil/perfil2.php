@@ -231,8 +231,8 @@ if ($sql->rowCount() >= 1) {
                                     <span style="font-size: 15px;">Imagem de Perfil</span>
                                     <input type="file" style="margin-left: 20px;">
                                 </div>
-                                <div class="btn-confirm-edit">
-                                    <button>Confirmar</button>
+                                <div class="btn-confirm-edit" style="margin-left: 700px; border: none;">
+                                    <button style="border: none; border-radius: 10px; height: 30px; width: 90px; background-color: #AC7E55; color: white;">Confirmar</button>
                                 </div>
                             </div>
                         </div>
@@ -248,7 +248,21 @@ if ($sql->rowCount() >= 1) {
                 </div>
 
                 <div id="match" style="display: none;">
-                    <p>match</p>
+
+                    <div class="col-md-7 px-3" style="background-color: #ffffff; display: flex; width: 460px; border-radius: 2%">
+                        <div class="card-block px-6">
+                            <p style="font-size:15px;">Barbara Hellen</p>
+                            <p><img class=" img-fluid" src="../assets/imgs/barbara.jpg" alt="card image" style="width:150px; height: 150px; border-radius: 90%;"></p>
+                        </div>
+                        <div class="card-block px-2" style="margin-left: -15%;">
+                            <p style=" margin-left: 20px; font-size:15px;">Beatriz Martins</p>
+                            <p><img class=" img-fluid" src="../assets/imgs/beatriz.jpg" alt="card image" style="width: 150px; height: 150px; border-radius: 90%;"></p>
+                        </div>
+                        <div class="card-block px-2">
+                            <p style="font-size:15px;">A cabana</p>
+                            <p><img class=" img-fluid" src="../assets/imgs/acabana.jpg" alt="card image" style="width: 130px; height: 150px; border-radius: 5%;"></p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- MODAL DELETE -->
@@ -348,6 +362,69 @@ if ($sql->rowCount() >= 1) {
                 -webkit-font-smoothing: antialiased;
                 -moz-font-smoothing: antialiased;
                 background-image: linear-gradient(to right, #f2eee8, #d4c1a5, #f2eee8);
+            }
+
+            .title {
+
+                margin-bottom: 50px;
+                text-transform: uppercase;
+            }
+
+            .card-block {
+                font-size: 1em;
+                position: relative;
+                margin: 0;
+                padding: 1em;
+                border: none;
+                border-top: 1px solid rgba(34, 36, 38, .1);
+                box-shadow: none;
+
+            }
+
+            .card {
+                font-size: 1em;
+                overflow: hidden;
+                padding: 5;
+                border: none;
+                border-radius: .28571429rem;
+                box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+                margin-top: 20px;
+            }
+
+            .carousel-indicators li {
+                border-radius: 12px;
+                width: 12px;
+                height: 12px;
+                background-color: #404040;
+            }
+
+            .carousel-indicators li {
+                border-radius: 12px;
+                width: 12px;
+                height: 12px;
+                background-color: #404040;
+            }
+
+            .carousel-indicators .active {
+                background-color: white;
+                max-width: 12px;
+                margin: 0 3px;
+                height: 12px;
+            }
+
+            .carousel-control-prev-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+            }
+
+            .carousel-control-next-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+            }
+
+            lex-direction: column;
+            }
+
+            .btn {
+                margin-top: auto;
             }
 
             .product-content {
