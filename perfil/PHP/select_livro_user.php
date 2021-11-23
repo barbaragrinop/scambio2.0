@@ -25,34 +25,36 @@ if($SQLANUN->rowCount() > 0){
     <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
        <!-- product -->
        <div class="product-content product-wrap clearfix">
-           <div class="row">
+           <div class="row" id="livroItem'. $row['CDLI'] .'">
                <div class="col-md-5 col-sm-12 col-xs-12">
                    <div class="product-image">
-                       <img src="../fotos/'. $row['FT1'] .'" alt="194x228" class="img-responsive">
+                       <img src="../fotos/'. $row['FT1'] .'" alt="194x228" class="img-responsive" id="Itemimg'. $row['CDLI'] .'">
                    </div>
                </div>
                <div class="col-md-7 col-sm-12 col-xs-12 div-inff" style="height: 238px;">
                    <div class="product-deatil">
                        <h5 class="name">
-                           <a href="#">
-                               ' . $row['NMLV'] . '<span style="font-size: 14px;">'. $row['AUTOR'] . '</span>
+                           <a href="#" >
+                               <p id="Itemlb'. $row['CDLI'] .'">' . $row['NMLV'] . '</p><span id="Itemaut'. $row['CDLI'] .'" style="font-size: 14px;">'. $row['AUTOR'] . '</span><span id="Itemge'. $row['CDLI'] .'" style="font-size: 14px;">'. $row['genero'] . '</span>
                            </a>
                        </h5>
                        <p class="status-container">
-                           <span>Status:' . $status . '</span>
+                            <input type="hidden" id="CityUs'. $row['CDLI'] .'" value="'. $row['CITY'] .'">
+                            <input type="hidden" id="UFUs'. $row['CDLI'] .'" value="'. $row['UF'] .'">
+                           <span id="Itemst'. $row['CDLI'] .'">Status:' . $status . '</span>
                        </p> 
                        <span class="tag1"></span>
                    </div>
                    <div class="description">
-                       <p>' . $row['DES'] .'</p>
+                       <p id="Itemdesc'. $row['CDLI'] .'">' . $row['DES'] .'</p>
                    </div>
                    <div class="product-info smart-form">
                        <div class="row">
                            <div class="col-md-6 col-sm-6 col-xs-6">
-                               <a href="javascript:void(0);" class="fas fa-trash-alt btn btn-danger"></a>
+                               <a href="javascript:void(0);" onclick="carregaModal('.$row['CDLI'].', 1)" class="fas fa-trash-alt btn btn-danger"></a>
                            </div>
                            <div class="col-md-4 col-sm-4 col-xs-4">
-                               <a href="javascript:void(0);" class="fas fa-edit btn btn-info"></a>
+                               <a href="javascript:void(0);"  onclick="carregaModal('.$row['CDLI'].', 0)" class="fas fa-edit btn btn-info" "></a>
                            </div>
                        </div>
                    </div>

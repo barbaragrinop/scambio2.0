@@ -34,10 +34,8 @@ if ($sql->rowCount() >= 1) {
     <title>Scambio | Perfil</title>
     <link rel="shortcut icon" href="assets/imgs/logoFundo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../home/style.css">
     <link rel="stylesheet" href="../fab/fab.css">
@@ -241,9 +239,10 @@ if ($sql->rowCount() >= 1) {
                     </div>
                 </div>
 
+               
 
                 <div id="perfil">
-                    <div class="container publicacoes" style="margin-left: -27px; width: 107%;">
+                    <div class="container publicacoes return" style="margin-left: -27px; width: 107%;">
 
                     </div>
                 </div>
@@ -251,10 +250,92 @@ if ($sql->rowCount() >= 1) {
                 <div id="match" style="display: none;">
                     <p>match</p>
                 </div>
+
+                <!-- MODAL DELETE -->
+                <div class="modal fade" id="exampleModalLongD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="lbdel"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Tem certeza que deseja excluir essa postagem ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <form method="POST">
+                                    <input type="hidden" id="idlb" name="cdlb">
+                                    <input id="btn-del" type="submit" value="Excluir" class="btn btn-danger">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIM MODAL DELETE -->
+
+                <!-- INICIO MODAL EDIT -->
+                <div class="modal fade" id="exampleModalLongE" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Editar Publicação</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form method="POST">
+                                <div class="modal-body">
+                                        <div class="form-group">
+                                            <img src="" id="imgedit" width="100px">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Livro:</label>
+                                            <input type="text" class="form-control" name="livro" id="lbedit">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Descrição:</label>
+                                            <textarea class="form-control" name="describe" id="descedit"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Gênero:</label>
+                                            <input type="text" class="form-control" name="genero" id="lbgenero">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Novo CEP:</label>
+                                            <input type="text" class="form-control" name="CEP" id="CEP">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Cidade:</label>
+                                            <input type="text" class="form-control" name="city" id="uscity">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Estado:</label>
+                                            <input type="text" class="form-control" name="uf" id="UFUs">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Autor:</label>
+                                            <input type="text" class="form-control" name="autor" id="lbautedit">
+                                        </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <input type="hidden" id="values" name="cda" id="">
+                                    <input type="submit" class="editf btn btn-primary" value="Salvar Alterações">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIM MODAL EDIT -->
             </div>
         </div>
 
+
         <?php include('../menu/menu.php') ?>
+
 
         <style type="text/css">
             body {
@@ -979,7 +1060,6 @@ if ($sql->rowCount() >= 1) {
                 margin-right: 0px;
             }
         </style>
-        <script src="../assets/js/ajaxperfil.js"></script>
         <script src="javascript/users.js"></script>
         <script src="javascript/chat.js"></script>
         <script type="text/javascript">
@@ -1006,6 +1086,12 @@ if ($sql->rowCount() >= 1) {
                 document.getElementById('panel').style.display = "none";
             }
         </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+        <script src="../assets/js/ajaxperfil.js"></script>
 </body>
 
 </html>
