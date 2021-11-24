@@ -92,6 +92,8 @@ body {
     .chat-box {
         height: 75vh !important;
     }
+
+
 }
 
 
@@ -103,6 +105,10 @@ body {
 
     .chat-box {
         height: 69vh !important;
+    }
+
+    .btn-match {
+        margin-left: 10px !important;
     }
 }
 
@@ -366,6 +372,7 @@ body {
 }
 
 .btn-match {
+    margin-top: 3px;
     color: white;
     margin-left: 5px;
     border: none;
