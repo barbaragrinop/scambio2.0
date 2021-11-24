@@ -66,7 +66,7 @@ body {
 }
 
 :is(.users, .users-list) .details span {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
 }
 
@@ -83,11 +83,22 @@ body {
     border-radius: 5px;
 }
 
+@media only screen and (max-height: 1200px) and (min-height: 999px) {
+    .users-list {
+        /* background-color: red; */
+        max-height: 66vh !important;
+    }
+
+    .chat-box {
+        height: 75vh !important;
+    }
+}
+
 
 @media only screen and (max-height: 1000px) and (min-height: 832px) {
     .users-list {
         /* background-color: red; */
-        max-height: 64vh !important;
+        max-height: 62vh !important;
     }
 
     .chat-box {
@@ -98,7 +109,7 @@ body {
 @media only screen and (max-height: 830px) and (min-height: 741px) {
     .users-list {
         /* background-color: blue; */
-        max-height: 61vh !important;
+        max-height: 59vh !important;
     }
 
     .chat-box {
@@ -109,7 +120,7 @@ body {
 @media only screen and (max-height: 740px) and (min-height: 678px) {
     .users-list {
         /* background-color: #ccc; */
-        max-height: 58vh !important;
+        max-height: 56vh !important;
     }
 
     .chat-box {
@@ -120,11 +131,11 @@ body {
 @media only screen and (max-height: 678px) and (min-height: 500px) {
     .users-list {
         /* background-color: #000; */
-        max-height: 56vh !important;
+        max-height: 54vh !important;
     }
 
     .chat-box {
-        height: 57vh !important;
+        height: 65vh !important;
     }
 }
 
@@ -139,7 +150,7 @@ body {
 }
 
 .users .search .text {
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .users .search input {
@@ -270,6 +281,7 @@ body {
     font-weight: 300;
 }
 
+
 .chat-box {
     overflow-y: auto;
     height: 405px;
@@ -280,7 +292,7 @@ body {
 }
 
 .chat-box .chat {
-    margin: 15px 0;
+    /* margin: 15px 0; */
 }
 
 .chat-box .chat p {
@@ -327,9 +339,8 @@ body {
 }
 
 .chat-area .typing-area {
-    padding: 14px 19px 0px 14px;
+    padding: 14px 0px 0px 14px;
     display: flex;
-    justify-content: space-between;
 }
 
 .typing-area input {
@@ -343,6 +354,7 @@ body {
 }
 
 .typing-area button {
+    height: 45px;
     width: 55px;
     border: none;
     outline: none;
@@ -351,4 +363,14 @@ body {
     cursor: pointer;
     font-size: 19px;
     border-radius: 0 5px 5px 0;
+}
+
+.btn-match {
+    color: white;
+    margin-left: 5px;
+    border: none;
+    border-radius: 4px;
+    height: 45px;
+    width: 55px;
+    background-color: #333;
 }
