@@ -363,6 +363,8 @@ if (isset($_SESSION['id'])) {
 										<option value="Carta">Carta</option>
 										<option value="Chick-Lit">Chick-Lit</option>
 										<option value="Conto">Conto</option>
+										<option value="CienciaBiologica">Ciências Biológicas e Naturais</option>
+										<option value="CienciaHumana">Ciências Humanas e Linguagens</option>
 										<option value="Crônica">Crônica</option>
 										<option value="Drama">Drama</option>
 										<option value="Ensaio">Ensaio</option>
@@ -378,6 +380,7 @@ if (isset($_SESSION['id'])) {
 										<option value="Novela">Novela</option>
 										<option value="Poesia">Poesia</option>
 										<option value="Realismo Mágico ">Realismo Mágico</option>
+										<option value="Resenha">Resenha</option>
 										<option value="Romance">Romance</option>
 										<option value="Sick-Lit">Sick-Lit</option>
 										<option value="Terror">Terror</option>

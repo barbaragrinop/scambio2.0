@@ -68,7 +68,7 @@ if ($sql->rowCount() >= 1) {
 
         .div-inff {
             height: 238px;
-            width: 280px;
+            width: 326px;
         }
 
         .modal-header,
@@ -105,7 +105,7 @@ if ($sql->rowCount() >= 1) {
 
         @media (min-width: 992px) {
             .col-md-5 {
-                width: 29.99667%;
+                width: 30.19667%;
             }
         }
 
@@ -123,7 +123,7 @@ if ($sql->rowCount() >= 1) {
 
         @media screen and (max-width: 900px) {
             .col-md-5 {
-                width: 32.99667%;
+                width: 38.99667%;
             }
         }
 
@@ -139,6 +139,14 @@ if ($sql->rowCount() >= 1) {
             .col-md-5 {
                 width: 32.99667%;
             }
+        }
+
+        .product-content .product-deatil {
+            padding-bottom: 0px !important;
+        }
+
+        .form-control {
+            width: 90px !important;
         }
     </style>
 </head>
@@ -239,7 +247,7 @@ if ($sql->rowCount() >= 1) {
                     </div>
                 </div>
 
-               
+
 
                 <div id="perfil">
                     <div class="container publicacoes return" style="margin-left: -27px; width: 107%;">
@@ -272,7 +280,7 @@ if ($sql->rowCount() >= 1) {
                             <div class="modal-header">
                                 <h5 class="modal-title" id="lbdel"></h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                                    <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
@@ -301,13 +309,16 @@ if ($sql->rowCount() >= 1) {
                                 </button>
                             </div>
                             <form method="POST">
-                                <div class="modal-body">
-                                        <div class="form-group">
-                                            <img src="" id="imgedit" width="100px">
-                                        </div>
+                                <div class="modal-body" style="display: flex; flex-direction: column;">
+                                    <div class="form-group">
+                                        <img src="" id="imgedit" width="100px">
+                                    </div>
+
+                                    <div style="display: flex; flex-direction: column; margin-left: 30px;">
+
                                         <div class="form-group">
                                             <label for="recipient-name" class="col-form-label">Livro:</label>
-                                            <input type="text" class="form-control" name="livro" id="lbedit">
+                                            <input type="text" class="form-control" name="livro" id="lbedit" style="width: 10px;">
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Descrição:</label>
@@ -333,6 +344,8 @@ if ($sql->rowCount() >= 1) {
                                             <label for="message-text" class="col-form-label">Autor:</label>
                                             <input type="text" class="form-control" name="autor" id="lbautedit">
                                         </div>
+                                    </div>
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -499,6 +512,7 @@ if ($sql->rowCount() >= 1) {
             }
 
             .product-content .description {
+                height: 66px;
                 font-size: 12.5px;
                 line-height: 20px;
                 padding: 10px 14px 16px 19px;
