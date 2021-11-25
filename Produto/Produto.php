@@ -62,6 +62,10 @@ if (!isset($_SESSION['id'])) {
         .white-box {
             width: 200px;
         }
+
+        .w-100 {
+            width: 250px !important;
+        }
     </style>
 </head>
 
@@ -95,52 +99,73 @@ if (!isset($_SESSION['id'])) {
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="card-title" style="font-size: 24px;">O Pequeno Principe</h3>
-                            <h5 class="card-subtitle" style="font-size: 16px;">@Beatriz Martins</h6>
-                                <div style="display: flex; flex-direction: row;">
-                                    <div class="col-lg-3 col-md-3 col-sm-5" style="margin-top: 10px; height: 290px;">
-                                        <div class="white-box text-center"><img width="215" src="img/pqnprincipe1.jpg" class="img-responsive"></div>
+                        <div style="margin-top: 8px; margin-left: 10px;">
+                            <h2 class="card-title" style="font-size: 24px;">O Pequeno Principe</h3>
+                                <h5 class="card-subtitle" style="font-size: 16px;">@Beatriz Martins</h6>
+                        </div>
+                        <div style="display: flex; flex-direction: row; margin-top: -28px;">
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-top: 20px;">
+                                <div class="carousel-inner" style="margin-top: 20px;">
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="../assets/imgs/aculpaedasestrelas.jpg" alt="First slide">
                                     </div>
-                                    <div style="margin-left: 20px;">
-                                        <div class="col-lg-8 col-md-4 col-sm-9" style="max-width: 100%;">
-                                            <h3 class="box-title mt-5" style="font-size: 21px;">Descrição do produto</h3>
-                                            <p style="font-size: 16px;">Livro em perfeito estado, com pouco tempo de uso e comprado em 2019. Aprenta algumas marcas de uso, mas nada que atrapalhe a leitura.</p>
-                                        </div>
-                                        <div class="col-lg-8 col-md-8 col-sm-8" style="max-width: 100%;">
-                                            <h3 class="box-title mt-5" style="font-size: 20px;">Outras Informações</h3>
-                                            <div class="table-responsive">
-                                                <table class="table table-striped table-product">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td width="200" style="font-size: 15px;">Nome do livro</td>
-                                                            <td style="font-size: 14px;">O Pequeno Principe</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="font-size: 15px;">Autor</td>
-                                                            <td style="font-size: 14px;">J. K. Rowling</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="font-size: 15px;">Gênero</td>
-                                                            <td style="font-size: 14px;">Romance, Literatura infantil, Literatura fantástica, Alta fantasia</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="font-size: 15px;">Idioma</td>
-                                                            <td style="font-size: 14px;">Portugês</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
-                                                <i class="fa fa-user"></i>
-                                                Perfil
-                                            </button>
-                                            <button class="btn btn-success btn-rounded" style="margin-left: 10px;">
-                                                <i class="fa fa-comments"></i>
-                                                Chat
-                                            </button>
-                                        </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="../assets/imgs/livrozul.jpg" alt="Second slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="../assets/imgs/acabana.jpg" alt="Third slide">
                                     </div>
                                 </div>
+                                <a class="carousel-control-prev" id="prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" id="next" href="#carouselExampleControls" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                            <div style="margin-left: 20px; margin-top: -80px;">
+                                <div class="col-lg-8 col-md-4 col-sm-9" style="max-width: 100%;">
+                                    <h3 class="box-title mt-5" style="font-size: 21px;">Descrição do produto</h3>
+                                    <p style="font-size: 16px;">Livro em perfeito estado, com pouco tempo de uso e comprado em 2019. Aprenta algumas marcas de uso, mas nada que atrapalhe a leitura.</p>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8" style="max-width: 100%; margin-top: -30px;">
+                                    <h3 class="box-title mt-5" style="font-size: 20px;">Outras Informações</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-product">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="200" style="font-size: 15px;">Nome do livro</td>
+                                                    <td style="font-size: 14px;">O Pequeno Principe</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 15px;">Descrição</td>
+                                                    <td style="font-size: 14px;">Perfeito para revisões para ENEM e vestibulares específicos, além de estudos para ensino médio e concurso de nível médio!</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 15px;">Gênero</td>
+                                                    <td style="font-size: 14px;">Romance, Literatura infantil, Literatura fantástica, Alta fantasia</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 15px;">Autor</td>
+                                                    <td style="font-size: 14px;">J. K. Rowling</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
+                                        <i class="fa fa-user"></i>
+                                        Perfil
+                                    </button>
+                                    <button class="btn btn-success btn-rounded" style="margin-left: 10px;">
+                                        <i class="fa fa-comments"></i>
+                                        Chat
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,7 +178,15 @@ if (!isset($_SESSION['id'])) {
 
 
     <?php include_once('../menu/menu.php'); ?>
-
+    <script>
+        $(document).ready(function() {
+            let qntImg = document.getElementsByClassName('carousel-item').length;
+            if (qntImg == 1) {
+                document.getElementById('prev').style.display = 'none';
+                document.getElementById('next').style.display = 'none';
+            }
+        })
+    </script>
 
 </body>
 
