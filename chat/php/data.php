@@ -23,10 +23,13 @@
 
         //adiocionando na frente do texto
         ($outgoing_id == ($row2['outgoing_msg_id'] ?? "")) ? $you = "Você: " : $you = "";
-        // echo $outgoing_id . " - " . $row2['outgoing_msg_id'];
-        // var_dump($row);
-        //checando se o usuário está online ou offline
-        ($value['nm_status'] == "Offline") ? $offline = "offline" : $offline = "";   
+        
+        // if(isset($value['nm_status'])){
+        //     ($value['nm_status'] == "Offline") ? $offline = "offline" : $offline = "";
+        // }
+
+        $offline = $value['nm_status'] ?? "";
+
 
         $output .= '
             <a href="users-all.php?user_id='.$value['cd_usuario'].'">   
