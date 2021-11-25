@@ -92,22 +92,27 @@ if (isset($_SESSION['id'])) {
 			}
 
 			.row .card img {
-				width: 73% !important;
+				width: 84% !important;
 				height: 12rem !important;
 				margin-top: 20px !important;
 
+			}
+
+			.h5,
+			h5 {
+				font-size: 1.15rem !important;
 			}
 
 			.card {
 				display: flex;
 				align-items: center;
 				border-radius: 20px;
-				margin-right: 25px;
+				margin-right: 15px;
 				margin-bottom: 25px;
 			}
 
 			.card-body {
-				margin-left: 30px;
+				margin-left: 20px;
 				width: 190px;
 				display: flex;
 				flex-direction: column;
@@ -340,7 +345,7 @@ if (isset($_SESSION['id'])) {
 			</div>
 		</div>
 
-		<div class="return row">
+		<div class="return row" style="margin-top: -38px;">
 
 		</div>
 		<div class="box-modal">
