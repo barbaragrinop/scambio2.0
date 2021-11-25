@@ -3,8 +3,8 @@
 
     foreach ($row as $key => $value) {
         $query2 = $pdo->prepare("SELECT * from db_scambio.messages where (incoming_msg_id = :unique_id
-               or outgoing_msg_id = :unique_id) and (outgoing_msg_id = :outgoing 
-               or incoming_msg_id = :outgoing) order by msg_id desc limit 1 "); //pegando a ultima mensagem
+            or outgoing_msg_id = :unique_id) and (outgoing_msg_id = :outgoing 
+            or incoming_msg_id = :outgoing) order by msg_id desc limit 1 "); //pegando a ultima mensagem
 
         $query2->execute(array(
             ':outgoing' => $outgoing_id, 
