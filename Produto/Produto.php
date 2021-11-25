@@ -125,6 +125,7 @@ if (!isset($_SESSION['id'])) {
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
+
                             <div style="margin-left: 20px; margin-top: -80px;">
                                 <div class="col-lg-8 col-md-4 col-sm-9" style="max-width: 100%;">
                                     <h3 class="box-title mt-5" style="font-size: 21px;">Descrição do produto</h3>
