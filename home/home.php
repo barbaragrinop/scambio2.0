@@ -93,7 +93,7 @@ if (isset($_SESSION['id'])) {
 
 			.row .card img {
 				width: 84% !important;
-				height: 12rem !important;
+				height: 12.9rem !important;
 				margin-top: 20px !important;
 
 			}
@@ -368,14 +368,16 @@ if (isset($_SESSION['id'])) {
 										<option value="Carta">Carta</option>
 										<option value="Chick-Lit">Chick-Lit</option>
 										<option value="Conto">Conto</option>
-										<option value="CienciaBiologica">Ciências Biológicas e Naturais</option>
-										<option value="CienciaHumana">Ciências Humanas e Linguagens</option>
+										<option value="Ciências Biológicas e Naturais">Ciências Biológicas e Naturais</option>
+										<option value="Ciências Humanas e Linguagens">Ciências Humanas e Linguagens</option>
 										<option value="Crônica">Crônica</option>
 										<option value="Drama">Drama</option>
 										<option value="Ensaio">Ensaio</option>
+										<option value="Educação">Educação</option>
+										<option value="Estudo">Estudo</option>
 										<option value="Ficção">Ficção</option>
 										<option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
-										<option value="ladlit">Lad-Lit</option>
+										<option value="Lad-Lit">Lad-Lit</option>
 										<option value="Literatura Fantástica">Literatura Fantástica</option>
 										<option value="Literatura Infantil">Literatura Infantil</option>
 										<option value="Literatura Infanto-juvenil">Literatura Infanto-juvenil</option>

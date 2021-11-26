@@ -18,7 +18,7 @@ $sql .= 'BA.CD_BAIRRO = LO.CD_BAIRRO ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_CIDADE AS CI ON ';
 $sql .= 'BA.CD_CIDADE = CI.CD_CIDADE ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_UF AS U ON ';
-$sql .= 'U.CD_UF = CI.CD_UF ';
+$sql .= 'U.CD_UF = CI.CD_UF ORDER BY LV.CD_LIVRO DESC';
 $SQLANUN = $pdo->prepare($sql);
 $SQLANUN->execute();
 
