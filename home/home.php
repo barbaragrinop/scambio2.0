@@ -273,14 +273,55 @@ if (isset($_SESSION['id'])) {
 				}
 			}
 
+			@media (max-height: 1200px) {
+				.modal-content {
+					margin-top: 300px !important;
+				}
+			}
 
-			@media (min-width: 1700) {
+			@media (max-height: 1100px) {
+				.modal-content {
+					margin-top: 286px !important;
+				}
+			}
+
+			@media (max-height: 1000px) {
+				.modal-content {
+					margin-top: 250px !important;
+				}
+			}
+
+			@media (max-height: 900px) {
+				.modal-content {
+					margin-top: 210px !important;
+				}
+			}
+
+			@media (max-height: 800px) {
+				.modal-content {
+					margin-top: 150px !important;
+				}
+			}
+
+			@media (max-height: 750px) {
+				.modal-content {
+					margin-top: 140px !important;
+				}
+			}
+
+			@media (max-height: 700px) {
+				.modal-content {
+					margin-top: 100px !important;
+				}
+			}
+
+			@media (min-width: 1700px) {
 				.inpAutor {
 					/* width: 100% !important; */
 				}
 
 				.selectGenero {
-					width: 650px !important;
+					width: 500px !important;
 				}
 			}
 
@@ -290,7 +331,7 @@ if (isset($_SESSION['id'])) {
 				}
 
 				.selectGenero {
-					width: 350px !important;
+					width: 360px !important;
 				}
 			}
 
@@ -299,7 +340,7 @@ if (isset($_SESSION['id'])) {
 					width: 100% !important;
 				}
 
-				select {
+				.selectGenero {
 					width: 460px;
 				}
 			}
@@ -358,8 +399,8 @@ if (isset($_SESSION['id'])) {
 							<span class="close">&times;</span>
 						</div>
 						<div class="modal-body" style="margin-bottom: 60px;">
-							<label style="font-size: 16px;">Nome: </label> <input type="text" name="nome">
-							<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea name="descricao" style="width: 100%; max-height: 200px;"> </textarea>
+							<label style="font-size: 16px;">Nome: </label> <input type="text" name="nome" id="nomeDigitado">
+							<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea id="descricaoDigitado" name="descricao" style="width: 100%; max-height: 200px;"></textarea>
 							<div style="display: flex; flex-direction: row;">
 								<div>
 									<label style="font-size: 16px;" for="genero">Gênero:</label>
@@ -399,7 +440,7 @@ if (isset($_SESSION['id'])) {
 								</div>
 								<div style="width: 100%; margin-left: 30px;">
 									<label style="font-size: 16px;">Autor: </label>
-									<input class="inpAutor" style="height: 45px; width: 100%;" type="text" name="autor">
+									<input id="autorDigitado" class="inpAutor" style="height: 45px; width: 100%;" type="text" name="autor">
 								</div>
 							</div>
 
@@ -418,7 +459,7 @@ if (isset($_SESSION['id'])) {
 							</label>
 						</div>
 						<div class="modal-footer" style="background: inherit;">
-							<a href="">
+							<a href="" onclick="btnModal()">
 								<input type="submit" id="btnCadastrar" value="Publicar" style="border: none; border-radius: 10px; background-color: #AC7E55; WIDTH: 90PX; COLOR: WHITE;height: 30px">
 							</a>
 						</div>
@@ -567,6 +608,21 @@ if (isset($_SESSION['id'])) {
 			function outsideClick(e) {
 				if (e.target == modal) {
 					modal.style.display = 'none';
+				}
+			}
+
+			function btnModal() {
+				let nome = document.getElementById('nomeDigitado').value.trim();
+				let descricao = document.getElementById('descricaoDigitado').value.trim();
+				let genero = document.getElementById('genero').value;
+				let autor = document.getElementById('autorDigitado').value.trim();
+				let foto1 = document.getElementById('file1').value;
+				let foto2 = document.getElementById('file2').value;
+				let foto3 = document.getElementById('file3').value;
+
+				if ((nome == '' && descricao == '' && autor == '') && (foto1 == '' || foto2 == '' || foto3 == '')) {
+					event.preventDefault();
+					alert('Preencha com todas as informações')
 				}
 			}
 		</script>
