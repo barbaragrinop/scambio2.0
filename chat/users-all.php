@@ -131,7 +131,6 @@ if (!isset($_SESSION['id'])) {
                     <a href="users-all.php"></a>
                     <div class="details" style="display: flex;">
                         <span><?= $row['nm_usuario'] ?></span>
-                        <p><?= $row['nm_status'] ?></p>
                     </div>
                 </header>
                 <div class="chat-box">
@@ -146,11 +145,13 @@ if (!isset($_SESSION['id'])) {
                         <div>
                             <i id="iconImg" class="fas fa-share" style="display: none;"></i>
                             <label for="file_input_id" title="Enviar imagem" style="padding: 0; display: flex; align-items: center; margin-left: -8px; margin-right: 10px;"><i value="enviar" id="enviar" class="fas fa-image"></i></label>
-                            <input type="file" id="file_input_id" style="display: none;">
+                            <input type="file" id="file_input_id" style="display: none;" accept="image/jpg, image/jpeg, image/png" />
                         </div>
 
                         <input type="text" name="message" class="input-field" id="inputMsg" placeholder="Digite sua mensagem..">
-                        <button><i class="fab fa-telegram plane"></i></button>
+                        <div onclick="btnEnviar()">
+                            <button><i class="fab fa-telegram plane"></i></button>
+                        </div>
                     </form>
                     <button class="btn-match" id="btn-match">Match</button>
                 </div>
@@ -182,41 +183,19 @@ if (!isset($_SESSION['id'])) {
         var fileUpload = document.getElementById("file_input_id");
         var enviar = document.getElementById("enviar");
         enviar.addEventListener("click", function(event) {
-            // if (fileUpload.files.length == 0) {
-            //     alert("Nenhum Arquivo Selecionado");
-            //     // PRECISA CANCELAR O ENVIO
-            //     return;
-            // }
 
-            // if (fileUpload.files.length != 0) {
-            //     alert("Arquivo selecionado.");
-            //     // MOSTRAR TEXTO DE ARQ SELECIONADO NO CAMPO INPUT
-            //     document.getElementById('iconImg').style.display = 'contents';
-
-            //     return;
-            // }
-
-            // if (fileUpload.files[0].type.indexOf("image") != 0) {
-            //     alert("Este arquivo não é uma imagem");
-            //     return;
-            // }
         });
 
         fileUpload.addEventListener("change", function(event) {
-            if (fileUpload.files.length == 0) {
-                alert("Nenhum Arquivo Selecionado");
-                // PRECISA CANCELAR O ENVIO
-                return;
-            }
+            // if (fileUpload.files.length == 0) {
+            //     alert("Nenhum Arquivo Selecionado");
+            //     return;
+            // }
 
             if (fileUpload.files.length != 0) {
-                alert("Arquivo selecionado.");
-                // MOSTRAR TEXTO DE ARQ SELECIONADO NO CAMPO INPUT
-                document.getElementById('iconImg').style.display = 'inline';
-                document.getElementById('iconImg').style.marginLeft = '-4px';
-                document.getElementById('iconImg').style.color = 'green';
-                document.getElementById('btn-match').style.marginBottom = '21.5px';
-                document.getElementById('enviar').style.marginTop = '-35px';
+                let nomeImg = document.getElementById('file_input_id').value;
+                document.getElementById('inputMsg').value = nomeImg;
+                document.querySelector('#inputMsg').disabled = true;
                 return;
             }
 
@@ -225,6 +204,10 @@ if (!isset($_SESSION['id'])) {
                 return;
             }
         })
+
+        function btnEnviar() {
+            document.querySelector('#inputMsg').disabled = false;
+        }
     </script>
 
     <script src="javascript/users.js"></script>
