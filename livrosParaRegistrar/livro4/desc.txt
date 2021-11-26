@@ -1,3 +1,4 @@
-5° Edição
-Volume 1
-Ensino Médio
+Nome: Química analítica quantitativa
+Descrição: Livro de química analítica quantitativa do baccan.
+Gênero: Química
+Autor: Edgard Blucher

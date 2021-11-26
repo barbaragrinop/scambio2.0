@@ -364,6 +364,8 @@ if (isset($_SESSION['id'])) {
 								<div>
 									<label style="font-size: 16px;" for="genero">Gênero:</label>
 									<select class="selectGenero" style="font-size: 14.5px;" id="genero" name="genero">
+										<option value="--" disabled selected>Selecione um gênero</option>
+										<option value="Auto Ajuda">Auto Ajuda</option>
 										<option value="Biografia">Biografia</option>
 										<option value="Carta">Carta</option>
 										<option value="Chick-Lit">Chick-Lit</option>
@@ -375,6 +377,7 @@ if (isset($_SESSION['id'])) {
 										<option value="Ensaio">Ensaio</option>
 										<option value="Educação">Educação</option>
 										<option value="Estudo">Estudo</option>
+										<option value="Farmacologia">Farmacologia</option>
 										<option value="Ficção">Ficção</option>
 										<option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
 										<option value="Lad-Lit">Lad-Lit</option>
@@ -386,6 +389,7 @@ if (isset($_SESSION['id'])) {
 										<option value="New Adult">New Adult</option>
 										<option value="Novela">Novela</option>
 										<option value="Poesia">Poesia</option>
+										<option value="Química">Química</option>
 										<option value="Realismo Mágico ">Realismo Mágico</option>
 										<option value="Resenha">Resenha</option>
 										<option value="Romance">Romance</option>
