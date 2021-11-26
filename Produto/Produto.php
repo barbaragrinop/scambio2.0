@@ -65,6 +65,7 @@ if (!isset($_SESSION['id'])) {
 
         .w-100 {
             width: 250px !important;
+            height: 401px;
         }
     </style>
 </head>
@@ -131,7 +132,7 @@ if (!isset($_SESSION['id'])) {
                                     <h3 class="box-title mt-5" style="font-size: 21px;">Descrição do produto</h3>
                                     <p style="font-size: 16px;">Livro em perfeito estado, com pouco tempo de uso e comprado em 2019. Aprenta algumas marcas de uso, mas nada que atrapalhe a leitura.</p>
                                 </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8" style="max-width: 100%; margin-top: -30px;">
+                                <div class="col-lg-8 col-md-8 col-sm-8" style="max-width: 100%;">
                                     <h3 class="box-title mt-5" style="font-size: 20px;">Outras Informações</h3>
                                     <div class="table-responsive">
                                         <table class="table table-striped table-product">
@@ -141,16 +142,16 @@ if (!isset($_SESSION['id'])) {
                                                     <td style="font-size: 14px;">O Pequeno Principe</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="font-size: 15px;">Descrição</td>
-                                                    <td style="font-size: 14px;">Perfeito para revisões para ENEM e vestibulares específicos, além de estudos para ensino médio e concurso de nível médio!</td>
-                                                </tr>
-                                                <tr>
                                                     <td style="font-size: 15px;">Gênero</td>
                                                     <td style="font-size: 14px;">Romance, Literatura infantil, Literatura fantástica, Alta fantasia</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="font-size: 15px;">Autor</td>
                                                     <td style="font-size: 14px;">J. K. Rowling</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 15px;">Data de publicação</td>
+                                                    <td style="font-size: 14px;">12/15/2021</td>
                                                 </tr>
                                             </tbody>
                                         </table>
