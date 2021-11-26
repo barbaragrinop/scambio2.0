@@ -8,7 +8,7 @@ function ajaxCall() {
         })
 }
 
-$(document).ready(function(){
-    setInterval(ajaxCall,500);
-   });
+$(document).ready(function () {
+    setInterval(ajaxCall, 500);
+});
 
