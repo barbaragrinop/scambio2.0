@@ -15,7 +15,6 @@ sendBtn.onclick = () => {
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
                 let data = xhr.response;
-                console.log(data);
                 inputField.value = ""; //se for inserido, vai o input vai esvaziar
                 scrollToBottom();
                 // console.log("console" + xhr.response);

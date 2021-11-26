@@ -4,6 +4,25 @@ session_start();
 if (!isset($_SESSION['id'])) {
     header("./home/home.php");
 }
+include_once '../config/conexao.php';
+
+$id = $_SESSION['id'];
+
+
+$sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
+                        inner join db_scambio.tb_logradouro
+                        on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
+                        inner join db_scambio.tb_bairro 
+                        on tb_bairro.cd_bairro = tb_logradouro.cd_bairro
+                        inner join db_scambio.tb_cidade
+                        on tb_cidade.cd_cidade = tb_bairro.cd_cidade
+                        inner join db_scambio.tb_uf
+                        on tb_uf.cd_uf = tb_cidade.cd_uf
+                        where cd_usuario = :id");
+$sql->execute(array(':id' => $id));
+if ($sql->rowCount() >= 1) {
+    $row = $sql->fetch((PDO::FETCH_ASSOC));
+}
 
 ?>
 
@@ -62,9 +81,17 @@ if (!isset($_SESSION['id'])) {
         <div style="display: flex; flex-direction: row; justify-content: space-around;">
             <div style="display: flex; flex-direction: row;">
                 <a href="">
-                    <img src="../assets/imgs/munir.jpeg" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+                <?php
+                            if(!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])){
+                                $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+                            }
+                            else{
+                                $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+                            }
+                            echo $img;
+                        ?>
                 </a>
-                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"> <a href="" style="text-decoration: none;">Munir</a> </p>
+                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"> <a href="" style="text-decoration: none;"><?= $row['nm_usuario'] ?></a> </p>
             </div>
             <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 7.5px;"></a>
             </button>
@@ -97,10 +124,18 @@ if (!isset($_SESSION['id'])) {
                 ?>
                 <header>
                     <div class="content">
-                        <img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1">
+                        <?php
+                            if(!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])){
+                                $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">';
+                            }
+                            else{
+                                $img = '<img src="../fotosuser/' . $row['DS_IMGP'] .'" alt="">';
+                            }
+                            echo $img;
+                        ?>
                         <div class="details">
                             <span><?= $row['nm_usuario'] ?></span>
-                            <p><?= $row['nm_status'] ?></p>
+                            <p><?=   ($row['nm_status'] == 1) ? $offline = "Online" : $offline = "Offline";   ?></p>
                         </div>
                     </div>
                 </header>

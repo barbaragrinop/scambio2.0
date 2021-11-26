@@ -1,16 +1,37 @@
-function Callajax() {
+function Callajaxpub() {
     $.ajax({
         type: "post",
         url: "PHP/select_livro_user.php",
         success: function (response) {
-            console.log(response);
             $('.publicacoes').html(response);
         }
     }) 
 }
 
+
+function update(){
+    const form = document.querySelector("#formupdate")
+    $('#formupdate').submit(function(){
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST",'../perfil/PHP/update_info_user.php', true)
+        xhr.onload = () => {
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                let data = xhr.response
+                console.log(data);               
+            }
+        }
+        let formData = new FormData(form);
+        xhr.send(formData);
+    })
+    setInterval(window.location.reload(), 50)
+}
+
+
+
+/* FILTRO CEP */
 $(document).ready( () => {
-    setInterval(Callajax(), 500)
+    setInterval(Callajaxperfil(), 2000)
+    setInterval(Callajaxpub(), 500)
     $('#CEP').mask('00000-000');
     document.getElementById('uscity').disabled = true;
     document.getElementById('UFUs').disabled = true;
@@ -46,6 +67,7 @@ $(document).ready( () => {
 })
 
 
+/* CARREGA MODAL COM AS INFORMAÇÕES DA PUBLICAÇÃO  */
 function carregaModal(id, oqE){
     var txtDesc = $("#Itemdesc"+id).text().trim()
     var txtGenero = $("#Itemge"+id).text().trim()
@@ -74,4 +96,16 @@ function carregaModal(id, oqE){
         document.getElementById("imgedit").src =  imgItem+""
         $("#exampleModalLongE").modal("show")
     }
+}
+
+/* POPULA DIV EDIT-PROFILE */
+
+function Callajaxperfil() {
+    $.ajax({
+        type: "post",
+        url: "PHP/select_info_user.php",
+        success: function (response) {
+            $('#editprofile').html(response);
+        }
+    }) 
 }

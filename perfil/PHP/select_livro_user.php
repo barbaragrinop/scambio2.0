@@ -14,7 +14,7 @@ $sql .= 'BA.CD_BAIRRO = LO.CD_BAIRRO ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_CIDADE AS CI ON ';
 $sql .= 'BA.CD_CIDADE = CI.CD_CIDADE ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_UF AS U ON ';
-$sql .= 'U.CD_UF = CI.CD_UF WHERE US.CD_USUARIO = ' . $_SESSION['id'];
+$sql .= 'U.CD_UF = CI.CD_UF  WHERE US.CD_USUARIO = ' . $_SESSION['id'] . ' ORDER BY CDLI DESC';
 $SQLANUN = $pdo->prepare($sql);
 $SQLANUN->execute();
 
