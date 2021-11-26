@@ -92,22 +92,27 @@ if (isset($_SESSION['id'])) {
 			}
 
 			.row .card img {
-				width: 73% !important;
-				height: 12rem !important;
+				width: 84% !important;
+				height: 12.9rem !important;
 				margin-top: 20px !important;
 
+			}
+
+			.h5,
+			h5 {
+				font-size: 1.15rem !important;
 			}
 
 			.card {
 				display: flex;
 				align-items: center;
 				border-radius: 20px;
-				margin-right: 25px;
+				margin-right: 15px;
 				margin-bottom: 25px;
 			}
 
 			.card-body {
-				margin-left: 30px;
+				margin-left: 20px;
 				width: 190px;
 				display: flex;
 				flex-direction: column;
@@ -348,7 +353,7 @@ if (isset($_SESSION['id'])) {
 			</div>
 		</div>
 
-		<div class="return row">
+		<div class="return row" style="margin-top: -38px;">
 
 		</div>
 		<div class="box-modal">
@@ -367,16 +372,23 @@ if (isset($_SESSION['id'])) {
 								<div>
 									<label style="font-size: 16px;" for="genero">Gênero:</label>
 									<select class="selectGenero" style="font-size: 14.5px;" id="genero" name="genero">
+										<option value="--" disabled selected>Selecione um gênero</option>
+										<option value="Auto Ajuda">Auto Ajuda</option>
 										<option value="Biografia">Biografia</option>
 										<option value="Carta">Carta</option>
 										<option value="Chick-Lit">Chick-Lit</option>
 										<option value="Conto">Conto</option>
+										<option value="Ciências Biológicas e Naturais">Ciências Biológicas e Naturais</option>
+										<option value="Ciências Humanas e Linguagens">Ciências Humanas e Linguagens</option>
 										<option value="Crônica">Crônica</option>
 										<option value="Drama">Drama</option>
 										<option value="Ensaio">Ensaio</option>
+										<option value="Educação">Educação</option>
+										<option value="Estudo">Estudo</option>
+										<option value="Farmacologia">Farmacologia</option>
 										<option value="Ficção">Ficção</option>
 										<option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
-										<option value="ladlit">Lad-Lit</option>
+										<option value="Lad-Lit">Lad-Lit</option>
 										<option value="Literatura Fantástica">Literatura Fantástica</option>
 										<option value="Literatura Infantil">Literatura Infantil</option>
 										<option value="Literatura Infanto-juvenil">Literatura Infanto-juvenil</option>
@@ -385,7 +397,9 @@ if (isset($_SESSION['id'])) {
 										<option value="New Adult">New Adult</option>
 										<option value="Novela">Novela</option>
 										<option value="Poesia">Poesia</option>
+										<option value="Química">Química</option>
 										<option value="Realismo Mágico ">Realismo Mágico</option>
+										<option value="Resenha">Resenha</option>
 										<option value="Romance">Romance</option>
 										<option value="Sick-Lit">Sick-Lit</option>
 										<option value="Terror">Terror</option>

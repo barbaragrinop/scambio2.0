@@ -164,21 +164,33 @@ if ($sql->rowCount() >= 1) {
                     ?>
                     <img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">
                     <a href="users-all.php"></a>
-                    <div class="details">
+                    <div class="details" style="display: flex;">
                         <span><?= $row['nm_usuario'] ?></span>
-                        <p><?= $row['nm_status'] ?></p>
                     </div>
                 </header>
                 <div class="chat-box">
 
                 </div>
 
-                <form action="#" class="typing-area" style="width: 90%;">
-                    <input type="text" name="cd_enviada" value="<?php echo $_SESSION['id']; ?>" hidden>
-                    <input type="text" name="cd_recebida" value="<?php echo $user_id; ?>" hidden>
-                    <input type="text" name="message" class="input-field" placeholder="Digite sua mensagem..">
-                    <button><i class="fab fa-telegram plane"></i></button>
-                </form>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <form action="#" class="typing-area" style="width: 90%;">
+                        <input type="text" name="cd_enviada" value="<?php echo $_SESSION['id']; ?>" hidden>
+                        <input type="text" name="cd_recebida" value="<?php echo $user_id; ?>" hidden>
+
+                        <div>
+                            <i id="iconImg" class="fas fa-share" style="display: none;"></i>
+                            <label for="file_input_id" title="Enviar imagem" style="padding: 0; display: flex; align-items: center; margin-left: -8px; margin-right: 10px;"><i value="enviar" id="enviar" class="fas fa-image"></i></label>
+                            <input type="file" id="file_input_id" style="display: none;" accept="image/jpg, image/jpeg, image/png" />
+                        </div>
+
+                        <input type="text" name="message" class="input-field" id="inputMsg" placeholder="Digite sua mensagem..">
+                        <div onclick="btnEnviar()">
+                            <button><i class="fab fa-telegram plane"></i></button>
+                        </div>
+                    </form>
+                    <button class="btn-match" id="btn-match">Match</button>
+                </div>
+
 
             </section>
         </div>
@@ -190,7 +202,48 @@ if ($sql->rowCount() >= 1) {
     }
     ?>
 
+    <script>
+        function updateImage() {
+            let nomeImagem = document.getElementById('file_input_id').value;
+            document.getElementById('inputMsg').value = 'Imagem Selecionada. Aperte enter para envia-la.';
+            document.getElementById('inputMsg').readOnly = true;
+        }
 
+        function limparImagemEInput() {
+            document.getElementById('file_input_id').value = '';
+            document.getElementById('inputMsg').value = '';
+            document.getElementById('inputMsg').readOnly = false;
+        }
+
+        var fileUpload = document.getElementById("file_input_id");
+        var enviar = document.getElementById("enviar");
+        enviar.addEventListener("click", function(event) {
+
+        });
+
+        fileUpload.addEventListener("change", function(event) {
+            // if (fileUpload.files.length == 0) {
+            //     alert("Nenhum Arquivo Selecionado");
+            //     return;
+            // }
+
+            if (fileUpload.files.length != 0) {
+                let nomeImg = document.getElementById('file_input_id').value;
+                document.getElementById('inputMsg').value = nomeImg;
+                document.querySelector('#inputMsg').disabled = true;
+                return;
+            }
+
+            if (fileUpload.files[0].type.indexOf("image") != 0) {
+                alert("Este arquivo não é uma imagem");
+                return;
+            }
+        })
+
+        function btnEnviar() {
+            document.querySelector('#inputMsg').disabled = false;
+        }
+    </script>
 
     <script src="javascript/users.js"></script>
     <script src="javascript/chat.js"></script>
