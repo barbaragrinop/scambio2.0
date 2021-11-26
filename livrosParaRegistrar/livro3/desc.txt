@@ -1,1 +1,4 @@
-Livro novo sem uso
+Nome: Quem ama Educa
+Descrição: Super novo, sem defeitos.
+Gênero: Auto Ajuda
+Autor: Içami Tiba
