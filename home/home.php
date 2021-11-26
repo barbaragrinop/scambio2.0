@@ -351,7 +351,15 @@ if (isset($_SESSION['id'])) {
 		<div class="container-fluid">
 			<div style="display: flex; flex-direction: row; justify-content: space-around;">
 				<div style="display: flex; flex-direction: row;">
-					<img src="data:image;base64,<?= $userinfo["DS_IMGP"]; ?> alt="" width=" 40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
+				<?php
+					if(!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])){
+						$img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+					}
+					else{
+						$img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+					}
+					echo $img;
+				?>
 					<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $userinfo['nm_usuario'] ?></p>
 				</div>
 				<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 5px;"></a>

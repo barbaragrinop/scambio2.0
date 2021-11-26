@@ -13,8 +13,6 @@ $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario WHERE not cd_usuario =
 $sql->bindParam(':search', $search);
 $sql->bindParam(':outgoing', $outgoing_id);
 $sql->execute();
-$row = $sql->fetchAll(PDO::FETCH_ASSOC);
-$sql->closeCursor();     
 
 if($sql->rowCount() >= 1){
     include 'data.php';
