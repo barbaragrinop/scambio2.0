@@ -86,8 +86,8 @@ if (!isset($_SESSION['id'])) {
                 </form>
             <?php
             } else {
+                header('Location:../login/login.php');
             ?>
-                header("Location: index.php");
             <?php
             }
             ?>
