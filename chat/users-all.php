@@ -81,17 +81,16 @@ if ($sql->rowCount() >= 1) {
         <div style="display: flex; flex-direction: row; justify-content: space-around;">
             <div style="display: flex; flex-direction: row;">
                 <a href="">
-                <?php
-                            if(!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])){
-                                $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
-                            }
-                            else{
-                                $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
-                            }
-                            echo $img;
-                        ?>
+                    <?php
+                    if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
+                        $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+                    } else {
+                        $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+                    }
+                    echo $img;
+                    ?>
                 </a>
-                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"> <a href="" style="text-decoration: none;"><?= $row['nm_usuario'] ?></a> </p>
+                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"> <a href="" style="text-decoration: none; color: black; cursor: text;"><?= $row['nm_usuario'] ?></a> </p>
             </div>
             <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 7.5px;"></a>
             </button>
@@ -125,17 +124,16 @@ if ($sql->rowCount() >= 1) {
                 <header>
                     <div class="content">
                         <?php
-                            if(!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])){
-                                $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">';
-                            }
-                            else{
-                                $img = '<img src="../fotosuser/' . $row['DS_IMGP'] .'" alt="">';
-                            }
-                            echo $img;
+                        if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
+                            $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">';
+                        } else {
+                            $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="">';
+                        }
+                        echo $img;
                         ?>
                         <div class="details">
                             <span><?= $row['nm_usuario'] ?></span>
-                            <p><?=   ($row['nm_status'] == 1) ? $offline = "Online" : $offline = "Offline";   ?></p>
+                            <p><?= ($row['nm_status'] == 1) ? $offline = "Online" : $offline = "Offline";   ?></p>
                         </div>
                     </div>
                 </header>
