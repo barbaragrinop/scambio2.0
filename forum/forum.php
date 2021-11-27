@@ -339,7 +339,7 @@ if (isset($_SESSION['id'])) {
                     </div>
                   </div>
 
-                  <div class="media-block">
+                  <div class="media-block ">
                     <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
                     </a>
                     <div class="media-body">
