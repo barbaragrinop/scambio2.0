@@ -109,7 +109,6 @@ if ($sql->rowCount() >= 1) {
 
     </div>
 
-
     <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
         <div class="wrapper" style="width: 85%;">
             <section class="users">
@@ -139,10 +138,12 @@ if ($sql->rowCount() >= 1) {
                 </header>
                 <div class="search">
                     <span class="text">Selecione um usuário para conversar</span>
-                    <input type="text" id'="name-user">
+                    <input type="text" id="name-user">
                     <button> <i class="fas fa-search"></i> </button>
                 </div>
-                <div class="users-list"></div>
+                <div class="users-list">
+
+                </div>
             </section>
 
             <section class="chat-area">

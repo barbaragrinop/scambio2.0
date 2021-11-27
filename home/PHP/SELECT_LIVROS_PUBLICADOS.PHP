@@ -8,7 +8,7 @@ if (isset($_POST["search"])) {
 	$filtro = "";
 }
 
-$sql = 'SELECT LV.CD_LIVRO AS CDLI, LV.foto1 AS FT1, LV.foto2 AS FT2, LV.foto3 AS FT3,LV.NM_LIVRO AS NMLV,LV.NM_GENERO AS genero, LV.DT_PUBLICACAO AS dt, CI.NM_CIDADE AS CITY, U.SG_UF AS UF,LV.DT_PUBLICACAO AS DT FROM DB_SCAMBIO.TB_LIVRO AS LV ';
+$sql = 'SELECT US.cd_usuario as USUARIOID, LV.CD_LIVRO AS CDLI, LV.foto1 AS FT1, LV.foto2 AS FT2, LV.foto3 AS FT3,LV.NM_LIVRO AS NMLV,LV.NM_GENERO AS genero, LV.DT_PUBLICACAO AS dt, CI.NM_CIDADE AS CITY, U.SG_UF AS UF,LV.DT_PUBLICACAO AS DT FROM DB_SCAMBIO.TB_LIVRO AS LV ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_USUARIO AS US ON ';
 $sql .= 'US.CD_USUARIO = LV.CD_USUARIO ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_LOGRADOURO AS LO ON ';
@@ -33,12 +33,12 @@ if ($SQLANUN->rowCount() > 0) {
 					<p class="card-publi" style="margin-top: -15px; font-size: 12.5px; color: #858A8D;">' . date("d/m/Y", strtotime(($row["DT"]))) . '</p>
 					<div class="btns">
 						<button>
-							<a href="">
+						<a href="../Produto/produto.php?produto-id='.$row['CDLI'].'">   
 								<i class="fa fa-ellipsis-h"></i>
 							</a>
 						</button>
 						<button>
-							<a href="">
+							<a href="../chat/users-all.php?user_id='.$row['USUARIOID'].'">   
 								<i class="fas fa-envelope"></i>
 							</a>
 						</button>
