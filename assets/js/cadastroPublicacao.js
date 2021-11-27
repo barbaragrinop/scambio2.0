@@ -46,11 +46,6 @@ btnCad.onclick = () => {
         document.getElementById('spanImagem').style.display = 'contents';
     }
 
-
-    if ((nome == '' && descricao == '' && autor == '') && (foto1 != '' || foto2 != '' || foto3 != '')) {
-        alert('Preencha os dados em vermelho')
-    }
-
     if ((nome != '' && descricao != '' && genero != '--' && autor != '') && (foto1 != '' || foto2 != '' || foto3 != '')) {
         let xhr = new XMLHttpRequest();
         xhr.open("POST", '../home/PHP/cadastra-livro.php', true)
