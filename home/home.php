@@ -21,7 +21,7 @@ if (isset($_SESSION['id'])) {
                         where cd_usuario = :id");
 	$sql->execute(array(':id' => $id));
 	if ($sql->rowCount() >= 1) {
-		$userinfo = $sql->fetch((PDO::FETCH_ASSOC));
+		$row = $sql->fetch((PDO::FETCH_ASSOC));
 	}
 ?>
 
@@ -358,8 +358,8 @@ if (isset($_SESSION['id'])) {
 						$img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
 					}
 					echo $img;
-					?>
-					<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $userinfo['nm_usuario'] ?></p>
+				?>
+					<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
 				</div>
 				<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 5px;"></a>
 				</button>

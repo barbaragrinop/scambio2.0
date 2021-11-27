@@ -5,9 +5,10 @@ session_start();
 include_once('../config/conexao.php');
 
 if (isset($_SESSION['id'])) {
-    $id = $_SESSION['id'];
 
-    $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
+	$id = $_SESSION['id'];
+
+	$sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
                         inner join db_scambio.tb_logradouro
                         on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
                         inner join db_scambio.tb_bairro 
@@ -17,11 +18,10 @@ if (isset($_SESSION['id'])) {
                         inner join db_scambio.tb_uf
                         on tb_uf.cd_uf = tb_cidade.cd_uf
                         where cd_usuario = :id");
-    $sql->execute(array(':id' => $id));
-    if ($sql->rowCount() >= 1) {
-        $userinfo = $sql->fetch((PDO::FETCH_ASSOC));
-    }
-}
+	$sql->execute(array(':id' => $id));
+	if ($sql->rowCount() >= 1) {
+		$row = $sql->fetch((PDO::FETCH_ASSOC));
+	}
 ?>
 
 <html lang="pt-br">
@@ -225,7 +225,7 @@ if (isset($_SESSION['id'])) {
 					}
 					echo $img;
 				?>
-					<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $userinfo['nm_usuario'] ?></p>
+					<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
       </div>
       <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
       </button>
@@ -611,5 +611,9 @@ if (isset($_SESSION['id'])) {
 
     </script>
 </body>
-
 </html>
+<?php
+} else {
+	header('Location:../login/login.php');
+}
+?>
