@@ -204,6 +204,34 @@
     </div>
 
   </div>
+  </div>
+<br>
+<br>
+<div class="generos" style="width: 70%; height: 150px; border-radius: 15px; background-color: #ac7e5578; margin-left: 15%;">
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Biografia</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Carta</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Chick-Lit</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Conto</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Crônica</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Drama</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Ensaio</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Ficção</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">HQ</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Lad-Lit</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Memórias</button>
+<button type="button"style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">New Adult</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Novela</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Poesia</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Romance</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Sick-Lit</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Terror</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Outro</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Literatura Fantástica</button>
+<button type="button"style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Literatura Infantil</button>
+<button type="button" style="margin-left: 2%;"class="btn btn-dark">Literatura Infanto-juvenil</button>
+<button type="button" style="margin-left: 2%;"class="btn btn-dark">Literatura Nacional</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%; margin-bottom: 1%"class="btn btn-dark">Realismo Mágico</button>
+</div>
   <br>
   <br>
   <div style="margin-top: 1px; display: flex; justify-content: center;">
@@ -267,7 +295,7 @@
                   <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
                   <!-- Default dropleft button -->
                   <div class="btn-group dropleft">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       ...
                     </button>
                     <div class="dropdown-menu">
@@ -292,7 +320,7 @@
                         <a href="#" class="btn-link text-semibold media-heading box-inline">Yago M.</a>
                         <!-- Default dropleft button -->
                         <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ...
                           </button>
                           <div class="dropdown-menu">
@@ -318,7 +346,7 @@
                         <a href="#" class="btn-link text-semibold media-heading box-inline">Betriz M.</a>
                         <!-- Default dropleft button -->
                         <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ...
                           </button>
                           <div class="dropdown-menu">
@@ -359,7 +387,7 @@
                   <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
                   <!-- Default dropleft button -->
                   <div class="btn-group dropleft">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       ...
                     </button>
                     <div class="dropdown-menu">
@@ -384,7 +412,7 @@
                         <a href="#" class="btn-link text-semibold media-heading box-inline">Martinez.</a>
                         <!-- Default dropleft button -->
                         <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ...
                           </button>
                           <div class="dropdown-menu">
@@ -410,7 +438,7 @@
                         <a href="#" class="btn-link text-semibold media-heading box-inline">Luciana G.</a>
                         <!-- Default dropleft button -->
                         <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button type="button" class="btn btn-secondary dropdown-toggle"style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ...
                           </button>
                           <div class="dropdown-menu">
@@ -515,7 +543,6 @@
               <a href="#">
                 <h6>Você publicou o livro Cinquenta...</h6>
               </a>
-            </div>
 
 
             <div class="modal-footer">
