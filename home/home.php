@@ -378,16 +378,45 @@ if (isset($_SESSION['id'])) {
 		</div>
 		<div class="wrapper">
 			<div class="form-filtro">
-				<form class="filtro" style="display: flex; flex-direction: row; margin-bottom: 20px; margin-left: 35px;">
+				<form class="filtro" style="display: flex; flex-direction: row; margin-bottom: 10px; margin-left: 70px;">
 					<select name="opcao_filtro" class="opcao_filtro">
-						<option value="nome">Nome</option>
-						<option value="cidade">Cidade</option>
-						<option value="genero">Genêro</option>
-						<option selected="selected" value="dataPublicacao">Data de publicação</option>
+						<option value="data">Mais Antigo</option>
+						<option selected="selected" value="dataPublicacao">Mais Recente</option>
+					</select>
+					<select name="opcao_filtro" style="margin-left: 9px;" class="opcao_filtro">
+						<option value="estado">AL</option>
+						<option value="estado">AC</option>
+						<option value="estado">AP</option>
+						<option value="estado">AM</option>
+						<option value="estado">BA</option>
+						<option value="estado">CE</option>
+						<option value="estado">ES</option>
+						<option value="estado">GO</option>
+						<option value="estado">MA</option>
+						<option value="estado">MT</option>
+						<option value="estado">MS</option>
+						<option value="estado">MG</option>
+						<option value="estado">PA</option>
+						<option value="estado">PB</option>
+						<option value="estado">PR</option>
+						<option value="estado">PE</option>
+						<option value="estado">PI</option>
+						<option value="estado">RJ</option>
+						<option value="estado">RN</option>
+						<option value="estado">RS</option>
+						<option value="estado">RO</option>
+						<option value="estado">RR</option>
+						<option value="estado">SC</option>
+						<option value="estado">SP</option>
+						<option value="estado">SE</option>
+						<option value="estado">TO</option>
+						<option value="estado"></option>
+						<option selected="selected" value="dataPublicacao">Estado</option>
 					</select>
 					<div style="margin-top: 1px;">
-						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 10px; padding-left: 10px; width: 270px;" placeholder="Nome do livro" />
-						<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px;" />
+						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 270px;" placeholder="Nome do livro" />
+						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 270px;" placeholder="Autor do livro" />
+						<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px; background-color: #AC7E55; color: white;" />
 					</div>
 				</form>
 			</div>
