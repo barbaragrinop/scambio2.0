@@ -68,7 +68,7 @@ if ($sql->rowCount() >= 1) {
 
         .div-inff {
             height: 238px;
-            width: 280px;
+            width: 326px;
         }
 
         .modal-header,
@@ -105,7 +105,7 @@ if ($sql->rowCount() >= 1) {
 
         @media (min-width: 992px) {
             .col-md-5 {
-                width: 29.99667%;
+                width: 30.19667%;
             }
         }
 
@@ -123,7 +123,7 @@ if ($sql->rowCount() >= 1) {
 
         @media screen and (max-width: 900px) {
             .col-md-5 {
-                width: 32.99667%;
+                width: 38.99667%;
             }
         }
 
@@ -137,8 +137,16 @@ if ($sql->rowCount() >= 1) {
 
         @media screen and (max-width: 1669px) {
             .col-md-5 {
-                width: 32.99667%;
+                width: 49.99667%;
             }
+        }
+
+        .product-content .product-deatil {
+            padding-bottom: 0px !important;
+        }
+
+        .form-control {
+            width: 90px !important;
         }
     </style>
 </head>
@@ -147,8 +155,15 @@ if ($sql->rowCount() >= 1) {
     <div class="container-fluid">
         <div style="display: flex; justify-content: space-around;">
             <div style="display: flex; flex-direction: row;">
-                <img src="data:image;base64,<?php echo $row["DS_IMGP"]; ?> alt="" width=" 40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
-                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
+                <?php
+                if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
+                    $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+                } else {
+                    $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+                }
+                echo $img;
+                ?>
+                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px; color: black;"><?= $row['nm_usuario'] ?></p>
             </div>
             <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
             </button>
@@ -173,8 +188,14 @@ if ($sql->rowCount() >= 1) {
                 <div class="panel">
                     <div class="user-heading round">
                         <a href="#" class="<?= $_SESSION['status'] == 'Online' ? 'profile-on' : 'profile-off' ?>">
-                            <img src="data:image;base64,<?php echo $row["DS_IMGP"]; ?> " alt="">
-
+                            <?php
+                            if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
+                                $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="100%" height="100%">';
+                            } else {
+                                $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="100%" height="100%">';
+                            }
+                            echo $img;
+                            ?>
                         </a>
                         <h1><?= $row['nm_usuario'] ?></h1>
                     </div>
@@ -211,35 +232,11 @@ if ($sql->rowCount() >= 1) {
                 </div>
 
                 <div id="panelEditPerfil" class="panel" style="display: none; height: 400px;">
-                    <div class="panel-body bio-graph-info">
-                        <div style="display: flex; justify-content: center;">
-                            <div class="display: flex; justify-content: center;" style="margin-top: 50px;">
-                                <h1 style="padding-left: 15px;">Biografia | Editar</h1>
-                                <div class="bio-row">
-                                    <p><span>Nome:</span><input type="text" name="" id=""></p>
-                                </div>
-                                <div class="bio-row">
-                                    <p><span>E-mail:</span><input type="text"></p>
-                                </div>
-                                <div class="bio-row" style="margin-top: 20px;">
-                                    <p><span>Nascimento:</span><input type="text"></p>
-                                </div>
-                                <div class="bio-row" style="margin-top: 20px;">
-                                    <p><span>CEP: </span><input type="text"></p>
-                                </div>
-                                <div class="up-img" style="padding-top: 20px; padding-left: 17px; display: flex; flex-direction: row;">
-                                    <span style="font-size: 15px;">Imagem de Perfil</span>
-                                    <input type="file" style="margin-left: 20px;">
-                                </div>
-                                <div class="btn-confirm-edit" style="margin-left: 700px; border: none;">
-                                    <button style="border: none; border-radius: 10px; height: 30px; width: 90px; background-color: #AC7E55; color: white;">Confirmar</button>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="editprofile" class=" panel-body bio-graph-info">
                     </div>
                 </div>
 
-               
+
 
                 <div id="perfil">
                     <div class="container publicacoes return" style="margin-left: -27px; width: 107%;">
@@ -272,7 +269,7 @@ if ($sql->rowCount() >= 1) {
                             <div class="modal-header">
                                 <h5 class="modal-title" id="lbdel"></h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                                    <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
@@ -301,13 +298,16 @@ if ($sql->rowCount() >= 1) {
                                 </button>
                             </div>
                             <form method="POST">
-                                <div class="modal-body">
-                                        <div class="form-group">
-                                            <img src="" id="imgedit" width="100px">
-                                        </div>
+                                <div class="modal-body" style="display: flex; flex-direction: column;">
+                                    <div class="form-group">
+                                        <img src="" id="imgedit" width="100px">
+                                    </div>
+
+                                    <div style="display: flex; flex-direction: column; margin-left: 30px;">
+
                                         <div class="form-group">
                                             <label for="recipient-name" class="col-form-label">Livro:</label>
-                                            <input type="text" class="form-control" name="livro" id="lbedit">
+                                            <input type="text" class="form-control" name="livro" id="lbedit" style="width: 10px;">
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Descrição:</label>
@@ -333,11 +333,13 @@ if ($sql->rowCount() >= 1) {
                                             <label for="message-text" class="col-form-label">Autor:</label>
                                             <input type="text" class="form-control" name="autor" id="lbautedit">
                                         </div>
+                                    </div>
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                     <input type="hidden" id="values" name="cda" id="">
-                                    <input type="submit" class="editf btn btn-primary" value="Salvar Alterações">
+                                    <input type="submit" id="edit" class="editf btn btn-primary" value="Salvar Alterações">
                                 </div>
                             </form>
                         </div>
@@ -420,9 +422,6 @@ if ($sql->rowCount() >= 1) {
                 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
             }
 
-            lex-direction: column;
-            }
-
             .btn {
                 margin-top: auto;
             }
@@ -499,6 +498,7 @@ if ($sql->rowCount() >= 1) {
             }
 
             .product-content .description {
+                height: 66px;
                 font-size: 12.5px;
                 line-height: 20px;
                 padding: 10px 14px 16px 19px;

@@ -14,61 +14,54 @@ $sql .= 'BA.CD_BAIRRO = LO.CD_BAIRRO ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_CIDADE AS CI ON ';
 $sql .= 'BA.CD_CIDADE = CI.CD_CIDADE ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_UF AS U ON ';
-$sql .= 'U.CD_UF = CI.CD_UF WHERE US.CD_USUARIO = ' . $_SESSION['id'];
+$sql .= 'U.CD_UF = CI.CD_UF  WHERE US.CD_USUARIO = ' . $_SESSION['id'] . ' ORDER BY CDLI DESC';
 $SQLANUN = $pdo->prepare($sql);
 $SQLANUN->execute();
 
-if($SQLANUN->rowCount() > 0){
+if ($SQLANUN->rowCount() > 0) {
     while ($row = $SQLANUN->fetch(PDO::FETCH_ASSOC)) {
-        $row['sts'] == 1 ? $status = 'Ativa' : $status = 'Desativa'; 
-       $out = '
+        $row['sts'] == 1 ? $status = 'Ativa' : $status = 'Desativa';
+        $out = '
     <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
        <!-- product -->
        <div class="product-content product-wrap clearfix">
-           <div class="row" id="livroItem'. $row['CDLI'] .'">
+           <div class="row" id="livroItem' . $row['CDLI'] . '">
                <div class="col-md-5 col-sm-12 col-xs-12">
                    <div class="product-image">
-                       <img src="../fotos/'. $row['FT1'] .'" alt="194x228" class="img-responsive" id="Itemimg'. $row['CDLI'] .'">
+                       <img src="../fotos/' . $row['FT1'] . '" alt="194x228" class="img-responsive" id="Itemimg' . $row['CDLI'] . '">
                    </div>
                </div>
                <div class="col-md-7 col-sm-12 col-xs-12 div-inff" style="height: 238px;">
                    <div class="product-deatil">
                        <h5 class="name">
                            <a href="#" >
-                               <p id="Itemlb'. $row['CDLI'] .'">' . $row['NMLV'] . '</p><span id="Itemaut'. $row['CDLI'] .'" style="font-size: 14px;">'. $row['AUTOR'] . '</span><span id="Itemge'. $row['CDLI'] .'" style="font-size: 14px;">'. $row['genero'] . '</span>
+                               <p id="Itemlb' . $row['CDLI'] . '">' . $row['NMLV'] . '</p><span id="Itemaut' . $row['CDLI'] . '" style="font-size: 14px;">' . $row['AUTOR'] . '</span><span id="Itemge' . $row['CDLI'] . '" style="font-size: 14px;">' . $row['genero'] . '</span>
                            </a>
                        </h5>
                        <p class="status-container">
-                            <input type="hidden" id="CityUs'. $row['CDLI'] .'" value="'. $row['CITY'] .'">
-                            <input type="hidden" id="UFUs'. $row['CDLI'] .'" value="'. $row['UF'] .'">
-                           <span id="Itemst'. $row['CDLI'] .'">Status:' . $status . '</span>
+                            <input type="hidden" id="CityUs' . $row['CDLI'] . '" value="' . $row['CITY'] . '">
+                            <input type="hidden" id="UFUs' . $row['CDLI'] . '" value="' . $row['UF'] . '">
+                           <span id="Itemst' . $row['CDLI'] . '">Status:' . $status . '</span>
                        </p> 
                        <span class="tag1"></span>
                    </div>
                    <div class="description">
-                       <p id="Itemdesc'. $row['CDLI'] .'">' . $row['DES'] .'</p>
+                       <p id="Itemdesc' . $row['CDLI'] . '">' . $row['DES'] . '</p>
                    </div>
                    <div class="product-info smart-form">
                        <div class="row">
                            <div class="col-md-6 col-sm-6 col-xs-6">
-                               <a href="javascript:void(0);" onclick="carregaModal('.$row['CDLI'].', 1)" class="fas fa-trash-alt btn btn-danger"></a>
+                               <a href="javascript:void(0);" onclick="carregaModal(' . $row['CDLI'] . ', 1)" class="fas fa-trash-alt btn btn-danger"></a>
                            </div>
                            <div class="col-md-4 col-sm-4 col-xs-4">
-                               <a href="javascript:void(0);"  onclick="carregaModal('.$row['CDLI'].', 0)" class="fas fa-edit btn btn-info" "></a>
+                               <a href="javascript:void(0);"  onclick="carregaModal(' . $row['CDLI'] . ', 0)" class="fas fa-edit btn btn-info" "></a>
                            </div>
                        </div>
                    </div>
                     </div>
-                    <div class="col-md-3 col-sm-12 col-xs-12">
-                        <h3>Adicionar foto das duas pessoas, e se tem match ou não.</h3>
-                    </div>
                 </div>
             </div>
-            <!-- end product -->
         </div>';
-          echo $out;
+        echo $out;
     }
- }
-
-
-?>
+}

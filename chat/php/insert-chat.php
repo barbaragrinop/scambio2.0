@@ -27,5 +27,4 @@ if(!empty($message)){
         echo "foi";
     }
 }
-
 ?>

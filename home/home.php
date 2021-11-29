@@ -21,7 +21,7 @@ if (isset($_SESSION['id'])) {
                         where cd_usuario = :id");
 	$sql->execute(array(':id' => $id));
 	if ($sql->rowCount() >= 1) {
-		$userinfo = $sql->fetch((PDO::FETCH_ASSOC));
+		$row = $sql->fetch((PDO::FETCH_ASSOC));
 	}
 ?>
 
@@ -92,22 +92,27 @@ if (isset($_SESSION['id'])) {
 			}
 
 			.row .card img {
-				width: 73% !important;
-				height: 12rem !important;
+				width: 84% !important;
+				height: 12.9rem !important;
 				margin-top: 20px !important;
 
+			}
+
+			.h5,
+			h5 {
+				font-size: 1.15rem !important;
 			}
 
 			.card {
 				display: flex;
 				align-items: center;
 				border-radius: 20px;
-				margin-right: 25px;
+				margin-right: 15px;
 				margin-bottom: 25px;
 			}
 
 			.card-body {
-				margin-left: 30px;
+				margin-left: 20px;
 				width: 190px;
 				display: flex;
 				flex-direction: column;
@@ -203,7 +208,7 @@ if (isset($_SESSION['id'])) {
 			}
 
 			.modal-body {
-				/* margin-bottom: 60px; */
+				margin-bottom: 7px;
 				padding: 10px 20px;
 				background: #fff;
 				display: flex;
@@ -268,14 +273,55 @@ if (isset($_SESSION['id'])) {
 				}
 			}
 
+			@media (max-height: 1200px) {
+				.modal-content {
+					margin-top: 300px !important;
+				}
+			}
 
-			@media (min-width: 1700) {
+			@media (max-height: 1100px) {
+				.modal-content {
+					margin-top: 286px !important;
+				}
+			}
+
+			@media (max-height: 1000px) {
+				.modal-content {
+					margin-top: 250px !important;
+				}
+			}
+
+			@media (max-height: 900px) {
+				.modal-content {
+					margin-top: 210px !important;
+				}
+			}
+
+			@media (max-height: 800px) {
+				.modal-content {
+					margin-top: 150px !important;
+				}
+			}
+
+			@media (max-height: 750px) {
+				.modal-content {
+					margin-top: 140px !important;
+				}
+			}
+
+			@media (max-height: 700px) {
+				.modal-content {
+					margin-top: 100px !important;
+				}
+			}
+
+			@media (min-width: 1700px) {
 				.inpAutor {
 					/* width: 100% !important; */
 				}
 
 				.selectGenero {
-					width: 650px !important;
+					width: 500px !important;
 				}
 			}
 
@@ -285,7 +331,7 @@ if (isset($_SESSION['id'])) {
 				}
 
 				.selectGenero {
-					width: 350px !important;
+					width: 360px !important;
 				}
 			}
 
@@ -294,7 +340,7 @@ if (isset($_SESSION['id'])) {
 					width: 100% !important;
 				}
 
-				select {
+				.selectGenero {
 					width: 460px;
 				}
 			}
@@ -305,8 +351,15 @@ if (isset($_SESSION['id'])) {
 		<div class="container-fluid">
 			<div style="display: flex; flex-direction: row; justify-content: space-around;">
 				<div style="display: flex; flex-direction: row;">
-					<img src="data:image;base64,<?= $userinfo["DS_IMGP"]; ?> alt="" width=" 40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">
-					<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $userinfo['nm_usuario'] ?></p>
+					<?php
+					if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
+						$img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+					} else {
+						$img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+					}
+					echo $img;
+					?>
+					<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
 				</div>
 				<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 5px;"></a>
 				</button>
@@ -369,7 +422,7 @@ if (isset($_SESSION['id'])) {
 			</div>
 		</div>
 
-		<div class="return row">
+		<div class="return row" style="margin-top: -38px;">
 
 		</div>
 		<div class="box-modal">
@@ -382,22 +435,40 @@ if (isset($_SESSION['id'])) {
 							<span class="close">&times;</span>
 						</div>
 						<div class="modal-body" style="margin-bottom: 60px;">
-							<label style="font-size: 16px;">Nome: </label> <input type="text" name="nome">
-							<label style="color: black !important; font-size: 16px;">Descrição: </label> <textarea name="descricao" style="width: 100%; max-height: 200px;"> </textarea>
+							<div>
+								<label style="font-size: 16px; width: 50px;">Nome: </label>
+								<span style="color: red; font-size: 14px; display: none;" id="spanNome">Digite o nome do livro</span>
+							</div>
+							<input type="text" name="nome" id="nomeDigitado">
+							<div>
+								<label style="color: black !important; font-size: 16px; width: 79px;">Descrição: </label>
+								<span style="color: red; font-size: 14px; display: none;" id="spanDescricao">Digite uma breve descrição</span>
+							</div>
+							<textarea id="descricaoDigitado" name="descricao" style="width: 100%; max-height: 200px;"></textarea>
 							<div style="display: flex; flex-direction: row;">
 								<div>
-									<label style="font-size: 16px;" for="genero">Gênero:</label>
+									<div>
+										<label style="font-size: 16px; width: 59px;" for="genero">Gênero:</label>
+										<span style="color: red; font-size: 14px; display: none;" id="spanGenero">Selecione o gênero do livro</span>
+									</div>
 									<select class="selectGenero" style="font-size: 14.5px;" id="genero" name="genero">
+										<option value="--" disabled selected>Selecione um gênero</option>
+										<option value="Auto Ajuda">Auto Ajuda</option>
 										<option value="Biografia">Biografia</option>
 										<option value="Carta">Carta</option>
 										<option value="Chick-Lit">Chick-Lit</option>
 										<option value="Conto">Conto</option>
+										<option value="Ciências Biológicas e Naturais">Ciências Biológicas e Naturais</option>
+										<option value="Ciências Humanas e Linguagens">Ciências Humanas e Linguagens</option>
 										<option value="Crônica">Crônica</option>
 										<option value="Drama">Drama</option>
 										<option value="Ensaio">Ensaio</option>
+										<option value="Educação">Educação</option>
+										<option value="Estudo">Estudo</option>
+										<option value="Farmacologia">Farmacologia</option>
 										<option value="Ficção">Ficção</option>
 										<option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
-										<option value="ladlit">Lad-Lit</option>
+										<option value="Lad-Lit">Lad-Lit</option>
 										<option value="Literatura Fantástica">Literatura Fantástica</option>
 										<option value="Literatura Infantil">Literatura Infantil</option>
 										<option value="Literatura Infanto-juvenil">Literatura Infanto-juvenil</option>
@@ -406,29 +477,38 @@ if (isset($_SESSION['id'])) {
 										<option value="New Adult">New Adult</option>
 										<option value="Novela">Novela</option>
 										<option value="Poesia">Poesia</option>
+										<option value="Química">Química</option>
 										<option value="Realismo Mágico ">Realismo Mágico</option>
+										<option value="Resenha">Resenha</option>
 										<option value="Romance">Romance</option>
 										<option value="Sick-Lit">Sick-Lit</option>
 										<option value="Terror">Terror</option>
 									</select>
 								</div>
 								<div style="width: 100%; margin-left: 30px;">
-									<label style="font-size: 16px;">Autor: </label>
-									<input class="inpAutor" style="height: 45px; width: 100%;" type="text" name="autor">
+									<div>
+										<label style="font-size: 16px; width: 44px;">Autor: </label>
+										<span style="color: red; font-size: 14px; display: none;" id="spanAutor">Selecione o autor do livro</span>
+									</div>
+
+									<input id="autorDigitado" class="inpAutor" style="height: 45px; width: 100%;" type="text" name="autor">
 								</div>
 							</div>
 
 
-							<label>Fotos: <span style="font-size: 12px;">(Máx 3 imagens)</span> </label>
+							<label>Fotos: <span style="font-size: 12px;">(Máx 3 imagens)</span> <span id="spanImagem" style="color: red; font-size: 14px; display: none;">Selecione no minimo 1 imagem</span> </label>
 							<label style="background: white; color: white; font-family: sans-serif; font-weight: bold; border-radius: 8px; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: start; margin-top: -10px;">
 								<div style="margin-left: 5px;">
-									<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 1</span> <input style="color: black; font-size: 13px;" type="file" name="file1" id="file1">
+									<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 1</span>
+									<input style="color: black; font-size: 13px;" type="file" name="file1" id="file1">
 								</div>
 								<div style="margin-left: 5px;">
-									<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 2</span> <input style="color: black; font-size: 13px;" type="file" name="file2" id="file2">
+									<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 2</span>
+									<input style="color: black; font-size: 13px;" type="file" name="file2" id="file2">
 								</div>
 								<div style="margin-left: 5px;">
-									<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 3</span> <input style="color: black; font-size: 13px;" type="file" name="file3" id="file3">
+									<span style="color: black; font-weight: 300; font-size: 14.5px;">Imagem 3</span>
+									<input style="color: black; font-size: 13px;" type="file" name="file3" id="file3">
 								</div>
 							</label>
 						</div>
@@ -510,16 +590,19 @@ if (isset($_SESSION['id'])) {
 
 
 						<div class="modal-body">
-							<a href="#">
-								<h6>Yago comentou na sua postagem do fórum.</h6>
+							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
+								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+								<h6 style="margin-top: 12px; margin-left: 10px;">Yago comentou na sua postagem do fórum.</h6>
 							</a>
-							<hr>
-							<a href="#">
-								<h6>Você recebeu uma mensagem de Josefa.</h6>
+							<hr style="margin-bottom: 12px;">
+							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
+								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+								<h6 style="margin-top: 12px; margin-left: 10px;">Você recebeu uma mensagem de Josefa.</h6>
 							</a>
-							<hr>
-							<a href="#">
-								<h6>Você publicou o livro Cinquenta...</h6>
+							<hr style="margin-bottom: 12px;">
+							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
+								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+								<h6 style="margin-top: 12px; margin-left: 10px;">Você publicou o livro Cinquenta...</h6>
 							</a>
 						</div>
 
