@@ -105,8 +105,8 @@ var_dump($row)
                 </form>
             <?php
             } else {
+                header('Location:../login/login.php');
             ?>
-                header("Location: index.php");
             <?php
             }
             ?>

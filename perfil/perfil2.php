@@ -137,7 +137,7 @@ if ($sql->rowCount() >= 1) {
 
         @media screen and (max-width: 1669px) {
             .col-md-5 {
-                width: 32.99667%;
+                width: 49.99667%;
             }
         }
 

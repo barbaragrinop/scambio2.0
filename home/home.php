@@ -208,7 +208,7 @@ if (isset($_SESSION['id'])) {
 			}
 
 			.modal-body {
-				/* margin-bottom: 60px; */
+				margin-bottom: 7px;
 				padding: 10px 20px;
 				background: #fff;
 				display: flex;
@@ -358,7 +358,7 @@ if (isset($_SESSION['id'])) {
 						$img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
 					}
 					echo $img;
-				?>
+					?>
 					<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
 				</div>
 				<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 5px;"></a>
@@ -561,16 +561,19 @@ if (isset($_SESSION['id'])) {
 
 
 						<div class="modal-body">
-							<a href="#">
-								<h6>Yago comentou na sua postagem do fórum.</h6>
+							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
+								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+								<h6 style="margin-top: 12px; margin-left: 10px;">Yago comentou na sua postagem do fórum.</h6>
 							</a>
-							<hr>
-							<a href="#">
-								<h6>Você recebeu uma mensagem de Josefa.</h6>
+							<hr style="margin-bottom: 12px;">
+							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
+								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+								<h6 style="margin-top: 12px; margin-left: 10px;">Você recebeu uma mensagem de Josefa.</h6>
 							</a>
-							<hr>
-							<a href="#">
-								<h6>Você publicou o livro Cinquenta...</h6>
+							<hr style="margin-bottom: 12px;">
+							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
+								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+								<h6 style="margin-top: 12px; margin-left: 10px;">Você publicou o livro Cinquenta...</h6>
 							</a>
 						</div>
 
