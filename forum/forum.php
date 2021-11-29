@@ -232,164 +232,168 @@ if (isset($_SESSION['id'])) {
           <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
         </form>
       </div>
+  </div>
+  </div>
+<br>
+<br>
+<div class="generos" style="width: 70%; height: 150px; border-radius: 15px; background-color: #ac7e5578; margin-left: 15%;">
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Biografia</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Carta</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Chick-Lit</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Conto</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Crônica</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Drama</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Ensaio</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Ficção</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">HQ</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Lad-Lit</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Memórias</button>
+<button type="button"style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">New Adult</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Novela</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Poesia</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Romance</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Sick-Lit</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Terror</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Outro</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Literatura Fantástica</button>
+<button type="button"style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Literatura Infantil</button>
+<button type="button" style="margin-left: 2%;"class="btn btn-dark">Literatura Infanto-juvenil</button>
+<button type="button" style="margin-left: 2%;"class="btn btn-dark">Literatura Nacional</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%; margin-bottom: 1%"class="btn btn-dark">Realismo Mágico</button>
+</div>
+  <br>
+  <br>
+  <div style="margin-top: 1px; display: flex; justify-content: center;">
+    <input type="text" name="search" style="border: none; height: 45px; border-radius: 2px; padding-left: 10px; width: 1020px; font-size: 17.5px;" placeholder="Pesquise por uma palavra chave." />
+    <input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 3px;background-color: #AC7E55; color: #ffffff; font-size: 16.5px; margin-left: 13px;" />
+  </div>
+  <br>
+  <br>
 
-    </div>
-    </div>
-    <br>
-    <br>
-    <div class="generos" style="width: 70%; height: 150px; border-radius: 15px; background-color: #ac7e5578; margin-left: 15%;">
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Biografia</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Carta</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Chick-Lit</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Conto</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Crônica</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Drama</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Ensaio</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Ficção</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">HQ</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Lad-Lit</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Memórias</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">New Adult</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Novela</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Poesia</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Romance</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Sick-Lit</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Terror</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Outro</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Literatura Fantástica</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Literatura Infantil</button>
-      <button type="button" style="margin-left: 2%;" class="btn btn-dark">Literatura Infanto-juvenil</button>
-      <button type="button" style="margin-left: 2%;" class="btn btn-dark">Literatura Nacional</button>
-      <button type="button" style="margin-left: 2%; margin-top: 1%; margin-bottom: 1%" class="btn btn-dark">Realismo Mágico</button>
-    </div>
-    <br>
-    <br>
-    <div style="margin-top: 1px; display: flex; justify-content: center;">
-      <input type="text" name="search" style="border: none; height: 45px; border-radius: 2px; padding-left: 10px; width: 1020px; font-size: 17.5px;" placeholder="Pesquise por uma palavra chave." />
-      <input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 3px;background-color: #AC7E55; color: #ffffff; font-size: 16.5px; margin-left: 13px;" />
-    </div>
-    <br>
-    <br>
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <div class="container bootdey">
-      <div class="col-md-12 bootstrap snippets">
-        <div class="panel">
-          <div class="panel-body">
-            <textarea class="form-control" rows="2" placeholder="Sobre o que você quer conversar?" style="font-size: 16.5px;"></textarea>
-            <div class="mar-top clearfix">
-              <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                <div style="width: 310px;">
-                  <label style="font-size: 16px;" for="genero">Gênero:</label>
-                  <select style="width: 100%; font-size: 16.5px; width: 940px;" id="genero" name="genero">
-                    <option value="Biografia">Biografia</option>
-                    <option value="Carta">Carta</option>
-                    <option value="Chick-Lit">Chick-Lit</option>
-                    <option value="Conto">Conto</option>
-                    <option value="Crônica">Crônica</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Ensaio">Ensaio</option>
-                    <option value="Ficção">Ficção</option>
-                    <option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
-                    <option value="ladlit">Lad-Lit</option>
-                    <option value="Literatura Fantástica">Literatura Fantástica</option>
-                    <option value="Literatura Infantil">Literatura Infantil</option>
-                    <option value="Literatura Infanto-juvenil">Literatura Infanto-juvenil</option>
-                    <option value="Literatura Nacional">Literatura Nacional</option>
-                    <option value="Memórias">Memórias</option>
-                    <option value="New Adult">New Adult</option>
-                    <option value="Novela">Novela</option>
-                    <option value="Poesia">Poesia</option>
-                    <option value="Realismo Mágico ">Realismo Mágico</option>
-                    <option value="Romance">Romance</option>
-                    <option value="Sick-Lit">Sick-Lit</option>
-                    <option value="Terror">Terror</option>
-                    <option value="Outro">Outro</option>
-                  </select>
-                </div>
-
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container bootdey">
+    <div class="col-md-12 bootstrap snippets">
+      <div class="panel">
+        <div class="panel-body">
+          <textarea class="form-control" rows="2" placeholder="Sobre o que você quer conversar?" style="font-size: 16.5px;"></textarea>
+          <div class="mar-top clearfix">
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+              <div style="width: 310px;">
+                <label style="font-size: 16px;" for="genero">Gênero:</label>
+                <select style="width: 100%; font-size: 16.5px; width: 940px;" id="genero" name="genero">
+                  <option value="Biografia">Biografia</option>
+                  <option value="Carta">Carta</option>
+                  <option value="Chick-Lit">Chick-Lit</option>
+                  <option value="Conto">Conto</option>
+                  <option value="Crônica">Crônica</option>
+                  <option value="Drama">Drama</option>
+                  <option value="Ensaio">Ensaio</option>
+                  <option value="Ficção">Ficção</option>
+                  <option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
+                  <option value="ladlit">Lad-Lit</option>
+                  <option value="Literatura Fantástica">Literatura Fantástica</option>
+                  <option value="Literatura Infantil">Literatura Infantil</option>
+                  <option value="Literatura Infanto-juvenil">Literatura Infanto-juvenil</option>
+                  <option value="Literatura Nacional">Literatura Nacional</option>
+                  <option value="Memórias">Memórias</option>
+                  <option value="New Adult">New Adult</option>
+                  <option value="Novela">Novela</option>
+                  <option value="Poesia">Poesia</option>
+                  <option value="Realismo Mágico ">Realismo Mágico</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Sick-Lit">Sick-Lit</option>
+                  <option value="Terror">Terror</option>
+                  <option value="Outro">Outro</option>
+                </select>
               </div>
+            <div>
             </div>
           </div>
         </div>
-        <div class="panel">
-          <div class="panel-body">
-            <!-- Newsfeed Content -->
-            <!--===================================================-->
-            <div class="media-block">
-              <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-              <div class="media-body">
-                <div class="mar-btm">
-                  <div style="display: flex; justify-content: space-between;">
-                    <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
-                    <!-- Default dropleft button -->
-                    <div class="btn-group dropleft">
-                      <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ...
-                      </button>
-                      <div class="dropdown-menu">
-                        <a href="">Reportar</a>
-                        <br>
-                        <a href="">Enviar mensagem</a>
-                      </div>
+      </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-body">
+          <!-- Newsfeed Content -->
+          <!--===================================================-->
+          <div class="media-block">
+            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
+            <div class="media-body">
+              <div class="mar-btm">
+                <div style="display: flex; justify-content: space-between;">
+                  <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
+                  <!-- Default dropleft button -->
+                  <div class="btn-group dropleft">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      ...
+                    </button>
+                    <div class="dropdown-menu">
+                      <a href="">Reportar</a>
+                      <br>
+                      <a href="">Enviar mensagem</a>
+
                     </div>
                     <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
                   </div>
-                  <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
                 </div>
-                <p style="font-size: 16.5px;">Eu comecei a ler um livro muito legal, ja estava querendo começar faz tempo. O nome dele é chapeuzinho vermelho, conta uma historia de uma vovo que tinha uma netinha que usava chapeuzinho vermelho.</p>
-                <hr>
+              </div>
+              <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
+              <p style="font-size: 16.5px;">Eu comecei a ler um livro muito legal, ja estava querendo começar faz tempo. O nome dele é chapeuzinho vermelho, conta uma historia de uma vovo que tinha uma netinha que usava chapeuzinho vermelho.</p>
+              <hr>
 
-                <!-- Comments -->
-                <div>
-                  <div class="media-block">
-                    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-                    <div class="media-body">
-                      <div class="mar-btm">
-                        <div style="display: flex; justify-content: space-between;">
-                          <a href="#" class="btn-link text-semibold media-heading box-inline">Yago M.</a>
-                          <!-- Default dropleft button -->
-                          <div class="btn-group dropleft">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ...
-                            </button>
-                            <div class="dropdown-menu">
-                              <a href="">Reportar</a>
-                              <br>
-                              <a href="">Enviar mensagem</a>
-                            </div>
+              <!-- Comments -->
+              <div>
+                <div class="media-block">
+                  <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
+                  <div class="media-body">
+                    <div class="mar-btm">
+                      <div style="display: flex; justify-content: space-between;">
+                        <a href="#" class="btn-link text-semibold media-heading box-inline">Yago M.</a>
+                        <!-- Default dropleft button -->
+                        <div class="btn-group dropleft">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="">Reportar</a>
+                            <br>
+                            <a href="">Enviar mensagem</a>
+
                           </div>
                           <p class="text-muted text-sm"> 09/11/2021</p>
                         </div>
-                        <p style="font-size: 16.5px;">Serio ?? Que legal, pretendo ler este livro tambem.</p>
-                        <hr>
                       </div>
+                      <p class="text-muted text-sm"> 09/11/2021</p>
+                      <p style="font-size: 16.5px;">Serio ?? Que legal, pretendo ler este livro tambem.</p>
+                      <hr>
                     </div>
 
-                    <div class="media-block">
-                      <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
-                      </a>
-                      <div class="media-body">
-                        <div class="mar-btm">
-                          <div style="display: flex; justify-content: space-between;">
-                            <a href="#" class="btn-link text-semibold media-heading box-inline">Betriz M.</a>
-                            <!-- Default dropleft button -->
-                            <div class="btn-group dropleft">
-                              <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                ...
-                              </button>
-                              <div class="dropdown-menu">
-                                <a href="">Reportar</a>
-                                <br>
-                                <a href="">Enviar mensagem</a>
-                              </div>
-                            </div>
-                            <p class="text-muted text-sm">10/11/2021</p>
+                <div class="media-block">
+                  <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
+                  </a>
+                  <div class="media-body">
+                    <div class="mar-btm">
+                      <div style="display: flex; justify-content: space-between;">
+                        <a href="#" class="btn-link text-semibold media-heading box-inline">Betriz M.</a>
+                        <!-- Default dropleft button -->
+                        <div class="btn-group dropleft">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="">Reportar</a>
+                            <br>
+                            <a href="">Enviar mensagem</a>
                           </div>
                           <p style="font-size: 16.5px;">Sim! pode ler, que é muito bom.</p>
                           <hr>
                         </div>
                       </div>
+                      <p class="text-muted text-sm">10/11/2021</p>
+                      <p style="font-size: 16.5px;">Sim! pode ler, que é muito bom.</p>
+                      <hr>
+
                     </div>
                   </div>
                 </div>
@@ -404,85 +408,89 @@ if (isset($_SESSION['id'])) {
               </div>
             </div>
           </div>
-          <div class="panel">
-            <div class="panel-body">
-              <!-- Newsfeed Content -->
-              <!--===================================================-->
-              <div class="media-block">
-                <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-                <div class="media-body">
-                  <div class="mar-btm">
-                    <div style="display: flex; justify-content: space-between;">
-                      <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
-                      <!-- Default dropleft button -->
-                      <div class="btn-group dropleft">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          ...
-                        </button>
-                        <div class="dropdown-menu">
-                          <a href="">Reportar</a>
-                          <br>
-                          <a href="">Enviar mensagem</a>
-                        </div>
-                      </div>
-                      <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
+        </div>
+      </div>
+      </div>
+      
+      <div class="panel">
+        <div class="panel-body">
+          <!-- Newsfeed Content -->
+          <!--===================================================-->
+          <div class="media-block">
+            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
+            <div class="media-body">
+              <div class="mar-btm">
+                <div style="display: flex; justify-content: space-between;">
+                  <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
+                  <!-- Default dropleft button -->
+                  <div class="btn-group dropleft">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      ...
+                    </button>
+                    <div class="dropdown-menu">
+                      <a href="">Reportar</a>
+                      <br>
+                      <a href="">Enviar mensagem</a>
+
                     </div>
                     <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
                   </div>
-                  <p style="font-size: 16.5px;">Alguem ja leu 'Garota Exemplar' ? To querendo ler.</p>
-                  <hr>
+                </div>
+                <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
+              </div>
+              <p style="font-size: 16.5px;">Alguem ja leu 'Garota Exemplar' ? To querendo ler.</p>
+              <hr>
 
-                  <!-- Comments -->
-                  <div>
-                    <div class="media-block">
-                      <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-                      <div class="media-body">
-                        <div class="mar-btm">
-                          <div style="display: flex; justify-content: space-between;">
-                            <a href="#" class="btn-link text-semibold media-heading box-inline">Martinez.</a>
-                            <!-- Default dropleft button -->
-                            <div class="btn-group dropleft">
-                              <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                ...
-                              </button>
-                              <div class="dropdown-menu">
-                                <a href="">Reportar</a>
-                                <br>
-                                <a href="">Enviar mensagem</a>
-                              </div>
-                            </div>
-                            <p class="text-muted text-sm"> 13/11/2021</p>
+              <!-- Comments -->
+              <div>
+                <div class="media-block">
+                  <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
+                  <div class="media-body">
+                    <div class="mar-btm">
+                      <div style="display: flex; justify-content: space-between;">
+                        <a href="#" class="btn-link text-semibold media-heading box-inline">Martinez.</a>
+                        <!-- Default dropleft button -->
+                        <div class="btn-group dropleft">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="">Reportar</a>
+                            <br>
+                            <a href="">Enviar mensagem</a>
                           </div>
                           <p style="font-size: 16.5px;">Eu já! muito interessante.</p>
                           <hr>
                         </div>
                       </div>
+                      <p class="text-muted text-sm"> 13/11/2021</p>
+                      <p style="font-size: 16.5px;">Eu já! muito interessante.</p>
+                      <hr>
+                    </div>
+                  </div>
 
-                      <div class="media-block">
-                        <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
-                        </a>
-                        <div class="media-body">
-                          <div class="mar-btm">
-                            <div style="display: flex; justify-content: space-between;">
-                              <a href="#" class="btn-link text-semibold media-heading box-inline">Luciana G.</a>
-                              <!-- Default dropleft button -->
-                              <div class="btn-group dropleft">
-                                <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  ...
-                                </button>
-                                <div class="dropdown-menu">
-                                  <a href="">Reportar</a>
-                                  <br>
-                                  <a href="">Enviar mensagem</a>
-                                </div>
-                              </div>
-                              <p class="text-muted text-sm"> 13/11/2021</p>
-                            </div>
-                            <p style="font-size: 16.5px;">Eu ainda não, mas to querendo.</p>
-                            <hr>
+                <div class="media-block">
+                  <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
+                  </a>
+                  <div class="media-body">
+                    <div class="mar-btm">
+                      <div style="display: flex; justify-content: space-between;">
+                        <a href="#" class="btn-link text-semibold media-heading box-inline">Luciana G.</a>
+                        <!-- Default dropleft button -->
+                        <div class="btn-group dropleft">
+                          <button type="button" class="btn btn-secondary dropdown-toggle"style="background-color: #AC7E55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="">Reportar</a>
+                            <br>
+                            <a href="">Enviar mensagem</a>
                           </div>
                         </div>
                       </div>
+                      <p class="text-muted text-sm"> 13/11/2021</p>
+                      <p style="font-size: 16.5px;">Eu ainda não, mas to querendo.</p>
+                      <hr>
                     </div>
                   </div>
                   <div class="bg-light p-2">
