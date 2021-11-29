@@ -1,9 +1,28 @@
 <?php
 
+include '../config/conexao.php';
+
 session_start();
 if (!isset($_SESSION['id'])) {
-    header("./home/home.php");
+    header("location: ../home/home.php"); 
+    die();
 }
+
+if(!isset($_GET['produto-id'])){
+    header("location: ../home/home.php"); 
+    die();
+}
+
+$id = $_GET['produto-id'];
+
+$SQLANUN = $pdo->prepare(
+    
+);
+$SQLANUN->execute(array(':idlivro' => $id));
+$row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
+
+
+var_dump($row)
 
 ?>
 
@@ -164,6 +183,8 @@ if (!isset($_SESSION['id'])) {
                                         <i class="fa fa-comments"></i>
                                         Chat
                                     </button>
+
+                                    <!-- <a href="users-all.php?user_id='.$value['cd_usuario'].'">    -->
                                 </div>
                             </div>
                         </div>

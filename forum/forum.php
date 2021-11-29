@@ -534,6 +534,7 @@ if (isset($_SESSION['id'])) {
 
 
               <div class="modal-body">
+
                 <a href="#" style="display: flex; flex-direction: row; height: 34px; text-decoration: none; color: black;">
                   <img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
                   <h6 style="margin-top: 12px; margin-left: 10px;">Yago comentou na sua postagem do fórum.</h6>
@@ -547,6 +548,7 @@ if (isset($_SESSION['id'])) {
                 <a href="#" style="display: flex; flex-direction: row; height: 34px; text-decoration: none; color: black;">
                   <img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
                   <h6 style="margin-top: 12px; margin-left: 10px;">Você publicou o livro Cinquenta...</h6>
+
                 </a>
               </div>
 

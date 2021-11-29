@@ -1,11 +1,11 @@
 function ajaxCall() {
-        $.ajax({
-            type: "post",
-            url: "PHP/SELECT_LIVROS_PUBLICADOS.php",
-            success: function (response) {
-                $('.return').html(response);
-            }    
-        })
+    $.ajax({
+        type: "post",
+        url: "PHP/SELECT_LIVROS_PUBLICADOS.php",
+        success: function (response) {
+            $('.return').html(response);
+        }    
+    })
 }
 
 $(document).ready(function () {
