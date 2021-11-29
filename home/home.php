@@ -344,6 +344,10 @@ if (isset($_SESSION['id'])) {
 					width: 460px;
 				}
 			}
+
+			.modal-notifi {
+				margin-top: 0 !important;
+			}
 		</style>
 	</head>
 
@@ -583,7 +587,7 @@ if (isset($_SESSION['id'])) {
 
 			<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
-					<div class="modal-content">
+					<div class="modal-content modal-notifi">
 						<div class="modal-header" style="margin-top: 0;">
 							<h5 class="modal-title" id="TituloModalCentralizado">Últimas Notificações</h5>
 						</div>
