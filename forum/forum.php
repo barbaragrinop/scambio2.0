@@ -307,11 +307,13 @@ if (isset($_SESSION['id'])) {
                   <option value="Outro">Outro</option>
                 </select>
               </div>
-
+            <div>
             </div>
           </div>
         </div>
       </div>
+      </div>
+
       <div class="panel">
         <div class="panel-body">
           <!-- Newsfeed Content -->
@@ -324,7 +326,7 @@ if (isset($_SESSION['id'])) {
                   <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
                   <!-- Default dropleft button -->
                   <div class="btn-group dropleft">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       ...
                     </button>
                     <div class="dropdown-menu">
@@ -333,10 +335,9 @@ if (isset($_SESSION['id'])) {
                       <a href="">Enviar mensagem</a>
                     </div>
                   </div>
-                  <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
                 </div>
-                <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
               </div>
+              <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
               <p style="font-size: 16.5px;">Eu comecei a ler um livro muito legal, ja estava querendo começar faz tempo. O nome dele é chapeuzinho vermelho, conta uma historia de uma vovo que tinha uma netinha que usava chapeuzinho vermelho.</p>
               <hr>
 
@@ -350,7 +351,7 @@ if (isset($_SESSION['id'])) {
                         <a href="#" class="btn-link text-semibold media-heading box-inline">Yago M.</a>
                         <!-- Default dropleft button -->
                         <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ...
                           </button>
                           <div class="dropdown-menu">
@@ -359,8 +360,8 @@ if (isset($_SESSION['id'])) {
                             <a href="">Enviar mensagem</a>
                           </div>
                         </div>
-                        <p class="text-muted text-sm"> 09/11/2021</p>
                       </div>
+                      <p class="text-muted text-sm"> 09/11/2021</p>
                       <p style="font-size: 16.5px;">Serio ?? Que legal, pretendo ler este livro tambem.</p>
                       <hr>
                     </div>
@@ -375,7 +376,7 @@ if (isset($_SESSION['id'])) {
                         <a href="#" class="btn-link text-semibold media-heading box-inline">Betriz M.</a>
                         <!-- Default dropleft button -->
                         <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ...
                           </button>
                           <div class="dropdown-menu">
@@ -384,8 +385,8 @@ if (isset($_SESSION['id'])) {
                             <a href="">Enviar mensagem</a>
                           </div>
                         </div>
-                        <p class="text-muted text-sm">10/11/2021</p>
                       </div>
+                      <p class="text-muted text-sm">10/11/2021</p>
                       <p style="font-size: 16.5px;">Sim! pode ler, que é muito bom.</p>
                       <hr>
                     </div>
@@ -404,6 +405,8 @@ if (isset($_SESSION['id'])) {
           </div>
         </div>
       </div>
+      </div>
+      
       <div class="panel">
         <div class="panel-body">
           <!-- Newsfeed Content -->
@@ -416,7 +419,7 @@ if (isset($_SESSION['id'])) {
                   <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
                   <!-- Default dropleft button -->
                   <div class="btn-group dropleft">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       ...
                     </button>
                     <div class="dropdown-menu">
@@ -425,7 +428,6 @@ if (isset($_SESSION['id'])) {
                       <a href="">Enviar mensagem</a>
                     </div>
                   </div>
-                  <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
                 </div>
                 <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
               </div>
@@ -442,7 +444,7 @@ if (isset($_SESSION['id'])) {
                         <a href="#" class="btn-link text-semibold media-heading box-inline">Martinez.</a>
                         <!-- Default dropleft button -->
                         <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ...
                           </button>
                           <div class="dropdown-menu">
@@ -451,8 +453,8 @@ if (isset($_SESSION['id'])) {
                             <a href="">Enviar mensagem</a>
                           </div>
                         </div>
-                        <p class="text-muted text-sm"> 13/11/2021</p>
                       </div>
+                      <p class="text-muted text-sm"> 13/11/2021</p>
                       <p style="font-size: 16.5px;">Eu já! muito interessante.</p>
                       <hr>
                     </div>
@@ -467,7 +469,7 @@ if (isset($_SESSION['id'])) {
                         <a href="#" class="btn-link text-semibold media-heading box-inline">Luciana G.</a>
                         <!-- Default dropleft button -->
                         <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle"style="background-color: #97938dd2;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button type="button" class="btn btn-secondary dropdown-toggle"style="background-color: #AC7E55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             ...
                           </button>
                           <div class="dropdown-menu">
@@ -476,8 +478,8 @@ if (isset($_SESSION['id'])) {
                             <a href="">Enviar mensagem</a>
                           </div>
                         </div>
-                        <p class="text-muted text-sm"> 13/11/2021</p>
                       </div>
+                      <p class="text-muted text-sm"> 13/11/2021</p>
                       <p style="font-size: 16.5px;">Eu ainda não, mas to querendo.</p>
                       <hr>
                     </div>
