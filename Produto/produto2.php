@@ -67,6 +67,42 @@ if (!isset($_SESSION['id'])) {
             width: 250px !important;
             height: 401px;
         }
+
+        @media (max-height: 1080px) {
+            .card {
+                margin-top: 180px;
+            }
+        }
+
+        @media (max-height: 1020px) {
+            .card {
+                margin-top: 130px;
+            }
+        }
+
+        @media (max-height: 940px) {
+            .card {
+                margin-top: 110px;
+            }
+        }
+
+        @media (max-height: 900px) {
+            .card {
+                margin-top: 90px;
+            }
+        }
+
+        @media (max-height: 820px) {
+            .card {
+                margin-top: 70px;
+            }
+        }
+
+        @media (min-width: 1735px) {
+            .card {
+                /* width: 1345px; */
+            }
+        }
     </style>
 </head>
 
@@ -95,9 +131,8 @@ if (!isset($_SESSION['id'])) {
 
     </div>
     <div>
-
         <div style="display: flex; justify-content: center;">
-            <div class="col-md-12">
+            <div class="col-md-12" style="max-width: 80%;">
                 <div class="card">
                     <div class="card-body">
                         <div style="margin-top: 8px; margin-left: 10px;">
@@ -127,7 +162,7 @@ if (!isset($_SESSION['id'])) {
                                 </a>
                             </div>
 
-                            <div style="margin-left: 20px; margin-top: -80px;">
+                            <div style="margin-left: 20px; margin-top: -80px; width: 100%;">
                                 <div class="col-lg-8 col-md-4 col-sm-9" style="max-width: 100%;">
                                     <h3 class="box-title mt-5" style="font-size: 21px;">Descrição do produto</h3>
                                     <p style="font-size: 16px;">Livro em perfeito estado, com pouco tempo de uso e comprado em 2019. Aprenta algumas marcas de uso, mas nada que atrapalhe a leitura.</p>
@@ -171,10 +206,6 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
         </div>
-        <!-- <div style="display: flex; justify-content: center; align-items: center;">
-            <h2 style="font-size: 21px;">Livros que podem te interessar</h2>
-
-        </div> -->
     </div>
 
 
