@@ -249,7 +249,8 @@ if (isset($_SESSION['id'])) {
     <div class="col-md-12 bootstrap snippets">
       <div class="panel">
         <div class="panel-body">
-          <textarea class="form-control" rows="2" placeholder="Sobre o que você quer conversar?" style="font-size: 16.5px;"></textarea>
+          <form>
+            <textarea id="publicacao" class="form-control" rows="2" placeholder="Sobre o que você quer conversar?" style="font-size: 16.5px;"></textarea>
           <div class="mar-top clearfix">
             <div style="display: flex; flex-direction: row; justify-content: space-between;">
               <div style="width: 310px;">
@@ -284,6 +285,8 @@ if (isset($_SESSION['id'])) {
             </div>
           </div>
         </div>
+        <input type="submit" value="Publicar" id="pub">
+        </form>
       </div>
       </div>
 
@@ -438,6 +441,7 @@ if (isset($_SESSION['id'])) {
 
             </script>
             <script src="../assets/js/ajaxforum.js"></script>
+            <script src="js/publicar.js"></script>
   </body>
 
   </html>

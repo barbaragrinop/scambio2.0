@@ -17,7 +17,6 @@ $("#edit").click(function(){
             "codigo":codigo
         },
         success: function (response) {
-            alert(response);
         }    
     })
 })

@@ -429,47 +429,41 @@ if (isset($_SESSION['id'])) {
 			<div class="form-filtro">
 				<form class="filtro">
 					<div class="primeira-div">
-						<select name="opcao_filtro" class="opcao_filtro" style="width: 150px;">
-							<option value="data">Mais Antigo</option>
-							<option selected="selected" value="dataPublicacao">Mais Recente</option>
-						</select>
-						<select name="opcao_filtro" style="margin-left: 9px; width: 150px;" class="opcao_filtro">
-							<option value="estado">AL</option>
-							<option value="estado">AC</option>
-							<option value="estado">AP</option>
-							<option value="estado">AM</option>
-							<option value="estado">BA</option>
-							<option value="estado">CE</option>
-							<option value="estado">ES</option>
-							<option value="estado">GO</option>
-							<option value="estado">MA</option>
-							<option value="estado">MT</option>
-							<option value="estado">MS</option>
-							<option value="estado">MG</option>
-							<option value="estado">PA</option>
-							<option value="estado">PB</option>
-							<option value="estado">PR</option>
-							<option value="estado">PE</option>
-							<option value="estado">PI</option>
-							<option value="estado">RJ</option>
-							<option value="estado">RN</option>
-							<option value="estado">RS</option>
-							<option value="estado">RO</option>
-							<option value="estado">RR</option>
-							<option value="estado">SC</option>
-							<option value="estado">SP</option>
-							<option value="estado">SE</option>
-							<option value="estado">TO</option>
-							<option value="estado"></option>
-							<option selected="selected" value="dataPublicacao">Estado</option>
+						<select name="opcao_filtro" style="margin-left: 9px; width: 150px;" id="uf" class="opcao_filtro">
+							<option value="SP">SP</option>
+							<option value="AL">AL</option>
+							<option value="AC">AC</option>
+							<option value="AP">AP</option>
+							<option value="AM">AM</option>
+							<option value="BA">BA</option>
+							<option value="CE">CE</option>
+							<option value="ES">ES</option>
+							<option value="GO">GO</option>
+							<option value="MA">MA</option>
+							<option value="MT">MT</option>
+							<option value="MS">MS</option>
+							<option value="MG">MG</option>
+							<option value="PA">PA</option>
+							<option value="PB">PB</option>
+							<option value="PR">PR</option>
+							<option value="PE">PE</option>
+							<option value="PI">PI</option>
+							<option value="RJ">RJ</option>
+							<option value="RN">RN</option>
+							<option value="RS">RS</option>
+							<option value="RO">RO</option>
+							<option value="RR">RR</option>
+							<option value="SC">SC</option>
+							<option value="SE">SE</option>
+							<option value="TO">TO</option>
 						</select>
 					</div>
 					<div style="margin-top: 1px;" class="segunda-div">
-						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 240px;" placeholder="Nome do livro" />
-						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 240px;" placeholder="Autor do livro" />
+						<input type="text" id="nmlivro" name="nmlivro" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 240px;" placeholder="Nome do livro" />
+						<input type="text" id="nmautor" name="nmautor" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 240px;" placeholder="Autor do livro" />
 					</div>
 					<div class="terceira-div">
-						<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px; background-color: #AC7E55; color: white;" />
+						<input type="submit" id="pesquisa" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px; background-color: #AC7E55; color: white;" />
 					</div>
 				</form>
 			</div>
@@ -718,6 +712,7 @@ if (isset($_SESSION['id'])) {
 		<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="js/pesquisa.js"></script>
 	</body>
 
 </html>

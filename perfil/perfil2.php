@@ -313,12 +313,12 @@ if ($sql->rowCount() >= 1) {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form method="POST" id="formedit">
-                                <div class="modal-body" style="display: flex; flex-direction: column;">
+                            <form method="POST">
+                                <div class="modal-body" style="display: inline-block; flex-direction: column;">
                                     <div style="display: flex; flex-direction: column; margin-left: 30px;">
                                         <div class="form-group" style=" margin-left: 200px; margin-top: -350px;">
                                             <label for="recipient-name" class="col-form-label">Livro:</label>
-                                            <input type="text" class="form-control" name="livro" id="lbedit" style="width:300px !important;">
+                                            <input type="text" class="form-control" name="livro" id="lbedit" style="width: 300px !important;">
                                         </div>
                                         <div class="form-group" style="margin-left: 200px;">
                                             <label for="message-text" class="col-form-label">Descrição:</label>
@@ -326,17 +326,18 @@ if ($sql->rowCount() >= 1) {
                                         </div>
                                         <div class="form-group" style="margin-left: 200px;">
                                             <label for="message-text" class="col-form-label">Gênero:</label>
-                                            <input type="text" class="form-control" name="genero" id="lbgenero" style="width:300px !important;">
+                                            <input type="text" class="form-control" name="genero" id="lbgenero" style="width: 300px !important;">
                                         </div>
                                         <div class="form-group" style="margin-left: 200px;">
                                             <label for="message-text" class="col-form-label">Autor:</label>
-                                            <input type="text" class="form-control" name="autor" id="lbautedit" style="width:300px !important;">
+                                            <input type="text" class="form-control" name="autor" id="lbautedit" style="width: 300px !important;">
                                         </div>
                                     </div>
-                                    <input type="hidden" id="values" name="values">
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <input type="hidden" id="values" name="cda" id="">
                                     <input type="submit" id="edit" class="editf btn btn-primary" value="Salvar Alterações">
                                 </div>
                             </form>
