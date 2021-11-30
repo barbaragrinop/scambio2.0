@@ -641,25 +641,12 @@ if (isset($_SESSION['id'])) {
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content modal-notifi">
 						<div class="modal-header" style="margin-top: 0;">
-							<h5 class="modal-title" id="TituloModalCentralizado">Últimas Notificações</h5>
+							<h5 class="modal-title" id="TituloModalCentralizado" style="font-weight: 700;">Últimas Notificações</h5>
+							<i class="fas fa-bell" style="color: #FFDB58; font-size: 25px;"></i>
 						</div>
 
-
-						<div class="modal-body">
-							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
-								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
-								<h6 style="margin-top: 12px; margin-left: 10px;">Yago comentou na sua postagem do fórum.</h6>
-							</a>
-							<hr style="margin-bottom: 12px;">
-							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
-								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
-								<h6 style="margin-top: 12px; margin-left: 10px;">Você recebeu uma mensagem de Josefa.</h6>
-							</a>
-							<hr style="margin-bottom: 12px;">
-							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
-								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
-								<h6 style="margin-top: 12px; margin-left: 10px;">Você publicou o livro Cinquenta...</h6>
-							</a>
+						<div class="modal-body notificacoes" style= "max-height: 60vh; overflow-y: scroll;">
+							
 						</div>
 
 

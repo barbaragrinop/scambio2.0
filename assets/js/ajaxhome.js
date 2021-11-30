@@ -8,6 +8,17 @@ function ajaxCall() {
     })
 }
 
+function ajaxAtualizaNotificoes() {
+    $.ajax({
+        type: "post",
+        url: "PHP/getNotificoes.php",
+        success: function (response) {
+            $('.notificacoes').html(response);
+        }    
+    })
+}
+
 $(document).ready(function () {
     setInterval(ajaxCall, 500);
+    setInterval(ajaxAtualizaNotificoes, 500);
 });

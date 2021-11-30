@@ -22,7 +22,7 @@ in usuario2 int,
 in idPub int
 )
 begin 
-	if not exists(select * from tb_match where cd_livro = idPub) then 
+	if not exists(select * from tb_match where cd_livro = idPub and cd_usuario1 = usuario and cd_usuario2 = usuario2) then 
 		insert into tb_match(cd_usuario1, cd_usuario2, cd_livro, idConfUsu1, idConfUsu2) values (usuario1, usuario2, idPub, 0, 0);
 	end if;
 

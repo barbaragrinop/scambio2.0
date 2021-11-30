@@ -28,15 +28,21 @@
         // echo $outgoing_id . " - " . $row2['outgoing_msg_id'];
         // var_dump($row);
         //checando se o usuário está online ou offline
-        ($value['nm_status'] == "Offline") ? $offline = "offline" : $offline = "";   
+        ($value['nm_status'] == 0) ? $offline = "offline" : $offline = "";   
 
-        $offline = $value['nm_status'] ?? "";
+
+        if(!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])){
+            $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">';
+        }
+        else{
+            $img = '<img src="../fotosuser/' . $row['DS_IMGP'] .'" alt="">';
+        }
 
 
         $output .= '
             <a href="users-all.php?user_id='.$value['cd_usuario'].'">   
                 <div class="content">
-                    <img src="" alt="">
+                    '. $img . '
                     <div class="details">
                         <span>'. $value['nm_usuario'] .'</span>
                         <p>'. $you . $msg.'</p>
