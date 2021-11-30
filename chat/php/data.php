@@ -24,10 +24,6 @@
         //checando se o usuário está online ou offline
         ($value['nm_status'] == "Offline") ? $offline = "offline" : $offline = "";   
 
-        // if(isset($value['nm_status'])){
-        //     ($value['nm_status'] == "Offline") ? $offline = "offline" : $offline = "";
-        // }
-
         $offline = $value['nm_status'] ?? "";
 
 
