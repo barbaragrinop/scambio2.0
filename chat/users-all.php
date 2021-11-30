@@ -178,16 +178,12 @@ if ($sql->rowCount() >= 1) {
 
                         <div>
                             <i id="iconImg" class="fas fa-share" style="display: none;"></i>
-                            <label for="file_input_id" title="Enviar imagem" style="padding: 0; display: flex; align-items: center; margin-left: -8px; margin-right: 10px;"><i value="enviar" id="enviar" class="fas fa-image"></i></label>
                             <input type="file" id="file_input_id" style="display: none;" accept="image/jpg, image/jpeg, image/png" />
                         </div>
 
                         <input type="text" name="message" class="input-field" id="inputMsg" placeholder="Digite sua mensagem..">
-                        <div onclick="btnEnviar()">
-                            <button><i class="fab fa-telegram plane"></i></button>
-                        </div>
                     </form>
-                    <button class="btn-match" id="btn-match">Match</button>
+                    <button class="btn-match" id="btn-match" onclick="clickBtnMatch()">Match</button>
                 </div>
 
 
@@ -202,6 +198,23 @@ if ($sql->rowCount() >= 1) {
     ?>
 
     <script>
+        function clickBtnMatch() {
+            if (document.getElementById('btn-match').style.backgroundColor == 'rgb(172, 126, 85)') {
+                document.getElementById('btn-match').style.backgroundColor = '#333';
+                document.getElementById('btn-match').style.width = '55px';
+                document.getElementById('btn-match').style.marginLeft = '5px';
+                document.getElementById('btn-match').style.lineHeight = '17px';
+                document.getElementById('btn-match').innerHTML = 'Match';
+            } else {
+                document.getElementById('btn-match').style.backgroundColor = 'rgb(172, 126, 85)';
+                document.getElementById('btn-match').style.width = '69.5px';
+                document.getElementById('btn-match').style.marginLeft = '2px';
+                document.getElementById('btn-match').style.lineHeight = '19px';
+                document.getElementById('btn-match').innerHTML = 'Desfazer Match';
+            }
+        }
+
+
         function updateImage() {
             let nomeImagem = document.getElementById('file_input_id').value;
             document.getElementById('inputMsg').value = 'Imagem Selecionada. Aperte enter para envia-la.';
@@ -214,18 +227,8 @@ if ($sql->rowCount() >= 1) {
             document.getElementById('inputMsg').readOnly = false;
         }
 
-        var fileUpload = document.getElementById("file_input_id");
-        var enviar = document.getElementById("enviar");
-        enviar.addEventListener("click", function(event) {
-
-        });
 
         fileUpload.addEventListener("change", function(event) {
-            // if (fileUpload.files.length == 0) {
-            //     alert("Nenhum Arquivo Selecionado");
-            //     return;
-            // }
-
             if (fileUpload.files.length != 0) {
                 let nomeImg = document.getElementById('file_input_id').value;
                 document.getElementById('inputMsg').value = nomeImg;
@@ -238,10 +241,6 @@ if ($sql->rowCount() >= 1) {
                 return;
             }
         })
-
-        function btnEnviar() {
-            document.querySelector('#inputMsg').disabled = false;
-        }
     </script>
 
     <script src="javascript/users.js"></script>

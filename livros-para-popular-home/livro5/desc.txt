@@ -1,0 +1,4 @@
+Nome: Livro Universo Numa Casca De Noz
+Descrição: Livro de química analítica quantitativa do baccan.
+Gênero: Química
+Autor: Stephen Hawking
