@@ -11,4 +11,3 @@ function ajaxCall() {
 $(document).ready(function () {
     setInterval(ajaxCall, 500);
 });
-

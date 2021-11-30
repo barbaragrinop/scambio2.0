@@ -552,7 +552,6 @@ if (isset($_SESSION['id'])) {
 								</div>
 							</div>
 
-
 							<label>Fotos: <span style="font-size: 12px;">(Máx 3 imagens)</span> <span id="spanImagem" style="color: red; font-size: 14px; display: none;">Selecione no minimo 1 imagem</span> </label>
 							<label style="background: white; color: white; font-family: sans-serif; font-weight: bold; border-radius: 8px; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: start; margin-top: -10px;">
 								<div style="margin-left: 5px;">
@@ -727,6 +726,7 @@ if (isset($_SESSION['id'])) {
 		</script>
 		<script src="../assets/js/cadastroPublicacao.js"></script>
 		<script src="../assets/js/ajaxhome.js"></script>
+		<script src="../assets/js/ajustandoMatch.js"></script>
 
 		<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -2,6 +2,8 @@
 /* SELECT PARA TRAZER TODOS OS LIVROS PUBLICADOS POR TODOS OS USUARIOS*/
 include_once('../../config/conexao.php');
 
+session_start();
+
 if (isset($_POST["search"])) {
 	$filtro = $_POST["search"];
 } else {
@@ -23,7 +25,12 @@ $SQLANUN = $pdo->prepare($sql);
 $SQLANUN->execute();
 
 if ($SQLANUN->rowCount() > 0) {
+
 	while ($row = $SQLANUN->fetch(PDO::FETCH_ASSOC)) {
+		$idSession = $_SESSION['id'];
+		$idEnviado = $row['USUARIOID'];
+		$idPublicao = $row['CDLI'];
+
 		$out = '<div class="card col-md-6" style="width: 13.3rem;">
 				<img src="../fotos/' . $row['FT1'] . '" class="card-img-top" alt="...">
 				<div class="card-body">
@@ -33,11 +40,11 @@ if ($SQLANUN->rowCount() > 0) {
 					<p class="card-publi" style="margin-top: -15px; font-size: 12.5px; color: #858A8D;">' . date("d/m/Y", strtotime(($row["DT"]))) . '</p>
 					<div class="btns">
 						<button>
-						<a href="../Produto/produto.php?produto-id='.$row['CDLI'].'">   
-								<i class="fa fa-ellipsis-h"></i>
-							</a>
-						</button>
-						<button>
+							<a href="../Produto/produto.php?produto-id='.$row['CDLI'].'">   
+									<i class="fa fa-ellipsis-h"></i>
+								</a>
+							</button>
+						<button onclick="inserindoMatch(' . $idSession . ',' . $idEnviado . ',' . $idPublicao  .')">
 							<a href="../chat/users-all.php?user_id='.$row['USUARIOID'].'">   
 								<i class="fas fa-envelope"></i>
 							</a>

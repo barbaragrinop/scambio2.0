@@ -3,15 +3,21 @@ include("config/conexao.php");
 
 $nome = $_POST['nome'];
 $dtnasc = $_POST['dtnasc'];
-$cel = $_POST['celular'];
+$cel = $_POST['celular']  ?? "";
 $email = $_POST['email'];
 $senha = $_POST['senha'];
-$cep = $_POST['cep'];
-$rua = $_POST['rua'];
-$numero = $_POST['numero'];
-$bairro = $_POST['bairro'];
+$cep = $_POST['cep'] ?? "1";
+$rua = $_POST['rua']  ?? "1";
+$numero = $_POST['numero'] ?? "1";   
+$bairro = $_POST['bairro'] ?? "1";
 $cidade = $_POST['cidade'];
 $uf = $_POST['estado']; 
+
+$cepp = str_replace("-", "", $cep);
+
+echo $numero;
+
+$dtnasci = date('Y/m/d', strtotime($dtnasc));
 
 //Verificando cadastro do email
 try{
@@ -20,9 +26,9 @@ try{
         ':nome' => $nome, 
         ':senha' => $senha,
         ':celular' => $cel,
-        ':datanasc' => $dtnasc,
+        ':datanasc' => $dtnasci,
         ':email' => $email, 
-        ':cep' => $cep,
+        ':cep' => $cepp,
         ':rua' => $rua, 
         ':bairro' => $bairro,
         ':cidade' => $cidade,
