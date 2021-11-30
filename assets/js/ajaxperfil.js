@@ -8,7 +8,6 @@ function Callajaxpub() {
     }) 
 }
 
-
 function update(){
     const form = document.querySelector("#formupdate")
     $('#formupdate').submit(function(){
@@ -33,8 +32,8 @@ $(document).ready( () => {
     setInterval(Callajaxperfil(), 2000)
     setInterval(Callajaxpub(), 500)
     $('#CEP').mask('00000-000');
-    document.getElementById('uscity').disabled = true;
-    document.getElementById('UFUs').disabled = true;
+    document.getElementById('uscity').disabled = false;
+    document.getElementById('UFUs').disabled = false;   
     $("#CEP").on("change", function(){    
         if(this.value){
             $.ajax({
@@ -77,6 +76,7 @@ function carregaModal(id, oqE){
     var UsUF= $("#UFUs"+id).val()
     var txtlbaut= $("#Itemaut"+id).text().trim()
     var imgItem = $("#Itemimg"+id).attr("src")+""
+    var id = $("#Itemimg"+id).attr("src")+""
 
     console.log(imgItem)
 

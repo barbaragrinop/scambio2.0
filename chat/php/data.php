@@ -19,8 +19,12 @@
         //cortando a mensagem p caber na visualização
         (strlen($result) > 24) ? $msg = substr($result, 0, 24).'...' :  $msg = $result;
 
+        ($outgoing_id != ($row2['outgoing_msg_id'] ?? "")) ? $msg = "<b>$msg</b>" : $msg ;
+        // ($outgoing_id != ($row2['outgoing_msg_id'] ?? "")) ? $msg = "<b>$msg</b>" : $msg ;
+
         //adiocionando na frente do texto
         ($outgoing_id == ($row2['outgoing_msg_id'] ?? "")) ? $you = "Você: " : $you = "";
+        
         // echo $outgoing_id . " - " . $row2['outgoing_msg_id'];
         // var_dump($row);
         //checando se o usuário está online ou offline
