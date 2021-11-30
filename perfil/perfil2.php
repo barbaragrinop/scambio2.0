@@ -10,10 +10,10 @@ if (!isset($_SESSION['id'])) {
 
 if(isset($_GET['user_id'])) {
     $id = $_GET['user_id'];
-    echo $id ;
+    // echo $id ;
 } else{
     $id = $_SESSION['id'];
-    echo $id ;
+    // echo $id ;
 }
 
 
@@ -314,7 +314,7 @@ if ($sql->rowCount() >= 1) {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form method="POST">
+                            <form id="form-alterar-publicacao" method="POST">
                                 <div class="modal-body" style="display: flex; flex-direction: column;">
                                     <div class="form-group">
                                         <img src="" id="imgedit" width="100px">
@@ -340,11 +340,15 @@ if ($sql->rowCount() >= 1) {
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Cidade:</label>
-                                            <input type="text" class="form-control" name="city" id="uscity">
+                                            <input type="text" class="form-control" name="city" id="uscity" readonly>
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Estado:</label>
-                                            <input type="text" class="form-control" name="uf" id="UFUs">
+                                            <input type="text" class="form-control" name="uf" id="UFUs" readonly>
+                                        </div>
+                                        <div class="form-group" >
+                                            <label for="message-text" class="col-form-label">Estado:</label>
+                                            <input type="text" class="form-control" name="id" id="id" readonly>
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Autor:</label>
@@ -1186,6 +1190,7 @@ if ($sql->rowCount() >= 1) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
         <script src="../assets/js/ajaxperfil.js"></script>
+        <script src="../assets/js/altera-info-perfil.js"></script>
 </body>
 
 </html>
