@@ -170,7 +170,7 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
                                     echo $img;
                                     ?>
                                     <!-- <img style="border: 1px #808080;  border-style: ridge; width: 39px; height: 39px; border-radius: 9999px;" src="https://flammo.com.br/app/uploads/2017/12/148243-o-que-e-experiencia-do-usuario-e-como-ela-impacta-suas-vendas.jpg" alt="Foto do usuário que postou"> -->
-                                    <h5 class="card-subtitle" style="font-size: 16px; margin-left: 10px;margin-top: 20px; overflow:hidden;"><?= $row['nm_usuario'] ?></h5>
+                                    <h5 class="card-subtitle" style="font-size: 16px; margin-left: 10px;margin-top: 20px; overflow:hidden;">@<?= $row['nm_usuario'] ?></h5>
                                 </div>
                             </div>
 
