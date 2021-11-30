@@ -9,7 +9,7 @@ function inserindoMatch(idSession, idEnviado, idPublicacao) {
         },
         success: function (response) {
             if(response != 0) {
-                window.location.href = "../chat/users-all?user-id=" + response;
+                window.location.href = "../chat/users-all.php?user_id=" + response;
             } else {
                 console.log("erro")
             }

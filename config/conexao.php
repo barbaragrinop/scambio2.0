@@ -2,7 +2,7 @@
 
 
 //Alterar para Servidor = LocalHost
-$servidor = "127.0.0.1:3308";
+$servidor = "127.0.0.1:3306";
 $usuario = "root";
 $senha = "";
 $banco = "db_scambio";
