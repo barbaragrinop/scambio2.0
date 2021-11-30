@@ -6,6 +6,9 @@ $idSession = $_POST['idSession'];
 $idPublicacao = $_POST['idPublicacao'];
 
 
+$_SESSION['idLivro'] = $idPublicacao;
+
+
 include '../../config/conexao.php';
 
 

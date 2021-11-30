@@ -36,11 +36,10 @@ foreach ($row as $key => $value) {
 
     $offline = $value['nm_status'] ?? "";
 
-
     $output .= '
             <a href="users-all.php?user_id=' . $value['cd_usuario'] . '">   
                 <div class="content">
-                    ' . $img . '
+                    '. $img . '
                     <div class="details">
                         <span>' . $value['nm_usuario'] . '</span>
                         <p>' . $you . $msg . '</p>
