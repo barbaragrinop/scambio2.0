@@ -36,7 +36,7 @@ function clickBtnMatch(idUser, idLivro) {
             estadoBotao: stateClass 
         },
         success: function (response) {
-            console.warn('veio do php', response );
+            
         }
     });
 }
