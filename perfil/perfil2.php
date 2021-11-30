@@ -15,7 +15,6 @@ if (isset($_GET['user_id'])) {
 }
 
 
-
 $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
                         inner join db_scambio.tb_logradouro
                         on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro

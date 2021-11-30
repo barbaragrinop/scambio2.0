@@ -11,6 +11,8 @@ if(isset($_POST['estadoBotao'])) $estadoBotao = $_POST['estadoBotao'];
 if($estadoBotao == false || $estadoBotao == 'false') $estadoBotao = 0;
 if($estadoBotao == true || $estadoBotao == 'true') $estadoBotao = 1;
 
+
+
 $sql = $pdo->prepare("SELECT * from db_scambio.tb_match where cd_livro = :idLivro");
 $sql->execute(array('idLivro' => $idPublicacao));
 
@@ -32,14 +34,31 @@ if($arr['cd_usuario1'] == $idUser){
     ));
 } 
 
+
 if(($arr['idConfUsu1'] == 1) && ($arr['idConfUsu2'] == 1)){
-    echo "É UM MATCH";
-} else {
-    echo "calma";
+    $asd = $pdo->prepare("SELECT * from db_scambio.relacoesmatches where 
+        usuario1 = :usu1 and usuario2 = :usu2 and cd_pub = :cdPub
+    ");
+    $asd->execute(array(
+        ':usu1' => $arr['cd_usuario1'], 
+        ':usu2' => $arr['cd_usuario2'], 
+        ':cdPub' => $idPublicacao
+    ));
+
+    if($asd->rowCount() >= 1 ){
+        // echo "sim";
+    } else {
+        $mac = $pdo->prepare("INSERT INTO db_scambio.relacoesmatches(usuario1, usuario2, cd_pub)
+                            values(:usu1, :usu2, :cdPub)");
+        $mac->execute(array(
+            ':usu1' => $arr['cd_usuario1'], 
+            ':usu2' => $arr['cd_usuario2'], 
+            ':cdPub' => $idPublicacao
+        ));
+        // echo "aqui";
+    }
+
+    echo "sim";
+
 } 
-
-// echo '$idUser - ' . $idUser . '  $idPublicacao - ' . $idPublicacao . ' $estadoBotao -'  . $estadoBotao;
-
-
-
 ?>

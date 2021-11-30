@@ -1,4 +1,8 @@
+
+
 var stateClass = false;
+
+
 
 
 function clickBtnMatch(idUser, idLivro) {
@@ -19,7 +23,6 @@ function clickBtnMatch(idUser, idLivro) {
         document.getElementById('btn-match').style.lineHeight = '19px';
         document.getElementById('btn-match').innerHTML = 'Desfazer Match';
         guardaEstado(true)
-        // console.warn(stateClass, usuarioOn)
     }
 
     function guardaEstado(state){
@@ -36,7 +39,10 @@ function clickBtnMatch(idUser, idLivro) {
             estadoBotao: stateClass 
         },
         success: function (response) {
-            
+            // console.warn(response)
+            if(response == "sim"){
+                swal("Match!", "Parabens!!!!!", "success");
+            }
         }
     });
 }
