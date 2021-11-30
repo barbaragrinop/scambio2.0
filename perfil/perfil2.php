@@ -232,7 +232,7 @@ if ($sql->rowCount() >= 1) {
                 </div>
 
                 <div id="panelEditPerfil" class="panel" style="display: none; height: 400px;">
-                    <div id="editprofile" class=" panel-body bio-graph-info">
+                    <div id="editprofile" class=" panel-body bio-graph-info ">
                     </div>
                 </div>
 
@@ -298,40 +298,28 @@ if ($sql->rowCount() >= 1) {
                                 </button>
                             </div>
                             <form method="POST">
-                                <div class="modal-body" style="display: flex; flex-direction: column;">
+                                <div class="modal-body" style="display: inline-block; flex-direction: column;">
                                     <div class="form-group">
-                                        <img src="" id="imgedit" width="100px">
+                                        <img src="" id="imgedit"  width="200px;">
                                     </div>
 
                                     <div style="display: flex; flex-direction: column; margin-left: 30px;">
 
-                                        <div class="form-group">
+                                        <div class="form-group" style=" margin-left: 200px; margin-top: -330px;">
                                             <label for="recipient-name" class="col-form-label">Livro:</label>
-                                            <input type="text" class="form-control" name="livro" id="lbedit" style="width: 10px;">
+                                            <input type="text" class="form-control" name="livro" id="lbedit" style="width: 300px !important;">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style="margin-left: 200px;">
                                             <label for="message-text" class="col-form-label">Descrição:</label>
-                                            <textarea class="form-control" name="describe" id="descedit"></textarea>
+                                            <textarea class="form-control" name="describe" id="descedit" style="width: 300px !important; height: 100px;"></textarea>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style="margin-left: 200px;">
                                             <label for="message-text" class="col-form-label">Gênero:</label>
-                                            <input type="text" class="form-control" name="genero" id="lbgenero">
+                                            <input type="text" class="form-control" name="genero" id="lbgenero" style="width: 300px !important;">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="message-text" class="col-form-label">Novo CEP:</label>
-                                            <input type="text" class="form-control" name="CEP" id="CEP">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message-text" class="col-form-label">Cidade:</label>
-                                            <input type="text" class="form-control" name="city" id="uscity">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message-text" class="col-form-label">Estado:</label>
-                                            <input type="text" class="form-control" name="uf" id="UFUs">
-                                        </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style="margin-left: 200px;">
                                             <label for="message-text" class="col-form-label">Autor:</label>
-                                            <input type="text" class="form-control" name="autor" id="lbautedit">
+                                            <input type="text" class="form-control" name="autor" id="lbautedit"style="width: 300px !important;">
                                         </div>
                                     </div>
 
