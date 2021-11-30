@@ -20,7 +20,7 @@ $SQLANUN->execute();
 
 if ($SQLANUN->rowCount() > 0) {
     while ($row = $SQLANUN->fetch(PDO::FETCH_ASSOC)) {
-        $row['sts'] == 1 ? $status = 'Ativa' : $status = 'Desativa';
+        $row['sts'] == 1 ? $status = 'Desativa' : $status = 'Ativa';
         $out = '
     <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
        <!-- product -->
@@ -35,18 +35,16 @@ if ($SQLANUN->rowCount() > 0) {
                    <div class="product-deatil">
                        <h5 class="name">
                            <a href="#" >
-                               <p id="Itemlb' . $row['CDLI'] . '">Nome: ' . $row['NMLV'] . '</p><span id="Itemaut' . $row['CDLI'] . '" style="font-size: 14px;">Autor(a): ' . $row['AUTOR'] . '</span><span id="Itemge' . $row['CDLI'] . '" style="font-size: 14px;">Gênero: ' . $row['genero'] . '</span>
+                              <p id="Itemlb' . $row['CDLI'] . '"> ' . $row['NMLV'] . '</p><span>Autor(a):</span><span id="Itemaut' . $row['CDLI'] . '" style="font-size: 14px;"> ' . $row['AUTOR'] . '</span><span>Gênero:</span><span id="Itemge' . $row['CDLI'] . '" style="font-size: 14px;"> ' . $row['genero'] . '</span>
                            </a>
                        </h5>
                        <p class="status-container">
                             <input type="hidden" id="CityUs' . $row['CDLI'] . '" value="' . $row['CITY'] . '">
                             <input type="hidden" id="UFUs' . $row['CDLI'] . '" value="' . $row['UF'] . '">
-                           <span id="Itemst' . $row['CDLI'] . '">Status:' . $status . '</span>
                        </p> 
-                       <span class="tag1"></span>
                    </div>
                    <div class="description">
-                       <p id="Itemdesc' . $row['CDLI'] . '">Descrição: ' . $row['DES'] . '</p>
+                   <span>Descrição:</span><p id="Itemdesc' . $row['CDLI'] . '"> ' .substr($row['DES'], 0, 80)  .'</p>
                    </div>
                    <div class="product-info smart-form" style="margin-top: 5px;">
                        <div class="row">

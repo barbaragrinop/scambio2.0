@@ -235,35 +235,10 @@ if (isset($_SESSION['id'])) {
   </div>
 <br>
 <br>
-<div class="generos" style="width: 70%; height: 150px; border-radius: 15px; background-color: #ac7e5578; margin-left: 15%;">
-<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Biografia</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Carta</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Chick-Lit</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Conto</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Crônica</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Drama</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Ensaio</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Ficção</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">HQ</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Lad-Lit</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Memórias</button>
-<button type="button"style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">New Adult</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Novela</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Poesia</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Romance</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Sick-Lit</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Terror</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Outro</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Literatura Fantástica</button>
-<button type="button"style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Literatura Infantil</button>
-<button type="button" style="margin-left: 2%;"class="btn btn-dark">Literatura Infanto-juvenil</button>
-<button type="button" style="margin-left: 2%;"class="btn btn-dark">Literatura Nacional</button>
-<button type="button" style="margin-left: 2%; margin-top: 1%; margin-bottom: 1%"class="btn btn-dark">Realismo Mágico</button>
-</div>
   <br>
   <br>
   <div style="margin-top: 1px; display: flex; justify-content: center;">
-    <input type="text" name="search" style="border: none; height: 45px; border-radius: 2px; padding-left: 10px; width: 1020px; font-size: 17.5px;" placeholder="Pesquise por uma palavra chave." />
+    <input type="text" name="search" id="search" style="border: none; height: 45px; border-radius: 2px; padding-left: 10px; width: 1020px; font-size: 17.5px;" placeholder="Pesquise por uma palavra chave." />
     <input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 3px;background-color: #AC7E55; color: #ffffff; font-size: 16.5px; margin-left: 13px;" />
   </div>
   <br>
@@ -274,7 +249,8 @@ if (isset($_SESSION['id'])) {
     <div class="col-md-12 bootstrap snippets">
       <div class="panel">
         <div class="panel-body">
-          <textarea class="form-control" rows="2" placeholder="Sobre o que você quer conversar?" style="font-size: 16.5px;"></textarea>
+          <form>
+            <textarea id="publicacao" class="form-control" rows="2" placeholder="Sobre o que você quer conversar?" style="font-size: 16.5px;"></textarea>
           <div class="mar-top clearfix">
             <div style="display: flex; flex-direction: row; justify-content: space-between;">
               <div style="width: 310px;">
@@ -309,6 +285,8 @@ if (isset($_SESSION['id'])) {
             </div>
           </div>
         </div>
+        <input type="submit" value="Publicar" id="pub">
+        </form>
       </div>
       </div>
 
@@ -463,6 +441,7 @@ if (isset($_SESSION['id'])) {
 
             </script>
             <script src="../assets/js/ajaxforum.js"></script>
+            <script src="js/publicar.js"></script>
   </body>
 
   </html>
