@@ -1,0 +1,4 @@
+Nome: Livro A magia
+Descrição: Livro fora da embalagem mas nunca aberto. Estado de novo.
+Gênero: Auto ajuda
+Autor: Rhonda byrne

@@ -8,12 +8,14 @@
             ':outgoing' => $outgoing_id, 
             ':unique_id' => $value['cd_usuario']
         ));
+      
         $row2 = $query2->fetch(PDO::FETCH_ASSOC);
         if($query2->rowCount() > 0){
             $result = $row2['msg'];
         } else{
             $result = "";
         }
+
         //cortando a mensagem p caber na visualização
         (strlen($result) > 24) ? $msg = substr($result, 0, 24).'...' :  $msg = $result;
 
@@ -42,3 +44,5 @@
             </a>    
         ';
     }
+?>
+
