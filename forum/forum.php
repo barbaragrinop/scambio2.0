@@ -31,7 +31,6 @@ if (isset($_SESSION['id'])) {
     <title>Scambio | Perfil</title>
     <link rel="shortcut icon" href="../assets/imgs/logoFundo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -313,197 +312,11 @@ if (isset($_SESSION['id'])) {
       </div>
       </div>
 
-      <div class="panel">
-        <div class="panel-body">
-          <!-- Newsfeed Content -->
-          <!--===================================================-->
-          <div class="media-block">
-            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-            <div class="media-body">
-              <div class="mar-btm">
-                <div style="display: flex; justify-content: space-between;">
-                  <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
-                  <!-- Default dropleft button -->
-                  <div class="btn-group dropleft">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      ...
-                    </button>
-                    <div class="dropdown-menu">
-                      <a href="">Reportar</a>
-                      <br>
-                      <a href="">Enviar mensagem</a>
-
-                    </div>
-                    <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
-                  </div>
-                </div>
-              </div>
-              <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
-              <p style="font-size: 16.5px;">Eu comecei a ler um livro muito legal, ja estava querendo começar faz tempo. O nome dele é chapeuzinho vermelho, conta uma historia de uma vovo que tinha uma netinha que usava chapeuzinho vermelho.</p>
-              <hr>
-
-              <!-- Comments -->
-              <div>
-                <div class="media-block">
-                  <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-                  <div class="media-body">
-                    <div class="mar-btm">
-                      <div style="display: flex; justify-content: space-between;">
-                        <a href="#" class="btn-link text-semibold media-heading box-inline">Yago M.</a>
-                        <!-- Default dropleft button -->
-                        <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ...
-                          </button>
-                          <div class="dropdown-menu">
-                            <a href="">Reportar</a>
-                            <br>
-                            <a href="">Enviar mensagem</a>
-
-                          </div>
-                          <p class="text-muted text-sm"> 09/11/2021</p>
-                        </div>
-                      </div>
-                      <p class="text-muted text-sm"> 09/11/2021</p>
-                      <p style="font-size: 16.5px;">Serio ?? Que legal, pretendo ler este livro tambem.</p>
-                      <hr>
-                    </div>
-
-                <div class="media-block">
-                  <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
-                  </a>
-                  <div class="media-body">
-                    <div class="mar-btm">
-                      <div style="display: flex; justify-content: space-between;">
-                        <a href="#" class="btn-link text-semibold media-heading box-inline">Betriz M.</a>
-                        <!-- Default dropleft button -->
-                        <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ...
-                          </button>
-                          <div class="dropdown-menu">
-                            <a href="">Reportar</a>
-                            <br>
-                            <a href="">Enviar mensagem</a>
-                          </div>
-                          <p style="font-size: 16.5px;">Sim! pode ler, que é muito bom.</p>
-                          <hr>
-                        </div>
-                      </div>
-                      <p class="text-muted text-sm">10/11/2021</p>
-                      <p style="font-size: 16.5px;">Sim! pode ler, que é muito bom.</p>
-                      <hr>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="bg-light p-2">
-                  <div class="d-flex flex-row align-items-start" style="display: flex; padding-left: 120px;">
-                    <img class="rounded-circle" src="../assets/imgs/munir.jpeg" width="70" style="margin-right: 15px; margin-top: 5px;">
-                    <textarea class="form-control ml-1 shadow-none textarea" style="width: 95%;"></textarea>
-                  </div>
-                  <br>
-                  <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" style="background-color: #AC7E55; border: none; font-size: 15px;" type="button">Comentar</button></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
+      <div class="panel publicacoes">
       
-      <div class="panel">
-        <div class="panel-body">
-          <!-- Newsfeed Content -->
-          <!--===================================================-->
-          <div class="media-block">
-            <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-            <div class="media-body">
-              <div class="mar-btm">
-                <div style="display: flex; justify-content: space-between;">
-                  <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
-                  <!-- Default dropleft button -->
-                  <div class="btn-group dropleft">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      ...
-                    </button>
-                    <div class="dropdown-menu">
-                      <a href="">Reportar</a>
-                      <br>
-                      <a href="">Enviar mensagem</a>
+      </div>
+    </div>
 
-                    </div>
-                    <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
-                  </div>
-                </div>
-                <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
-              </div>
-              <p style="font-size: 16.5px;">Alguem ja leu 'Garota Exemplar' ? To querendo ler.</p>
-              <hr>
-
-              <!-- Comments -->
-              <div>
-                <div class="media-block">
-                  <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-                  <div class="media-body">
-                    <div class="mar-btm">
-                      <div style="display: flex; justify-content: space-between;">
-                        <a href="#" class="btn-link text-semibold media-heading box-inline">Martinez.</a>
-                        <!-- Default dropleft button -->
-                        <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle" style="background-color: #ac7e55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ...
-                          </button>
-                          <div class="dropdown-menu">
-                            <a href="">Reportar</a>
-                            <br>
-                            <a href="">Enviar mensagem</a>
-                          </div>
-                          <p style="font-size: 16.5px;">Eu já! muito interessante.</p>
-                          <hr>
-                        </div>
-                      </div>
-                      <p class="text-muted text-sm"> 13/11/2021</p>
-                      <p style="font-size: 16.5px;">Eu já! muito interessante.</p>
-                      <hr>
-                    </div>
-                  </div>
-
-                <div class="media-block">
-                  <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
-                  </a>
-                  <div class="media-body">
-                    <div class="mar-btm">
-                      <div style="display: flex; justify-content: space-between;">
-                        <a href="#" class="btn-link text-semibold media-heading box-inline">Luciana G.</a>
-                        <!-- Default dropleft button -->
-                        <div class="btn-group dropleft">
-                          <button type="button" class="btn btn-secondary dropdown-toggle"style="background-color: #AC7E55;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ...
-                          </button>
-                          <div class="dropdown-menu">
-                            <a href="">Reportar</a>
-                            <br>
-                            <a href="">Enviar mensagem</a>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="text-muted text-sm"> 13/11/2021</p>
-                      <p style="font-size: 16.5px;">Eu ainda não, mas to querendo.</p>
-                      <hr>
-                    </div>
-                  </div>
-                  <div class="bg-light p-2">
-                    <div class="d-flex flex-row align-items-start" style="display: flex; padding-left: 120px;">
-                      <img class="rounded-circle" src="../assets/imgs/munir.jpeg" width="70" style="margin-right: 15px; margin-top: 5px;">
-                      <textarea class="form-control ml-1 shadow-none textarea" style="width: 95%;"></textarea>
-                    </div>
-                    <br>
-                    <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" style="background-color: #AC7E55; border: none; font-size: 15px;" type="button">Comentar</button></div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <div class="fab-containerrr">
               <div class="fabbb fab-icon-holderrr">
@@ -638,15 +451,18 @@ if (isset($_SESSION['id'])) {
             </style>
             <script src="javascript/users.js"></script>
             <script src="javascript/chat.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 
             <script type="text/javascript">
 
 
             </script>
+            <script src="../assets/js/ajaxforum.js"></script>
   </body>
 
   </html>
