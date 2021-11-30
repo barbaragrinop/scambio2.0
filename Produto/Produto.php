@@ -4,12 +4,12 @@ include '../config/conexao.php';
 
 session_start();
 if (!isset($_SESSION['id'])) {
-    header("location: ../home/home.php"); 
+    header("location: ../home/home.php");
     die();
 }
 
-if(!isset($_GET['produto-id'])){
-    header("location: ../home/home.php"); 
+if (!isset($_GET['produto-id'])) {
+    header("location: ../home/home.php");
     die();
 }
 
@@ -30,7 +30,7 @@ $SQLANUN = $pdo->prepare(
     where cd_livro = :idlivro"
 );
 $SQLANUN->execute(array(':idlivro' => $id));
-    $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
+$row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -65,6 +65,7 @@ $SQLANUN->execute(array(':idlivro' => $id));
             font-weight: 300;
             margin-bottom: 10px;
             color: #8898aa;
+            margin-top: 20px;
         }
 
         .table-product.table-striped tbody tr:nth-of-type(odd) {
@@ -97,6 +98,16 @@ $SQLANUN->execute(array(':idlivro' => $id));
         /* #titulo-descricao{
             font-weight: 700;
         } */
+
+        @media (max-height: 820px) {
+            .card {
+                margin-top: -60px;
+            }
+        }
+
+        body {
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -104,15 +115,15 @@ $SQLANUN->execute(array(':idlivro' => $id));
     <div class="container-fluid">
         <div style="display: flex; justify-content: space-around;">
             <?php
-                $sql2 = $pdo->prepare("SELECT * FROM db_scambio.tb_usuario where cd_usuario = :id");
-                $sql2->execute(array(':id' => $_SESSION['id']));
-                if($sql2->rowCount() >= 1){
-                    $row2 = $sql2->fetch((PDO::FETCH_ASSOC));
-                    $sql2->closeCursor();
-                }
+            $sql2 = $pdo->prepare("SELECT * FROM db_scambio.tb_usuario where cd_usuario = :id");
+            $sql2->execute(array(':id' => $_SESSION['id']));
+            if ($sql2->rowCount() >= 1) {
+                $row2 = $sql2->fetch((PDO::FETCH_ASSOC));
+                $sql2->closeCursor();
+            }
             ?>
             <div style="display: flex; flex-direction: row;">
-            <?php
+                <?php
                 if (!isset($row2['DS_IMGP']) && empty($row2['DS_IMGP'])) {
                     $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
                 } else {
@@ -120,7 +131,7 @@ $SQLANUN->execute(array(':idlivro' => $id));
                 }
                 echo $img;
                 ?>
-                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row2['nm_usuario']?></p>
+                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row2['nm_usuario'] ?></p>
             </div>
             <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="90" height="30" style="padding-top: 4px; margin-top: 3px;"></a>
             <?php
@@ -133,33 +144,33 @@ $SQLANUN->execute(array(':idlivro' => $id));
             } else {
 
                 header('Location:../login/login.php');
-              }
+            }
             ?>
         </div>
 
     </div>
     <div>
 
-        <div style="display: flex; justify-content: center;">
-            <div class="col-md-12">
+        <div style="display: flex; justify-content: center; height: 100vh; align-items: center;">
+            <div class="col-md-12" style="max-width: 80%;">
                 <div class="card">
                     <div class="card-body">
                         <div style="margin-top: 8px; margin-left: 10px; ">
                             <div style="display: flex; flex-direction: row;">
-                                <h2 class="card-title" style="font-size: 24px;"><?= $row['nm_livro']?></h3>
+                                <h2 class="card-title" style="font-size: 24px;"><?= $row['nm_livro'] ?></h2>
                             </div>
                             <div class="" style="display: block; overflow:hidden; width: 25%;">
                                 <div style="display: flex; flex-direction: row;  align-items: center; ">
                                     <?php
-                                        if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
-                                            $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
-                                        } else {
-                                            $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
-                                        }
-                                        echo $img;
+                                    if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
+                                        $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+                                    } else {
+                                        $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+                                    }
+                                    echo $img;
                                     ?>
                                     <!-- <img style="border: 1px #808080;  border-style: ridge; width: 39px; height: 39px; border-radius: 9999px;" src="https://flammo.com.br/app/uploads/2017/12/148243-o-que-e-experiencia-do-usuario-e-como-ela-impacta-suas-vendas.jpg" alt="Foto do usuário que postou"> -->
-                                    <h5 class="card-subtitle" style="font-size: 16px; margin-left: 10px;margin-top: 3px; overflow:hidden;" ><?= $row['nm_usuario']?></h5> 
+                                    <h5 class="card-subtitle" style="font-size: 16px; margin-left: 10px;margin-top: 20px; overflow:hidden;"><?= $row['nm_usuario'] ?></h5>
                                 </div>
                             </div>
 
@@ -167,24 +178,24 @@ $SQLANUN->execute(array(':idlivro' => $id));
                         <div style="display: flex; flex-direction: row; margin-top: -28px;">
                             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-top: 20px;">
                                 <div class="carousel-inner" style="margin-top: 20px;">
-                                <!-- fotos aqui -->
+                                    <!-- fotos aqui -->
                                     <?php
-                                                if(isset($row['foto1'])) {?>
-                                                    <div class="carousel-item active">
-                                                        <img class="d-block w-100" src="../assets/imgs/aculpaedasestrelas.jpg" alt="First slide">
-                                                    </div>
-                                    <?php       } else if(isset($row['foto2'])){?>
-                                                    <div class="carousel-item">
-                                                        <img class="d-block w-100" src="../assets/imgs/livrozul.jpg" alt="Second slide">
-                                                    </div>
-                                    <?php       } else if(isset($row['foto3'])){?> 
-                                                    <div class="carousel-item">
-                                                        <img class="d-block w-100" src="../assets/imgs/acabana.jpg" alt="Third slide">
-                                                    </div>
-                                    <?php       }else{ ?>
-                                                    <div class="carousel-item">
-                                                        <img class="d-block w-100" src="../assets/imgs/acabana.jpg" alt="Third slide">
-                                                    </div>  
+                                    if (isset($row['foto1'])) { ?>
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="../assets/imgs/aculpaedasestrelas.jpg" alt="First slide">
+                                        </div>
+                                    <?php       } else if (isset($row['foto2'])) { ?>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="../assets/imgs/livrozul.jpg" alt="Second slide">
+                                        </div>
+                                    <?php       } else if (isset($row['foto3'])) { ?>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="../assets/imgs/acabana.jpg" alt="Third slide">
+                                        </div>
+                                    <?php       } else { ?>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="../assets/imgs/acabana.jpg" alt="Third slide">
+                                        </div>
                                     <?php } ?>
                                 </div>
                                 <a class="carousel-control-prev" id="prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -197,27 +208,27 @@ $SQLANUN->execute(array(':idlivro' => $id));
                                 </a>
                             </div>
 
-                            <div style="margin-left: 20px; margin-top: -80px;">
+                            <div style="margin-left: 20px; margin-top: -80px; width: 100%;">
                                 <div class="col-lg-8 col-md-4 col-sm-9" style="max-width: 100%;">
                                     <h3 class="box-title mt-5" id="titulo-descricao" style="font-size: 21px; font-weight: 700;">Descrição</h3>
-                                    <p style="font-size: 16px;"><?=$row['descricao']?></p>
+                                    <p style="font-size: 16px;"><?= $row['descricao'] ?></p>
                                 </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8" style="max-width: 100%;">
-                                    <h3 class="box-title mt-5" style="font-size: 15px; display: flex; justify-content: center; ">Outras Informações</h3>
+                                <div class="col-lg-8 col-md-8 col-sm-8" style="max-width: 100%; width: 100%;">
+                                    <h2 class="box-title mt-5" style="font-size: 17px; display: flex; justify-content: left; font-weight: 700; margin-left: 1px;">Outras Informações</h2>
                                     <div class="table-responsive">
                                         <table class="table table-striped table-product">
                                             <tbody>
                                                 <tr>
                                                     <td width="200" style="font-size: 15px;font-weight: 600;">Nome do livro</td>
-                                                    <td style="font-size: 14px;"><?=$row['nm_livro']?></td>
+                                                    <td style="font-size: 14px;"><?= $row['nm_livro'] ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="font-size: 15px;font-weight: 600;">Gênero</td>
-                                                    <td style="font-size: 14px;"><?=$row['nm_genero']?></td>
+                                                    <td style="font-size: 14px;"><?= $row['nm_genero'] ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="font-size: 15px;font-weight: 600;">Autor</td>
-                                                    <td style="font-size: 14px;"><?=$row['nm_autor']?></td>
+                                                    <td style="font-size: 14px;"><?= $row['nm_autor'] ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="font-size: 15px;font-weight: 600;">Data de publicação</td>
@@ -227,13 +238,13 @@ $SQLANUN->execute(array(':idlivro' => $id));
                                         </table>
                                     </div>
                                     <div style="display:flex; justify-content:end; padding: 10px">
-                                        <a href="../perfil/perfil2.php?user_id=<?= $row['cd_usuario']?>">   
+                                        <a href="../perfil/perfil2.php?user_id=<?= $row['cd_usuario'] ?>">
                                             <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
                                                 <i class="fa fa-user"></i>
                                                 Perfil
                                             </button>
                                         </a>
-                                        <a href="../chat/users-all.php?user_id=<?= $row['cd_usuario']?>">   
+                                        <a href="../chat/users-all.php?user_id=<?= $row['cd_usuario'] ?>">
                                             <button class="btn btn-success btn-rounded" style="margin-left: 10px;">
                                                 <i class="fa fa-comments"></i>
                                                 Chat
