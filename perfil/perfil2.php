@@ -287,16 +287,17 @@ if ($sql->rowCount() >= 1) {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                Tem certeza que deseja excluir essa postagem ?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            <div class="modal-body" style="display: flex;">
+                                <p style="margin-top: 10px; margin-right: 13px;">Tem certeza que deseja excluir essa postagem ?</p>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-bottom: 5px; margin-right: 10px;">Fechar</button>
                                 <form method="POST">
                                     <input type="hidden" id="idlb" name="cdlb">
                                     <input id="btn-del" type="submit" value="Excluir" class="btn btn-danger">
                                 </form>
                             </div>
+                            <!-- <div class="modal-footer" style="display: flex;">
+
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -315,12 +316,11 @@ if ($sql->rowCount() >= 1) {
                             <form method="POST">
                                 <div class="modal-body" style="display: inline-block; flex-direction: column;">
                                     <div class="form-group">
-                                        <img src="" id="imgedit" width="200px;">
+                                        <img src="" id="imgedit" width="200px;" height="330px">
                                     </div>
 
                                     <div style="display: flex; flex-direction: column; margin-left: 30px;">
-
-                                        <div class="form-group" style=" margin-left: 200px; margin-top: -330px;">
+                                        <div class="form-group" style=" margin-left: 200px; margin-top: -350px;">
                                             <label for="recipient-name" class="col-form-label">Livro:</label>
                                             <input type="text" class="form-control" name="livro" id="lbedit" style="width: 300px !important;">
                                         </div>
