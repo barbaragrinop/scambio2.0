@@ -8,12 +8,14 @@
             ':outgoing' => $outgoing_id, 
             ':unique_id' => $value['cd_usuario']
         ));
+      
         $row2 = $query2->fetch(PDO::FETCH_ASSOC);
         if($query2->rowCount() > 0){
             $result = $row2['msg'];
         } else{
             $result = "";
         }
+
         //cortando a mensagem p caber na visualização
         (strlen($result) > 24) ? $msg = substr($result, 0, 24).'...' :  $msg = $result;
 
@@ -27,10 +29,6 @@
         // var_dump($row);
         //checando se o usuário está online ou offline
         ($value['nm_status'] == "Offline") ? $offline = "offline" : $offline = "";   
-
-        // if(isset($value['nm_status'])){
-        //     ($value['nm_status'] == "Offline") ? $offline = "offline" : $offline = "";
-        // }
 
         $offline = $value['nm_status'] ?? "";
 
@@ -50,3 +48,5 @@
             </a>    
         ';
     }
+?>
+

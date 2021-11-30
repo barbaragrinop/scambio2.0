@@ -208,7 +208,7 @@ if (isset($_SESSION['id'])) {
 			}
 
 			.modal-body {
-				/* margin-bottom: 60px; */
+				margin-bottom: 7px;
 				padding: 10px 20px;
 				background: #fff;
 				display: flex;
@@ -344,6 +344,55 @@ if (isset($_SESSION['id'])) {
 					width: 460px;
 				}
 			}
+
+			@media (max-width: 1191px) {
+				/* .inpAutor {
+					width: 100% !important;
+				}
+
+				.selectGenero {
+					width: 460px;
+				} */
+
+				.filtro {
+					display: column !important;
+				}
+
+				.primeira-div {
+					width: 220px;
+				}
+
+				.segunda-div {
+					display: flex;
+					flex-direction: column;
+				}
+
+				.terceira-div {
+					display: flex;
+					align-items: center;
+					padding-left: 20px;
+				}
+
+				.opcao_filtro {
+					margin-left: 0 !important;
+				}
+			}
+
+			.filtro {
+				display: flex;
+				flex-direction: row;
+				margin-bottom: 10px;
+				margin-left: 70px;
+			}
+
+			.modal-notifi {
+				margin-top: 0 !important;
+			}
+
+			.terceira-div {
+				margin-top: 1.5px;
+				margin-left: 10px;
+			}
 		</style>
 	</head>
 
@@ -358,7 +407,7 @@ if (isset($_SESSION['id'])) {
 						$img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
 					}
 					echo $img;
-				?>
+					?>
 					<p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px;"><?= $row['nm_usuario'] ?></p>
 				</div>
 				<a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="110" height="38" style="padding-top: 5px;"></a>
@@ -378,16 +427,49 @@ if (isset($_SESSION['id'])) {
 		</div>
 		<div class="wrapper">
 			<div class="form-filtro">
-				<form class="filtro" style="display: flex; flex-direction: row; margin-bottom: 20px; margin-left: 35px;">
-					<select name="opcao_filtro" class="opcao_filtro">
-						<option value="nome">Nome</option>
-						<option value="cidade">Cidade</option>
-						<option value="genero">Genêro</option>
-						<option selected="selected" value="dataPublicacao">Data de publicação</option>
-					</select>
-					<div style="margin-top: 1px;">
-						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 10px; padding-left: 10px; width: 270px;" placeholder="Nome do livro" />
-						<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px;" />
+				<form class="filtro">
+					<div class="primeira-div">
+						<select name="opcao_filtro" class="opcao_filtro">
+							<option value="data">Mais Antigo</option>
+							<option selected="selected" value="dataPublicacao">Mais Recente</option>
+						</select>
+						<select name="opcao_filtro" style="margin-left: 9px;" class="opcao_filtro">
+							<option value="estado">AL</option>
+							<option value="estado">AC</option>
+							<option value="estado">AP</option>
+							<option value="estado">AM</option>
+							<option value="estado">BA</option>
+							<option value="estado">CE</option>
+							<option value="estado">ES</option>
+							<option value="estado">GO</option>
+							<option value="estado">MA</option>
+							<option value="estado">MT</option>
+							<option value="estado">MS</option>
+							<option value="estado">MG</option>
+							<option value="estado">PA</option>
+							<option value="estado">PB</option>
+							<option value="estado">PR</option>
+							<option value="estado">PE</option>
+							<option value="estado">PI</option>
+							<option value="estado">RJ</option>
+							<option value="estado">RN</option>
+							<option value="estado">RS</option>
+							<option value="estado">RO</option>
+							<option value="estado">RR</option>
+							<option value="estado">SC</option>
+							<option value="estado">SP</option>
+							<option value="estado">SE</option>
+							<option value="estado">TO</option>
+							<option value="estado"></option>
+							<option selected="selected" value="dataPublicacao">Estado</option>
+						</select>
+					</div>
+					<div style="margin-top: 1px;" class="segunda-div">
+						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 270px;" placeholder="Nome do livro" />
+						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 270px;" placeholder="Autor do livro" />
+					</div>
+					<div class="terceira-div">
+						<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px; background-color: #AC7E55; color: white;" />
 					</div>
 				</form>
 			</div>
@@ -436,8 +518,12 @@ if (isset($_SESSION['id'])) {
 										<option value="Ensaio">Ensaio</option>
 										<option value="Educação">Educação</option>
 										<option value="Estudo">Estudo</option>
+										<option value="Educação e Matemática">Educação e Matemática</option>
+										<option value="Educação e Português">Educação e Português</option>
+										<option value="Estudo">Estudo</option>
 										<option value="Farmacologia">Farmacologia</option>
 										<option value="Ficção">Ficção</option>
+										<option value="Segurança do Trabalho">Segurança do Trabalho</option>
 										<option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
 										<option value="Lad-Lit">Lad-Lit</option>
 										<option value="Literatura Fantástica">Literatura Fantástica</option>
@@ -465,7 +551,6 @@ if (isset($_SESSION['id'])) {
 									<input id="autorDigitado" class="inpAutor" style="height: 45px; width: 100%;" type="text" name="autor">
 								</div>
 							</div>
-
 
 							<label>Fotos: <span style="font-size: 12px;">(Máx 3 imagens)</span> <span id="spanImagem" style="color: red; font-size: 14px; display: none;">Selecione no minimo 1 imagem</span> </label>
 							<label style="background: white; color: white; font-family: sans-serif; font-weight: bold; border-radius: 8px; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: start; margin-top: -10px;">
@@ -554,23 +639,26 @@ if (isset($_SESSION['id'])) {
 
 			<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
-					<div class="modal-content">
+					<div class="modal-content modal-notifi">
 						<div class="modal-header" style="margin-top: 0;">
 							<h5 class="modal-title" id="TituloModalCentralizado">Últimas Notificações</h5>
 						</div>
 
 
 						<div class="modal-body">
-							<a href="#">
-								<h6>Yago comentou na sua postagem do fórum.</h6>
+							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
+								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+								<h6 style="margin-top: 12px; margin-left: 10px;">Yago comentou na sua postagem do fórum.</h6>
 							</a>
-							<hr>
-							<a href="#">
-								<h6>Você recebeu uma mensagem de Josefa.</h6>
+							<hr style="margin-bottom: 12px;">
+							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
+								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+								<h6 style="margin-top: 12px; margin-left: 10px;">Você recebeu uma mensagem de Josefa.</h6>
 							</a>
-							<hr>
-							<a href="#">
-								<h6>Você publicou o livro Cinquenta...</h6>
+							<hr style="margin-bottom: 12px;">
+							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
+								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+								<h6 style="margin-top: 12px; margin-left: 10px;">Você publicou o livro Cinquenta...</h6>
 							</a>
 						</div>
 
@@ -638,6 +726,7 @@ if (isset($_SESSION['id'])) {
 		</script>
 		<script src="../assets/js/cadastroPublicacao.js"></script>
 		<script src="../assets/js/ajaxhome.js"></script>
+		<script src="../assets/js/ajustandoMatch.js"></script>
 
 		<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

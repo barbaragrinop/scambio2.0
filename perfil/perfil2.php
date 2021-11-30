@@ -146,7 +146,7 @@ if ($sql->rowCount() >= 1) {
 
         @media screen and (max-width: 1669px) {
             .col-md-5 {
-                width: 32.99667%;
+                width: 49.99667%;
             }
         }
 
@@ -249,7 +249,7 @@ if ($sql->rowCount() >= 1) {
                 </div>
 
                 <div id="panelEditPerfil" class="panel" style="display: none; height: 400px;">
-                    <div id="editprofile" class=" panel-body bio-graph-info">
+                    <div id="editprofile" class=" panel-body bio-graph-info ">
                     </div>
                 </div>
 
@@ -317,22 +317,22 @@ if ($sql->rowCount() >= 1) {
                             <form id="form-alterar-publicacao" method="POST">
                                 <div class="modal-body" style="display: flex; flex-direction: column;">
                                     <div class="form-group">
-                                        <img src="" id="imgedit" width="100px">
+                                        <img src="" id="imgedit"  width="200px;">
                                     </div>
 
                                     <div style="display: flex; flex-direction: column; margin-left: 30px;">
 
-                                        <div class="form-group">
+                                        <div class="form-group" style=" margin-left: 200px; margin-top: -330px;">
                                             <label for="recipient-name" class="col-form-label">Livro:</label>
-                                            <input type="text" class="form-control" name="livro" id="lbedit" style="width: 10px;">
+                                            <input type="text" class="form-control" name="livro" id="lbedit" style="width: 300px !important;">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style="margin-left: 200px;">
                                             <label for="message-text" class="col-form-label">Descrição:</label>
-                                            <textarea class="form-control" name="describe" id="descedit"></textarea>
+                                            <textarea class="form-control" name="describe" id="descedit" style="width: 300px !important; height: 100px;"></textarea>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style="margin-left: 200px;">
                                             <label for="message-text" class="col-form-label">Gênero:</label>
-                                            <input type="text" class="form-control" name="genero" id="lbgenero">
+                                            <input type="text" class="form-control" name="genero" id="lbgenero" style="width: 300px !important;">
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Novo CEP:</label>
@@ -352,7 +352,7 @@ if ($sql->rowCount() >= 1) {
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Autor:</label>
-                                            <input type="text" class="form-control" name="autor" id="lbautedit">
+                                            <input type="text" class="form-control" name="autor" id="lbautedit"style="width: 300px !important;">
                                         </div>
                                     </div>
 

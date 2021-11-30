@@ -31,7 +31,6 @@ if (isset($_SESSION['id'])) {
     <title>Scambio | Perfil</title>
     <link rel="shortcut icon" href="../assets/imgs/logoFundo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -232,383 +231,238 @@ if (isset($_SESSION['id'])) {
           <input style="font-size: 14px;" id="inpkill" class="inpkill glyphicon buttonLogout" name="DestroySession" type="submit" value="Sair">
         </form>
       </div>
+  </div>
+  </div>
+<br>
+<br>
+<div class="generos" style="width: 70%; height: 150px; border-radius: 15px; background-color: #ac7e5578; margin-left: 15%;">
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Biografia</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Carta</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Chick-Lit</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Conto</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Crônica</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Drama</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Ensaio</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Ficção</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">HQ</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Lad-Lit</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Memórias</button>
+<button type="button"style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">New Adult</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Novela</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Poesia</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Romance</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Sick-Lit</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Terror</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Outro</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%;"class="btn btn-dark">Literatura Fantástica</button>
+<button type="button"style="margin-left: 2%; margin-top: 1%;" class="btn btn-dark">Literatura Infantil</button>
+<button type="button" style="margin-left: 2%;"class="btn btn-dark">Literatura Infanto-juvenil</button>
+<button type="button" style="margin-left: 2%;"class="btn btn-dark">Literatura Nacional</button>
+<button type="button" style="margin-left: 2%; margin-top: 1%; margin-bottom: 1%"class="btn btn-dark">Realismo Mágico</button>
+</div>
+  <br>
+  <br>
+  <div style="margin-top: 1px; display: flex; justify-content: center;">
+    <input type="text" name="search" style="border: none; height: 45px; border-radius: 2px; padding-left: 10px; width: 1020px; font-size: 17.5px;" placeholder="Pesquise por uma palavra chave." />
+    <input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 3px;background-color: #AC7E55; color: #ffffff; font-size: 16.5px; margin-left: 13px;" />
+  </div>
+  <br>
+  <br>
 
-    </div>
-    <br>
-    <br>
-    <div style="margin-top: 1px; display: flex; justify-content: center;">
-      <input type="text" name="search" style="border: none; height: 45px; border-radius: 2px; padding-left: 10px; width: 1020px; font-size: 17.5px;" placeholder="Pesquise por uma palavra chave." />
-      <input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 3px;background-color: #AC7E55; color: #ffffff; font-size: 16.5px; margin-left: 13px;" />
-    </div>
-    <br>
-    <br>
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <div class="container bootdey">
-      <div class="col-md-12 bootstrap snippets">
-        <div class="panel">
-          <div class="panel-body">
-            <textarea class="form-control" rows="2" placeholder="Sobre o que você quer conversar?" style="font-size: 16.5px;"></textarea>
-            <div class="mar-top clearfix">
-              <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                <div style="width: 310px;">
-                  <label style="font-size: 16px;" for="genero">Gênero:</label>
-                  <select style="width: 100%; font-size: 16.5px; width: 940px;" id="genero" name="genero">
-                    <option value="Biografia">Biografia</option>
-                    <option value="Carta">Carta</option>
-                    <option value="Chick-Lit">Chick-Lit</option>
-                    <option value="Conto">Conto</option>
-                    <option value="Crônica">Crônica</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Ensaio">Ensaio</option>
-                    <option value="Ficção">Ficção</option>
-                    <option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
-                    <option value="ladlit">Lad-Lit</option>
-                    <option value="Literatura Fantástica">Literatura Fantástica</option>
-                    <option value="Literatura Infantil">Literatura Infantil</option>
-                    <option value="Literatura Infanto-juvenil">Literatura Infanto-juvenil</option>
-                    <option value="Literatura Nacional">Literatura Nacional</option>
-                    <option value="Memórias">Memórias</option>
-                    <option value="New Adult">New Adult</option>
-                    <option value="Novela">Novela</option>
-                    <option value="Poesia">Poesia</option>
-                    <option value="Realismo Mágico ">Realismo Mágico</option>
-                    <option value="Romance">Romance</option>
-                    <option value="Sick-Lit">Sick-Lit</option>
-                    <option value="Terror">Terror</option>
-                    <option value="Outro">Outro</option>
-                  </select>
-                </div>
-                <button class="btn btn-sm btn-primary pull-right" style="background-color: #AC7E55; border: none; width: 95px; height: 38px; margin-top: 37px; font-size: 15.5px;" type="submit"><i class="fa fa-pencil fa-fw"></i> <span style="font-size: 15.5px;"> Publicar</span></button>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container bootdey">
+    <div class="col-md-12 bootstrap snippets">
+      <div class="panel">
+        <div class="panel-body">
+          <textarea class="form-control" rows="2" placeholder="Sobre o que você quer conversar?" style="font-size: 16.5px;"></textarea>
+          <div class="mar-top clearfix">
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+              <div style="width: 310px;">
+                <label style="font-size: 16px;" for="genero">Gênero:</label>
+                <select style="width: 100%; font-size: 16.5px; width: 940px;" id="genero" name="genero">
+                  <option value="Biografia">Biografia</option>
+                  <option value="Carta">Carta</option>
+                  <option value="Chick-Lit">Chick-Lit</option>
+                  <option value="Conto">Conto</option>
+                  <option value="Crônica">Crônica</option>
+                  <option value="Drama">Drama</option>
+                  <option value="Ensaio">Ensaio</option>
+                  <option value="Ficção">Ficção</option>
+                  <option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
+                  <option value="ladlit">Lad-Lit</option>
+                  <option value="Literatura Fantástica">Literatura Fantástica</option>
+                  <option value="Literatura Infantil">Literatura Infantil</option>
+                  <option value="Literatura Infanto-juvenil">Literatura Infanto-juvenil</option>
+                  <option value="Literatura Nacional">Literatura Nacional</option>
+                  <option value="Memórias">Memórias</option>
+                  <option value="New Adult">New Adult</option>
+                  <option value="Novela">Novela</option>
+                  <option value="Poesia">Poesia</option>
+                  <option value="Realismo Mágico ">Realismo Mágico</option>
+                  <option value="Romance">Romance</option>
+                  <option value="Sick-Lit">Sick-Lit</option>
+                  <option value="Terror">Terror</option>
+                  <option value="Outro">Outro</option>
+                </select>
               </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="panel-body">
-            <!-- Newsfeed Content -->
-            <!--===================================================-->
-            <div class="media-block">
-              <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-              <div class="media-body">
-                <div class="mar-btm">
-                  <div style="display: flex; justify-content: space-between;">
-                    <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
-                    <!-- Default dropleft button -->
-                    <div class="btn-group dropleft">
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ...
-                      </button>
-                      <div class="dropdown-menu">
-                        <a href="">Reportar</a>
-                        <br>
-                        <a href="">Enviar mensagem</a>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
-                </div>
-                <p style="font-size: 16.5px;">Eu comecei a ler um livro muito legal, ja estava querendo começar faz tempo. O nome dele é chapeuzinho vermelho, conta uma historia de uma vovo que tinha uma netinha que usava chapeuzinho vermelho.</p>
-                <hr>
-
-                <!-- Comments -->
-                <div>
-                  <div class="media-block">
-                    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-                    <div class="media-body">
-                      <div class="mar-btm">
-                        <div style="display: flex; justify-content: space-between;">
-                          <a href="#" class="btn-link text-semibold media-heading box-inline">Yago M.</a>
-                          <!-- Default dropleft button -->
-                          <div class="btn-group dropleft">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ...
-                            </button>
-                            <div class="dropdown-menu">
-                              <a href="">Reportar</a>
-                              <br>
-                              <a href="">Enviar mensagem</a>
-                            </div>
-                          </div>
-                        </div>
-                        <p class="text-muted text-sm"> 09/11/2021</p>
-                      </div>
-                      <p style="font-size: 16.5px;">Serio ?? Que legal, pretendo ler este livro tambem.</p>
-                      <hr>
-                    </div>
-                  </div>
-
-                  <div class="media-block ">
-                    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
-                    </a>
-                    <div class="media-body">
-                      <div class="mar-btm">
-                        <div style="display: flex; justify-content: space-between;">
-                          <a href="#" class="btn-link text-semibold media-heading box-inline">Betriz M.</a>
-                          <!-- Default dropleft button -->
-                          <div class="btn-group dropleft">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ...
-                            </button>
-                            <div class="dropdown-menu">
-                              <a href="">Reportar</a>
-                              <br>
-                              <a href="">Enviar mensagem</a>
-                            </div>
-                          </div>
-                        </div>
-                        <p class="text-muted text-sm">10/11/2021</p>
-                      </div>
-                      <p style="font-size: 16.5px;">Sim! pode ler, que é muito bom.</p>
-                      <hr>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-light p-2">
-              <div class="d-flex flex-row align-items-start" style="display: flex; padding-left: 120px;">
-                <img class="rounded-circle" src="../assets/imgs/munir.jpeg" width="70" style="margin-right: 15px; margin-top: 5px;">
-                <textarea class="form-control ml-1 shadow-none textarea" style="width: 95%;"></textarea>
-              </div>
-              <br>
-              <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" style="background-color: #AC7E55; border: none; font-size: 15px;" type="button">Comentar</button></div>
-            </div>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="panel-body">
-            <!-- Newsfeed Content -->
-            <!--===================================================-->
-            <div class="media-block">
-              <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-              <div class="media-body">
-                <div class="mar-btm">
-                  <div style="display: flex; justify-content: space-between;">
-                    <a href="#" class="btn-link text-semibold media-heading box-inline">Amanda R.</a>
-                    <!-- Default dropleft button -->
-                    <div class="btn-group dropleft">
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ...
-                      </button>
-                      <div class="dropdown-menu">
-                        <a href="">Reportar</a>
-                        <br>
-                        <a href="">Enviar mensagem</a>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="text-muted text-sm"> Suspense - 12/11/2021</p>
-                </div>
-                <p style="font-size: 16.5px;">Alguem ja leu 'Garota Exemplar' ? To querendo ler.</p>
-                <hr>
-
-                <!-- Comments -->
-                <div>
-                  <div class="media-block">
-                    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png"></a>
-                    <div class="media-body">
-                      <div class="mar-btm">
-                        <div style="display: flex; justify-content: space-between;">
-                          <a href="#" class="btn-link text-semibold media-heading box-inline">Martinez.</a>
-                          <!-- Default dropleft button -->
-                          <div class="btn-group dropleft">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ...
-                            </button>
-                            <div class="dropdown-menu">
-                              <a href="">Reportar</a>
-                              <br>
-                              <a href="">Enviar mensagem</a>
-                            </div>
-                          </div>
-                        </div>
-                        <p class="text-muted text-sm"> 13/11/2021</p>
-                      </div>
-                      <p style="font-size: 16.5px;">Eu já! muito interessante.</p>
-                      <hr>
-                    </div>
-                  </div>
-
-                  <div class="media-block">
-                    <a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar3.png">
-                    </a>
-                    <div class="media-body">
-                      <div class="mar-btm">
-                        <div style="display: flex; justify-content: space-between;">
-                          <a href="#" class="btn-link text-semibold media-heading box-inline">Luciana G.</a>
-                          <!-- Default dropleft button -->
-                          <div class="btn-group dropleft">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ...
-                            </button>
-                            <div class="dropdown-menu">
-                              <a href="">Reportar</a>
-                              <br>
-                              <a href="">Enviar mensagem</a>
-                            </div>
-                          </div>
-                        </div>
-                        <p class="text-muted text-sm"> 13/11/2021</p>
-                      </div>
-                      <p style="font-size: 16.5px;">Eu ainda não, mas to querendo.</p>
-                      <hr>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-light p-2">
-              <div class="d-flex flex-row align-items-start" style="display: flex; padding-left: 120px;">
-                <img class="rounded-circle" src="../assets/imgs/munir.jpeg" width="70" style="margin-right: 15px; margin-top: 5px;">
-                <textarea class="form-control ml-1 shadow-none textarea" style="width: 95%;"></textarea>
-              </div>
-              <br>
-              <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" style="background-color: #AC7E55; border: none; font-size: 15px;" type="button">Comentar</button></div>
+            <div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="fab-containerrr">
-        <div class="fabbb fab-icon-holderrr">
-          <i class="fas fa-bars"></i>
-        </div>
-
-        <ul class="fab-optionsss">
-          <li>
-            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Home</a></span>
-            <div class="fab-icon-holderrr">
-              <a id="home" style="text-decoration: none;" onclick="redirectHome()"><i class="fas fa-file-alt"></i></a>
-            </div>
-          </li>
-          <li>
-            <span class="fab-labelll"><a id="modal-btn" style="text-decoration: none; color: white;">Publicar Livro</a></span>
-            <div class="fab-icon-holderrr">
-              <a id="modal-btn" style="text-decoration: none;" onclick="redirectPublicacao()"><i class="fas fa-book"></i></a>
-            </div>
-          </li>
-          <li>
-            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Mensagens</a></span>
-            <div class="fab-icon-holderrr">
-              <a id="chat" style="text-decoration: none;" onclick="redirectChat()"><i class="fas fa-comments"></i></a>
-            </div>
-          </li>
-          <li>
-            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Meu Perfil</a></span>
-            <div class="fab-icon-holderrr">
-              <a id="perfil" style="text-decoration: none;" onclick="redirectPerfil()"><i class="fas fa-user"></i></a>
-            </div>
-          </li>
-          <li>
-            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Forum</a></span>
-            <div class="fab-icon-holderrr">
-              <a id="perfil" style="text-decoration: none;" onclick="redirectForum()"><i class="far fa-newspaper	"></i></a>
-            </div>
-          </li>
-          <li>
-            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Ajuda</a></span>
-            <div class="fab-icon-holderrr">
-              <a id="ajuda" style="text-decoration: none;" onclick="redirectAjuda()"><i class="fas fa-question"></i></a>
-            </div>
-          </li>
-          <li>
-            <span class="fab-labelll"><a style="text-decoration: none; color: white;">Notificações</a></span>
-            <div class="fab-icon-holderrr">
-              <!-- <span>1</span> -->
-              <a id="ajuda" data-toggle="modal" data-target="#ExemploModalCentralizado" style="text-decoration: none;"><i class="fas fa-bell"></i></a>
-            </div>
-          </li>
-        </ul>
-        <!-- Modal -->
-        <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.5); cursor: context-menu;">
-          <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100%; display: flex; justify-content: center; align-items: center;">
-            <div class="modal-content" style="width: 500px;">
-              <div class="modal-header">
-                <h5 class="modal-title" id="TituloModalCentralizado" style="font-size: 18.5px; color: black;">Últimas Notificações</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                  <!-- <span aria-hidden="true">&times;</span> -->
-                </button>
-              </div>
-
-
-              <div class="modal-body">
-                <a href="#">
-                  <h6>Yago comentou na sua postagem do fórum.</h6>
-                </a>
-                <hr>
-                <a href="#">
-                  <h6>Você recebeu uma mensagem de Josefa.</h6>
-                </a>
-                <hr>
-                <a href="#">
-                  <h6>Você publicou o livro Cinquenta...</h6>
-                </a>
-              </div>
-
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <!-- <button type="button" class="btn btn-primary">Salvar mudanças</button> -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <script>
-          function redirectHome() {
-            location.replace('http://localhost/scambio2.0/home/home.php');
-          }
-
-          function redirectPublicacao() {
-            location.replace('http://localhost/scambio2.0/home/home.php');
-          }
-
-          function redirectChat() {
-            location.replace('http://localhost/scambio2.0/chat/users-all.php');
-          }
-
-          function redirectPerfil() {
-            location.replace('http://localhost/scambio2.0/perfil/perfil2.php');
-          }
-
-          function redirectForum() {
-            location.replace('http://localhost/scambio2.0/forum/forum.php');
-          }
-
-          function redirectAjuda() {
-            location.replace('http://localhost/scambio2.0/index.php#ajuda');
-          }
-        </script>
       </div>
 
-      <!-- /importar menu -->
-
-      <style type="text/css">
-        body {
-          color: #797979;
-          font-family: 'Open Sans', sans-serif;
-          padding: 0px !important;
-          margin: 0px !important;
-          font-size: 13px;
-          text-rendering: optimizeLegibility;
-          -webkit-font-smoothing: antialiased;
-          -moz-font-smoothing: antialiased;
-          background-image: linear-gradient(to right, #f2eee8, #d4c1a5, #f2eee8);
-        }
-      </style>
-      <script src="javascript/users.js"></script>
-      <script src="javascript/chat.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <div class="panel publicacoes">
+      
+      </div>
+    </div>
 
 
-      <script type="text/javascript">
+            <div class="fab-containerrr">
+              <div class="fabbb fab-icon-holderrr">
+                <i class="fas fa-bars"></i>
+              </div>
+
+              <ul class="fab-optionsss">
+                <li>
+                  <span class="fab-labelll"><a style="text-decoration: none; color: white;">Home</a></span>
+                  <div class="fab-icon-holderrr">
+                    <a id="home" style="text-decoration: none;" onclick="redirectHome()"><i class="fas fa-file-alt"></i></a>
+                  </div>
+                </li>
+                <li>
+                  <span class="fab-labelll"><a id="modal-btn" style="text-decoration: none; color: white;">Publicar Livro</a></span>
+                  <div class="fab-icon-holderrr">
+                    <a id="modal-btn" style="text-decoration: none;" onclick="redirectPublicacao()"><i class="fas fa-book"></i></a>
+                  </div>
+                </li>
+                <li>
+                  <span class="fab-labelll"><a style="text-decoration: none; color: white;">Mensagens</a></span>
+                  <div class="fab-icon-holderrr">
+                    <a id="chat" style="text-decoration: none;" onclick="redirectChat()"><i class="fas fa-comments"></i></a>
+                  </div>
+                </li>
+                <li>
+                  <span class="fab-labelll"><a style="text-decoration: none; color: white;">Meu Perfil</a></span>
+                  <div class="fab-icon-holderrr">
+                    <a id="perfil" style="text-decoration: none;" onclick="redirectPerfil()"><i class="fas fa-user"></i></a>
+                  </div>
+                </li>
+                <li>
+                  <span class="fab-labelll"><a style="text-decoration: none; color: white;">Forum</a></span>
+                  <div class="fab-icon-holderrr">
+                    <a id="perfil" style="text-decoration: none;" onclick="redirectForum()"><i class="far fa-newspaper	"></i></a>
+                  </div>
+                </li>
+                <li>
+                  <span class="fab-labelll"><a style="text-decoration: none; color: white;">Ajuda</a></span>
+                  <div class="fab-icon-holderrr">
+                    <a id="ajuda" style="text-decoration: none;" onclick="redirectAjuda()"><i class="fas fa-question"></i></a>
+                  </div>
+                </li>
+                <li>
+                  <span class="fab-labelll"><a style="text-decoration: none; color: white;">Notificações</a></span>
+                  <div class="fab-icon-holderrr">
+                    <!-- <span>1</span> -->
+                    <a id="ajuda" data-toggle="modal" data-target="#ExemploModalCentralizado" style="text-decoration: none;"><i class="fas fa-bell"></i></a>
+                  </div>
+                </li>
+              </ul>
+              <!-- Modal -->
+              <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.5); cursor: context-menu;">
+                <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100%; display: flex; justify-content: center; align-items: center;">
+                  <div class="modal-content" style="width: 500px;">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="TituloModalCentralizado" style="font-size: 18.5px; color: black;">Últimas Notificações</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <!-- <span aria-hidden="true">&times;</span> -->
+                      </button>
+                    </div>
 
 
-      </script>
+                    <div class="modal-body">
+                      <a href="#" style="display: flex; flex-direction: row; height: 34px; text-decoration: none; color: black;">
+                        <img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+                        <h6 style="margin-top: 12px; margin-left: 10px;">Yago comentou na sua postagem do fórum.</h6>
+                      </a>
+                      <hr style="margin-bottom: 12px;">
+                      <a href="#" style="display: flex; flex-direction: row; height: 34px; text-decoration: none; color: black;">
+                        <img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+                        <h6 style="margin-top: 12px; margin-left: 10px;">Você recebeu uma mensagem de Josefa.</h6>
+                      </a>
+                      <hr style="margin-bottom: 12px;">
+                      <a href="#" style="display: flex; flex-direction: row; height: 34px; text-decoration: none; color: black;">
+                        <img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
+                        <h6 style="margin-top: 12px; margin-left: 10px;">Você publicou o livro Cinquenta...</h6>
+
+                      </a>
+                    </div>
+
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                      <!-- <button type="button" class="btn btn-primary">Salvar mudanças</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <script>
+                function redirectHome() {
+                  location.replace('http://localhost/scambio2.0/home/home.php');
+                }
+
+                function redirectPublicacao() {
+                  location.replace('http://localhost/scambio2.0/home/home.php');
+                }
+
+                function redirectChat() {
+                  location.replace('http://localhost/scambio2.0/chat/users-all.php');
+                }
+
+                function redirectPerfil() {
+                  location.replace('http://localhost/scambio2.0/perfil/perfil2.php');
+                }
+
+                function redirectForum() {
+                  location.replace('http://localhost/scambio2.0/forum/forum.php');
+                }
+
+                function redirectAjuda() {
+                  location.replace('http://localhost/scambio2.0/index.php#ajuda');
+                }
+              </script>
+            </div>
+
+            <!-- /importar menu -->
+
+            <style type="text/css">
+              body {
+                color: #797979;
+                font-family: 'Open Sans', sans-serif;
+                padding: 0px !important;
+                margin: 0px !important;
+                font-size: 13px;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                -moz-font-smoothing: antialiased;
+                background-image: linear-gradient(to right, #f2eee8, #d4c1a5, #f2eee8);
+              }
+            </style>
+            <script src="javascript/users.js"></script>
+            <script src="javascript/chat.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+            <script type="text/javascript">
+
+
+            </script>
+            <script src="../assets/js/ajaxforum.js"></script>
   </body>
 
   </html>

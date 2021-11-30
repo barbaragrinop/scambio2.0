@@ -131,15 +131,16 @@ $SQLANUN->execute(array(':idlivro' => $id));
                 </form>
             <?php
             } else {
-                header("Location: index.php");
-            }
+
+                header('Location:../login/login.php');
+              }
             ?>
         </div>
 
     </div>
-    <div style="display: flex; justify-content: center; flex-direction: column;">
+    <div>
 
-        <div class="container" style="width: 170vh; border-radius: 1%; margin-top: 8px; margin-left: 110px;">
+        <div style="display: flex; justify-content: center;">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
@@ -161,6 +162,7 @@ $SQLANUN->execute(array(':idlivro' => $id));
                                     <h5 class="card-subtitle" style="font-size: 16px; margin-left: 10px;margin-top: 3px; overflow:hidden;" ><?= $row['nm_usuario']?></h5> 
                                 </div>
                             </div>
+
                         </div>
                         <div style="display: flex; flex-direction: row; margin-top: -28px;">
                             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-top: 20px;">

@@ -1,9 +1,9 @@
 function ajaxCall() {
     $.ajax({
         type: "post",
-        url: "PHP/SELECT_LIVROS_PUBLICADOS.php",
+        url: "PHP/SELECT_FORUM_PUBLICACAO.php",
         success: function (response) {
-            $('.return').html(response);
+            $('.publicacoes').html(response)
         }    
     })
 }

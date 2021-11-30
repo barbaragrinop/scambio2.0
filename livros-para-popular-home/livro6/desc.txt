@@ -1,0 +1,4 @@
+Nome: Segurança e Medicina e Trabalho
+Descrição: Manual em segurança e medicina do trabalho.
+Gênero: Química
+Autor: Equipe Atlas
