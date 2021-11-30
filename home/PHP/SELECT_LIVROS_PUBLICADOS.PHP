@@ -39,8 +39,8 @@ if ($SQLANUN->rowCount() > 0) {
 					<p class="card-gen" style="margin-top: -21px; font-size: 14px;">' . $row['genero'] . '</p>
 					<p class="card-publi" style="margin-top: -15px; font-size: 12.5px; color: #858A8D;">' . date("d/m/Y", strtotime(($row["DT"]))) . '</p>
 					<div class="btns">
-						<button>
-							<a href="../Produto/produto.php?produto-id='.$row['CDLI'].'">   
+						<a href="../Produto/produto.php?produto-id=' . $row['CDLI'] . '">   
+							<button>
 									<i class="fa fa-ellipsis-h"></i>
 								</a>
 							</button>';

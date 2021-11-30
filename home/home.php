@@ -359,7 +359,7 @@ if (isset($_SESSION['id'])) {
 				}
 
 				.primeira-div {
-					width: 220px;
+					width: 155px;
 				}
 
 				.segunda-div {
@@ -429,11 +429,11 @@ if (isset($_SESSION['id'])) {
 			<div class="form-filtro">
 				<form class="filtro">
 					<div class="primeira-div">
-						<select name="opcao_filtro" class="opcao_filtro">
+						<select name="opcao_filtro" class="opcao_filtro" style="width: 150px;">
 							<option value="data">Mais Antigo</option>
 							<option selected="selected" value="dataPublicacao">Mais Recente</option>
 						</select>
-						<select name="opcao_filtro" style="margin-left: 9px;" class="opcao_filtro">
+						<select name="opcao_filtro" style="margin-left: 9px; width: 150px;" class="opcao_filtro">
 							<option value="estado">AL</option>
 							<option value="estado">AC</option>
 							<option value="estado">AP</option>
@@ -465,8 +465,8 @@ if (isset($_SESSION['id'])) {
 						</select>
 					</div>
 					<div style="margin-top: 1px;" class="segunda-div">
-						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 270px;" placeholder="Nome do livro" />
-						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 270px;" placeholder="Autor do livro" />
+						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 240px;" placeholder="Nome do livro" />
+						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 240px;" placeholder="Autor do livro" />
 					</div>
 					<div class="terceira-div">
 						<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px; background-color: #AC7E55; color: white;" />
