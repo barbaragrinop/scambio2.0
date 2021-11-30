@@ -35,7 +35,7 @@ if ($SQLANUN->rowCount() > 0) {
                    <div class="product-deatil">
                        <h5 class="name">
                            <a href="#" >
-                               <p id="Itemlb' . $row['CDLI'] . '">' . $row['NMLV'] . '</p><span id="Itemaut' . $row['CDLI'] . '" style="font-size: 14px;">' . $row['AUTOR'] . '</span><span id="Itemge' . $row['CDLI'] . '" style="font-size: 14px;">' . $row['genero'] . '</span>
+                               <p id="Itemlb' . $row['CDLI'] . '">Nome: ' . $row['NMLV'] . '</p><span id="Itemaut' . $row['CDLI'] . '" style="font-size: 14px;">Autor(a): ' . $row['AUTOR'] . '</span><span id="Itemge' . $row['CDLI'] . '" style="font-size: 14px;">Gênero: ' . $row['genero'] . '</span>
                            </a>
                        </h5>
                        <p class="status-container">
@@ -46,9 +46,9 @@ if ($SQLANUN->rowCount() > 0) {
                        <span class="tag1"></span>
                    </div>
                    <div class="description">
-                       <p id="Itemdesc' . $row['CDLI'] . '">' . $row['DES'] . '</p>
+                       <p id="Itemdesc' . $row['CDLI'] . '">Descrição: ' . $row['DES'] . '</p>
                    </div>
-                   <div class="product-info smart-form">
+                   <div class="product-info smart-form" style="margin-top: 5px;">
                        <div class="row">
                            <div class="col-md-6 col-sm-6 col-xs-6">
                                <a href="javascript:void(0);" onclick="carregaModal(' . $row['CDLI'] . ', 1)" class="fas fa-trash-alt btn btn-danger"></a>
