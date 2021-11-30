@@ -182,19 +182,19 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
                                     <?php
                                     if (isset($row['foto1'])) { ?>
                                         <div class="carousel-item active">
-                                            <img class="d-block w-100" src="../assets/imgs/aculpaedasestrelas.jpg" alt="First slide">
+                                            <img class="d-block w-100" src="../fotos/<?= $row['foto1']?>" alt="First slide">
                                         </div>
                                     <?php       } else if (isset($row['foto2'])) { ?>
                                         <div class="carousel-item">
-                                            <img class="d-block w-100" src="../assets/imgs/livrozul.jpg" alt="Second slide">
+                                            <img class="d-block w-100" src="../fotos/<?= $row['foto2']?>" alt="Second slide">
                                         </div>
                                     <?php       } else if (isset($row['foto3'])) { ?>
                                         <div class="carousel-item">
-                                            <img class="d-block w-100" src="../assets/imgs/acabana.jpg" alt="Third slide">
+                                            <img class="d-block w-100" src="../fotos/<?= $row['foto2']?>" alt="Third slide">
                                         </div>
                                     <?php       } else { ?>
                                         <div class="carousel-item">
-                                            <img class="d-block w-100" src="../assets/imgs/acabana.jpg" alt="Third slide">
+                                            <img class="d-block w-100" src="../fotos/<?= $row['foto1']?>" alt="Third slide">
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -287,36 +287,3 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
 
 </html>
 
-
-if (isset($_SESSION['perfil'])) {
-    $id = $_SESSION['perfil'];
-    
-    $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
-                        inner join db_scambio.tb_logradouro
-                        on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
-                        inner join db_scambio.tb_bairro 
-                        on tb_bairro.cd_bairro = tb_logradouro.cd_bairro
-                        inner join db_scambio.tb_cidade
-                        on tb_cidade.cd_cidade = tb_bairro.cd_cidade
-                        inner join db_scambio.tb_uf
-                        on tb_uf.cd_uf = tb_cidade.cd_uf
-                        where cd_usuario = :id");
-    $sql->execute(array(':id' => $id));
-    if ($sql->rowCount() >= 1) {
-        $row2 = $sql->fetch((PDO::FETCH_ASSOC));
-    }
-}
-            $sql2 = $pdo->prepare('SELECT * from db_scambio.tb_usuario
-            inner join db_scambio.tb_logradouro
-            on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
-            inner join db_scambio.tb_bairro 
-            on tb_bairro.cd_bairro = tb_logradouro.cd_bairro
-            inner join db_scambio.tb_cidade
-            on tb_cidade.cd_cidade = tb_bairro.cd_cidade
-            inner join db_scambio.tb_uf
-            on tb_uf.cd_uf = tb_cidade.cd_uf
-            where cd_usuario = :id');
-            $sql2->execute(array(':id' => $_SESSION['id']));
-            if ($sql2->rowCount() >= 1) {
-                $row2 = $sql2->fetch((PDO::FETCH_ASSOC));
-            }
