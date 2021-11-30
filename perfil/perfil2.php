@@ -8,12 +8,10 @@ if (!isset($_SESSION['id'])) {
 
 // $userId = $_;
 
-if(isset($_GET['user_id'])) {
+if (isset($_GET['user_id'])) {
     $id = $_GET['user_id'];
-    echo $id ;
-} else{
+} else {
     $id = $_SESSION['id'];
-    echo $id ;
 }
 
 
@@ -164,12 +162,12 @@ if ($sql->rowCount() >= 1) {
     <div class="container-fluid">
         <div style="display: flex; justify-content: space-around;">
             <?php
-                $sql2 = $pdo->prepare("SELECT * FROM db_scambio.tb_usuario where cd_usuario = :id");
-                $sql2->execute(array(':id' => $_SESSION['id']));
-                if($sql2->rowCount() >= 1){
-                    $row2 = $sql2->fetch((PDO::FETCH_ASSOC));
-                }
-            
+            $sql2 = $pdo->prepare("SELECT * FROM db_scambio.tb_usuario where cd_usuario = :id");
+            $sql2->execute(array(':id' => $_SESSION['id']));
+            if ($sql2->rowCount() >= 1) {
+                $row2 = $sql2->fetch((PDO::FETCH_ASSOC));
+            }
+
             ?>
             <div style="display: flex; flex-direction: row;">
                 <?php
@@ -317,7 +315,7 @@ if ($sql->rowCount() >= 1) {
                             <form method="POST">
                                 <div class="modal-body" style="display: inline-block; flex-direction: column;">
                                     <div class="form-group">
-                                        <img src="" id="imgedit"  width="200px;">
+                                        <img src="" id="imgedit" width="200px;">
                                     </div>
 
                                     <div style="display: flex; flex-direction: column; margin-left: 30px;">
@@ -336,7 +334,7 @@ if ($sql->rowCount() >= 1) {
                                         </div>
                                         <div class="form-group" style="margin-left: 200px;">
                                             <label for="message-text" class="col-form-label">Autor:</label>
-                                            <input type="text" class="form-control" name="autor" id="lbautedit"style="width: 300px !important;">
+                                            <input type="text" class="form-control" name="autor" id="lbautedit" style="width: 300px !important;">
                                         </div>
                                     </div>
 
