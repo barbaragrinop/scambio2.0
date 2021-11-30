@@ -59,6 +59,8 @@ btnCad.onclick = () => {
         let formData = new FormData(form);
         xhr.send(formData);
 
+        location.reload();
+
         document.getElementById('nomeDigitado').value = '';
         document.getElementById('descricaoDigitado').value = '';
         document.getElementById('genero').value = '--';
