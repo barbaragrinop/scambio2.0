@@ -359,7 +359,7 @@ if (isset($_SESSION['id'])) {
 				}
 
 				.primeira-div {
-					width: 220px;
+					width: 155px;
 				}
 
 				.segunda-div {
@@ -429,11 +429,11 @@ if (isset($_SESSION['id'])) {
 			<div class="form-filtro">
 				<form class="filtro">
 					<div class="primeira-div">
-						<select name="opcao_filtro" class="opcao_filtro">
+						<select name="opcao_filtro" class="opcao_filtro" style="width: 150px;">
 							<option value="data">Mais Antigo</option>
 							<option selected="selected" value="dataPublicacao">Mais Recente</option>
 						</select>
-						<select name="opcao_filtro" style="margin-left: 9px;" class="opcao_filtro">
+						<select name="opcao_filtro" style="margin-left: 9px; width: 150px;" class="opcao_filtro">
 							<option value="estado">AL</option>
 							<option value="estado">AC</option>
 							<option value="estado">AP</option>
@@ -465,8 +465,8 @@ if (isset($_SESSION['id'])) {
 						</select>
 					</div>
 					<div style="margin-top: 1px;" class="segunda-div">
-						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 270px;" placeholder="Nome do livro" />
-						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 270px;" placeholder="Autor do livro" />
+						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 240px;" placeholder="Nome do livro" />
+						<input type="text" id="search" name="search" style="border: none; height: 45px; border-radius: 5px; margin-left: 8px; padding-left: 8px; width: 240px;" placeholder="Autor do livro" />
 					</div>
 					<div class="terceira-div">
 						<input type="submit" name="Pesquisar" value="Pesquisar" style="border: none; height: 45px; border-radius: 5px; background-color: #AC7E55; color: white;" />
@@ -551,7 +551,6 @@ if (isset($_SESSION['id'])) {
 									<input id="autorDigitado" class="inpAutor" style="height: 45px; width: 100%;" type="text" name="autor">
 								</div>
 							</div>
-
 
 							<label>Fotos: <span style="font-size: 12px;">(Máx 3 imagens)</span> <span id="spanImagem" style="color: red; font-size: 14px; display: none;">Selecione no minimo 1 imagem</span> </label>
 							<label style="background: white; color: white; font-family: sans-serif; font-weight: bold; border-radius: 8px; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: start; margin-top: -10px;">
@@ -642,25 +641,12 @@ if (isset($_SESSION['id'])) {
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content modal-notifi">
 						<div class="modal-header" style="margin-top: 0;">
-							<h5 class="modal-title" id="TituloModalCentralizado">Últimas Notificações</h5>
+							<h5 class="modal-title" id="TituloModalCentralizado" style="font-weight: 700;">Últimas Notificações</h5>
+							<i class="fas fa-bell" style="color: #FFDB58; font-size: 25px;"></i>
 						</div>
 
-
-						<div class="modal-body">
-							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
-								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
-								<h6 style="margin-top: 12px; margin-left: 10px;">Yago comentou na sua postagem do fórum.</h6>
-							</a>
-							<hr style="margin-bottom: 12px;">
-							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
-								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
-								<h6 style="margin-top: 12px; margin-left: 10px;">Você recebeu uma mensagem de Josefa.</h6>
-							</a>
-							<hr style="margin-bottom: 12px;">
-							<a href="#" style="display: flex; flex-direction: row; height: 34px;">
-								<img width="40" height="40" src="../babi.jpg" alt="" style="border-radius: 20px;">
-								<h6 style="margin-top: 12px; margin-left: 10px;">Você publicou o livro Cinquenta...</h6>
-							</a>
+						<div class="modal-body notificacoes" style= "max-height: 60vh; overflow-y: scroll;">
+							
 						</div>
 
 
@@ -727,6 +713,7 @@ if (isset($_SESSION['id'])) {
 		</script>
 		<script src="../assets/js/cadastroPublicacao.js"></script>
 		<script src="../assets/js/ajaxhome.js"></script>
+		<script src="../assets/js/ajustandoMatch.js"></script>
 
 		<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

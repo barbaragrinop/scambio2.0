@@ -41,7 +41,8 @@ if ($sql->rowCount() >= 1) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="login/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 
     <style>
@@ -123,11 +124,11 @@ if ($sql->rowCount() >= 1) {
                 <header>
                     <div class="content">
                         <?php
-                        if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
-                            $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">';
-                        } else {
-                            $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="">';
-                        }
+                            if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
+                                $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">';
+                            } else {
+                                $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="">';
+                            }
                         echo $img;
                         ?>
                         <div class="details">
@@ -142,7 +143,7 @@ if ($sql->rowCount() >= 1) {
                     <button> <i class="fas fa-search"></i> </button>
                 </div>
                 <div class="users-list">
-
+                    
                 </div>
             </section>
 
@@ -188,11 +189,12 @@ if ($sql->rowCount() >= 1) {
                         </div>
 
                         <input type="text" name="message" class="input-field" id="inputMsg" placeholder="Digite sua mensagem..">
+                        <div onclick="btnEnviar()">
+                            <button><i class="fab fa-telegram plane"></i></button>
+                        </div>
                     </form>
-                    <button class="btn-match" id="btn-match" onclick="clickBtnMatch()">Match</button>
+                    <button class="btn-match" id="btn-match" onclick="clickBtnMatch(<?php print $_SESSION['id'] ?? null?>, <?php print $_SESSION['idLivro'] ?? null?> )">Match</button>
                 </div>
-
-
             </section>
         </div>
     </div>
@@ -204,23 +206,6 @@ if ($sql->rowCount() >= 1) {
     ?>
 
     <script>
-        function clickBtnMatch() {
-            if (document.getElementById('btn-match').style.backgroundColor == 'rgb(172, 126, 85)') {
-                document.getElementById('btn-match').style.backgroundColor = '#333';
-                document.getElementById('btn-match').style.width = '55px';
-                document.getElementById('btn-match').style.marginLeft = '5px';
-                document.getElementById('btn-match').style.lineHeight = '17px';
-                document.getElementById('btn-match').innerHTML = 'Match';
-            } else {
-                document.getElementById('btn-match').style.backgroundColor = 'rgb(172, 126, 85)';
-                document.getElementById('btn-match').style.width = '69.5px';
-                document.getElementById('btn-match').style.marginLeft = '2px';
-                document.getElementById('btn-match').style.lineHeight = '19px';
-                document.getElementById('btn-match').innerHTML = 'Desfazer Match';
-            }
-        }
-
-
         function updateImage() {
             let nomeImagem = document.getElementById('file_input_id').value;
             document.getElementById('inputMsg').value = 'Imagem Selecionada. Aperte enter para envia-la.';
@@ -251,8 +236,9 @@ if ($sql->rowCount() >= 1) {
 
     <script src="javascript/users.js"></script>
     <script src="javascript/chat.js"></script>
+    <script src="../assets/js/realizandoMatch.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>

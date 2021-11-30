@@ -8,7 +8,6 @@ function Callajaxpub() {
     }) 
 }
 
-
 function update(){
     const form = document.querySelector("#formupdate")
     $('#formupdate').submit(function(){
@@ -32,7 +31,6 @@ function update(){
 $(document).ready( () => {
     setInterval(Callajaxperfil(), 2000)
     setInterval(Callajaxpub(), 500)
-
 })
 
 
