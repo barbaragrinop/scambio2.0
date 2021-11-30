@@ -469,8 +469,12 @@ if (isset($_SESSION['id'])) {
 										<option value="Ensaio">Ensaio</option>
 										<option value="Educação">Educação</option>
 										<option value="Estudo">Estudo</option>
+										<option value="Educação e Matemática">Educação e Matemática</option>
+										<option value="Educação e Português">Educação e Português</option>
+										<option value="Estudo">Estudo</option>
 										<option value="Farmacologia">Farmacologia</option>
 										<option value="Ficção">Ficção</option>
+										<option value="Segurança do Trabalho">Segurança do Trabalho</option>
 										<option value="História em Quadrinhos (HQ)">História em Quadrinhos (HQ)</option>
 										<option value="Lad-Lit">Lad-Lit</option>
 										<option value="Literatura Fantástica">Literatura Fantástica</option>
