@@ -44,9 +44,19 @@ function ajaxAtualizaNotificoes() {
 
 $(document).ready(function () { 
     setInterval(ajaxAtualizaNotificoes, 500);
+    setInterval(ajaxCall(), 500);
 });
 
-setInterval(ajaxCall(), 500);
+setInterval(ajaxCallprin(), 500);
 
 
+function ajaxCallprin() {
+    $.ajax({
+        type: "post",
+        url: "PHP/SELECT_LIVROS_PUBLICADOS.php",
+        success: function (response) {
+            $('.return').html(response);
+        }    
+    })
+}
 

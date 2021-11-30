@@ -239,6 +239,9 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
                                     </div>
                                     <div style="display:flex; justify-content:end; padding: 10px">
                                         <a href="../perfil/perfil2.php?user_id=<?= $row['cd_usuario'] ?>">
+                                            <?php
+                                                    $_SESSION['perfil'] = $row['cd_usuario'];
+                                            ?>
                                             <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
                                                 <i class="fa fa-user"></i>
                                                 Perfil
@@ -267,7 +270,9 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
     </div>
 
 
-    <?php include_once('../menu/menu.php'); ?>
+    <?php 
+        include_once('../menu/menu.php'); 
+    ?>
     <script>
         $(document).ready(function() {
             let qntImg = document.getElementsByClassName('carousel-item').length;
@@ -281,3 +286,37 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
 </body>
 
 </html>
+
+
+if (isset($_SESSION['perfil'])) {
+    $id = $_SESSION['perfil'];
+    
+    $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
+                        inner join db_scambio.tb_logradouro
+                        on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
+                        inner join db_scambio.tb_bairro 
+                        on tb_bairro.cd_bairro = tb_logradouro.cd_bairro
+                        inner join db_scambio.tb_cidade
+                        on tb_cidade.cd_cidade = tb_bairro.cd_cidade
+                        inner join db_scambio.tb_uf
+                        on tb_uf.cd_uf = tb_cidade.cd_uf
+                        where cd_usuario = :id");
+    $sql->execute(array(':id' => $id));
+    if ($sql->rowCount() >= 1) {
+        $row2 = $sql->fetch((PDO::FETCH_ASSOC));
+    }
+}
+            $sql2 = $pdo->prepare('SELECT * from db_scambio.tb_usuario
+            inner join db_scambio.tb_logradouro
+            on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
+            inner join db_scambio.tb_bairro 
+            on tb_bairro.cd_bairro = tb_logradouro.cd_bairro
+            inner join db_scambio.tb_cidade
+            on tb_cidade.cd_cidade = tb_bairro.cd_cidade
+            inner join db_scambio.tb_uf
+            on tb_uf.cd_uf = tb_cidade.cd_uf
+            where cd_usuario = :id');
+            $sql2->execute(array(':id' => $_SESSION['id']));
+            if ($sql2->rowCount() >= 1) {
+                $row2 = $sql2->fetch((PDO::FETCH_ASSOC));
+            }
