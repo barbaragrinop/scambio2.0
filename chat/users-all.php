@@ -182,6 +182,9 @@ if ($sql->rowCount() >= 1) {
                         </div>
 
                         <input type="text" name="message" class="input-field" id="inputMsg" placeholder="Digite sua mensagem..">
+                        <div onclick="btnEnviar()">
+                            <button><i class="fab fa-telegram plane"></i></button>
+                        </div>
                     </form>
                     <button class="btn-match" id="btn-match" onclick="clickBtnMatch()">Match</button>
                 </div>
