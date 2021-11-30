@@ -312,8 +312,8 @@ if ($sql->rowCount() >= 1) {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form method="POST">
-                                <div class="modal-body" style="display: inline-block; flex-direction: column;">
+                            <form id="form-alterar-publicacao" method="POST">
+                                <div class="modal-body" style="display: flex; flex-direction: column;">
                                     <div class="form-group">
                                         <img src="" id="imgedit" width="200px;">
                                     </div>
@@ -332,7 +332,23 @@ if ($sql->rowCount() >= 1) {
                                             <label for="message-text" class="col-form-label">Gênero:</label>
                                             <input type="text" class="form-control" name="genero" id="lbgenero" style="width: 300px !important;">
                                         </div>
-                                        <div class="form-group" style="margin-left: 200px;">
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Novo CEP:</label>
+                                            <input type="text" class="form-control" name="CEP" id="CEP">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Cidade:</label>
+                                            <input type="text" class="form-control" name="city" id="uscity" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Estado:</label>
+                                            <input type="text" class="form-control" name="uf" id="UFUs" readonly>
+                                        </div>
+                                        <div class="form-group" >
+                                            <label for="message-text" class="col-form-label">Estado:</label>
+                                            <input type="text" class="form-control" name="id" id="id" readonly>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="message-text" class="col-form-label">Autor:</label>
                                             <input type="text" class="form-control" name="autor" id="lbautedit" style="width: 300px !important;">
                                         </div>
@@ -1172,6 +1188,7 @@ if ($sql->rowCount() >= 1) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
         <script src="../assets/js/ajaxperfil.js"></script>
+        <script src="../assets/js/altera-info-perfil.js"></script>
 </body>
 
 </html>
