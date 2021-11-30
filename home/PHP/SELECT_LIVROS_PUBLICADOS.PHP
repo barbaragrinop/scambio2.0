@@ -41,21 +41,18 @@ if ($SQLANUN->rowCount() > 0) {
 					<div class="btns"> ';
 					if($row['USUARIOID'] != $idSession){
 						$out .= '
-						<a href="../Produto/produto.php?produto-id=' . $row['CDLI'] . '">   
-							<button>
-									<i class="fa fa-ellipsis-h"></i>
+							<a href="../Produto/produto.php?produto-id=' . $row['CDLI'] . '">   
+								<button><i class="fa fa-ellipsis-h"></i></button>
+							</a>
+							<button onclick="inserindoMatch(' . $idSession . ',' . $idEnviado . ',' . $idPublicao  .')">
+								<a href="../chat/users-all.php?user_id='.$row['USUARIOID'].'">   
+									<i class="fas fa-envelope"></i>
 								</a>
-							</button>
-						<button onclick="inserindoMatch(' . $idSession . ',' . $idEnviado . ',' . $idPublicao  .')">
-										<a href="../chat/users-all.php?user_id='.$row['USUARIOID'].'">   
-											<i class="fas fa-envelope"></i>
-										</a>
-									</button>';
+							</button>';
 						}
-						 $out .= 
-						 '</div>
-					 </div>
-				 </div>';
+						$out .= '</div>
+							</div>
+						</div>';
 		echo $out;
 	}
 }
