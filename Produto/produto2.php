@@ -94,7 +94,7 @@ if (!isset($_SESSION['id'])) {
 
         @media (max-height: 820px) {
             .card {
-                margin-top: 70px;
+                margin-top: 20px;
             }
         }
 
