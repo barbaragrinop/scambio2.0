@@ -15,9 +15,7 @@ $("#edit").click(function(){
             "genero":genero,
             "autor":autor,
             "codigo":codigo
-        },
-        success: function (response) {
-        }    
+        },   
     })
 })
 

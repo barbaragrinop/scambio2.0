@@ -4,7 +4,6 @@ include_once('../../config/conexao.php');
 
 session_start();
 
-
 $livro = $_POST['livro'] ?? "";
 $autor = $_POST['autor'] ?? "";
 $uf = $_POST['uf'] ?? "";
