@@ -17,9 +17,7 @@ function ajaxCall() {
     })
 }
 
-$(document).ready(function () {
-    setInterval(ajaxCall(), 500);
-});
+setInterval(ajaxCall(), 500);
 
 
 
