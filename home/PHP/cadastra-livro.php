@@ -29,7 +29,7 @@ if (isset($_FILES['file1'])) {
     $diretorio = '../../fotos/';
 
     move_uploaded_file($_FILES['file1']['tmp_name'], $diretorio.$file1);
-}
+};
 
 if (isset($_FILES['file2'])) {
     $extensao2 = strtolower(substr($_FILES['file2']['name'], -4));
@@ -58,7 +58,7 @@ $date = date("Y-m-d h:i");
 // ECHO $date
 
 try{
-    $sql = $pdo->prepare("CALL db_scambio.sp_cadastrapublicacao(:livro, :descricao, :genero, :autor,  :ft1, :ft2, :ft3, :us, :dt, :st)");
+    $sql = $pdo->prepare("CALL db_scambio.sp_cadastrapublicacao(:livro, :descricao, :genero, :autor,  :ft1, :ft2, :ft3, :us, :dt)");
     $sql->execute(array(
         ':livro' => $nome,
         ':autor' => $autor,
@@ -68,8 +68,7 @@ try{
         ':ft2' => $file2,
         ':ft3' => $file3,
         ':us' => $_SESSION['id'],
-        ':dt' => $date ,
-        ':st' => 1
+        ':dt' => $date
     ));
 }
 catch(Exception $e){

@@ -276,11 +276,9 @@ if ($sql->rowCount() >= 1) {
                                 Tem certeza que deseja excluir essa postagem ?
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                <form method="POST">
-                                    <input type="hidden" id="idlb" name="cdlb">
+                                <button type="button" id="fechar" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <input type="hidden" id="idlb" name="idlb">
                                     <input id="btn-del" type="submit" value="Excluir" class="btn btn-danger">
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -297,48 +295,31 @@ if ($sql->rowCount() >= 1) {
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form method="POST">
+                            <form method="POST" id="formedit">
                                 <div class="modal-body" style="display: flex; flex-direction: column;">
-                                    <div class="form-group">
-                                        <img src="" id="imgedit" width="100px">
-                                    </div>
-
                                     <div style="display: flex; flex-direction: column; margin-left: 30px;">
 
                                         <div class="form-group">
                                             <label for="recipient-name" class="col-form-label">Livro:</label>
-                                            <input type="text" class="form-control" name="livro" id="lbedit" style="width: 10px;">
+                                            <input type="text" class="form-control" name="livro" id="lbedit" style="width:300px !important;">
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Descrição:</label>
-                                            <textarea class="form-control" name="describe" id="descedit"></textarea>
+                                            <textarea class="form-control" name="describe" id="descedit" style="width:300px !important;"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Gênero:</label>
-                                            <input type="text" class="form-control" name="genero" id="lbgenero">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message-text" class="col-form-label">Novo CEP:</label>
-                                            <input type="text" class="form-control" name="CEP" id="CEP">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message-text" class="col-form-label">Cidade:</label>
-                                            <input type="text" class="form-control" name="city" id="uscity">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message-text" class="col-form-label">Estado:</label>
-                                            <input type="text" class="form-control" name="uf" id="UFUs">
+                                            <input type="text" class="form-control" name="genero" id="lbgenero" style="width:300px !important;">
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" class="col-form-label">Autor:</label>
-                                            <input type="text" class="form-control" name="autor" id="lbautedit">
+                                            <input type="text" class="form-control" name="autor" id="lbautedit" style="width:300px !important;">
                                         </div>
                                     </div>
-
+                                    <input type="hidden" id="values" name="values">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <input type="hidden" id="values" name="cda" id="">
                                     <input type="submit" id="edit" class="editf btn btn-primary" value="Salvar Alterações">
                                 </div>
                             </form>
@@ -1169,6 +1150,8 @@ if ($sql->rowCount() >= 1) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
         <script src="../assets/js/ajaxperfil.js"></script>
+        <script src="js/modaldel.js"></script>
+        <script src="js/modaledit.js"></script>
 </body>
 
 </html>

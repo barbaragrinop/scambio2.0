@@ -32,38 +32,7 @@ function update(){
 $(document).ready( () => {
     setInterval(Callajaxperfil(), 2000)
     setInterval(Callajaxpub(), 500)
-    $('#CEP').mask('00000-000');
-    document.getElementById('uscity').disabled = true;
-    document.getElementById('UFUs').disabled = true;
-    $("#CEP").on("change", function(){    
-        if(this.value){
-            $.ajax({
-                url: 'https://api.postmon.com.br/v1/cep/' + this.value,
-                dataType: "json", 
-                crossDomain: true,
-                statusCode:{
-                    200: (data)=>{
-                        console.log(data);
-                        $("#cep").addClass("is-valid");
-                        $("#uscity").val(data.cidade);
-                        $("#UFUs").val(data.estado);
-                    },
-                    400: (msg)=>{
-                        console.log(400)
-                        console.log(msg); //request error
-                    },
-                    404: (msg)=>{
-                        console.log(404)
-                        console.log(msg);// cpf invalido
-                    }
-                },
-                success: function () {
-                    retorno = 2;
-                    console.log(retorno)
-                }
-           });
-        }
-    })
+
 })
 
 
@@ -76,16 +45,15 @@ function carregaModal(id, oqE){
     var UsCity= $("#CityUs"+id).val()
     var UsUF= $("#UFUs"+id).val()
     var txtlbaut= $("#Itemaut"+id).text().trim()
-    var imgItem = $("#Itemimg"+id).attr("src")+""
 
-    console.log(imgItem)
 
     if(oqE){
         $("#lbdel").html('Excluir postagem do livro ' + txtLb)
-        $("#idlb").val(id)
+        $("#idlb").val(id)    
         $("#exampleModalLongD").modal("show")
     }
     else{
+        $("#values").val(id)
         $("#descedit").val(txtDesc) 
         $("#uscity").val(UsCity) 
         $("#UFUs").val(UsUF) 
@@ -93,7 +61,6 @@ function carregaModal(id, oqE){
         $("#lbedit").val(txtLb)
         $("#lbautedit").val(txtlbaut)
         $("#lbgenero").val(txtGenero)
-        document.getElementById("imgedit").src =  imgItem+""
         $("#exampleModalLongE").modal("show")
     }
 }
@@ -109,3 +76,5 @@ function Callajaxperfil() {
         }
     }) 
 }
+
+

@@ -159,9 +159,15 @@ if ($sql->rowCount() >= 1) {
                     $sql->execute(array(':user' => $user_id));
                     if ($sql->rowCount() >= 1) {
                         $row = $sql->fetch(PDO::FETCH_ASSOC);
+                        if(!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])){
+                            $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">';
+                         }
+                         else{
+                            $img = '<img src="../fotosuser/' . $row['DS_IMGP'] .'" alt="">';
+                         }
                     }
+                    echo $img;
                     ?>
-                    <img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1" alt="" srcset="">
                     <a href="users-all.php"></a>
                     <div class="details" style="display: flex;">
                         <span><?= $row['nm_usuario'] ?></span>

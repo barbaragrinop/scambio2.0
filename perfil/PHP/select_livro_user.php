@@ -20,7 +20,7 @@ $SQLANUN->execute();
 
 if ($SQLANUN->rowCount() > 0) {
     while ($row = $SQLANUN->fetch(PDO::FETCH_ASSOC)) {
-        $row['sts'] == 1 ? $status = 'Ativa' : $status = 'Desativa';
+        $row['sts'] == 1 ? $status = 'Desativa' : $status = 'Ativa';
         $out = '
     <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
        <!-- product -->
