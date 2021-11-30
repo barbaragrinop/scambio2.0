@@ -6,7 +6,16 @@ if (!isset($_SESSION['id'])) {
     header("Location: ../index.php");
 }
 
-$id = $_SESSION['id'];
+// $userId = $_;
+
+if(isset($_GET['user_id'])) {
+    $id = $_GET['user_id'];
+    echo $id ;
+} else{
+    $id = $_SESSION['id'];
+    echo $id ;
+}
+
 
 
 $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
@@ -137,7 +146,7 @@ if ($sql->rowCount() >= 1) {
 
         @media screen and (max-width: 1669px) {
             .col-md-5 {
-                width: 32.99667%;
+                width: 49.99667%;
             }
         }
 
@@ -154,16 +163,24 @@ if ($sql->rowCount() >= 1) {
 <body>
     <div class="container-fluid">
         <div style="display: flex; justify-content: space-around;">
+            <?php
+                $sql2 = $pdo->prepare("SELECT * FROM db_scambio.tb_usuario where cd_usuario = :id");
+                $sql2->execute(array(':id' => $_SESSION['id']));
+                if($sql2->rowCount() >= 1){
+                    $row2 = $sql2->fetch((PDO::FETCH_ASSOC));
+                }
+            
+            ?>
             <div style="display: flex; flex-direction: row;">
                 <?php
-                if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
+                if (!isset($row2['DS_IMGP']) && empty($row2['DS_IMGP'])) {
                     $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
                 } else {
-                    $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+                    $img = '<img src="../fotosuser/' . $row2['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
                 }
                 echo $img;
                 ?>
-                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px; color: black;"><?= $row['nm_usuario'] ?></p>
+                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px; color: black;"><?= $row2['nm_usuario'] ?></p>
             </div>
             <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
             </button>
