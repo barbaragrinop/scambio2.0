@@ -7,15 +7,10 @@ if (!isset($_SESSION['id'])) {
 }
 
 // $userId = $_;
-
-if (isset($_GET['user_id'])) {
-    $id = $_GET['user_id'];
-} else {
-    $id = $_SESSION['id'];
-}
-
-
-$sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
+if (isset($_SESSION['perfil'])) {
+    $id = $_SESSION['perfil'];
+    
+    $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
                         inner join db_scambio.tb_logradouro
                         on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
                         inner join db_scambio.tb_bairro 
@@ -25,10 +20,32 @@ $sql = $pdo->prepare("SELECT * from db_scambio.tb_usuario
                         inner join db_scambio.tb_uf
                         on tb_uf.cd_uf = tb_cidade.cd_uf
                         where cd_usuario = :id");
-$sql->execute(array(':id' => $id));
-if ($sql->rowCount() >= 1) {
-    $row = $sql->fetch((PDO::FETCH_ASSOC));
+    $sql->execute(array(':id' => $id));
+    if ($sql->rowCount() >= 1) {
+        $row2 = $sql->fetch((PDO::FETCH_ASSOC));
+    }
 }
+else{
+    
+    $sql2 = $pdo->prepare('SELECT * from db_scambio.tb_usuario
+    inner join db_scambio.tb_logradouro
+    on tb_usuario.cd_logradouro = tb_logradouro.cd_logradouro
+    inner join db_scambio.tb_bairro 
+    on tb_bairro.cd_bairro = tb_logradouro.cd_bairro
+    inner join db_scambio.tb_cidade
+    on tb_cidade.cd_cidade = tb_bairro.cd_cidade
+    inner join db_scambio.tb_uf
+    on tb_uf.cd_uf = tb_cidade.cd_uf
+    where cd_usuario = :id');
+    $sql2->execute(array(':id' => $_SESSION['id']));
+    if ($sql2->rowCount() >= 1) {
+        $row2 = $sql2->fetch((PDO::FETCH_ASSOC));
+    }
+}
+
+
+
+
 
 ?>
 
@@ -164,20 +181,20 @@ if ($sql->rowCount() >= 1) {
             $sql2 = $pdo->prepare("SELECT * FROM db_scambio.tb_usuario where cd_usuario = :id");
             $sql2->execute(array(':id' => $_SESSION['id']));
             if ($sql2->rowCount() >= 1) {
-                $row2 = $sql2->fetch((PDO::FETCH_ASSOC));
+                $row = $sql2->fetch((PDO::FETCH_ASSOC));
             }
 
             ?>
             <div style="display: flex; flex-direction: row;">
                 <?php
-                if (!isset($row2['DS_IMGP']) && empty($row2['DS_IMGP'])) {
+                if (!isset($row['DS_IMGP']) && empty($row['DS_IMGP'])) {
                     $img  = '<img src="https://i1.wp.com/terracoeconomico.com.br/wp-content/uploads/2019/01/default-user-image.png?ssl=1"  alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
                 } else {
-                    $img = '<img src="../fotosuser/' . $row2['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
+                    $img = '<img src="../fotosuser/' . $row['DS_IMGP'] . '" alt="" width="40" height="40" style="border-radius: 30px; border: 3px solid #3CD10C; margin-top: 8px;">';
                 }
                 echo $img;
                 ?>
-                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px; color: black;"><?= $row2['nm_usuario'] ?></p>
+                <p style="font-size: 16px; font-weight: 600; margin-top: 17px; margin-left: 7px; color: black;"><?= $row['nm_usuario'] ?></p>
             </div>
             <a href="../index.php"><img class="img-index" src="../assets/imgs/LOGO_TRANSPARENTE.PNG" alt="logo Scambio" width="104" height="30" style="margin-top: 9px;"></a>
             </button>
@@ -211,7 +228,7 @@ if ($sql->rowCount() >= 1) {
                             echo $img;
                             ?>
                         </a>
-                        <h1><?= $row['nm_usuario'] ?></h1>
+                        <h1><?= $row2['nm_usuario'] ?></h1>
                     </div>
 
                     <ul class="nav nav-pills nav-stacked">
@@ -227,16 +244,16 @@ if ($sql->rowCount() >= 1) {
                         <h1>Biografia</h1>
                         <div class="row">
                             <div class="bio-row">
-                                <p><span>Nome:</span><?= $row['nm_usuario'] ?></p>
+                                <p><span>Nome:</span><?= $row2['nm_usuario'] ?></p>
                             </div>
                             <div class="bio-row">
-                                <p><span>Estado:</span><?= $row['sg_uf'] ?></p>
+                                <p><span>Estado:</span><?= $row2['sg_uf'] ?></p>
                             </div>
                             <div class="bio-row">
-                                <p><span>Cidade:</span><?= $row['nm_cidade'] ?></p>
+                                <p><span>Cidade:</span><?= $row2['nm_cidade'] ?></p>
                             </div>
                             <div class="bio-row">
-                                <p><span>Aniversario:</span><?= date('d/m/Y', strtotime(($row['dt_nascimento']))) ?></p>
+                                <p><span>Aniversario:</span><?= date('d/m/Y', strtotime(($row2['dt_nascimento']))) ?></p>
                             </div>
                             <div class="bio-row">
                                 <p><span>Status:</span><?= $_SESSION['status'] ?></p>
@@ -1170,5 +1187,4 @@ if ($sql->rowCount() >= 1) {
         <script src="js/modaldel.js"></script>
         <script src="js/modaledit.js"></script>
 </body>
-
 </html>

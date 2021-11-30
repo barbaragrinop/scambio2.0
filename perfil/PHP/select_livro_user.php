@@ -4,6 +4,14 @@ session_start();
 
 include_once('../../config/conexao.php');
 
+
+if (isset($_SESSION['perfil'])) {
+    $id = $_SESSION['perfil'];
+} else {
+    $id = $_SESSION['id'];
+}
+
+
 $sql = 'SELECT LV.status_pub as sts,LV.DESCRICAO AS DES,LV.NM_AUTOR AS AUTOR ,LV.CD_LIVRO AS CDLI, LV.foto1 AS FT1, LV.foto2 AS FT2, LV.foto3 AS FT3,LV.NM_LIVRO AS NMLV,LV.NM_GENERO AS genero, LV.DT_PUBLICACAO AS dta, CI.NM_CIDADE AS CITY, U.SG_UF AS UF,LV.DT_PUBLICACAO AS DT FROM DB_SCAMBIO.TB_LIVRO AS LV ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_USUARIO AS US ON ';
 $sql .= 'US.CD_USUARIO = LV.CD_USUARIO ';
@@ -14,7 +22,7 @@ $sql .= 'BA.CD_BAIRRO = LO.CD_BAIRRO ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_CIDADE AS CI ON ';
 $sql .= 'BA.CD_CIDADE = CI.CD_CIDADE ';
 $sql .= 'INNER JOIN DB_SCAMBIO.TB_UF AS U ON ';
-$sql .= 'U.CD_UF = CI.CD_UF  WHERE US.CD_USUARIO = ' . $_SESSION['id'] . ' ORDER BY CDLI DESC';
+$sql .= 'U.CD_UF = CI.CD_UF  WHERE US.CD_USUARIO = ' . $id . ' ORDER BY CDLI DESC';
 $SQLANUN = $pdo->prepare($sql);
 $SQLANUN->execute();
 
@@ -63,3 +71,6 @@ if ($SQLANUN->rowCount() > 0) {
         echo $out;
     }
 }
+
+unset($_SESSION['perfil']);
+

@@ -8,7 +8,6 @@ $("#btn-del").click(() =>{
             'id':id
         },
         success: function (response) {
-            alert(response);
             $("#exampleModalLongD").modal("hide")
             Callajaxpub();
         }    

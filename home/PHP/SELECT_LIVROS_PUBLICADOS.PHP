@@ -4,10 +4,9 @@ include_once('../../config/conexao.php');
 
 session_start();
 
-
-$livro = $_POST['livro'];
-$autor = $_POST['autor'];
-$uf = $_POST['uf'];
+$livro = $_POST['livro'] ?? "";
+$autor = $_POST['autor'] ?? "";
+$uf = $_POST['uf'] ?? "";
 
 
 $sql = 'SELECT US.cd_usuario as USUARIOID,LV.STATUS_PUB AS STA, LV.CD_LIVRO AS CDLI, LV.foto1 AS FT1, LV.foto2 AS FT2, LV.foto3 AS FT3,LV.NM_LIVRO AS NMLV,LV.NM_GENERO AS genero, LV.DT_PUBLICACAO AS dt, CI.NM_CIDADE AS CITY, U.SG_UF AS UF,LV.DT_PUBLICACAO AS DT FROM DB_SCAMBIO.TB_LIVRO AS LV ';
