@@ -91,8 +91,8 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
         }
 
         .w-100 {
-            width: 250px !important;
-            height: 401px;
+            width: 230px !important;
+            height: 335px;
         }
 
         /* #titulo-descricao{
@@ -182,19 +182,19 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
                                     <?php
                                     if (isset($row['foto1'])) { ?>
                                         <div class="carousel-item active">
-                                            <img class="d-block w-100" src="../fotos/<?= $row['foto1']?>" alt="First slide">
+                                            <img class="d-block w-100" src="../fotos/<?= $row['foto1'] ?>" alt="First slide">
                                         </div>
                                     <?php       } else if (isset($row['foto2'])) { ?>
                                         <div class="carousel-item">
-                                            <img class="d-block w-100" src="../fotos/<?= $row['foto2']?>" alt="Second slide">
+                                            <img class="d-block w-100" src="../fotos/<?= $row['foto2'] ?>" alt="Second slide">
                                         </div>
                                     <?php       } else if (isset($row['foto3'])) { ?>
                                         <div class="carousel-item">
-                                            <img class="d-block w-100" src="../fotos/<?= $row['foto2']?>" alt="Third slide">
+                                            <img class="d-block w-100" src="../fotos/<?= $row['foto2'] ?>" alt="Third slide">
                                         </div>
                                     <?php       } else { ?>
                                         <div class="carousel-item">
-                                            <img class="d-block w-100" src="../fotos/<?= $row['foto1']?>" alt="Third slide">
+                                            <img class="d-block w-100" src="../fotos/<?= $row['foto1'] ?>" alt="Third slide">
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -240,7 +240,7 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
                                     <div style="display:flex; justify-content:end; padding: 10px">
                                         <a href="../perfil/perfil2.php?user_id=<?= $row['cd_usuario'] ?>">
                                             <?php
-                                                    $_SESSION['perfil'] = $row['cd_usuario'];
+                                            $_SESSION['perfil'] = $row['cd_usuario'];
                                             ?>
                                             <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
                                                 <i class="fa fa-user"></i>
@@ -270,8 +270,8 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
     </div>
 
 
-    <?php 
-        include_once('../menu/menu.php'); 
+    <?php
+    include_once('../menu/menu.php');
     ?>
     <script>
         $(document).ready(function() {
@@ -286,4 +286,3 @@ $row = $SQLANUN->fetch(PDO::FETCH_ASSOC);
 </body>
 
 </html>
-
